@@ -86,4 +86,4 @@
 미완료/미입증: 전국 음식점 원본403 해결, 사람의 정답 검토, 시장/주차장 개별 이용허락 확정, CRS 변환, 완전히 독립된 더 많은 국내 스키마, 날짜/혼합값/단위 변환 효과, 설명 결손 및 자연적 혼용, 불충분 근거에서의 검토 성능, 실제 상품·주문 전체 후보의 상용 정확도, 반복 통계평가. 이 쉬운 잠정 참조만으로 제품의 높은 정확도를 주장하지 않는다. 개선을 확인하지 못해 **기존 C·main·안정 배포를 그대로 유지**한다.
 
 
-최종 확인: 전체 자동 검사247개 통과(20.39초). Cloud Run 리비전 schema-c-web-00003-kcm 유지, 기존 숫자형URL health200, 기존 서비스 quota 예약2건 그대로·active-generation 잠금없음. Azure 학생 VM schema-match-demo-rg/schema-match-llm-vm은 PowerState/deallocated. 기존 main 원격SHA cbfecba9232b2ed089d9812478aa190862435020, 배포/병합 명령을 실행하지 않았다.
+최종 확인: 전체 자동 검사248개 통과(16.00초). Cloud Run 리비전 schema-c-web-00003-kcm 유지, 기존 숫자형URL health200, 기존 서비스 quota 예약2건 그대로·active-generation 잠금없음. Azure 학생 VM schema-match-demo-rg/schema-match-llm-vm은 PowerState/deallocated. 기존 main 원격SHA cbfecba9232b2ed089d9812478aa190862435020, 배포/병합 명령을 실행하지 않았다.

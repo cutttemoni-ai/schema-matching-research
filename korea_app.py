@@ -50,6 +50,8 @@ else:
                 st.session_state.pop('kr_export',None)
                 st.caption('저장 결과 재사용' if reused else '지금 완료된 실제 호출: 연구 점수에 합산하지 않음')
         except Exception as e:st.error(str(e))
+    else:
+        st.session_state.pop('kr_loaded',None);st.session_state.pop('kr_export',None)
 
 if 'kr_loaded' in st.session_state:
     source,targets,wire,r=st.session_state.kr_loaded
@@ -66,6 +68,8 @@ if 'kr_loaded' in st.session_state:
             item=pred[col.id];st.write(f"**{col.name}** · 최초 상태 `{item['status']}` · {item['reason']}")
             choices[col.id]=st.selectbox(f'{col.name}의 확정 대상',options,index=options.index(item['target_id']),format_func=lambda x:names.get(x,'매칭 없음'),key=f"choice-{r['request_id']}-{col.id}")
             if st.checkbox(f'{col.name} 검토 완료',key=f"approve-{r['request_id']}-{col.id}"):approved.add(col.id)
+        if 'kr_export' in st.session_state and st.session_state.kr_export[1]!=app.review_signature(r,choices,approved):
+            st.session_state.pop('kr_export',None)
         if st.button('검토 결과 확정'):
             try:
                 key,files=app.commit_review(store,source,targets,r,choices,approved);st.session_state.kr_export=(r['request_id'],key,files)

@@ -102,3 +102,21 @@ def test_changing_app_mode_clears_previous_upload_result(monkeypatch):
     app.radio[0].set_value('사용자 CSV·대상 스키마').run(timeout=20)
     assert not app.exception
     assert 'kr_loaded' not in app.session_state
+
+def test_edit_after_confirmation_invalidates_downloads(monkeypatch,tmp_path):
+    from streamlit.testing.v1 import AppTest
+    from schema_match import cloud_c_service as service
+    from schema_match.models import Column
+    monkeypatch.delenv('SERVICE_BUCKET',raising=False)
+    original=service.Store
+    monkeypatch.setattr(service,'Store',lambda owner,session,**kw:original(owner,session,local_root=tmp_path))
+    source=service.checked_csv('코드\n0012\n'.encode());targets=[Column(id='t',name='code',description='',data_type='string'),Column(id='u',name='other',description='',data_type='string')]
+    wire=service.evidence(source,targets)
+    record={'request_id':'offline-regression','finished_at':'2026-11-03T00:00:00+00:00','method':'C','model_id':'mock-not-a-real-call',
+        'execution_category':'valid_output','initial_recommendations':[{'source_id':'src_001','target_id':'t','status':'matched','reason':'offline fixture'}]}
+    at=AppTest.from_file(k.ROOT/'korea_app.py').run(timeout=20)
+    at.session_state['kr_loaded']=(source,targets,wire,record);at.run(timeout=20)
+    at.checkbox[0].check().run(timeout=20);at.button[1].click().run(timeout=20)
+    assert not at.exception and 'kr_export' in at.session_state
+    at.selectbox[-1].select('u').run(timeout=20)
+    assert not at.exception and 'kr_export' not in at.session_state

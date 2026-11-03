@@ -61,9 +61,12 @@ def run_custom(source_bytes,schema_bytes,reference_bytes):
     from . import korea_app_live_v1 as live
     return live.run(source_bytes,schema_bytes,reference_bytes)
 
+def review_signature(initial,choices,approved):
+    return digest({'initial_request_id':initial['request_id'],'choices':choices,'approved':sorted(approved)})
+
 def commit_review(store,source,targets,initial,choices,approved):
     files=service.export_review(source,targets,choices,approved)
-    key=digest({'initial_request_id':initial['request_id'],'choices':choices,'approved':sorted(approved)})
+    key=review_signature(initial,choices,approved)
     record={'initial_request_id':initial['request_id'],'initial_recommendations':initial.get('initial_recommendations'),
         'user_choices':choices,'approved':sorted(approved),'new_inference_count':0,'value_transformations':False}
     if store.get(f'reviews/{key}/review.json') is None:
