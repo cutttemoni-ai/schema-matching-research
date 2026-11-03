@@ -1,0 +1,19 @@
+{
+  "version": "selected-evidence-D-v1",
+  "representative_seed": "representative-values-v1-20261103",
+  "representative_max_chars": 80,
+  "representative_max_count": 3,
+  "representative_policy": ["most_frequent_lexical_tie", "seeded_uniform_distinct", "maximum_minimum_lexical_distance"],
+  "numeric_literal_max_chars": 100,
+  "numeric_pattern": "[+-]?(?:[0-9]+(?:\\.[0-9]+)?|\\.[0-9]+)(?:[eE][+-]?[0-9]+)?",
+  "recognized_units": ["%", "cm", "mm", "m", "km", "kg", "g", "mg", "L", "mL", "Hz", "kHz", "MHz", "ms", "s", "min", "h", "USD", "KRW", "EUR", "$", "€", "£", "₩"],
+  "radio_band_prefixes": ["AM", "FM"],
+  "year_shape_range": [1000, 2999],
+  "feature_priority": ["row_count", "non_missing_count", "missing_rate", "inferred_type", "unique_ratio", "parse_evidence", "representative_values", "partial_numeric", "date_evidence", "format_evidence", "length_summary", "pattern_ratios"],
+  "source_feature_bytes": 2600,
+  "candidate_feature_bytes_max": 2200,
+  "all_feature_bytes": 24000,
+  "budget_note": "UTF-8 feature serialization selection cap, not a token estimate. No values truncated. Final Vertex CountTokens + schema/framing +4096 output must pass native context separately.",
+  "review_policy": "auto_link_eligible iff validated initial status matched and nonnull candidate; no_match and needs_review require user review. All real exports still require explicit user confirmation and collision resolution.",
+  "selection_after_final": "Choose D1 only if planned-denominator Top1 >= C, auto_link_precision >= C, auto_link_coverage >= C and paired valid-usage cost <= C; otherwise C. Heuristic product default selection, not equivalence/significance/commercial certification."
+}

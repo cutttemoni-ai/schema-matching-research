@@ -1,0 +1,6 @@
+title: Schema Matching Gemini Predictor
+description: Predict and count tokens only; no VM or model administration.
+stage: GA
+includedPermissions:
+  - aiplatform.endpoints.predict
+  - serviceusage.services.use

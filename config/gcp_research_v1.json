@@ -1,0 +1,27 @@
+{
+  "version": "vertex-gemini-research-v1.1",
+  "project": "schema-match-gemini-261103",
+  "location": "global",
+  "model": "gemini-3.8-flash",
+  "api_version": "v1",
+  "context_tokens": 1048576,
+  "max_model_output_tokens": 65536,
+  "max_output_tokens": 4096,
+  "thinking_level": "LOW",
+  "reason_max_chars": 120,
+  "automatic_retries": 0,
+  "migration_inference_cap": 6,
+  "pricing": {
+    "currency": "USD",
+    "input_per_million": 0.75,
+    "cached_input_per_million": 0.075,
+    "output_including_thoughts_per_million": 3.75,
+    "effective_through": "2026-12-31",
+    "checked_at": "2026-11-03",
+    "source": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing"
+  },
+  "model_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash",
+  "parameter_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash",
+  "schema_policy": "Supported JSON Schema enum/anyOf; reason length additionally validated in Python. No inferred target repairs.",
+  "token_policy": "CountTokens real request plus a separate budget-only message/schema representation. max(two counts)+256 service framing+output4096; messages and system not added twice. CountTokens26 vs real prompt60 in smoke means not exact. No byte-based admission or content clipping."
+}

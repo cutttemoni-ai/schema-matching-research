@@ -1,0 +1,92 @@
+# Product quality development frozen plan
+
+Frozen UTC 2026-11-03T02:43:56.586503+00:00; seed product-quality-task-selection-v1-20261103. Model/config unchanged: Vertex Gemini3.8Flash/global/LOW/4096; same SYSTEM/schema/target order and common policy. One source per request, serial, SDK attempts1, inference retries0. Planned60; families6. Prior270 not merged.
+
+Methods ['C', 'C_no_categories', 'D0', 'D0_representatives', 'D1'], conditions['original', 'opaque']. Expected undiscounted standard-reference fee$0.518972; all maximum reservations$2.611143. Global cap450, dev60, USD10 including thinking; no credits/cache discounts; not a billing hardcap. Current0.75/3.75 vs conservative standard1.5/7.5 USD/M. Actual total-prompt accounts output/thought once; missing components stay null. Before every new request reserve twice admission estimate and4096 output.
+
+A local. Raw first outputs scored before user edits. Top1 includes reviews/errors/unexecuted; no unannotated pair assumed negative. Natural none not available: generated none explicitly separate. Magellan development-only positive references are not exhaustive negatives. Same source variants not independent. Candidate ordering seed hashes opaque IDs; method starts rotate before outcomes.
+
+C is original full profile v0; D0 original fixed selection. D1 candidates use additional value-only partial numeric/unit/date/format evidence, so a D1 vs C difference is not selection alone. C_no_categories removes only category VALUE STRINGS and retains counts/ratios. D0_representatives adds only up to3 actual representative values with frequencies/roles. No extra same-token random control in the60-call budget; do not claim isolated numeric-feature or exact-token-matched effects.
+
+Development D1 choice: Select D0_representatives or D1 by dev reference-hit count, then auto-link precision lower bound, then coverage, then lower observed input tokens. At most2 candidates; no further retuning.. Product default criterion fixed: Choose D1 only if planned-denominator Top1 >= C, auto_link_precision >= C, auto_link_coverage >= C and paired valid-usage cost <= C; otherwise C. Heuristic product default selection, not equivalence/significance/commercial certification.. No confidence percentages used.
+
+| order | ID | task | condition | method | actual variant | candidate IDs |
+|---:|---|---|---|---|---|---|
+|1|4c762ff7da93b8694d5047a97e341ec1|5d6d9c5e131aced86722261e|original|C|C|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|2|45697fd1b0033fea9074dd345564e8d9|5d6d9c5e131aced86722261e|original|C_no_categories|C_no_categories|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|3|a493d32c62dc81e9f98c345f431e0580|5d6d9c5e131aced86722261e|original|D0|D0|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|4|4f04c83b88429eb32e96a8707a6bfa07|5d6d9c5e131aced86722261e|original|D0_representatives|D0_representatives|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|5|0bd284f1812accbb6d0fd28ae384bf33|5d6d9c5e131aced86722261e|original|D1|D1|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|6|0f87b4ed8c4064a313a2ca6d19403c5a|5d6d9c5e131aced86722261e|opaque|C_no_categories|C_no_categories|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|7|911f6c78d79a9f5443ff09ba100d7ebd|5d6d9c5e131aced86722261e|opaque|D0|D0|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|8|03b94a29be43b1aa0ab13218771b39fa|5d6d9c5e131aced86722261e|opaque|D0_representatives|D0_representatives|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|9|12084c3c0f2a67cd2ac9cf2f3a3b7f56|5d6d9c5e131aced86722261e|opaque|D1|D1|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|10|ad49c5d1ba89225abbe9666dcb83a854|5d6d9c5e131aced86722261e|opaque|C|C|t_f92a0a3597067ca4,t_4e308064d6c1a55d,t_b166c69d7d29afeb|
+|11|ec6fdd4877fca9ffaa045b1ffbe54a15|bd644a814a9a022e9a73bf37|original|C_no_categories|C_no_categories|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|12|aa3e57351bc8ccbb7d3e945ea91525ff|bd644a814a9a022e9a73bf37|original|D0|D0|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|13|510c1816b54fe1bc369772d0d987d09a|bd644a814a9a022e9a73bf37|original|D0_representatives|D0_representatives|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|14|60e8e0f9d72435deb0475cb87d55acb6|bd644a814a9a022e9a73bf37|original|D1|D1|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|15|0388b2d1047ff7a63ad1b609bd23d66e|bd644a814a9a022e9a73bf37|original|C|C|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|16|fb1cc9c15ab7e58f10bfafc3d36802ab|bd644a814a9a022e9a73bf37|opaque|D0|D0|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|17|02a799063ed17c7a096d568e1bdef8c5|bd644a814a9a022e9a73bf37|opaque|D0_representatives|D0_representatives|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|18|b41f02c5452d3ce0a49f3590901b8582|bd644a814a9a022e9a73bf37|opaque|D1|D1|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|19|295fb32e08da32e990be1459ea368bb3|bd644a814a9a022e9a73bf37|opaque|C|C|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|20|5a5210bb229ddc21b71156b73d837da7|bd644a814a9a022e9a73bf37|opaque|C_no_categories|C_no_categories|t_7fefc0d7d22e052a,t_87aae293145a8296,t_1759195a4c91e5ce|
+|21|e8663269d2a50f69473c3fd149027e0d|80ff3a8c60db2b1d996ef837|original|D0|D0|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|22|43d59fa95053e6e466000fd39cf41dcc|80ff3a8c60db2b1d996ef837|original|D0_representatives|D0_representatives|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|23|4496789e90f0dd29207e6f172e6c30a9|80ff3a8c60db2b1d996ef837|original|D1|D1|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|24|6d3ad6a15c0035f921a7471e98deb240|80ff3a8c60db2b1d996ef837|original|C|C|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|25|90aad52a903ee92c1f63c1d4ec9c062f|80ff3a8c60db2b1d996ef837|original|C_no_categories|C_no_categories|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|26|04d1f02bc1d65ce872624acfa9be43e3|80ff3a8c60db2b1d996ef837|opaque|D0_representatives|D0_representatives|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|27|e7dda7b378e67635ec9f87c9a63ab9e8|80ff3a8c60db2b1d996ef837|opaque|D1|D1|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|28|62a4513d17e8d4733f1108fbe079bd54|80ff3a8c60db2b1d996ef837|opaque|C|C|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|29|ed65c884424900f893107fb3f4b8e01d|80ff3a8c60db2b1d996ef837|opaque|C_no_categories|C_no_categories|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|30|bc131ad71743a5d059ce9deb1791c5f8|80ff3a8c60db2b1d996ef837|opaque|D0|D0|t_b6054445a90a4cde,t_5107645c24ee61a5,t_2b0725b8c21abdff,t_e9e3508332bc3e13|
+|31|95285422b12e23805a8d15b0706c9dc0|ebbdcd98d580bbe403fb4e8b|original|D0_representatives|D0_representatives|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|32|34c2a8d16d3abd7207b58e9f059f74ef|ebbdcd98d580bbe403fb4e8b|original|D1|D1|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|33|723da5472fc5d34242111385c381b741|ebbdcd98d580bbe403fb4e8b|original|C|C|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|34|ac5ad5dd59d84fa6fe45e85be89b913e|ebbdcd98d580bbe403fb4e8b|original|C_no_categories|C_no_categories|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|35|fb0a8d3fed384678f66e6a4ae71683c0|ebbdcd98d580bbe403fb4e8b|original|D0|D0|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|36|aa8792901daf9b89d6afef44606fb689|ebbdcd98d580bbe403fb4e8b|opaque|D1|D1|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|37|43073e2c09e4b22bedb1936b05ed1932|ebbdcd98d580bbe403fb4e8b|opaque|C|C|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|38|08373b6f58c783addb03828dfdbe3785|ebbdcd98d580bbe403fb4e8b|opaque|C_no_categories|C_no_categories|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|39|96f24861b4a92dc6e956adf919592b64|ebbdcd98d580bbe403fb4e8b|opaque|D0|D0|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|40|71cbdbc39915f225fb4656b562ae7243|ebbdcd98d580bbe403fb4e8b|opaque|D0_representatives|D0_representatives|t_a2ddc84278dca4c0,t_e71fcb1a406e081b,t_ef1d24febb9a8631|
+|41|52412b336a8f8acd2f31a05d9b7f869f|86e435293c01c242882dd7d2|original|D1|D1|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|42|054f8d84b6815a01c2249201cfaae4f2|86e435293c01c242882dd7d2|original|C|C|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|43|f631d00f6b7ef28dfcaf61667f9257d3|86e435293c01c242882dd7d2|original|C_no_categories|C_no_categories|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|44|4d64454ac6d336b0d66479a48deeb8a5|86e435293c01c242882dd7d2|original|D0|D0|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|45|f1929d553f3cb338f6795caa1b199467|86e435293c01c242882dd7d2|original|D0_representatives|D0_representatives|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|46|814964ed7c24fd1660367f46490ba65f|86e435293c01c242882dd7d2|opaque|C|C|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|47|4342f4037ce14fbe3134f4f3e3e61b9b|86e435293c01c242882dd7d2|opaque|C_no_categories|C_no_categories|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|48|ca15ef9280ce68c77e9d90b4cf3b9b00|86e435293c01c242882dd7d2|opaque|D0|D0|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|49|89cc9c7f6764ac85704844fb64111513|86e435293c01c242882dd7d2|opaque|D0_representatives|D0_representatives|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|50|a0ee26b4d1cd2125f9c7f071ba6ae790|86e435293c01c242882dd7d2|opaque|D1|D1|t_b06144c8ded5b3de,t_5a270d770d1ec7bc,t_e19d5efee44ebc5a,t_2c4db905642a5759,t_40895050b195ed15,t_d4326fb183d3d137|
+|51|792a611f3344a38305bd7e9b53d79b6e|41082bf90cd44f9d658a1bb8|original|C|C|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+|52|ae6300917765c3cfe2d3e309e3899ba8|41082bf90cd44f9d658a1bb8|original|C_no_categories|C_no_categories|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+|53|e822d151410d9617490bf43006f29552|41082bf90cd44f9d658a1bb8|original|D0|D0|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+|54|0135b87f42f7d8ef361e77109a343c6a|41082bf90cd44f9d658a1bb8|original|D0_representatives|D0_representatives|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+|55|77d1968aab6c42216463cbd7d1990736|41082bf90cd44f9d658a1bb8|original|D1|D1|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+|56|40b12aac401d90004dbefc7609aa43c4|41082bf90cd44f9d658a1bb8|opaque|C_no_categories|C_no_categories|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+|57|5e071b72a9258c7f6c1b0ad4c1c83c38|41082bf90cd44f9d658a1bb8|opaque|D0|D0|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+|58|c8d4cd61093527f2ed82659ff017e7e8|41082bf90cd44f9d658a1bb8|opaque|D0_representatives|D0_representatives|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+|59|cc1adc354d37cb1b3691ea672d57efe6|41082bf90cd44f9d658a1bb8|opaque|D1|D1|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+|60|e8d208bb4570dcc0b9ce6303f35d3bdd|41082bf90cd44f9d658a1bb8|opaque|C|C|t_38063dea3448f099,t_d36a05593f2062e9,t_e16de0d3f073b91d,t_4a726abc7ea7002b,t_8ff7562b21452311,t_0c6359f34b7d5b05,t_3dad59d4729a4cde|
+
+## Frozen file hashes
+
+- `schema_match/product_profiles_v1.py` `20041b79fc5497f13ed77a19f8c4a217f7cfab05aad8afd7f86015ecb2b8f3fc`
+- `schema_match/product_data_v1.py` `b62f98dfe874ee891cd68aa632660953f6b062de359d924c9a178c0fe748e7e3`
+- `schema_match/product_campaign_v1.py` `99434e5d36f1bcc3bb730e301592ea645b382015b59f7a0087845e9d6098ef57`
+- `schema_match/vertex_provider_v1.py` `9097af7142b9a2988e3af27049258aebd1ed62b95a649d654e8bcfc61925eb3a`
+- `schema_match/vertex_budget_v1_2.py` `684b74c3fc25ed020d7220c3d02b2250151743f38b4c3bf8faddefc8dae6ccd8`
+- `config/product_d1_v1.json` `55af9fee95120cf1b326634a5722a38d154c936e2134d15e198b61640734c15b`
+- `config/gcp_research_v1.json` `a02f3d1ef07a35a9c93c75681659f06ac718564cfccacee7b92576aea012a91c`
+- `config/gcp_budget_v1_2.json` `cf533cb6deb366d9991e72034d46653ef5926e4cbe7f7b06d41e494f1141ce79`
+- `config/comparison_v0.json` `ba5efdcaf41b6b7e791e51a15f11f57fe75508ee968be34a50e9c9b535005488`
+- `schema_match/research_request.py` `56efeb5f96bd799c0ade4e4b66a4acc19048311c997b0a9fb86b032287f10ead`
+- `schema_match/profiles.py` `9dd42eb27f7a2f18242b0ec52f1d62cf7657a4f187eef5f2a3d874ec2730cab0`
+- `research-artifacts/product-quality-v1/tasks.json` `6dbedd01e8fe4c4affc3533a1fd1dc6a1ad0291f2dd73bd013a73a7b147b4e8c`
+- `research-artifacts/product-quality-v1/features.json.gz` `4b060028b1384e7c7a8ff479a79c5021a08b5f2baf8518ea998d17e2c7b7ed65`
+- `research-artifacts/product-quality-v1/split.json` `ce807bbcbd771d108b378937522ddaa8b84efe3fc26be3368ce8a2e17d09d90a`
+- `research-artifacts/product-quality-v1/split-amendment-v1_1.json` `6dfb3155987fd0193ddd059d42df669a99db6d73c7bb3531ed815cabf1349aec`

@@ -1,0 +1,1148 @@
+{
+  "version": "product-family-split-v1",
+  "created_at": "2026-11-03T02:32:57.230094+00:00",
+  "seed": "product-quality-family-split-v1-20261103",
+  "dev_t2d_components": [
+    "1ae354ba757bb8920b4a",
+    "ad4d06d5914e90a82275",
+    "749de5f3409895e1641d",
+    "787e546126b5571fffca",
+    "3cc627f6ab5aefb28fdc"
+  ],
+  "evaluation_t2d_components": [
+    "7ebd226580f8ef38b70d",
+    "fd964c8c7e598c6c5fc2",
+    "1d72f1ba159b0811fcce",
+    "2d3f7f085b756c0f5667",
+    "d13e21db24edeb353994",
+    "95d54157a30bcdb9f09b",
+    "1238b45a3d0a006df929",
+    "7352ef08ed2354b64804",
+    "6a6a63168965998af6e3",
+    "ccff1b185f63cec0a2c2",
+    "965d1ee89ebe72e6304e",
+    "5f6e3c6a6006bcf3d193",
+    "4e0a0cbeb0f98482c4a8",
+    "a21550e17f07874916f4",
+    "79742d0f884d717bb1ad",
+    "fe9f5a3293561a8d22ed",
+    "6b519944cd5aa3fa7615",
+    "53be12623c331ffe2529",
+    "f948063e9befd40de514",
+    "fae394d85b637c49d652",
+    "f2897a83fcf87eaed517",
+    "374087903130d7d13795",
+    "5bf404ffcfe967149e20",
+    "5a250c278a8cb8695e8c",
+    "a04877ca71711f5f13d9",
+    "7f4ecdb45b875b71a07a"
+  ],
+  "reserve_t2d_components": [
+    "0f47d8ef3f6607c2c28b",
+    "c08c43f482e430e76d44"
+  ],
+  "eligible_unseen_tasks": [
+    {
+      "task_id": "8ea0471ce0f3582f7b5adb26",
+      "split": "test",
+      "pair_id": "48944826_0_2321751364268052533",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "787e546126b5571fffca",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "b6176781c5050ad9030e10e5",
+      "split": "test",
+      "pair_id": "29412826_0_3422707769191426540",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        1,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": false,
+      "component_id": "a21550e17f07874916f4",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "4b711ca4f94e329d2a057055",
+      "split": "test",
+      "pair_id": "99070098_0_2074872741302696997",
+      "source_index": 4,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "kind": "main",
+      "full_target_count": 8,
+      "annotation_complete": false,
+      "component_id": "7f4ecdb45b875b71a07a",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "f50f33e1918d48fe01add3a4",
+      "split": "test",
+      "pair_id": "78650283_0_5937576517849452289",
+      "source_index": 0,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": true,
+      "component_id": "749de5f3409895e1641d",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "7d92ce0abcd46350a2c4f700",
+      "split": "test",
+      "pair_id": "4444204_0_951426790527152756",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        2,
+        4,
+        5
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "f948063e9befd40de514",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "2975115950d1f1a36489c162",
+      "split": "test",
+      "pair_id": "67865873_0_8259587610208037357",
+      "source_index": 4,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 3,
+      "annotation_complete": true,
+      "component_id": "965d1ee89ebe72e6304e",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "18cd187cebcd0e5333afbe33",
+      "split": "test",
+      "pair_id": "4444204_0_951426790527152756",
+      "source_index": 4,
+      "target_indices": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "f948063e9befd40de514",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "37d2c5451d6475fa988a1fae",
+      "split": "test",
+      "pair_id": "62564020_0_3836030043284699244",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "5bf404ffcfe967149e20",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "b285d30305517ccc73097291",
+      "split": "test",
+      "pair_id": "29021592_3_2299138476894681059",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "ad4d06d5914e90a82275",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "58ca846a976efb1b9a63d344",
+      "split": "test",
+      "pair_id": "46671561_0_6122315295162029872",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "79742d0f884d717bb1ad",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "df29b8b7e53237f3566c873e",
+      "split": "test",
+      "pair_id": "4444204_0_951426790527152756",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "f948063e9befd40de514",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "5d6d9c5e131aced86722261e",
+      "split": "test",
+      "pair_id": "60319454_0_3938426910282115527",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": false,
+      "component_id": "1ae354ba757bb8920b4a",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "97a8a268ad90bf513fb4380e",
+      "split": "test",
+      "pair_id": "84548468_0_5955155464119382182",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": true,
+      "component_id": "fe9f5a3293561a8d22ed",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "d90b47d93462dbc574576053",
+      "split": "test",
+      "pair_id": "19361188_0_1640726405141876003",
+      "source_index": 5,
+      "target_indices": [
+        0,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "1238b45a3d0a006df929",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "ccbf2baa8034b156b64db598",
+      "split": "test",
+      "pair_id": "69381058_0_984708047398578866",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": true,
+      "component_id": "1d72f1ba159b0811fcce",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "09aa649edeaeb31ce8960f9e",
+      "split": "test",
+      "pair_id": "10151359_0_8168779773862259178",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": false,
+      "component_id": "6b519944cd5aa3fa7615",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "3228d853e01c347ee75d562d",
+      "split": "test",
+      "pair_id": "84548468_0_5955155464119382182",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "fe9f5a3293561a8d22ed",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "5f2ed8c4959150a7e5eb149a",
+      "split": "test",
+      "pair_id": "46671561_0_6122315295162029872",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": true,
+      "component_id": "79742d0f884d717bb1ad",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "d2102aba8f726b2b28146a4f",
+      "split": "test",
+      "pair_id": "2066887_0_746204117268168398",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 3,
+      "annotation_complete": true,
+      "component_id": "ccff1b185f63cec0a2c2",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "86e435293c01c242882dd7d2",
+      "split": "test",
+      "pair_id": "93702496_0_39013305210829591",
+      "source_index": 4,
+      "target_indices": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        8
+      ],
+      "kind": "main",
+      "full_target_count": 10,
+      "annotation_complete": false,
+      "component_id": "3cc627f6ab5aefb28fdc",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "3dd7b436bca16cc07e0fa1d5",
+      "split": "test",
+      "pair_id": "99070098_0_2074872741302696997",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        3,
+        5,
+        7
+      ],
+      "kind": "main",
+      "full_target_count": 8,
+      "annotation_complete": false,
+      "component_id": "7f4ecdb45b875b71a07a",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "ca68549077039d7eb14679dd",
+      "split": "test",
+      "pair_id": "98929678_0_3700213490979945526",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "f2897a83fcf87eaed517",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "6bfb3facd694e976dca31ea9",
+      "split": "test",
+      "pair_id": "13395751_3_369722706637560735",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": false,
+      "component_id": "6a6a63168965998af6e3",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "e714aba19100f07ad7337003",
+      "split": "test",
+      "pair_id": "84548468_0_5955155464119382182",
+      "source_index": 4,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "fe9f5a3293561a8d22ed",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "66beb88b415098bd7310d501",
+      "split": "test",
+      "pair_id": "47709681_0_4437772923903322343",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": true,
+      "component_id": "fae394d85b637c49d652",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "ebbdcd98d580bbe403fb4e8b",
+      "split": "test",
+      "pair_id": "48944826_0_2321751364268052533",
+      "source_index": 5,
+      "target_indices": [
+        1,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "787e546126b5571fffca",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "94531a433c298b302692b4f0",
+      "split": "test",
+      "pair_id": "55004961_0_2904467548072189860",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 3,
+      "annotation_complete": true,
+      "component_id": "0f47d8ef3f6607c2c28b",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "6c1a595b3efb97eea38f2003",
+      "split": "test",
+      "pair_id": "90723763_0_874013697986950454",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": false,
+      "component_id": "5f6e3c6a6006bcf3d193",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "39d5f67ebbd331620dd614e5",
+      "split": "test",
+      "pair_id": "69381058_0_984708047398578866",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": false,
+      "component_id": "1d72f1ba159b0811fcce",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "1ef48a6e3649a41b187adff6",
+      "split": "test",
+      "pair_id": "47709681_0_4437772923903322343",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": true,
+      "component_id": "fae394d85b637c49d652",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "773472ca2d46ae676cbef662",
+      "split": "test",
+      "pair_id": "46671561_0_6122315295162029872",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "79742d0f884d717bb1ad",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "5ad4091fce0a7cb71f31fd1d",
+      "split": "test",
+      "pair_id": "41194422_1_1172256090552737974",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": false,
+      "component_id": "c08c43f482e430e76d44",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "1ec7565ef4676ac7be67bd59",
+      "split": "test",
+      "pair_id": "66009064_0_9148652238372261251",
+      "source_index": 4,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 3,
+      "annotation_complete": true,
+      "component_id": "374087903130d7d13795",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "42de3a38a4f9f5f692392cd6",
+      "split": "test",
+      "pair_id": "22864497_0_8632623712684511496",
+      "source_index": 0,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": true,
+      "component_id": "5a250c278a8cb8695e8c",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "085d174d4e1e4890d47b7c13",
+      "split": "test",
+      "pair_id": "34899692_0_6530393048033763438",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "2d3f7f085b756c0f5667",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "ccc1f53b2ee7fa2262e9b29c",
+      "split": "test",
+      "pair_id": "22864497_0_8632623712684511496",
+      "source_index": 6,
+      "target_indices": [
+        0,
+        1,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "5a250c278a8cb8695e8c",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "f8c987e2fc60947e866df7f9",
+      "split": "test",
+      "pair_id": "99070098_0_2074872741302696997",
+      "source_index": 7,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "kind": "main",
+      "full_target_count": 8,
+      "annotation_complete": false,
+      "component_id": "7f4ecdb45b875b71a07a",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "caa09161977b9cb01945e40e",
+      "split": "test",
+      "pair_id": "64734047_0_5880705307495695536",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": true,
+      "component_id": "7ebd226580f8ef38b70d",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "edf21c4a9c0ed377eebd1eb0",
+      "split": "test",
+      "pair_id": "13395751_3_369722706637560735",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": true,
+      "component_id": "6a6a63168965998af6e3",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "6e892225e9f0f0d578b0c139",
+      "split": "test",
+      "pair_id": "41194422_0_7231546114369966811",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "c08c43f482e430e76d44",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "775a82166ef84937ce87e318",
+      "split": "test",
+      "pair_id": "52208141_2_5171684379987586712",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 3,
+      "annotation_complete": true,
+      "component_id": "7352ef08ed2354b64804",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "065ab93cfaf3992cdc4edfed",
+      "split": "test",
+      "pair_id": "49772588_0_6549847739640234347",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1
+      ],
+      "kind": "main",
+      "full_target_count": 2,
+      "annotation_complete": true,
+      "component_id": "95d54157a30bcdb9f09b",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "1f3c684f1449412670cf8fd0",
+      "split": "test",
+      "pair_id": "63389809_0_8179819543692215824",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": false,
+      "component_id": "fd964c8c7e598c6c5fc2",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "81ba8ee15e817d4286116389",
+      "split": "test",
+      "pair_id": "93702496_0_39013305210829591",
+      "source_index": 1,
+      "target_indices": [
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "kind": "main",
+      "full_target_count": 10,
+      "annotation_complete": false,
+      "component_id": "3cc627f6ab5aefb28fdc",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "dc763f803e4f63287007f8e1",
+      "split": "test",
+      "pair_id": "34899692_0_6530393048033763438",
+      "source_index": 0,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "2d3f7f085b756c0f5667",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "a611fefe80be5ba3e66af641",
+      "split": "test",
+      "pair_id": "2066887_0_746204117268168398",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 3,
+      "annotation_complete": true,
+      "component_id": "ccff1b185f63cec0a2c2",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "80ff3a8c60db2b1d996ef837",
+      "split": "test",
+      "pair_id": "78650283_0_5937576517849452289",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "749de5f3409895e1641d",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "8514a8ac543ec786a7b08c55",
+      "split": "test",
+      "pair_id": "46646666_0_5802598112171303204",
+      "source_index": 0,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": true,
+      "component_id": "a04877ca71711f5f13d9",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "d1f4c717b93a71bd82d457c9",
+      "split": "test",
+      "pair_id": "66009064_0_9148652238372261251",
+      "source_index": 0,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 3,
+      "annotation_complete": true,
+      "component_id": "374087903130d7d13795",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "99d1a03cad1bdc00f7485a43",
+      "split": "test",
+      "pair_id": "91959037_0_7907661684242014480",
+      "source_index": 3,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 3,
+      "annotation_complete": true,
+      "component_id": "4e0a0cbeb0f98482c4a8",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "624d0e141ddf30f3efc48848",
+      "split": "test",
+      "pair_id": "48944826_0_2321751364268052533",
+      "source_index": 4,
+      "target_indices": [
+        0,
+        2,
+        3,
+        5
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "787e546126b5571fffca",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "33cc92062a1de42ba885f11b",
+      "split": "test",
+      "pair_id": "64499281_8_7181683886563136802",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 4,
+      "annotation_complete": true,
+      "component_id": "53be12623c331ffe2529",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "bd644a814a9a022e9a73bf37",
+      "split": "test",
+      "pair_id": "29021592_3_2299138476894681059",
+      "source_index": 0,
+      "target_indices": [
+        0,
+        2,
+        3
+      ],
+      "kind": "main",
+      "full_target_count": 6,
+      "annotation_complete": false,
+      "component_id": "ad4d06d5914e90a82275",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "61b71b4c974417ce08dde3a2",
+      "split": "test",
+      "pair_id": "99070098_0_2074872741302696997",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "kind": "main",
+      "full_target_count": 8,
+      "annotation_complete": false,
+      "component_id": "7f4ecdb45b875b71a07a",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "8b54a4eb9ecdf1a6a95488fa",
+      "split": "test",
+      "pair_id": "93702496_0_39013305210829591",
+      "source_index": 2,
+      "target_indices": [
+        1,
+        6,
+        7,
+        9
+      ],
+      "kind": "main",
+      "full_target_count": 10,
+      "annotation_complete": false,
+      "component_id": "3cc627f6ab5aefb28fdc",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "b75c27ec51ca8e9b2cbec928",
+      "split": "test",
+      "pair_id": "98929678_0_3700213490979945526",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "f2897a83fcf87eaed517",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "30e4b50c88d4e2427f9dff39",
+      "split": "test",
+      "pair_id": "98929678_0_3700213490979945526",
+      "source_index": 0,
+      "target_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "f2897a83fcf87eaed517",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "23588faa42455a4d8c3f1d67",
+      "split": "test",
+      "pair_id": "90196673_0_5458330029110291950",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2
+      ],
+      "kind": "main",
+      "full_target_count": 3,
+      "annotation_complete": true,
+      "component_id": "d13e21db24edeb353994",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "aea9bf2d2b6e2fa1022531da",
+      "split": "test",
+      "pair_id": "46646666_0_5802598112171303204",
+      "source_index": 2,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": true,
+      "component_id": "a04877ca71711f5f13d9",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "db6a2b2460eea2e28d8cb77b",
+      "split": "test",
+      "pair_id": "22864497_0_8632623712684511496",
+      "source_index": 4,
+      "target_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": false,
+      "component_id": "5a250c278a8cb8695e8c",
+      "test_leakage_with_development": false
+    },
+    {
+      "task_id": "d34f3f79e782b82a6c8182ac",
+      "split": "test",
+      "pair_id": "46646666_0_5802598112171303204",
+      "source_index": 1,
+      "target_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kind": "main",
+      "full_target_count": 5,
+      "annotation_complete": true,
+      "component_id": "a04877ca71711f5f13d9",
+      "test_leakage_with_development": false
+    }
+  ],
+  "external_pairs": {
+    "Magellan": {
+      "prefix": "Valentine-datasets/Magellan/fodors_zagats/fodors_zagats",
+      "members": [
+        "Valentine-datasets/Magellan/fodors_zagats/fodors_zagats_source.csv",
+        "Valentine-datasets/Magellan/fodors_zagats/fodors_zagats_target.csv",
+        "Valentine-datasets/Magellan/fodors_zagats/fodors_zagats_mapping.json",
+        "Valentine-datasets/Magellan/fodors_zagats/fodors_zagats_source.json",
+        "Valentine-datasets/Magellan/fodors_zagats/fodors_zagats_target.json"
+      ],
+      "split": "development",
+      "family": "Magellan-ALL-original-and-variants",
+      "selection": "minimum compressed complete5-file pair, <=10MB/member; SHA seed tie-break, no predictions/labels inspected"
+    },
+    "OpenData": {
+      "prefix": "Valentine-datasets/OpenData/View -Unionable/miller2_both_0_1_ac2_ev/miller2_both_0_1_ac2_ev",
+      "members": [
+        "Valentine-datasets/OpenData/View -Unionable/miller2_both_0_1_ac2_ev/miller2_both_0_1_ac2_ev_source.csv",
+        "Valentine-datasets/OpenData/View -Unionable/miller2_both_0_1_ac2_ev/miller2_both_0_1_ac2_ev_target.csv",
+        "Valentine-datasets/OpenData/View -Unionable/miller2_both_0_1_ac2_ev/miller2_both_0_1_ac2_ev_mapping.json",
+        "Valentine-datasets/OpenData/View -Unionable/miller2_both_0_1_ac2_ev/miller2_both_0_1_ac2_ev_source.json",
+        "Valentine-datasets/OpenData/View -Unionable/miller2_both_0_1_ac2_ev/miller2_both_0_1_ac2_ev_target.json"
+      ],
+      "split": "evaluation",
+      "family": "OpenData-ALL-original-and-variants",
+      "selection": "minimum compressed complete5-file pair, <=10MB/member; SHA seed tie-break, no predictions/labels inspected"
+    },
+    "TPC-DI": {
+      "prefix": "Valentine-datasets/TPC-DI/View-Unionable/prospect_both_0_1_ac2_ev/prospect_both_0_1_ac2_ev",
+      "members": [
+        "Valentine-datasets/TPC-DI/View-Unionable/prospect_both_0_1_ac2_ev/prospect_both_0_1_ac2_ev_source.csv",
+        "Valentine-datasets/TPC-DI/View-Unionable/prospect_both_0_1_ac2_ev/prospect_both_0_1_ac2_ev_target.csv",
+        "Valentine-datasets/TPC-DI/View-Unionable/prospect_both_0_1_ac2_ev/prospect_both_0_1_ac2_ev_mapping.json",
+        "Valentine-datasets/TPC-DI/View-Unionable/prospect_both_0_1_ac2_ev/prospect_both_0_1_ac2_ev_source.json",
+        "Valentine-datasets/TPC-DI/View-Unionable/prospect_both_0_1_ac2_ev/prospect_both_0_1_ac2_ev_target.json"
+      ],
+      "split": "evaluation",
+      "family": "TPC-DI-ALL-original-and-variants",
+      "selection": "minimum compressed complete5-file pair, <=10MB/member; SHA seed tie-break, no predictions/labels inspected"
+    },
+    "ChEMBL": {
+      "prefix": "Valentine-datasets/ChEMBL/View-Unionable/assays_both_0_1_ac2_av/assays_both_0_1_ac2_av",
+      "members": [
+        "Valentine-datasets/ChEMBL/View-Unionable/assays_both_0_1_ac2_av/assays_both_0_1_ac2_av_source.csv",
+        "Valentine-datasets/ChEMBL/View-Unionable/assays_both_0_1_ac2_av/assays_both_0_1_ac2_av_target.csv",
+        "Valentine-datasets/ChEMBL/View-Unionable/assays_both_0_1_ac2_av/assays_both_0_1_ac2_av_mapping.json",
+        "Valentine-datasets/ChEMBL/View-Unionable/assays_both_0_1_ac2_av/assays_both_0_1_ac2_av_source.json",
+        "Valentine-datasets/ChEMBL/View-Unionable/assays_both_0_1_ac2_av/assays_both_0_1_ac2_av_target.json"
+      ],
+      "split": "evaluation",
+      "family": "ChEMBL-ALL-original-and-variants",
+      "selection": "minimum compressed complete5-file pair, <=10MB/member; SHA seed tie-break, no predictions/labels inspected"
+    },
+    "Wikidata": {
+      "prefix": "Valentine-datasets/Wikidata/Musicians/Musicians_viewunion/musicians_viewunion",
+      "members": [
+        "Valentine-datasets/Wikidata/Musicians/Musicians_viewunion/musicians_viewunion_source.csv",
+        "Valentine-datasets/Wikidata/Musicians/Musicians_viewunion/musicians_viewunion_target.csv",
+        "Valentine-datasets/Wikidata/Musicians/Musicians_viewunion/musicians_viewunion_mapping.json",
+        "Valentine-datasets/Wikidata/Musicians/Musicians_viewunion/musicians_viewunion_source.json",
+        "Valentine-datasets/Wikidata/Musicians/Musicians_viewunion/musicians_viewunion_target.json"
+      ],
+      "split": "evaluation",
+      "family": "Wikidata-ALL-original-and-variants",
+      "selection": "minimum compressed complete5-file pair, <=10MB/member; SHA seed tie-break, no predictions/labels inspected"
+    }
+  },
+  "development_families": 6,
+  "evaluation_families": 30,
+  "family_policy": "All Magellan domains conservatively one family (DBLP/product vendor overlap); all variants of OpenData/TPCDI/ChEMBL/Wikidata stay in one family each. Same/contents/page T2D components retained. External-known-duplicate crosscheck precedes final tasks."
+}

@@ -1,0 +1,20 @@
+{
+  "status": "user_approved_resource_group_created_model_blocked_by_azure_region_policy",
+  "subscription_type": "Azure for Students",
+  "required_spending_limit": "On",
+  "resource_group": "schema-match-demo-rg",
+  "resource_name": "schema-match-demo-261102-a199b5",
+  "location": "eastus2",
+  "kind": "OpenAI",
+  "account_sku": "S0",
+  "deployment_name": "schema-match-b",
+  "model_name": "gpt-4.1-mini",
+  "model_version": "2025-04-14",
+  "deployment_sku": "GlobalStandard",
+  "capacity": 10,
+  "application_deployment": false,
+  "provisioned_throughput": false,
+  "paid_subscription_upgrade": false,
+  "test_requests_after_approval": "one-column smoke, then three synthetic CSV inputs",
+  "billing_note": "Token requests consume student credits if eligible. Resource group created; OpenAI resource and model were blocked by Azure region policy. No inference request was sent. See azure-execution-status.json."
+}

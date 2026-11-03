@@ -1,0 +1,9 @@
+{
+  "product-quality-original-files": {
+    "datasets\\product-quality-v1\\acquisition.json": "db61fd96ef7ee76030144f5d063762f300a18c526d84b4f61a0c322617c3f8c0",
+    "research-artifacts\\product-quality-v1\\split.json": "ce807bbcbd771d108b378937522ddaa8b84efe3fc26be3368ce8a2e17d09d90a",
+    "research-artifacts\\product-quality-v1\\split-amendment-v1_1.json": "6dfb3155987fd0193ddd059d42df669a99db6d73c7bb3531ed815cabf1349aec",
+    "research-artifacts\\product-quality-v1\\data-seal.json": "6b4309f398adaf795d5179e036c302288864615931cb9e6e4877d9364638cd44",
+    "research-artifacts\\product-quality-v1\\additional-duplicate-audit.json": "af6baffa3a3dea0029abd7915cdafd70d0b41db27417a6eb1f8e760667f1f197"
+  }
+}

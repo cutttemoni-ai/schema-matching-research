@@ -1,0 +1,31 @@
+{
+  "$schema":"https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion":"1.0.0.0",
+  "parameters":{
+    "sshPublicKey":{"type":"string"},
+    "cloudInit":{"type":"string"}
+  },
+  "variables":{"vmName":"schema-match-llm-vm","location":"eastasia"},
+  "resources":[
+    {"type":"Microsoft.Network/virtualNetworks","apiVersion":"2024-05-01","name":"schema-model-vnet","location":"[variables('location')]",
+      "properties":{"addressSpace":{"addressPrefixes":["10.42.0.0/16"]},"subnets":[{"name":"model","properties":{"addressPrefix":"10.42.0.0/24"}}]}},
+    {"type":"Microsoft.Network/networkSecurityGroups","apiVersion":"2024-05-01","name":"schema-model-nsg","location":"[variables('location')]",
+      "properties":{"securityRules":[{"name":"DenyInternetInbound","properties":{"priority":100,"direction":"Inbound","access":"Deny","protocol":"*","sourcePortRange":"*","destinationPortRange":"*","sourceAddressPrefix":"Internet","destinationAddressPrefix":"*"}}]}},
+    {"type":"Microsoft.Network/publicIPAddresses","apiVersion":"2024-05-01","name":"schema-model-outbound-ip","location":"[variables('location')]","sku":{"name":"Standard"},
+      "properties":{"publicIPAllocationMethod":"Static"}},
+    {"type":"Microsoft.Network/networkInterfaces","apiVersion":"2024-05-01","name":"schema-model-nic","location":"[variables('location')]",
+      "dependsOn":["[resourceId('Microsoft.Network/virtualNetworks','schema-model-vnet')]","[resourceId('Microsoft.Network/networkSecurityGroups','schema-model-nsg')]","[resourceId('Microsoft.Network/publicIPAddresses','schema-model-outbound-ip')]"],
+      "properties":{"networkSecurityGroup":{"id":"[resourceId('Microsoft.Network/networkSecurityGroups','schema-model-nsg')]"},
+        "ipConfigurations":[{"name":"model","properties":{"privateIPAllocationMethod":"Dynamic","subnet":{"id":"[resourceId('Microsoft.Network/virtualNetworks/subnets','schema-model-vnet','model')]"},"publicIPAddress":{"id":"[resourceId('Microsoft.Network/publicIPAddresses','schema-model-outbound-ip')]"}}}]}},
+    {"type":"Microsoft.Compute/virtualMachines","apiVersion":"2024-07-01","name":"[variables('vmName')]","location":"[variables('location')]",
+      "dependsOn":["[resourceId('Microsoft.Network/networkInterfaces','schema-model-nic')]"],
+      "tags":{"purpose":"schema-matching-prototype","model":"qwen3-4b","costControl":"daily-shutdown-1400UTC"},
+      "properties":{"hardwareProfile":{"vmSize":"Standard_D2as_v4"},
+        "storageProfile":{"imageReference":{"publisher":"Canonical","offer":"0001-com-ubuntu-server-jammy","sku":"22_04-lts-gen2","version":"latest"},
+          "osDisk":{"name":"schema-model-os","createOption":"FromImage","diskSizeGB":32,"managedDisk":{"storageAccountType":"StandardSSD_LRS"},"deleteOption":"Delete"}},
+        "osProfile":{"computerName":"schema-llm","adminUsername":"modeladmin","customData":"[base64(parameters('cloudInit'))]",
+          "linuxConfiguration":{"disablePasswordAuthentication":true,"provisionVMAgent":true,"ssh":{"publicKeys":[{"path":"/home/modeladmin/.ssh/authorized_keys","keyData":"[parameters('sshPublicKey')]"}]}}},
+        "networkProfile":{"networkInterfaces":[{"id":"[resourceId('Microsoft.Network/networkInterfaces','schema-model-nic')]","properties":{"deleteOption":"Delete"}}]}}}
+  ],
+  "outputs":{"vmName":{"type":"string","value":"[variables('vmName')]"},"location":{"type":"string","value":"[variables('location')]"}}
+}

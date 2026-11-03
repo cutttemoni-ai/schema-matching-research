@@ -1,0 +1,427 @@
+{
+  "region": "eastasia",
+  "quota": [
+    {
+      "name": "standardBpsv2Family",
+      "current": 4,
+      "limit": 10
+    },
+    {
+      "name": "lowPriorityCores",
+      "current": 0,
+      "limit": 3
+    },
+    {
+      "name": "cores",
+      "current": 4,
+      "limit": 6
+    },
+    {
+      "name": "virtualMachines",
+      "current": 1,
+      "limit": 25000
+    },
+    {
+      "name": "availabilitySets",
+      "current": 0,
+      "limit": 2500
+    },
+    {
+      "name": "virtualMachineScaleSets",
+      "current": 0,
+      "limit": 2500
+    },
+    {
+      "name": "cloudServices",
+      "current": 0,
+      "limit": 2500
+    },
+    {
+      "name": "capacityReservations",
+      "current": 0,
+      "limit": 1000
+    },
+    {
+      "name": "capacityReservationGroups",
+      "current": 0,
+      "limit": 1000
+    },
+    {
+      "name": "basicAFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardA0_A7Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardA8_A11Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardAv2Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardBSFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardBasv2Family",
+      "current": 0,
+      "limit": 10
+    },
+    {
+      "name": "standardBsv2Family",
+      "current": 0,
+      "limit": 10
+    },
+    {
+      "name": "standardDFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDv2Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDv2PromoFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDASv4Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDDSv4Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDDv4Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDSv3Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDSv4Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDv3Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDv4Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDCSFamily",
+      "current": 0,
+      "limit": 2
+    },
+    {
+      "name": "standardDSFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDSv2Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardDSv2PromoFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardEASv4Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardEDSv4Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardESv3Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardEv3Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardEv4Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardEISv3Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardEIv3Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardFFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardFSFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardFSv2Family",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardGFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardGSFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardLSFamily",
+      "current": 0,
+      "limit": 4
+    },
+    {
+      "name": "standardNCFamily",
+      "current": 0,
+      "limit": 6
+    },
+    {
+      "name": "standardNCPromoFamily",
+      "current": 0,
+      "limit": 6
+    },
+    {
+      "name": "standardNVFamily",
+      "current": 0,
+      "limit": 6
+    },
+    {
+      "name": "standardNVPromoFamily",
+      "current": 0,
+      "limit": 6
+    },
+    {
+      "name": "standardNVSv4Family",
+      "current": 0,
+      "limit": 2
+    },
+    {
+      "name": "standardPBSFamily",
+      "current": 0,
+      "limit": 6
+    },
+    {
+      "name": "StandardDiskCount",
+      "current": 0,
+      "limit": 50000
+    },
+    {
+      "name": "PremiumDiskCount",
+      "current": 1,
+      "limit": 50000
+    },
+    {
+      "name": "StandardSSDDiskCount",
+      "current": 0,
+      "limit": 50000
+    },
+    {
+      "name": "StandardSSDZRSDiskCount",
+      "current": 0,
+      "limit": 50000
+    },
+    {
+      "name": "PremiumZRSDiskCount",
+      "current": 0,
+      "limit": 50000
+    },
+    {
+      "name": "UltraSSDDiskCount",
+      "current": 0,
+      "limit": 1000
+    },
+    {
+      "name": "PremiumV2DiskCount",
+      "current": 0,
+      "limit": 5000
+    },
+    {
+      "name": "StandardSnapshotCount",
+      "current": 0,
+      "limit": 75000
+    },
+    {
+      "name": "StandardSSDSnapshotCount",
+      "current": 0,
+      "limit": 75000
+    },
+    {
+      "name": "PremiumSnapshotCount",
+      "current": 0,
+      "limit": 75000
+    },
+    {
+      "name": "ZRSSnapshotCount",
+      "current": 0,
+      "limit": 75000
+    },
+    {
+      "name": "UltraSSDDiskSizeInGB",
+      "current": 0,
+      "limit": 102400
+    },
+    {
+      "name": "PremiumV2DiskSizeInGB",
+      "current": 0,
+      "limit": 1048576
+    },
+    {
+      "name": "DiskEncryptionSetCount",
+      "current": 0,
+      "limit": 5000
+    },
+    {
+      "name": "DiskAccessCount",
+      "current": 0,
+      "limit": 1000
+    },
+    {
+      "name": "BackgroundCopyInProgressUltraSSDDiskCount",
+      "current": 0,
+      "limit": 50
+    },
+    {
+      "name": "BackgroundCopyInProgressPremiumV2DiskCount",
+      "current": 0,
+      "limit": 50
+    },
+    {
+      "name": "PremiumV2SnapshotCount",
+      "current": 0,
+      "limit": 1000
+    },
+    {
+      "name": "PremiumV2SnapshotSizeInGB",
+      "current": 0,
+      "limit": 102400
+    },
+    {
+      "name": "Gallery",
+      "current": 0,
+      "limit": 100
+    },
+    {
+      "name": "GalleryImage",
+      "current": 0,
+      "limit": 1000
+    },
+    {
+      "name": "GalleryImageVersion",
+      "current": 0,
+      "limit": 10000
+    },
+    {
+      "name": "GalleryApplicationVersion",
+      "current": 0,
+      "limit": 300
+    },
+    {
+      "name": "GalleryScriptVersion",
+      "current": 0,
+      "limit": 300
+    }
+  ],
+  "skus": [
+    {
+      "name": "Standard_B2as_v2",
+      "family": "standardBasv2Family",
+      "restrictions": []
+    },
+    {
+      "name": "Standard_D2as_v4",
+      "family": "standardDASv4Family",
+      "restrictions": []
+    },
+    {
+      "name": "Standard_D2s_v3",
+      "family": "standardDSv3Family",
+      "restrictions": [
+        {
+          "type": "Location",
+          "values": [
+            "eastasia"
+          ],
+          "restrictionInfo": {
+            "locations": [
+              "eastasia"
+            ]
+          },
+          "reasonCode": "NotAvailableForSubscription"
+        },
+        {
+          "type": "Zone",
+          "values": [
+            "eastasia"
+          ],
+          "restrictionInfo": {
+            "locations": [
+              "eastasia"
+            ],
+            "zones": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          "reasonCode": "NotAvailableForSubscription"
+        }
+      ]
+    }
+  ],
+  "public_linux_compute_prices": [
+    {
+      "armSkuName": "Standard_D2as_v4",
+      "productName": "Virtual Machines Dasv4 Series",
+      "skuName": "D2as v4",
+      "retailPrice": 0.132,
+      "currencyCode": "USD",
+      "unitOfMeasure": "1 Hour"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "version": "comparison-v0",
+  "frozen_before_live_evaluation": "2026-11-02",
+  "a": {
+    "version": "name-similarity-v0",
+    "normalization": "NFKC, casefold, keep Unicode letters/numbers only",
+    "comparison": "difflib.SequenceMatcher(autojunk=False).ratio, target name only, no aliases/translation",
+    "no_match_threshold": 0.6,
+    "tie_epsilon": 1e-12,
+    "development_choice": "Fixed 0.60 after inspecting only names/candidate-score ranges in the 3 existing synthetic development tables; no truth-based threshold sweep. Exact/near English names should pass; weak abbreviation overlap should abstain. Korean-English mismatch is a known limitation."
+  },
+  "execution": {
+    "max_selected_columns": 3,
+    "partition": "one source column per request for B/C/D; all target candidates; no other source names or row context",
+    "automatic_retries": 0,
+    "context_tokens": 8192,
+    "framing_token_reserve": 512,
+    "input_bound": "UTF-8 bytes of system + content + schema, plus framing reserve and output budget; conservative bound, not reported API tokens",
+    "on_limit": "block B/C/D together before calls for the selected scope; never clip, silently reduce features, or retry with different information"
+  },
+  "profile": {
+    "version": "column-profile-v0",
+    "missing": "empty or whitespace-only after strip; NA/null text stays a value",
+    "analysis_text": "strip outer whitespace in a separate analysis copy; original cells unchanged",
+    "numeric_max_literal_characters": 100,
+    "numeric_pattern": "[+-]?(?:[0-9]+(?:\\.[0-9]+)?|\\.[0-9]+)",
+    "code_like_pattern": "[+-]?0[0-9]",
+    "numeric_inference": "100% nonmissing strict finite decimal, no leading-zero code-like value; integer iff all numeric values have zero fractional part",
+    "numeric_encoding": "exact decimal strings; quartiles linear interpolation at (n-1)*p",
+    "date_inference": "100% nonmissing strict valid YYYY-MM-DD or ISO datetime; no slash dates, compact dates, epochs or dateutil inference",
+    "date_range": "parsed subset; aware values normalized to UTC, naive dates at midnight; omit range if aware/naive mixed",
+    "top_category_count": 5,
+    "pattern_definitions": {
+      "digits_only": "[0-9]+",
+      "latin_only": "[A-Za-z]+",
+      "hangul_only": "[가-힣ㄱ-ㅎㅏ-ㅣ]+",
+      "latin_digit_mixed": "ASCII letters/digits only, with at least one of each",
+      "other": "none of the four mutually exclusive patterns above"
+    }
+  },
+  "selection": {
+    "version": "type-selected-profile-v0",
+    "label": "자료형 기반 선택 프로파일 v0",
+    "type_source": "profile inferred_type, never a column name or evaluation label",
+    "common": ["row_count", "non_missing_count", "missing_rate", "inferred_type", "inference_basis"],
+    "by_type": {
+      "integer": ["q25", "q50", "q75", "negative_ratio", "fractional_ratio"],
+      "number": ["q25", "q50", "q75", "negative_ratio", "fractional_ratio"],
+      "string": ["unique_ratio", "length_median", "pattern_ratios"],
+      "boolean": ["unique_ratio", "pattern_ratios"],
+      "date": ["date_parse_success_rate", "date_parsed_count", "date_min", "date_max", "time_inclusion_ratio"],
+      "unknown": []
+    },
+    "reasons": {
+      "common": "Missingness and auditable inferred type are shared context.",
+      "integer": "Central numeric distribution and signs/fractionality, without using names or guessing unit price/total.",
+      "number": "Central numeric distribution and signs/fractionality, without using names or guessing unit price/total.",
+      "string": "Cardinality, typical length and format patterns; omit raw category strings.",
+      "boolean": "Cardinality and lexical patterns; omit category values.",
+      "date": "Strict parse coverage, comparable range and time presence.",
+      "unknown": "No nonmissing evidence; use common features only."
+    }
+  }
+}

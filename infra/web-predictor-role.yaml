@@ -1,0 +1,6 @@
+title: Schema C Web Predictor
+description: Text generation and token counting in the existing research project
+stage: GA
+includedPermissions:
+  - aiplatform.endpoints.predict
+  - serviceusage.services.use

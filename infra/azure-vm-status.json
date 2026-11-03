@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-02T02:24:16.792295+00:00",
+  "status": "deployed_and_live_verified",
+  "provider": "azure_vm",
+  "model": "qwen3:4b",
+  "subscription_type": "Azure for Students",
+  "spending_limit": "On",
+  "resource_group": "schema-match-demo-rg",
+  "vm_name": "schema-match-llm-vm",
+  "vm_location": "eastasia",
+  "vm_size": "Standard_D2as_v4",
+  "public_model_or_ssh_ports": false,
+  "authentication": "existing Azure CLI student identity / Run Command",
+  "compute_public_price": {
+    "amount": 0.132,
+    "currency": "USD",
+    "unit": "hour",
+    "disk_and_ip_included": false,
+    "actual_bill": false
+  },
+  "automatic_shutdown": {
+    "status": "Enabled",
+    "time": "14:00",
+    "timezone": "UTC",
+    "korean_time": "23:00 Asia/Seoul",
+    "location": "eastasia"
+  },
+  "smoke_record": "runs/smoke/20fbfedd10b740629f2f650180df0fb2.json",
+  "three_examples_report": "validation-artifacts\\azure_vm-live\\20261102T021029Z\\report.json",
+  "three_examples_live_passed": true,
+  "browser_validation": "validation-artifacts/azure-browser/verification.json",
+  "local_fallback_live_passed": true,
+  "automated_tests_passed": 55,
+  "native_azure_openai": "still unavailable under the subscription region policy; not used",
+  "research_accuracy_claim": null
+}

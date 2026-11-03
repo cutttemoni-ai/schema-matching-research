@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-03T03:25:59.735664+00:00",
+  "T2D_tables_checked": 356,
+  "external_tables_checked": 10,
+  "exact_normalized_full_table_matches": [],
+  "criterion": "Whole table after column-value-multiset canonical order then row multiset; strip whitespace; ignore headers. Equal schema or individual entity values do not suffice.",
+  "limitation": "Identical column marginals can tie canonical order; not a guarantee against partial overlap or unknown source-page/family duplication.",
+  "new_inferences": 0
+}

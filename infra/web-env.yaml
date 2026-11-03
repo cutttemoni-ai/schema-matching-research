@@ -1,0 +1,4 @@
+GOOGLE_CLOUD_PROJECT: schema-match-gemini-261103
+GOOGLE_CLOUD_LOCATION: global
+SERVICE_BUCKET: schema-match-gemini-261103-service
+SERVICE_DAILY_CALL_LIMIT: '20'

@@ -1,0 +1,9 @@
+{
+  "version": "vertex-counttokens-admission-v1.2",
+  "service_framing_reserve_tokens": 1024,
+  "previous_reserve_tokens": 256,
+  "reason": "Observed real prompt count exceeded the previous admission estimate by81 tokens in B/C/D and104 in six-column service B. Preserve those results. Increase service reserve, not model context. No prompt/profile/model/output change.",
+  "is_exact_tokenizer_or_proven_upper_bound": false,
+  "scope": "Text JSON schema requests tested here; further unseen framing may vary. Native context errors and non-STOP outputs remain failures.",
+  "cohort_change_from_previous_budget": false
+}

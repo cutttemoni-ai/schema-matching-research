@@ -1,0 +1,11 @@
+{
+  "location":"eastasia",
+  "properties":{
+    "status":"Enabled",
+    "taskType":"ComputeVmShutdownTask",
+    "dailyRecurrence":{"time":"1400"},
+    "timeZoneId":"UTC",
+    "targetResourceId":"/subscriptions/f01f27b9-f573-4f0a-bfbc-4c1f883bcc5e/resourceGroups/schema-match-demo-rg/providers/Microsoft.Compute/virtualMachines/schema-match-llm-vm",
+    "notificationSettings":{"status":"Disabled","timeInMinutes":30}
+  }
+}
