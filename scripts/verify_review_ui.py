@@ -125,8 +125,11 @@ with sync_playwright() as pw:
     assert other.request.get(base+'/api/tasks/'+task_id).status==404;checks.append('other_user_task_id_denied')
     if demo_mode:
         assert context.request.get(base+'/api/session').json()['user']['uid']==user['user']['uid']
+        page.get_by_label('작업 검색',exact=True).fill('이전 세션 검색 조건')
         page.get_by_role('button',name='로그아웃',exact=True).click()
         expect(page.get_by_role('button',name='로그인',exact=True)).to_be_visible()
+        assert page.get_by_label('작업 검색',exact=True).input_value()==''
+        for node in ['#profile-overview','#profile-json','#preview-body','#record-json']:assert page.locator(node).text_content()==''
         assert context.request.get(base+'/api/tasks').status==401
         assert other.request.get(base+'/api/session').json()['user']['uid']==other_user['user']['uid']
         page.get_by_label('아이디',exact=True).fill(username);page.get_by_label('비밀번호',exact=True).fill(password)
