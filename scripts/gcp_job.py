@@ -30,7 +30,7 @@ def jobs_from_plan(plan):
 
 
 def execute_jobs(jobs,store,output,provider,max_calls):
-    if not output or max_calls is None or max_calls<1:raise ValueError('Explicit --output and positive --max-calls required')
+    if not output or (max_calls is not None and max_calls<1):raise ValueError('Explicit --output required; --max-calls positive when supplied')
     new=0;actual=0;records=[]
     for job in jobs:
         validate_wire_shape(job['wire']);identifier=job['id'];base=join(output,identifier)
@@ -41,7 +41,7 @@ def execute_jobs(jobs,store,output,provider,max_calls):
             if r.get('completion_uncertain'):raise RuntimeError('Saved uncertain call blocks: '+identifier)
             continue
         if store.exists(slot_uri):raise RuntimeError('Prior submission has no result; inspect same ID, no replay: '+identifier)
-        if new>=max_calls:break
+        if max_calls is not None and new>=max_calls:break
         store.create(slot_uri,{'at':now_iso(),'request_id':identifier,'wire_hash':digest(job['wire']),'config':load_config(),'automatic_retries':0})
         new+=1
         try:r=provider.run(job['wire'])
@@ -79,7 +79,7 @@ def main():
         plan=json.loads(store.read(a.plan));jobs=jobs_from_plan(plan)
         for job in jobs:validate_wire_shape(job['wire']);schemas(job['wire'])
         if a.mode=='match':
-            if not a.execute or a.max_calls is None or a.max_calls<1:parser.error('match requires --execute --max-calls N and --output')
+            if not a.execute or not a.output or (a.max_calls is not None and a.max_calls<1):parser.error('match requires --execute --output; --max-calls is optional')
             provider=VertexProvider();result=execute_jobs(jobs,store,a.output,provider,a.max_calls)
         else:
             if a.execute:parser.error('--execute requires explicit --mode match')

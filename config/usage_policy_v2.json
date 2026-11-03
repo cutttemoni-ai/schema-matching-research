@@ -1,0 +1,11 @@
+{
+  "version": "usage-control-v2-20261103",
+  "limits": {
+    "cumulative_generation_calls": null,
+    "cumulative_estimated_usd": null,
+    "service_daily_generation_calls": null,
+    "per_file_estimated_usd": null
+  },
+  "retry_429": {"maximum_retries": 1, "initial_delay_seconds": 1, "maximum_delay_seconds": 10, "retry_window_seconds": 30},
+  "counting": "Append-only logical request and physical attempt journals; null disables only the corresponding application cap. No credit assumptions."
+}

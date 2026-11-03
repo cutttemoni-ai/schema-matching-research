@@ -36,7 +36,7 @@ def main():
         files=['app.py','schema_match/product_service_v1.py','schema_match/product_profiles_v1.py','config/product_default_v1.json','config/product_d1_v1.json','config/gcp_research_v1.json']
         p={'phase':'integration','config':cfg,'system_instruction':SYSTEM,'created_at':now_iso(),'jobs':jobs,'files':{n:s.filehash(c.ROOT/n) for n in files},
             'expected_new_generations':2,'synthetic_data_not_research_evaluation':True,'target_candidates':6,'reference_values_available_on_target':False,
-            'budget_and_call_limits':'same global450/USD10; no retries; failed/uncertain never replayed'}
+            'budget_and_call_limits':'aggregate application caps disabled; one confirmed429 retry; failed/uncertain never replayed'}
         s.atomic(plan_path,p,True);s.atomic(c.OUT/'integration-seal.json',{'plan_sha256':s.filehash(plan_path)},True)
     def runner(wire,index):
         job=p['jobs'][index];assert job['wire']==wire

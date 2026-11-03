@@ -26,6 +26,8 @@ from .models import Recommendation
 from .review import review_errors, conservative_guard, export_files
 from .vertex_provider_v1 import load_config, schemas, SYSTEM, digest
 from .vertex_budget_v1_2 import CurrentVertexProvider
+from .usage_policy import limit,policy_hash
+from .generation_attempts import AttemptJournal
 
 VERSION = 'cloud-c-product-v1'
 MAX_FILE_BYTES = 1024 * 1024
@@ -165,42 +167,33 @@ def run_once(store, wire, source_bytes, reference_bytes=None, provider_factory=N
             store.put(f'{fingerprint}/reference.csv', reference_bytes)
         store.put(f'{fingerprint}/request.json', {'id': request_id, 'wire': wire, 'model': cfg, 'system': SYSTEM})
 
+        def reserve(attempt):
+            day=now_iso()[:10];maximum=limit('service_daily_generation_calls')
+            receipt={'id':request_id,'at':now_iso(),'attempt':attempt,'execution_policy_sha256':policy_hash()}
+            if maximum is None:
+                store.put(f'quota/{day}/{request_id}-{attempt:04}.json',receipt,global_key=True)
+            else:
+                for number in range(1,int(maximum)+1):
+                    try:store.put(f'quota/{day}/{number:04}.json',receipt,global_key=True);break
+                    except FileExistsError:continue
+                else:raise ValueError('Configured application daily request limit reached')
+        journal=AttemptJournal(lambda name:store.get(f'{fingerprint}/'+name),
+            lambda name,value:store.put(f'{fingerprint}/'+name,value),request_id,reserve)
         def on_request(request):
-            nonlocal posted
-            if not request.url.path.endswith(':generateContent'):
-                return
-            if posted:
-                raise ValueError('Duplicate generation POST blocked')
-            if not counts or max(counts)+1024 > 20000:
+            nonlocal posted,full_http
+            if not request.url.path.endswith(':generateContent'):return
+            if not counts or max(counts)+1024>20000:
                 raise ValueError('웹 서비스의 입력 예산 20,000토큰을 초과했습니다. C 특징을 자르지 않고 요청을 중단합니다.')
             if not request.url.host.endswith('aiplatform.googleapis.com') or f"/projects/{cfg['project']}/locations/{cfg['location']}/" not in request.url.path:
                 raise ValueError('Unexpected provider/project blocked')
-            day = now_iso()[:10]
-            maximum = int(os.getenv('SERVICE_DAILY_CALL_LIMIT', '20'))
-            for number in range(1, maximum+1):
-                try:
-                    store.put(f'quota/{day}/{number:04}.json', {'id': request_id, 'at': now_iso()}, global_key=True)
-                    break
-                except FileExistsError:
-                    continue
-            else:
-                raise ValueError('서비스의 일일 생성 요청 상한에 도달했습니다.')
-            body = request.content
-            store.put(f'{fingerprint}/actual-request.json', body)
-            store.put(f'{fingerprint}/transmission.json', {'id': request_id, 'at': now_iso(), 'sha256': sha256(body).hexdigest(), 'physical_POST_attempts': 1})
-            posted = True
-
+            journal.sending(request);posted=True;full_http=False
         def on_response(response):
             nonlocal full_http
-            if response.request.url.path.endswith(':countTokens') and response.status_code == 200:
-                body = response.read()
-                value = json.loads(body).get('totalTokens')
-                if isinstance(value, int): counts.append(value)
+            if response.request.url.path.endswith(':countTokens') and response.status_code==200:
+                value=json.loads(response.read()).get('totalTokens')
+                if isinstance(value,int):counts.append(value)
             if response.request.url.path.endswith(':generateContent'):
-                body = response.read()
-                store.put(f'{fingerprint}/http-response.bin', body)
-                store.put(f'{fingerprint}/http-complete.json', {'id': request_id, 'status_code': response.status_code, 'bytes': len(body), 'sha256': sha256(body).hexdigest(), 'at': now_iso()})
-                full_http = True
+                journal.received(response);full_http=True
 
         if provider_factory:
             provider = provider_factory(on_request, on_response)
@@ -218,11 +211,16 @@ def run_once(store, wire, source_bytes, reference_bytes=None, provider_factory=N
                     retry_options=types.HttpRetryOptions(attempts=1),
                     client_args={'event_hooks': {'request': [on_request], 'response': [on_response]}}))
             provider = CurrentVertexProvider(config=cfg, client=client)
-        # Same model/output contract/system/full C profiles as the frozen baseline.
+        # Same model/output contract/system/full C profiles; only confirmed429 may retry.
+        provider.client._usage_retry_guard=journal.can_retry
+        provider.http_events=journal.events
         result = provider.run(wire)
+        journal.finalize()
+        names={'prompt_token_count':'promptTokenCount','candidates_token_count':'candidatesTokenCount','thoughts_token_count':'thoughtsTokenCount','cached_content_token_count':'cachedContentTokenCount','total_token_count':'totalTokenCount'}
+        result['usage_coverage']={name:{'observed_attempts':sum(key in e.get('usage_metadata',{}) for e in journal.events),'missing_attempts':sum(key not in e.get('usage_metadata',{}) for e in journal.events),'scope':'physical HTTP attempts; usage itself is final attempt metadata'} for name,key in names.items()}
         result.update(service_version=VERSION, request_id=request_id, fingerprint=fingerprint, method='C',
             saved_at=now_iso(), source_sha256=sha256(source_bytes).hexdigest(),
-            physical_POST_attempts=int(posted), result_reused=False,
+            physical_POST_attempts=journal.count, physical_attempts=deepcopy(journal.events), execution_policy_sha256=policy_hash(), result_reused=False,
             source_profile_columns=len(wire['source_columns']),
             target_profile_columns=sum('profile' in c for c in wire['target_fields']),
             wall_seconds=time.perf_counter()-started)
@@ -234,7 +232,7 @@ def run_once(store, wire, source_bytes, reference_bytes=None, provider_factory=N
     except Exception as exc:
         failure = {'service_version': VERSION, 'request_id': request_id, 'fingerprint': fingerprint,
             'status': 'uncertain' if posted and not full_http else 'failed', 'method': 'C',
-            'model_id': cfg['model'], 'physical_POST_attempts': int(posted), 'saved_at': now_iso(),
+            'model_id': cfg['model'], 'physical_POST_attempts': journal.count if 'journal' in locals() else int(posted), 'saved_at': now_iso(),
             'error': str(exc) if isinstance(exc, (ValueError, FileExistsError)) else type(exc).__name__,
             'failure_phase': 'transport' if posted else 'before_generation', 'wall_seconds': time.perf_counter()-started}
         if not final_stored:

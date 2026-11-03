@@ -11,6 +11,8 @@ from google import genai
 from google.genai import types
 from jsonschema import Draft202012Validator
 from types import SimpleNamespace
+from .usage_policy import limit,require_budget,remaining,exceeded,physical_attempts,control_hash_matches,recorded_scope_usage,policy_hash
+from .generation_attempts import local_journal,finalize_local
 from .config import ROOT
 from .records import json_bytes,now_iso
 from .vertex_provider_v1 import VertexProvider,SYSTEM,load_config,schemas,digest
@@ -125,7 +127,7 @@ def prepare():
     preservation.update(read(ROOT/'evaluation-artifacts/v2/past-preservation.json')['files'])
     plan={'version':'gemini-public-main30-v1','created_at':now_iso(),'seed':SEED,'config':cfg,'system_instruction':SYSTEM,
         'output_contract':'vertex-gemini-research-v1.1','admission_policy':'vertex-counttokens-admission-v1.2','selected_tasks':chosen,
-        'headers_for_offline_evaluation_only':heads,'jobs':jobs,'A_local':a,'planned_inferences':270,'budget_usd':10.,'rate':RATE,
+        'headers_for_offline_evaluation_only':heads,'jobs':jobs,'A_local':a,'planned_inferences':270,'budget_usd':limit('cumulative_estimated_usd'),'rate':RATE,
         'repeat':1,'automatic_retries':0,'SDK_attempts_including_first':1,'composition':{'positive_numeric':numbers,'positive_string':strings,'natural_none':none},
         'selection_policy':'Reserve natural2, up to5 positive numeric with actual numeric aggregates, fill positive strings; SHA seed rank; one known component each. No model outputs used.',
         'candidate_order':'existing research seed20261102, unchanged across BCD','method_order':'(source_index_in_plan+condition_index)%3: BCD,CDB,DBC',
@@ -133,7 +135,7 @@ def prepare():
         'cost_policy':'Undiscounted1.5/7.5 perM; full cached input, output total-prompt once. Next reservation uses twice input admission estimate plus all4096 output; not a Cloud billing hardcap.',
         'annotation_sha256_for_evaluation_only':next(v['sha256'] for v in acq['inventory'] if v['path'].replace('\\','/').endswith('/test/test_correspondences.csv')),
         'files':{p:filehash(ROOT/p) for p in paths},'preserved':preservation,'data_inventory':{v['path']:v['sha256'] for v in acq['inventory']}}
-    if plan['expected_cost_usd']>10:raise ValueError('Expected cost exceeds authorized budget; do not start')
+    require_budget(next_cost=plan['expected_cost_usd'])
     atomic(OUT/'profile-evidence.json',evidence,True);atomic(OUT/'plan.json',plan,True)
     write_plan(plan)
     atomic(OUT/'seal.json',{'plan_sha256':filehash(OUT/'plan.json'),'document_sha256':filehash(ROOT/'GEMINI_EVALUATION_PLAN.md'),
@@ -165,7 +167,7 @@ def verify():
     assert load_config()==p['config']
     for group in ('files','preserved','data_inventory'):
         for name,h in p[group].items():
-            if filehash(ROOT/name)!=h:raise ValueError('Frozen/preserved file changed: '+name)
+            if not control_hash_matches(ROOT,name,h):raise ValueError('Frozen/preserved file changed: '+name)
     return p
 
 
@@ -184,9 +186,9 @@ def budget_status(p):
             else:unresolved+=1
         elif (d/'slot.json').exists():categories['uncertain']+=1;committed+=j['conservative_cost_usd'];unresolved+=1
         else:categories['unexecuted']+=1
-        count+=(d/'transmission.json').exists()
+        count+=physical_attempts(d)
     return {'at':now_iso(),'planned':270,'categories':dict(categories),'physical_POST_attempt_markers':count,
-        'budget_commitment_usd':committed,'observed_no_discount_cost_usd':known,'cost_unknown_requests':unresolved,'budget_limit_usd':10.,'automatic_retries':0}
+        'budget_commitment_usd':committed,'observed_no_discount_cost_usd':known,'cost_unknown_requests':unresolved,'budget_limit_usd':limit('cumulative_estimated_usd'),'automatic_retries':0}
 
 
 class FrozenProvider(VertexProvider):
@@ -201,23 +203,18 @@ def client_for(p,j,d,events):
     path=os.getenv('GOOGLE_APPLICATION_CREDENTIALS') or str(ROOT/'.runtime/gcloud-research/application_default_credentials.json')
     credentials,_=google.auth.load_credentials_from_file(path,scopes=['https://www.googleapis.com/auth/cloud-platform'])
     if credentials.quota_project_id!=p['config']['project']:raise ValueError('ADC quota project mismatch')
+    journal=local_journal(d,j['id'],atomic);journal.events=events
     def sending(request):
         cfg=p['config'];expected=f"/v1/projects/{cfg['project']}/locations/{cfg['location']}/publishers/google/models/{cfg['model']}:generateContent"
         if request.url.host!='aiplatform.googleapis.com' or request.url.path!=expected or request.method!='POST':raise ValueError('Unexpected API endpoint')
         if request.headers.get('x-goog-user-project')!=cfg['project']:raise ValueError('Actual quota header differs')
-        # The atomic x-create marker prevents a second SDK transport attempt.
-        marker={'at':now_iso(),'method':request.method,'host':request.url.host,'path':request.url.path,
-            'quota_project':request.headers.get('x-goog-user-project'),'body_sha256':sha256(request.content).hexdigest(),'request_id':j['id']}
-        with (d/'transmission.json').open('xb') as h:h.write(json_bytes(marker));h.flush();os.fsync(h.fileno())
-        atomic(d/'actual-request-body.json',request.content,True);events.append(marker)
-    def received(response):
-        atomic(d/'http-status.json',{'at':now_iso(),'status_code':response.status_code,
-            'server_request_id':response.headers.get('x-request-id') or response.headers.get('x-goog-request-id')},True)
-        raw=response.read();atomic(d/'http-response.bin',raw,True)
-        atomic(d/'http-complete.json',{'at':now_iso(),'status_code':response.status_code,'bytes':len(raw),'sha256':sha256(raw).hexdigest()},True)
-    return genai.Client(vertexai=True,project=p['config']['project'],location=p['config']['location'],credentials=credentials,
+        journal.sending(request)
+    def received(response):journal.received(response)
+    client=genai.Client(vertexai=True,project=p['config']['project'],location=p['config']['location'],credentials=credentials,
         http_options=types.HttpOptions(api_version='v1',timeout=120000,retry_options=types.HttpRetryOptions(attempts=1),
             headers={'X-Client-Request-Id':j['id']},client_args={'event_hooks':{'request':[sending],'response':[received]}}))
+    client._usage_retry_guard=journal.can_retry
+    return client
 
 
 def validate_saved(r,j):
@@ -231,7 +228,7 @@ def validate_saved(r,j):
 
 
 def finish(p,j,r,d,started,recovered=False):
-    complete=read(d/'http-complete.json') if (d/'http-complete.json').exists() else None
+    complete=read(d/'http-complete.json') if finalize_local(d,atomic) and (d/'http-complete.json').exists() else None
     http=complete['status_code'] if complete else None
     if complete:
         raw=(d/'http-response.bin').read_bytes();assert len(raw)==complete['bytes'] and sha256(raw).hexdigest()==complete['sha256']
@@ -246,13 +243,13 @@ def finish(p,j,r,d,started,recovered=False):
     r.update(request_id=j['id'],task_id=j['task_id'],condition=j['condition'],method=j['method'],request=j['wire'],
         execution_category=category,no_discount_cost=charge,budget_commitment_usd=commit,http_status=http,
         local_total_seconds=time.perf_counter()-started,finished_at=now_iso(),recovered_from_saved_HTTP=recovered,
-        actual_POST_attempts=int((d/'transmission.json').exists()),automatic_retries=0)
+        actual_POST_attempts=physical_attempts(d),automatic_retries=r.get('retry_count',0),execution_policy_sha256=policy_hash())
     atomic(d/'result.json',r,True);return r
 
 
 def recover(p,j):
     d=jobdir(j)
-    if not (d/'http-complete.json').exists():raise RuntimeError('Existing slot uncertain; inspect SAME ID; no inference replay: '+j['id'])
+    if not finalize_local(d,atomic):raise RuntimeError('Existing slot uncertain; inspect SAME ID; no inference replay: '+j['id'])
     started=time.perf_counter();http=read(d/'http-complete.json')['status_code'];r={'status':'failed','usage':None,'raw_response':None}
     if http==200:
         response=types.GenerateContentResponse.model_validate(json.loads((d/'http-response.bin').read_bytes()))
@@ -262,7 +259,7 @@ def recover(p,j):
     return finish(p,j,r,d,started,True)
 
 
-def run(max_new=270):
+def run(max_new=None):
     p=verify();RUNS.mkdir(parents=True,exist_ok=True);new=0
     with locked(RUNS/'driver.lock'):
         for j in p['jobs']:
@@ -272,10 +269,10 @@ def run(max_new=270):
                 continue
             if (d/'slot.json').exists():r=recover(p,j)
             else:
-                if new>=max_new:break
+                if max_new is not None and new>=max_new:break
                 status=budget_status(p)
-                if status['budget_commitment_usd']+j['conservative_cost_usd']>10+1e-12:
-                    atomic(OUT/'stop.json',{'at':now_iso(),'reason':'next conservative reservation exceeds USD10','next_id':j['id'],'progress':status});break
+                if exceeded(status['budget_commitment_usd'],limit('cumulative_estimated_usd'),j['conservative_cost_usd']):
+                    atomic(OUT/'stop.json',{'at':now_iso(),'reason':'configured cumulative usage cap reached','next_id':j['id'],'progress':status});break
                 started=time.perf_counter();d.mkdir(parents=True,exist_ok=True)
                 with (d/'slot.json').open('xb') as h:h.write(json_bytes({'at':now_iso(),'request_id':j['id'],'reservation_usd':j['conservative_cost_usd'],'wire_hash':digest(j['wire'])}));h.flush();os.fsync(h.fileno())
                 new+=1;client=None;events=[]

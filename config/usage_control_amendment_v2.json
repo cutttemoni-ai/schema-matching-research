@@ -1,0 +1,49 @@
+{
+  "version": "usage-control-amendment-v2-20261103",
+  "authorization": "User explicitly withdrew application cumulative call/cost/day limits; scientific requests/results unchanged",
+  "scope": "Exact hashes for operational controls only. No exceptions for model config, prompt definitions, profile rules, candidates, data, answers or result journals.",
+  "files": {
+    "schema_match/vertex_provider_v1.py": {
+      "previous_sha256": [
+        "9097af7142b9a2988e3af27049258aebd1ed62b95a649d654e8bcfc61925eb3a"
+      ],
+      "current_sha256": "70764a3a393810615f7d59c1f3f37bd086f538231213f07148731fc031a96aa0"
+    },
+    "schema_match/cloud_c_service.py": {
+      "previous_sha256": [
+        "39c39ca9faf875bfdfd76a077ffd6935dfc46ed6e63de857b0c7ddb91994e420"
+      ],
+      "current_sha256": "ff8dab600599335279fbb2d3c7ff5ee5c15c9511e843c973afd0bb278564a78c"
+    },
+    "schema_match/gemini_main30.py": {
+      "previous_sha256": [
+        "d38343c2e82cb26ba3e8bbc47d351e464b4fdce0401c46114f1397a083658917"
+      ],
+      "current_sha256": "a71c4cdcfd64ca4ec3a427e4d39b0445efc55eed1ce35f436fa0c6e65d448f0a"
+    },
+    "schema_match/product_campaign_v1.py": {
+      "previous_sha256": [
+        "99434e5d36f1bcc3bb730e301592ea645b382015b59f7a0087845e9d6098ef57"
+      ],
+      "current_sha256": "e05bfd09cb4369a6124c5e0b06528ba06a932e68e1c874f012848492ecd83355"
+    },
+    "schema_match/product_service_v1.py": {
+      "previous_sha256": [
+        "b3550bfb8d671045586cbae9ff25b0a5d3df86369f3de295c2c5df1f1acc236d"
+      ],
+      "current_sha256": "a3d5b2df03a58fb3110a42b1a2f160823c06541243e0165fcbd9c3cd784fd854"
+    },
+    "scripts/run_gemini_evaluation.py": {
+      "previous_sha256": [
+        "ca13ea0e1c2ad3323d661123ded3638fda75be48a2073fc63f288cf072785892"
+      ],
+      "current_sha256": "b70e749167e529dca3ad56ba3eeeb165ce9a51a55f34dd92740bd03cd3af8e62"
+    },
+    "scripts/gcp_job.py": {
+      "previous_sha256": [
+        "8c16fbdf57af7a498acdeded91ceaff42f8b4b761080064baa136a527d1c0ec6"
+      ],
+      "current_sha256": "13cbbc58ec1f1676c190a3b2b87c382aa3c86835aca99e06b316556030b8c7a9"
+    }
+  }
+}

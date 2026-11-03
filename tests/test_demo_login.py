@@ -74,7 +74,7 @@ def test_rejects_wrong_login_signup_and_public_secret_disclosure(setup):
     assert c.get('/api/session').status_code==401
     assert c.post('/api/register',json={'username':name,'password':password}).status_code==403
     assert not [k for k in objects.items if '/auth-sessions/' in k or '/accounts/' in k]
-    cfg=c.get('/api/config').json();assert cfg['demo_mode'] and cfg['service_daily_limit']==20
+    cfg=c.get('/api/config').json();assert cfg['demo_mode'] and cfg['service_daily_limit'] is None
     assert not {'password','password_hash','salt','username','credential_revision'}&set(cfg)
     config=json.loads(objects.read(KEY)[0])
     for path in ['/','/static/app.js','/static/app.css']:

@@ -11,6 +11,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from pydantic import ValidationError
 from schema_match.vertex_provider_v1 import load_config,digest
 from schema_match.config import ROOT
+from schema_match.usage_policy import limit,policy
 from .auth import Accounts,AuthError,Throttled,COOKIE,SESSION_SECONDS
 from .storage import GCSObjects,LocalObjects,Conflict
 from .service import Workflow,WorkflowError,default_schema
@@ -72,7 +73,7 @@ def create_app(objects=None,infer=None,executor=None):
     async def config(request):
         cfg=load_config()
         return JSONResponse({'engine':'C','model':cfg['model'],'location':cfg['location'],'engine_config_sha256':digest(cfg),
-            'targets':default_schema(),'transforms':TRANSFORMS,'transform_version':VERSION,'service_daily_limit':int(os.getenv('SERVICE_DAILY_CALL_LIMIT','20')),
+            'targets':default_schema(),'transforms':TRANSFORMS,'transform_version':VERSION,'service_daily_limit':limit('service_daily_generation_calls'),'usage_limits':policy()['limits'],'retry_429':policy()['retry_429'],
             'retention_days':7,'app_commit':os.getenv('APP_COMMIT','local-development'),
             'authentication':'demo-password-session' if accounts.demo_only else 'app-password-session','demo_mode':accounts.demo_only,
             'limits':{'csv_bytes':1048576,'source_columns':20,'target_columns':20,'rows':10000,'schema_bytes':65536}})

@@ -35,10 +35,13 @@ schema_match/*
 !schema_match/vertex_provider_v1.py
 !schema_match/vertex_budget_v1_2.py
 !schema_match/cloud_c_service.py
+!schema_match/usage_policy.py
+!schema_match/generation_attempts.py
 !config/
 config/*
 !config/gcp_research_v1.json
 !config/gcp_budget_v1_2.json
+!config/usage_policy_v2.json
 !config/comparison_v0.json
 !schemas/
 !schemas/product_order.json
