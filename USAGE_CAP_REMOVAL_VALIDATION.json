@@ -1,0 +1,45 @@
+{
+  "application_limits": {
+    "cumulative_calls": null,
+    "cumulative_usd": null,
+    "service_daily_calls": null,
+    "per_file_usd": null
+  },
+  "runtime_commit": "0e1ee09cf8565cd43cadd8bda62a052fb28d8d3a",
+  "research_commit": "81afdd574bf75542f76f267087452bcf3f05eb6b",
+  "revision": "schema-c-web-usage-0e1ee09",
+  "traffic_percent": 100,
+  "model_calls_this_task": 0,
+  "tests": {
+    "web_passed": 274,
+    "research_passed": 256,
+    "last_change_related_passed": 17,
+    "production_ui_passed": 18
+  },
+  "usage_observed_at": "2026-11-03T12:25:23.259809+00:00",
+  "prior_limit_scope_attempts": 464,
+  "reference_usd": 2.7674805,
+  "actual_bill_verified": false,
+  "google_quota_or_billing_changed": false,
+  "original_results_changed": false,
+  "production_checks": [
+    "demo_form_server_login_and_upload_landing",
+    "authenticated_home",
+    "real_cached_recommendations_labeled",
+    "readable_both_side_profiles_and_schema",
+    "unreviewed_approval_blocked",
+    "duplicate_and_required_target_blocked",
+    "column_search",
+    "preview_original_values",
+    "approval_executes_results",
+    "download_values_and_mapping",
+    "duplicate_approval_no_execution",
+    "refresh_reopens_without_inference",
+    "edit_revokes_approval_and_download",
+    "mobile_no_page_overflow",
+    "source_upload_custom_schema_and_reference_csv_no_inference",
+    "same_demo_credentials_isolate_list_approval_and_download",
+    "other_user_task_id_denied",
+    "logout_revokes_and_next_login_has_fresh_workspace"
+  ]
+}
