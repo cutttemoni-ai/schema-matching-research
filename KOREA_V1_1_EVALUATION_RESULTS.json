@@ -1,0 +1,2150 @@
+{
+  "version": "kr-C-evaluation-v1",
+  "at": "2026-11-03T05:24:22.305454+00:00",
+  "phases": [
+    "evaluation"
+  ],
+  "truth_status": "assistant provisional; NOT human-validated",
+  "totals": [
+    {
+      "method": "C",
+      "planned": 9,
+      "correct": 9,
+      "top1": 1.0,
+      "categories": {
+        "correct": 9
+      },
+      "valid_output_n": 9,
+      "review_ratio": 0.0,
+      "auto_links": 6,
+      "auto_correct": 6,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.6666666666666666,
+      "none_n": 3,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 31881,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 643,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 9
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 9
+        },
+        "total_tokens": {
+          "observed_sum": 32524,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 31.850476999999955,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 38.03139889999875,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.052643999999999996,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.026321999999999998,
+          "observed_n": 9,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "method": "C-kr-v1",
+      "planned": 9,
+      "correct": 9,
+      "top1": 1.0,
+      "categories": {
+        "correct": 9
+      },
+      "valid_output_n": 9,
+      "review_ratio": 0.0,
+      "auto_links": 6,
+      "auto_correct": 6,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.6666666666666666,
+      "none_n": 3,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 33429,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 736,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 9
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 9
+        },
+        "total_tokens": {
+          "observed_sum": 34165,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 42.43236629998137,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 48.17168810000294,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0556635,
+          "observed_n": 9,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.02783175,
+          "observed_n": 9,
+          "missing_n": 0
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "dimension": "condition",
+      "value": "mixed",
+      "method": "C",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 2,
+      "auto_correct": 2,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.6666666666666666,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 10628,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 240,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 10868,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 8.175033299994539,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 10.273618000006536,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.017742,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.008871,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "condition",
+      "value": "mixed",
+      "method": "C-kr-v1",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 2,
+      "auto_correct": 2,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.6666666666666666,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 11144,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 227,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 11371,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 9.329555200005416,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 11.264936199993826,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.018418499999999997,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.009209249999999999,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "condition",
+      "value": "opaque",
+      "method": "C",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 2,
+      "auto_correct": 2,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.6666666666666666,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 10626,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 190,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 10816,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 15.100303200015333,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 17.26575170000433,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.017364,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.008682,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "condition",
+      "value": "opaque",
+      "method": "C-kr-v1",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 2,
+      "auto_correct": 2,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.6666666666666666,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 11142,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 261,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 11403,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 23.267955199975404,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 25.154020200003288,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0186705,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00933525,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "condition",
+      "value": "original",
+      "method": "C",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 2,
+      "auto_correct": 2,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.6666666666666666,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 10627,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 213,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 10840,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 8.575140499990084,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 10.492029199987883,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.017537999999999998,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.008768999999999999,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "condition",
+      "value": "original",
+      "method": "C-kr-v1",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 2,
+      "auto_correct": 2,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.6666666666666666,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 11143,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 248,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 11391,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 9.834855900000548,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 11.752731700005825,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0185745,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00928725,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_family",
+      "value": "markets",
+      "method": "C",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 0,
+      "auto_correct": 0,
+      "auto_precision": null,
+      "auto_coverage": 0.0,
+      "none_n": 3,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 9426,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 216,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 9642,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 8.301163100011763,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 10.230814299997292,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.015759,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.0078795,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_family",
+      "value": "markets",
+      "method": "C-kr-v1",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 0,
+      "auto_correct": 0,
+      "auto_precision": null,
+      "auto_coverage": 0.0,
+      "none_n": 3,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 9942,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 241,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 10183,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 9.42278749999241,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 11.237691399990581,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0167205,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00836025,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_family",
+      "value": "parking",
+      "method": "C",
+      "planned": 6,
+      "correct": 6,
+      "top1": 1.0,
+      "categories": {
+        "correct": 6
+      },
+      "valid_output_n": 6,
+      "review_ratio": 0.0,
+      "auto_links": 6,
+      "auto_correct": 6,
+      "auto_precision": 1.0,
+      "auto_coverage": 1.0,
+      "none_n": 0,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": null,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 22455,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 427,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "total_tokens": {
+          "observed_sum": 22882,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 23.549313899988192,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 27.800584600001457,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.036885,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.0184425,
+          "observed_n": 6,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_family",
+      "value": "parking",
+      "method": "C-kr-v1",
+      "planned": 6,
+      "correct": 6,
+      "top1": 1.0,
+      "categories": {
+        "correct": 6
+      },
+      "valid_output_n": 6,
+      "review_ratio": 0.0,
+      "auto_links": 6,
+      "auto_correct": 6,
+      "auto_precision": 1.0,
+      "auto_coverage": 1.0,
+      "none_n": 0,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": null,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 23487,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 495,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "total_tokens": {
+          "observed_sum": 23982,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 33.00957879998896,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 36.93399670001236,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.038943,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.0194715,
+          "observed_n": 6,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_type",
+      "value": "integer",
+      "method": "C",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 3,
+      "auto_correct": 3,
+      "auto_precision": 1.0,
+      "auto_coverage": 1.0,
+      "none_n": 0,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": null,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 11783,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 208,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 11991,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 15.620865199991385,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 18.05471349999425,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0192345,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00961725,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_type",
+      "value": "integer",
+      "method": "C-kr-v1",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 3,
+      "auto_correct": 3,
+      "auto_precision": 1.0,
+      "auto_coverage": 1.0,
+      "none_n": 0,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": null,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 12299,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 264,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 12563,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 10.30838310001127,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 12.462982600016403,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0204285,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.01021425,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_type",
+      "value": "string",
+      "method": "C",
+      "planned": 6,
+      "correct": 6,
+      "top1": 1.0,
+      "categories": {
+        "correct": 6
+      },
+      "valid_output_n": 6,
+      "review_ratio": 0.0,
+      "auto_links": 3,
+      "auto_correct": 3,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.5,
+      "none_n": 3,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 20098,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 435,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "total_tokens": {
+          "observed_sum": 20533,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 16.22961180000857,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 19.9766854000045,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0334095,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.01670475,
+          "observed_n": 6,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_type",
+      "value": "string",
+      "method": "C-kr-v1",
+      "planned": 6,
+      "correct": 6,
+      "top1": 1.0,
+      "categories": {
+        "correct": 6
+      },
+      "valid_output_n": 6,
+      "review_ratio": 0.0,
+      "auto_links": 3,
+      "auto_correct": 3,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.5,
+      "none_n": 3,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 21130,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 472,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "total_tokens": {
+          "observed_sum": 21602,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 32.1239831999701,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 35.708705499986536,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.035235,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.0176175,
+          "observed_n": 6,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "test_kind",
+      "value": "controlled-real-data",
+      "method": "C",
+      "planned": 6,
+      "correct": 6,
+      "top1": 1.0,
+      "categories": {
+        "correct": 6
+      },
+      "valid_output_n": 6,
+      "review_ratio": 0.0,
+      "auto_links": 6,
+      "auto_correct": 6,
+      "auto_precision": 1.0,
+      "auto_coverage": 1.0,
+      "none_n": 0,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": null,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 22455,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 427,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "total_tokens": {
+          "observed_sum": 22882,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 23.549313899988192,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 27.800584600001457,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.036885,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.0184425,
+          "observed_n": 6,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "test_kind",
+      "value": "controlled-real-data",
+      "method": "C-kr-v1",
+      "planned": 6,
+      "correct": 6,
+      "top1": 1.0,
+      "categories": {
+        "correct": 6
+      },
+      "valid_output_n": 6,
+      "review_ratio": 0.0,
+      "auto_links": 6,
+      "auto_correct": 6,
+      "auto_precision": 1.0,
+      "auto_coverage": 1.0,
+      "none_n": 0,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": null,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 23487,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 495,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 6
+        },
+        "total_tokens": {
+          "observed_sum": 23982,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 33.00957879998896,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 36.93399670001236,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.038943,
+          "observed_n": 6,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.0194715,
+          "observed_n": 6,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "test_kind",
+      "value": "cross-source",
+      "method": "C",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 0,
+      "auto_correct": 0,
+      "auto_precision": null,
+      "auto_coverage": 0.0,
+      "none_n": 3,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 9426,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 216,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 9642,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 8.301163100011763,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 10.230814299997292,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.015759,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.0078795,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "test_kind",
+      "value": "cross-source",
+      "method": "C-kr-v1",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 0,
+      "auto_correct": 0,
+      "auto_precision": null,
+      "auto_coverage": 0.0,
+      "none_n": 3,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 9942,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 241,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 10183,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 9.42278749999241,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 11.237691399990581,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0167205,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00836025,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "task_id": "eval-market-name",
+      "condition": "mixed",
+      "C_correct": true,
+      "candidate_correct": true,
+      "C_status": "no_match",
+      "candidate_status": "no_match",
+      "C_target": null,
+      "candidate_target": null,
+      "improved": false,
+      "worsened": false,
+      "C_input": 3143,
+      "candidate_input": 3315,
+      "C_cost": 0.005247,
+      "candidate_cost": 0.0055425
+    },
+    {
+      "task_id": "eval-market-name",
+      "condition": "opaque",
+      "C_correct": true,
+      "candidate_correct": true,
+      "C_status": "no_match",
+      "candidate_status": "no_match",
+      "C_target": null,
+      "candidate_target": null,
+      "improved": false,
+      "worsened": false,
+      "C_input": 3143,
+      "candidate_input": 3315,
+      "C_cost": 0.005247,
+      "candidate_cost": 0.00567
+    },
+    {
+      "task_id": "eval-market-name",
+      "condition": "original",
+      "C_correct": true,
+      "candidate_correct": true,
+      "C_status": "no_match",
+      "candidate_status": "no_match",
+      "C_target": null,
+      "candidate_target": null,
+      "improved": false,
+      "worsened": false,
+      "C_input": 3140,
+      "candidate_input": 3312,
+      "C_cost": 0.005265,
+      "candidate_cost": 0.005508
+    },
+    {
+      "task_id": "eval-parking-clock",
+      "condition": "mixed",
+      "C_correct": true,
+      "candidate_correct": true,
+      "C_status": "matched",
+      "candidate_status": "matched",
+      "C_target": "평일운영시작시각",
+      "candidate_target": "평일운영시작시각",
+      "improved": false,
+      "worsened": false,
+      "C_input": 3557,
+      "candidate_input": 3729,
+      "C_cost": 0.0059505,
+      "candidate_cost": 0.006081
+    },
+    {
+      "task_id": "eval-parking-clock",
+      "condition": "opaque",
+      "C_correct": true,
+      "candidate_correct": true,
+      "C_status": "matched",
+      "candidate_status": "matched",
+      "C_target": "평일운영시작시각",
+      "candidate_target": "평일운영시작시각",
+      "improved": false,
+      "worsened": false,
+      "C_input": 3556,
+      "candidate_input": 3728,
+      "C_cost": 0.005739,
+      "candidate_cost": 0.0061995
+    },
+    {
+      "task_id": "eval-parking-clock",
+      "condition": "original",
+      "C_correct": true,
+      "candidate_correct": true,
+      "C_status": "matched",
+      "candidate_status": "matched",
+      "C_target": "평일운영시작시각",
+      "candidate_target": "평일운영시작시각",
+      "improved": false,
+      "worsened": false,
+      "C_input": 3559,
+      "candidate_input": 3731,
+      "C_cost": 0.005961,
+      "candidate_cost": 0.006234
+    },
+    {
+      "task_id": "eval-parking-fee",
+      "condition": "mixed",
+      "C_correct": true,
+      "candidate_correct": true,
+      "C_status": "matched",
+      "candidate_status": "matched",
+      "C_target": "주차기본요금",
+      "candidate_target": "주차기본요금",
+      "improved": false,
+      "worsened": false,
+      "C_input": 3928,
+      "candidate_input": 4100,
+      "C_cost": 0.0065445,
+      "candidate_cost": 0.006795
+    },
+    {
+      "task_id": "eval-parking-fee",
+      "condition": "opaque",
+      "C_correct": true,
+      "candidate_correct": true,
+      "C_status": "matched",
+      "candidate_status": "matched",
+      "C_target": "주차기본요금",
+      "candidate_target": "주차기본요금",
+      "improved": false,
+      "worsened": false,
+      "C_input": 3927,
+      "candidate_input": 4099,
+      "C_cost": 0.006378,
+      "candidate_cost": 0.006801
+    },
+    {
+      "task_id": "eval-parking-fee",
+      "condition": "original",
+      "C_correct": true,
+      "candidate_correct": true,
+      "C_status": "matched",
+      "candidate_status": "matched",
+      "C_target": "주차기본요금",
+      "candidate_target": "주차기본요금",
+      "improved": false,
+      "worsened": false,
+      "C_input": 3928,
+      "candidate_input": 4100,
+      "C_cost": 0.006312,
+      "candidate_cost": 0.0068325
+    }
+  ],
+  "profile_counts": {
+    "source_columns": 3,
+    "numeric_aggregate_columns": 1,
+    "date_range_columns": 0,
+    "types": {
+      "string": 2,
+      "integer": 1
+    }
+  },
+  "progress": {
+    "at": "2026-11-03T05:24:22.744186+00:00",
+    "planned": 18,
+    "categories": {
+      "valid_output": 18
+    },
+    "actual_POSTs": 18,
+    "reserved_slots": 18,
+    "prior_korean_POSTs": 7,
+    "task_actual_POSTs": 25,
+    "global_calls": 445,
+    "remaining_calls": 5,
+    "reference_cost_usd": 0.10830749999999999,
+    "task_reference_cost_usd": 0.148422,
+    "global_reference_cost_usd": 2.6018714999999997,
+    "remaining_reference_usd": 7.398128500000001,
+    "retries": 0,
+    "v1_blocked_unsubmitted": 23
+  },
+  "improved": 0,
+  "worsened": 0,
+  "paired_usage": {
+    "planned_pairs": 9,
+    "observed_pairs": 9,
+    "missing_pairs": 0,
+    "C_input": 31881,
+    "candidate_input": 33429,
+    "C_standard_cost": 0.052643999999999996,
+    "candidate_standard_cost": 0.0556635
+  },
+  "actual_invoice_verified": false,
+  "new_inferences_in_scoring": 0,
+  "rows": [
+    {
+      "id": "dd32a43988d9c60d9a4ec6d55dd0f451",
+      "order": 1,
+      "task_id": "eval-market-name",
+      "condition": "original",
+      "method": "C",
+      "source_id": "markets_001",
+      "target_id": null,
+      "status": "no_match",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": false,
+      "phase": "evaluation",
+      "source_family": "markets",
+      "target_family": "parking",
+      "test_kind": "cross-source",
+      "source_name": "시장명",
+      "source_type": "string",
+      "expected_no_match": true,
+      "expected_target": null,
+      "target_name": null,
+      "execution_category": "valid_output",
+      "input_tokens": 3140,
+      "output_tokens": 74,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3214,
+      "standard_cost_usd": 0.005265,
+      "current_no_cache_upper_usd": 0.0026325,
+      "model_seconds": 2.971528900001431,
+      "local_seconds": 3.6791914999921573,
+      "finished_at": "2026-11-03T05:21:46.150798+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "d21bae36acb505e960621ad993b19b49",
+      "order": 2,
+      "task_id": "eval-market-name",
+      "condition": "original",
+      "method": "C-kr-v1",
+      "source_id": "markets_001",
+      "target_id": null,
+      "status": "no_match",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": false,
+      "phase": "evaluation",
+      "source_family": "markets",
+      "target_family": "parking",
+      "test_kind": "cross-source",
+      "source_name": "시장명",
+      "source_type": "string",
+      "expected_no_match": true,
+      "expected_target": null,
+      "target_name": null,
+      "execution_category": "valid_output",
+      "input_tokens": 3312,
+      "output_tokens": 72,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3384,
+      "standard_cost_usd": 0.005508,
+      "current_no_cache_upper_usd": 0.002754,
+      "model_seconds": 3.651006600004621,
+      "local_seconds": 4.292267099997844,
+      "finished_at": "2026-11-03T05:21:53.662637+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "2f55b30cc46843973bfe88fe53ebe629",
+      "order": 3,
+      "task_id": "eval-market-name",
+      "condition": "mixed",
+      "method": "C-kr-v1",
+      "source_id": "markets_001",
+      "target_id": null,
+      "status": "no_match",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": false,
+      "phase": "evaluation",
+      "source_family": "markets",
+      "target_family": "parking",
+      "test_kind": "cross-source",
+      "source_name": "시장명",
+      "source_type": "string",
+      "expected_no_match": true,
+      "expected_target": null,
+      "target_name": null,
+      "execution_category": "valid_output",
+      "input_tokens": 3315,
+      "output_tokens": 76,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3391,
+      "standard_cost_usd": 0.0055425,
+      "current_no_cache_upper_usd": 0.00277125,
+      "model_seconds": 2.6832302999973763,
+      "local_seconds": 3.2371727999998257,
+      "finished_at": "2026-11-03T05:21:59.982886+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "11454926e7d9f45afba52d73d1f1ffc1",
+      "order": 4,
+      "task_id": "eval-market-name",
+      "condition": "mixed",
+      "method": "C",
+      "source_id": "markets_001",
+      "target_id": null,
+      "status": "no_match",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": false,
+      "phase": "evaluation",
+      "source_family": "markets",
+      "target_family": "parking",
+      "test_kind": "cross-source",
+      "source_name": "시장명",
+      "source_type": "string",
+      "expected_no_match": true,
+      "expected_target": null,
+      "target_name": null,
+      "execution_category": "valid_output",
+      "input_tokens": 3143,
+      "output_tokens": 71,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3214,
+      "standard_cost_usd": 0.005247,
+      "current_no_cache_upper_usd": 0.0026235,
+      "model_seconds": 2.7096731000056025,
+      "local_seconds": 3.3233999000076437,
+      "finished_at": "2026-11-03T05:22:06.364366+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "79c67d9fe9e80b8dffdea36d13d4695b",
+      "order": 5,
+      "task_id": "eval-market-name",
+      "condition": "opaque",
+      "method": "C",
+      "source_id": "markets_001",
+      "target_id": null,
+      "status": "no_match",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": false,
+      "phase": "evaluation",
+      "source_family": "markets",
+      "target_family": "parking",
+      "test_kind": "cross-source",
+      "source_name": "시장명",
+      "source_type": "string",
+      "expected_no_match": true,
+      "expected_target": null,
+      "target_name": null,
+      "execution_category": "valid_output",
+      "input_tokens": 3143,
+      "output_tokens": 71,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3214,
+      "standard_cost_usd": 0.005247,
+      "current_no_cache_upper_usd": 0.0026235,
+      "model_seconds": 2.61996110000473,
+      "local_seconds": 3.2282228999974905,
+      "finished_at": "2026-11-03T05:22:12.644192+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "403110ac86fb7ee6cc0e21262b17cb29",
+      "order": 6,
+      "task_id": "eval-market-name",
+      "condition": "opaque",
+      "method": "C-kr-v1",
+      "source_id": "markets_001",
+      "target_id": null,
+      "status": "no_match",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": false,
+      "phase": "evaluation",
+      "source_family": "markets",
+      "target_family": "parking",
+      "test_kind": "cross-source",
+      "source_name": "시장명",
+      "source_type": "string",
+      "expected_no_match": true,
+      "expected_target": null,
+      "target_name": null,
+      "execution_category": "valid_output",
+      "input_tokens": 3315,
+      "output_tokens": 93,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3408,
+      "standard_cost_usd": 0.00567,
+      "current_no_cache_upper_usd": 0.002835,
+      "model_seconds": 3.0885505999904126,
+      "local_seconds": 3.7082514999929117,
+      "finished_at": "2026-11-03T05:22:19.443702+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "2e8cd9c75e0cc26488ab62a958910c47",
+      "order": 7,
+      "task_id": "eval-parking-fee",
+      "condition": "original",
+      "method": "C-kr-v1",
+      "source_id": "parking_004",
+      "target_id": "t_61125475eea1fb38",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "주차기본요금",
+      "source_type": "integer",
+      "expected_no_match": false,
+      "expected_target": "t_61125475eea1fb38",
+      "target_name": "주차기본요금",
+      "execution_category": "valid_output",
+      "input_tokens": 4100,
+      "output_tokens": 91,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 4191,
+      "standard_cost_usd": 0.0068325,
+      "current_no_cache_upper_usd": 0.00341625,
+      "model_seconds": 2.9750131000037072,
+      "local_seconds": 3.6353112000069814,
+      "finished_at": "2026-11-03T05:22:26.069721+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "0761b5354da1fe59e04014a423d820b3",
+      "order": 8,
+      "task_id": "eval-parking-fee",
+      "condition": "original",
+      "method": "C",
+      "source_id": "parking_004",
+      "target_id": "t_61125475eea1fb38",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "주차기본요금",
+      "source_type": "integer",
+      "expected_no_match": false,
+      "expected_target": "t_61125475eea1fb38",
+      "target_name": "주차기본요금",
+      "execution_category": "valid_output",
+      "input_tokens": 3928,
+      "output_tokens": 56,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3984,
+      "standard_cost_usd": 0.006312,
+      "current_no_cache_upper_usd": 0.003156,
+      "model_seconds": 2.7876686999952653,
+      "local_seconds": 3.433799699996598,
+      "finished_at": "2026-11-03T05:22:32.642622+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "caddc09de81484f320462c5e072c2247",
+      "order": 9,
+      "task_id": "eval-parking-fee",
+      "condition": "mixed",
+      "method": "C",
+      "source_id": "parking_004",
+      "target_id": "t_61125475eea1fb38",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "주차기본요금",
+      "source_type": "integer",
+      "expected_no_match": false,
+      "expected_target": "t_61125475eea1fb38",
+      "target_name": "주차기본요금",
+      "execution_category": "valid_output",
+      "input_tokens": 3928,
+      "output_tokens": 87,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 4015,
+      "standard_cost_usd": 0.0065445,
+      "current_no_cache_upper_usd": 0.00327225,
+      "model_seconds": 2.521940699996776,
+      "local_seconds": 3.349423099993146,
+      "finished_at": "2026-11-03T05:22:39.337304+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "b32d31d9dfc0e109359ecdf038479376",
+      "order": 10,
+      "task_id": "eval-parking-fee",
+      "condition": "mixed",
+      "method": "C-kr-v1",
+      "source_id": "parking_004",
+      "target_id": "t_61125475eea1fb38",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "주차기본요금",
+      "source_type": "integer",
+      "expected_no_match": false,
+      "expected_target": "t_61125475eea1fb38",
+      "target_name": "주차기본요금",
+      "execution_category": "valid_output",
+      "input_tokens": 4100,
+      "output_tokens": 86,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 4186,
+      "standard_cost_usd": 0.006795,
+      "current_no_cache_upper_usd": 0.0033975,
+      "model_seconds": 4.18652670001029,
+      "local_seconds": 4.9955492000008235,
+      "finished_at": "2026-11-03T05:22:48.055228+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "3da2f821028b8c0ced158ef2a26ffb74",
+      "order": 11,
+      "task_id": "eval-parking-fee",
+      "condition": "opaque",
+      "method": "C-kr-v1",
+      "source_id": "parking_004",
+      "target_id": "t_61125475eea1fb38",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "주차기본요금",
+      "source_type": "integer",
+      "expected_no_match": false,
+      "expected_target": "t_61125475eea1fb38",
+      "target_name": "주차기본요금",
+      "execution_category": "valid_output",
+      "input_tokens": 4099,
+      "output_tokens": 87,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 4186,
+      "standard_cost_usd": 0.006801,
+      "current_no_cache_upper_usd": 0.0034005,
+      "model_seconds": 3.146843299997272,
+      "local_seconds": 3.832122200008598,
+      "finished_at": "2026-11-03T05:22:55.084988+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "8f52b18d0c55478c2e019b673ffe686f",
+      "order": 12,
+      "task_id": "eval-parking-fee",
+      "condition": "opaque",
+      "method": "C",
+      "source_id": "parking_004",
+      "target_id": "t_61125475eea1fb38",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "주차기본요금",
+      "source_type": "integer",
+      "expected_no_match": false,
+      "expected_target": "t_61125475eea1fb38",
+      "target_name": "주차기본요금",
+      "execution_category": "valid_output",
+      "input_tokens": 3927,
+      "output_tokens": 65,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3992,
+      "standard_cost_usd": 0.006378,
+      "current_no_cache_upper_usd": 0.003189,
+      "model_seconds": 10.311255799999344,
+      "local_seconds": 11.271490700004506,
+      "finished_at": "2026-11-03T05:23:09.668535+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "252db113f8eafe4a8f8e70d904940bdc",
+      "order": 13,
+      "task_id": "eval-parking-clock",
+      "condition": "original",
+      "method": "C",
+      "source_id": "parking_007",
+      "target_id": "t_9bd8130f64bebcd8",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "평일운영시작시각",
+      "source_type": "string",
+      "expected_no_match": false,
+      "expected_target": "t_9bd8130f64bebcd8",
+      "target_name": "평일운영시작시각",
+      "execution_category": "valid_output",
+      "input_tokens": 3559,
+      "output_tokens": 83,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3642,
+      "standard_cost_usd": 0.005961,
+      "current_no_cache_upper_usd": 0.0029805,
+      "model_seconds": 2.815942899993388,
+      "local_seconds": 3.3790379999991274,
+      "finished_at": "2026-11-03T05:23:16.203428+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "08d21c4769a5b9ede99136087661c590",
+      "order": 14,
+      "task_id": "eval-parking-clock",
+      "condition": "original",
+      "method": "C-kr-v1",
+      "source_id": "parking_007",
+      "target_id": "t_9bd8130f64bebcd8",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "평일운영시작시각",
+      "source_type": "string",
+      "expected_no_match": false,
+      "expected_target": "t_9bd8130f64bebcd8",
+      "target_name": "평일운영시작시각",
+      "execution_category": "valid_output",
+      "input_tokens": 3731,
+      "output_tokens": 85,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3816,
+      "standard_cost_usd": 0.006234,
+      "current_no_cache_upper_usd": 0.003117,
+      "model_seconds": 3.20883619999222,
+      "local_seconds": 3.8251534000009997,
+      "finished_at": "2026-11-03T05:23:23.017875+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "2912325335497934d5650d7460ea1d72",
+      "order": 15,
+      "task_id": "eval-parking-clock",
+      "condition": "mixed",
+      "method": "C-kr-v1",
+      "source_id": "parking_007",
+      "target_id": "t_9bd8130f64bebcd8",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "평일운영시작시각",
+      "source_type": "string",
+      "expected_no_match": false,
+      "expected_target": "t_9bd8130f64bebcd8",
+      "target_name": "평일운영시작시각",
+      "execution_category": "valid_output",
+      "input_tokens": 3729,
+      "output_tokens": 65,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3794,
+      "standard_cost_usd": 0.006081,
+      "current_no_cache_upper_usd": 0.0030405,
+      "model_seconds": 2.459798199997749,
+      "local_seconds": 3.0322141999931773,
+      "finished_at": "2026-11-03T05:23:29.194517+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "27fd6bb978a8b65db30e6ce878bb9670",
+      "order": 16,
+      "task_id": "eval-parking-clock",
+      "condition": "mixed",
+      "method": "C",
+      "source_id": "parking_007",
+      "target_id": "t_9bd8130f64bebcd8",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "평일운영시작시각",
+      "source_type": "string",
+      "expected_no_match": false,
+      "expected_target": "t_9bd8130f64bebcd8",
+      "target_name": "평일운영시작시각",
+      "execution_category": "valid_output",
+      "input_tokens": 3557,
+      "output_tokens": 82,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3639,
+      "standard_cost_usd": 0.0059505,
+      "current_no_cache_upper_usd": 0.00297525,
+      "model_seconds": 2.94341949999216,
+      "local_seconds": 3.6007950000057463,
+      "finished_at": "2026-11-03T05:23:35.949109+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "c4ae081d2bdbf48f27dac605f0ccedfc",
+      "order": 17,
+      "task_id": "eval-parking-clock",
+      "condition": "opaque",
+      "method": "C",
+      "source_id": "parking_007",
+      "target_id": "t_9bd8130f64bebcd8",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "평일운영시작시각",
+      "source_type": "string",
+      "expected_no_match": false,
+      "expected_target": "t_9bd8130f64bebcd8",
+      "target_name": "평일운영시작시각",
+      "execution_category": "valid_output",
+      "input_tokens": 3556,
+      "output_tokens": 54,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3610,
+      "standard_cost_usd": 0.005739,
+      "current_no_cache_upper_usd": 0.0028695,
+      "model_seconds": 2.1690863000112586,
+      "local_seconds": 2.7660381000023335,
+      "finished_at": "2026-11-03T05:23:41.684823+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "9477703d7fdfae242de85f1b2d76200b",
+      "order": 18,
+      "task_id": "eval-parking-clock",
+      "condition": "opaque",
+      "method": "C-kr-v1",
+      "source_id": "parking_007",
+      "target_id": "t_9bd8130f64bebcd8",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "evaluation",
+      "source_family": "parking",
+      "target_family": "parking",
+      "test_kind": "controlled-real-data",
+      "source_name": "평일운영시작시각",
+      "source_type": "string",
+      "expected_no_match": false,
+      "expected_target": "t_9bd8130f64bebcd8",
+      "target_name": "평일운영시작시각",
+      "execution_category": "valid_output",
+      "input_tokens": 3728,
+      "output_tokens": 81,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3809,
+      "standard_cost_usd": 0.0061995,
+      "current_no_cache_upper_usd": 0.00309975,
+      "model_seconds": 17.03256129998772,
+      "local_seconds": 17.613646500001778,
+      "finished_at": "2026-11-03T05:24:02.287795+00:00",
+      "http_status": 200
+    }
+  ],
+  "real_values_and_raw_responses_omitted": true
+}

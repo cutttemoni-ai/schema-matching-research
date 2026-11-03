@@ -1,0 +1,2326 @@
+{
+  "shops": {
+    "rows": 15637,
+    "columns": {
+      "상가업소번호": {
+        "index": 0,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": true,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 1.0,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "상호명": {
+        "index": 1,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.9457056980239177,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "지점명": {
+        "index": 2,
+        "metadata_type": "string",
+        "literal_empty_cells": 13636,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.8720342776747458,
+          "unique_ratio": 0.07246376811594203,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "상권업종대분류코드": {
+        "index": 3,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0006395088571976722,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "상권업종대분류명": {
+        "index": 4,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0006395088571976722,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "상권업종중분류코드": {
+        "index": 5,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.004732365543262774,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "상권업종중분류명": {
+        "index": 6,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 988,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.004732365543262774,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "상권업종소분류코드": {
+        "index": 7,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0154121634584639,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "상권업종소분류명": {
+        "index": 8,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0154121634584639,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "표준산업분류코드": {
+        "index": 9,
+        "metadata_type": "string",
+        "literal_empty_cells": 3,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.00019185265715930165,
+          "unique_ratio": 0.01605475246258155,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "표준산업분류명": {
+        "index": 10,
+        "metadata_type": "string",
+        "literal_empty_cells": 3,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.00019185265715930165,
+          "unique_ratio": 0.01605475246258155,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "시도코드": {
+        "index": 11,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 6.395088571976722e-05,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "시도명": {
+        "index": 12,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 6.395088571976722e-05,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "시군구코드": {
+        "index": 13,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 6.395088571976722e-05,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "시군구명": {
+        "index": 14,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 6.395088571976722e-05,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "행정동코드": {
+        "index": 15,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0015348212572744132,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "행정동명": {
+        "index": 16,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0015348212572744132,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "법정동코드": {
+        "index": 17,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00850546780072904,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "법정동명": {
+        "index": 18,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0018545756858732493,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "지번코드": {
+        "index": 19,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.26648334079427,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "대지구분코드": {
+        "index": 20,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00012790177143953444,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "대지구분명": {
+        "index": 21,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00012790177143953444,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "지번본번지": {
+        "index": 22,
+        "metadata_type": "integer",
+        "literal_empty_cells": 15,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0009592632857965083,
+          "unique_ratio": 0.06926129816924849,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "지번부번지": {
+        "index": 23,
+        "metadata_type": "integer",
+        "literal_empty_cells": 10636,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.6801816205154442,
+          "unique_ratio": 0.01779644071185763,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "지번주소": {
+        "index": 24,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.26648334079427,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "도로명코드": {
+        "index": 25,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.042655240775084736,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "도로명": {
+        "index": 26,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.04438191468951845,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "건물본번지": {
+        "index": 27,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.050201445290017264,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "건물부번지": {
+        "index": 28,
+        "metadata_type": "integer",
+        "literal_empty_cells": 13216,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.8451749056724436,
+          "unique_ratio": 0.0322180916976456,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "건물관리번호": {
+        "index": 29,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": true,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.26884952356590136,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "건물명": {
+        "index": 30,
+        "metadata_type": "string",
+        "literal_empty_cells": 5766,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.3687408070601778,
+          "unique_ratio": 0.12318913990477155,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "도로명주소": {
+        "index": 31,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.26872162179446185,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "구우편번호": {
+        "index": 32,
+        "metadata_type": "integer",
+        "literal_empty_cells": 244,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.015604016115623202,
+          "unique_ratio": 0.0055869551094653415,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "신우편번호": {
+        "index": 33,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.009017074886487177,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "동정보": {
+        "index": 34,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 15637,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "층정보": {
+        "index": 35,
+        "metadata_type": "string",
+        "literal_empty_cells": 8061,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.5155080897870435,
+          "unique_ratio": 0.0034318901795142554,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "호정보": {
+        "index": 36,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 15637,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "경도": {
+        "index": 37,
+        "metadata_type": "number",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.2820873569098932,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "위도": {
+        "index": 38,
+        "metadata_type": "number",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.2820873569098932,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      }
+    },
+    "duplicate_rows": 0,
+    "empty_columns": [
+      "동정보",
+      "호정보"
+    ],
+    "duplicate_headers": 0,
+    "profile_seconds": 5.27713919999951,
+    "reference_date_range": null
+  },
+  "markets": {
+    "rows": 1393,
+    "columns": {
+      "시장명": {
+        "index": 0,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.9641062455132807,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "시장유형": {
+        "index": 1,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.005025125628140704,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "소재지도로명주소": {
+        "index": 2,
+        "metadata_type": "string",
+        "literal_empty_cells": 14,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.010050251256281407,
+          "unique_ratio": 0.9927483683828862,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "소재지지번주소": {
+        "index": 3,
+        "metadata_type": "string",
+        "literal_empty_cells": 9,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.006460875807609476,
+          "unique_ratio": 0.9884393063583815,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "시장개설주기": {
+        "index": 4,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00574300071787509,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "위도": {
+        "index": 5,
+        "metadata_type": "number",
+        "literal_empty_cells": 16,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.01148600143575018,
+          "unique_ratio": 0.990559186637618,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "경도": {
+        "index": 6,
+        "metadata_type": "number",
+        "literal_empty_cells": 16,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.01148600143575018,
+          "unique_ratio": 0.990559186637618,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "점포수": {
+        "index": 7,
+        "metadata_type": "integer",
+        "literal_empty_cells": 5,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.003589375448671931,
+          "unique_ratio": 0.24063400576368876,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "취급품목": {
+        "index": 8,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.135678391959799,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "사용가능상품권": {
+        "index": 9,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 1393,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "홈페이지주소": {
+        "index": 10,
+        "metadata_type": "string",
+        "literal_empty_cells": 1329,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": true,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.9540559942569993,
+          "unique_ratio": 1.0,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "공중화장실보유여부": {
+        "index": 11,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0014357501794687725,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "주차장보유여부": {
+        "index": 12,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0014357501794687725,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "개설연도": {
+        "index": 13,
+        "metadata_type": "integer",
+        "literal_empty_cells": 13,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.00933237616654702,
+          "unique_ratio": 0.08695652173913043,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "전화번호": {
+        "index": 14,
+        "metadata_type": "string",
+        "literal_empty_cells": 543,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": true,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.3898061737257717,
+          "unique_ratio": 0.9835294117647059,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "데이터기준일자": {
+        "index": 15,
+        "metadata_type": "date",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "date",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0007178750897343862,
+          "date_parse_success_rate": 1.0,
+          "date_min": "2025-11-10",
+          "date_max": "2025-11-10"
+        }
+      },
+      "제공기관코드": {
+        "index": 16,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0007178750897343862,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "제공기관명": {
+        "index": 17,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0007178750897343862,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      }
+    },
+    "duplicate_rows": 0,
+    "empty_columns": [
+      "사용가능상품권"
+    ],
+    "duplicate_headers": 0,
+    "profile_seconds": 0.22247890000289772,
+    "reference_date_range": [
+      "2025-11-10",
+      "2025-11-10"
+    ]
+  },
+  "parking": {
+    "rows": 18994,
+    "columns": {
+      "주차장관리번호": {
+        "index": 0,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": true,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.9412446035590186,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "주차장명": {
+        "index": 1,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.9263451616299884,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "주차장구분": {
+        "index": 2,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00010529640939243972,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "주차장유형": {
+        "index": 3,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00015794461408865957,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "소재지도로명주소": {
+        "index": 4,
+        "metadata_type": "string",
+        "literal_empty_cells": 11740,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.6180899231336211,
+          "unique_ratio": 0.930658946787979,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "소재지지번주소": {
+        "index": 5,
+        "metadata_type": "string",
+        "literal_empty_cells": 1524,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 2,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.08023586395703906,
+          "unique_ratio": 0.9383514596451059,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "주차구획수": {
+        "index": 6,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.028114141307781403,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "급지구분": {
+        "index": 7,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00031588922817731913,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "부제시행구분": {
+        "index": 8,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00031588922817731913,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "운영요일": {
+        "index": 9,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00031588922817731913,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "평일운영시작시각": {
+        "index": 10,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.001526797936190376,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "평일운영종료시각": {
+        "index": 11,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0014215015267979361,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "토요일운영시작시각": {
+        "index": 12,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.001526797936190376,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "토요일운영종료시각": {
+        "index": 13,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0013162051174054965,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "공휴일운영시작시각": {
+        "index": 14,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0013162051174054965,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "공휴일운영종료시각": {
+        "index": 15,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.001158260503316837,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "요금정보": {
+        "index": 16,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00021059281878487945,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "주차기본시간": {
+        "index": 17,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 20,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0013688533221017163,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "주차기본요금": {
+        "index": 18,
+        "metadata_type": "integer",
+        "literal_empty_cells": 5414,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.2850373802253343,
+          "unique_ratio": 0.003681885125184094,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "추가단위시간": {
+        "index": 19,
+        "metadata_type": "integer",
+        "literal_empty_cells": 11083,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.5835000526482047,
+          "unique_ratio": 0.0016432815067627354,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "추가단위요금": {
+        "index": 20,
+        "metadata_type": "integer",
+        "literal_empty_cells": 11089,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.583815941876382,
+          "unique_ratio": 0.006578115117014548,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "1일주차권요금적용시간": {
+        "index": 21,
+        "metadata_type": "number",
+        "literal_empty_cells": 14629,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.7701905865010004,
+          "unique_ratio": 0.012600229095074456,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "1일주차권요금": {
+        "index": 22,
+        "metadata_type": "integer",
+        "literal_empty_cells": 13882,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.730862377592924,
+          "unique_ratio": 0.008607198748043818,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "월정기권요금": {
+        "index": 23,
+        "metadata_type": "integer",
+        "literal_empty_cells": 13908,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.7322312309150258,
+          "unique_ratio": 0.014353126228863547,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "결제방법": {
+        "index": 24,
+        "metadata_type": "string",
+        "literal_empty_cells": 13971,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.7355480678108877,
+          "unique_ratio": 0.008162452717499503,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "특기사항": {
+        "index": 25,
+        "metadata_type": "string",
+        "literal_empty_cells": 16315,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.858955459618827,
+          "unique_ratio": 0.12206047032474804,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "관리기관명": {
+        "index": 26,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.03680109508265768,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "전화번호": {
+        "index": 27,
+        "metadata_type": "string",
+        "literal_empty_cells": 4201,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": true,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.22117510792881961,
+          "unique_ratio": 0.05969039410532009,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "위도": {
+        "index": 28,
+        "metadata_type": "number",
+        "literal_empty_cells": 750,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.03948615352216489,
+          "unique_ratio": 0.9306073229554922,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "경도": {
+        "index": 29,
+        "metadata_type": "number",
+        "literal_empty_cells": 750,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.03948615352216489,
+          "unique_ratio": 0.9297303222977418,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "장애인전용주차구역보유여부": {
+        "index": 30,
+        "metadata_type": "string",
+        "literal_empty_cells": 10319,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.5432768242602928,
+          "unique_ratio": 0.00023054755043227666,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "데이터기준일자": {
+        "index": 31,
+        "metadata_type": "date",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "date",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00384331894282405,
+          "date_parse_success_rate": 1.0,
+          "date_min": "2026-04-08",
+          "date_max": "2026-10-30"
+        }
+      },
+      "제공기관코드": {
+        "index": 32,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.013267347583447404,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "제공기관명": {
+        "index": 33,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.013267347583447404,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      }
+    },
+    "duplicate_rows": 0,
+    "empty_columns": [],
+    "duplicate_headers": 0,
+    "profile_seconds": 4.991425600004732,
+    "reference_date_range": [
+      "2026-04-08",
+      "2026-10-30"
+    ]
+  },
+  "restaurants": {
+    "rows": 13589,
+    "columns": {
+      "개방자치단체코드": {
+        "index": 0,
+        "metadata_type": "integer",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0018397233056148354,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "관리번호": {
+        "index": 1,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": true,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 1.0,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "인허가일자": {
+        "index": 2,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 13589,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "date",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.018470821988372948,
+          "date_parse_success_rate": 1.0,
+          "date_min": "2025-01-02",
+          "date_max": "2025-12-31"
+        }
+      },
+      "영업상태코드": {
+        "index": 3,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 13589,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00014717786444918684,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "영업상태명": {
+        "index": 4,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00014717786444918684,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "상세영업상태코드": {
+        "index": 5,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 13589,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00014717786444918684,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "상세영업상태명": {
+        "index": 6,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00014717786444918684,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "폐업일자": {
+        "index": 7,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 9745,
+        "leading_zero_cells": 0,
+        "padded_cells": 13589,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "date",
+          "missing_rate": 0.7171241445286629,
+          "unique_ratio": 0.13345473465140478,
+          "date_parse_success_rate": 1.0,
+          "date_min": "2025-01-09",
+          "date_max": "2026-10-30"
+        }
+      },
+      "전화번호": {
+        "index": 8,
+        "metadata_type": "string",
+        "literal_empty_cells": 12728,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 376,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": true,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.936639929354625,
+          "unique_ratio": 0.9291521486643438,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "소재지면적": {
+        "index": 9,
+        "metadata_type": "string",
+        "literal_empty_cells": 1213,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.08926337478843183,
+          "unique_ratio": 0.44998383968972205,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "소재지우편번호": {
+        "index": 10,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 13589,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.15497829126499374,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "지번주소": {
+        "index": 11,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 6093,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.686511148723232,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "도로명주소": {
+        "index": 12,
+        "metadata_type": "string",
+        "literal_empty_cells": 149,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.01096475090146442,
+          "unique_ratio": 0.8590029761904762,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "도로명우편번호": {
+        "index": 13,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 149,
+        "leading_zero_cells": 13439,
+        "padded_cells": 149,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.01096475090146442,
+          "unique_ratio": 0.2460565476190476,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "사업장명": {
+        "index": 14,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.9151519611450438,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "최종수정일자": {
+        "index": 15,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "date",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.8733534476414747,
+          "date_parse_success_rate": 1.0,
+          "date_min": "2025-01-02T09:14:21",
+          "date_max": "2026-10-30T17:36:08"
+        }
+      },
+      "데이터갱신구분": {
+        "index": 16,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00014717786444918684,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "데이터갱신일자": {
+        "index": 17,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "date",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.07093973066450805,
+          "date_parse_success_rate": 1.0,
+          "date_min": "2025-12-15T16:15:28",
+          "date_max": "2026-10-31T22:47:45"
+        }
+      },
+      "업태구분명": {
+        "index": 18,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0015453675767164619,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "좌표정보(X)": {
+        "index": 19,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 1675,
+        "leading_zero_cells": 0,
+        "padded_cells": 13589,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.12326146147619398,
+          "unique_ratio": 0.6960718482457613,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "좌표정보(Y)": {
+        "index": 20,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 1675,
+        "leading_zero_cells": 0,
+        "padded_cells": 13589,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.12326146147619398,
+          "unique_ratio": 0.6960718482457613,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "위생업태명": {
+        "index": 21,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.0015453675767164619,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "남성종사자수": {
+        "index": 22,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "여성종사자수": {
+        "index": 23,
+        "metadata_type": "integer",
+        "literal_empty_cells": 13588,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.9999264110677754,
+          "unique_ratio": 1.0,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "영업장주변구분명": {
+        "index": 24,
+        "metadata_type": "string",
+        "literal_empty_cells": 13238,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.9741702847891677,
+          "unique_ratio": 0.017094017094017096,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "등급구분명": {
+        "index": 25,
+        "metadata_type": "string",
+        "literal_empty_cells": 13249,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.9749797630436382,
+          "unique_ratio": 0.008823529411764706,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "급수시설구분명": {
+        "index": 26,
+        "metadata_type": "string",
+        "literal_empty_cells": 11401,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.8389874162925895,
+          "unique_ratio": 0.0009140767824497258,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "본사종업원수": {
+        "index": 27,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "공장사무직종업원수": {
+        "index": 28,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "공장판매직종업원수": {
+        "index": 29,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "공장생산직종업원수": {
+        "index": 30,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "건물소유구분명": {
+        "index": 31,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "보증액": {
+        "index": 32,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "월세액": {
+        "index": 33,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "다중이용업소여부": {
+        "index": 34,
+        "metadata_type": "string",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "string",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.00014717786444918684,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "시설총규모": {
+        "index": 35,
+        "metadata_type": "number",
+        "literal_empty_cells": 0,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.0,
+          "unique_ratio": 0.41062624181323126,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "전통업소지정번호": {
+        "index": 36,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "전통업소주된음식": {
+        "index": 37,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "홈페이지": {
+        "index": 38,
+        "metadata_type": "unknown",
+        "literal_empty_cells": 13589,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": true,
+        "profile_summary": {
+          "inferred_type": "unknown",
+          "missing_rate": 1.0,
+          "unique_ratio": null,
+          "date_parse_success_rate": null,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "X좌표": {
+        "index": 39,
+        "metadata_type": "number",
+        "literal_empty_cells": 212,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.015600853631613806,
+          "unique_ratio": 0.6637512147716229,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "Y좌표": {
+        "index": 40,
+        "metadata_type": "number",
+        "literal_empty_cells": 212,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "number",
+          "missing_rate": 0.015600853631613806,
+          "unique_ratio": 0.6637512147716229,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      },
+      "법정동코드": {
+        "index": 41,
+        "metadata_type": "integer",
+        "literal_empty_cells": 208,
+        "whitespace_only_cells": 0,
+        "leading_zero_cells": 0,
+        "padded_cells": 0,
+        "contact_or_unnecessary_identifier": false,
+        "profile_summary": {
+          "inferred_type": "integer",
+          "missing_rate": 0.015306497902715432,
+          "unique_ratio": 0.031088857335027278,
+          "date_parse_success_rate": 0.0,
+          "date_min": null,
+          "date_max": null
+        }
+      }
+    },
+    "duplicate_rows": 0,
+    "empty_columns": [
+      "남성종사자수",
+      "본사종업원수",
+      "공장사무직종업원수",
+      "공장판매직종업원수",
+      "공장생산직종업원수",
+      "건물소유구분명",
+      "보증액",
+      "월세액",
+      "전통업소지정번호",
+      "전통업소주된음식",
+      "홈페이지"
+    ],
+    "duplicate_headers": 0,
+    "profile_seconds": 4.455687499998021,
+    "reference_date_range": null
+  }
+}

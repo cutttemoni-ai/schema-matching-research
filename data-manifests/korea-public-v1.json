@@ -1,0 +1,395 @@
+{
+  "version": "korean-public-acquisition-v1",
+  "recorded_at": "2026-11-03T05:11:35.545007+00:00",
+  "sources": {
+    "shops": {
+      "source": "https://www.data.go.kr/data/15083033/fileData.do",
+      "csv": "datasets/korea-v1/raw/shops-sejong.csv",
+      "download_endpoint": "https://www.data.go.kr/cmm/cmm/fileDownload.do",
+      "file_id": "FILE_000000007751774",
+      "archive": "datasets\\korea-v1\\raw\\shops-20260930.zip",
+      "zip_members": [
+        {
+          "name": "[필독]파일열람방법.txt",
+          "bytes": 1011,
+          "compressed_bytes": 610,
+          "crc32": 507979933
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_강원_202609.csv",
+          "bytes": 62229064,
+          "compressed_bytes": 13599664,
+          "crc32": 872194599
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_경기_202609.csv",
+          "bytes": 365158911,
+          "compressed_bytes": 89779357,
+          "crc32": 1562928630
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_경남_202609.csv",
+          "bytes": 93682550,
+          "compressed_bytes": 21598345,
+          "crc32": 395437000
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_경북_202609.csv",
+          "bytes": 77416042,
+          "compressed_bytes": 18106579,
+          "crc32": 3926185907
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_대구_202609.csv",
+          "bytes": 62402597,
+          "compressed_bytes": 13910897,
+          "crc32": 4274312345
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_대전_202609.csv",
+          "bytes": 42491143,
+          "compressed_bytes": 8994324,
+          "crc32": 2952080481
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_부산_202609.csv",
+          "bytes": 85599407,
+          "compressed_bytes": 19334593,
+          "crc32": 1283081413
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_서울_202609.csv",
+          "bytes": 301042198,
+          "compressed_bytes": 71179239,
+          "crc32": 1743275235
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_세종_202609.csv",
+          "bytes": 9816519,
+          "compressed_bytes": 1631564,
+          "crc32": 4052076215
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_울산_202609.csv",
+          "bytes": 28475731,
+          "compressed_bytes": 6005487,
+          "crc32": 724845807
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_인천_202609.csv",
+          "bytes": 75040506,
+          "compressed_bytes": 16434714,
+          "crc32": 4154227517
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_전남광주_202609.csv",
+          "bytes": 104679467,
+          "compressed_bytes": 23207657,
+          "crc32": 2188282062
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_전북_202609.csv",
+          "bytes": 56960229,
+          "compressed_bytes": 12260803,
+          "crc32": 1959235402
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_제주_202609.csv",
+          "bytes": 33661938,
+          "compressed_bytes": 6619670,
+          "crc32": 2756097979
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_충남_202609.csv",
+          "bytes": 67800687,
+          "compressed_bytes": 15112111,
+          "crc32": 4277084634
+        },
+        {
+          "name": "소상공인시장진흥공단_상가(상권)정보_충북_202609.csv",
+          "bytes": 51670998,
+          "compressed_bytes": 11290254,
+          "crc32": 146608268
+        }
+      ],
+      "scope": "One Sejong regional member; all regional members share one schema family, not independent",
+      "reference_date": "2026-09-30 (edition name)",
+      "license": "이용허락범위 제한 없음 (official catalog)",
+      "encoding": "utf-8-sig",
+      "sha256": "f2b8291cf26b55f91ac82385d63b417662562cce8536c80551ee2290f87c3023",
+      "bytes": 9816519,
+      "rows": 15637,
+      "columns": 39,
+      "raw_file_observed_mtime_utc": "2026-11-03T05:10:56.233118+00:00",
+      "acquisition_time_basis": "local original-file write mtime; manifest recorded separately"
+    },
+    "markets": {
+      "csv": "datasets\\korea-v1\\derived\\markets.csv",
+      "raw_parts": [
+        "markets-data-1.json"
+      ],
+      "original_json_null_cells": 0,
+      "format": "official CSV-button JSON, lossless string CSV serialization; JSON null mask separate",
+      "download_endpoint": "https://www.data.go.kr/download/standard.json",
+      "count_from_download": 1393,
+      "source": "https://www.data.go.kr/data/15012894/standard.do",
+      "license": "Official JSON-LD links general portal terms without a named license; per-dataset scope unconfirmed. No raw redistribution.",
+      "reference_date": "per-row 데이터기준일자; see quality audit",
+      "sha256": "a5809d4b849179eb021459cfdaa48f095fb8c8241aa49561f402fa466b082862",
+      "bytes": 399627,
+      "rows": 1393,
+      "columns": 18,
+      "encoding": "utf-8-sig",
+      "raw_file_observed_mtime_utc": "2026-11-03T05:11:35.574908+00:00",
+      "acquisition_time_basis": "local original-file write mtime; manifest recorded separately"
+    },
+    "parking": {
+      "csv": "datasets\\korea-v1\\derived\\parking.csv",
+      "raw_parts": [
+        "parking-data-1.json",
+        "parking-data-2.json"
+      ],
+      "original_json_null_cells": 0,
+      "format": "official CSV-button JSON, lossless string CSV serialization; JSON null mask separate",
+      "download_endpoint": "https://www.data.go.kr/download/standard.json",
+      "count_from_download": 18994,
+      "source": "https://www.data.go.kr/data/15012896/standard.do",
+      "license": "Official JSON-LD links general portal terms without a named license; per-dataset scope unconfirmed. No raw redistribution.",
+      "reference_date": "per-row 데이터기준일자; see quality audit",
+      "sha256": "a0ffcca0d08cd5657932cfc85f83c4656a18e2759c7c58b8465862b1dfeef903",
+      "bytes": 6564352,
+      "rows": 18994,
+      "columns": 34,
+      "encoding": "utf-8-sig",
+      "raw_file_observed_mtime_utc": "2026-11-03T05:11:36.134909+00:00",
+      "acquisition_time_basis": "local original-file write mtime; manifest recorded separately"
+    },
+    "restaurants": {
+      "source": "https://www.data.go.kr/data/15096283/standard.do",
+      "actual_source": "https://data.seoul.go.kr/dataList/OA-23056/S/1/datasetView.do",
+      "csv": "datasets\\korea-v1\\raw\\restaurants-seoul-permit2025.csv",
+      "download_endpoint": "https://datafile.seoul.go.kr/bigfile/iot/sheet/csv/download.do",
+      "POST_form": {
+        "srvType": "S",
+        "infId": "OA-23056",
+        "serviceKind": "1",
+        "pageNo": "1",
+        "ssUserId": "SAMPLE_VIEW",
+        "strWhere": "",
+        "strOrderby": "",
+        "filterCol": "APVPERMYMD",
+        "txtFilter": "2025"
+      },
+      "scope": "Seoul only, APVPERMYMD contains2025; NOT nationwide standard dataset",
+      "encoding": "cp949",
+      "reference_date": "page update2026-11-03, per-row update timestamps vary",
+      "license": "공공누리 제1유형: 출처표시, 상업적 이용/변경 가능 (Seoul official page)",
+      "coordinate_warning": "Legacy 좌표정보(X/Y): national catalog EPSG:5174. Extra X좌표/Y좌표 CRS unverified; never treated as WGS84 degrees.",
+      "sha256": "471d4f322e537c8487c4110ef9b6a293219885b04931570fb31fe7c7521723c1",
+      "bytes": 6522464,
+      "rows": 13589,
+      "columns": 42,
+      "raw_file_observed_mtime_utc": "2026-11-03T05:10:49.241791+00:00",
+      "acquisition_time_basis": "local original-file write mtime; manifest recorded separately"
+    }
+  },
+  "failures": [
+    {
+      "source": "restaurants-national",
+      "url": "https://file.localdata.go.kr/file/general_restaurants/info",
+      "result": "HTTP403 redirected /error.html in both requests and normal browser; nationwide file NOT acquired"
+    },
+    {
+      "source": "seoul-original-files-tab",
+      "url": "https://data.seoul.go.kr/dataList/OA-23056/S/1/datasetView.do",
+      "result": "No static attachments; used official sheet CSV download instead"
+    }
+  ],
+  "license_audit_amendment": "2026-11-03: initial blanket license assumption corrected against actual official JSON-LD; raw bytes/hashes unchanged, initial manifest retained.",
+  "files": {
+    "datasets\\korea-v1\\raw\\markets-data-1.json": {
+      "bytes": 783788,
+      "sha256": "13ffd04a946ec7eec28222c8c3762f2e77aab919cd250888cdaaf7f51cce303b"
+    },
+    "datasets\\korea-v1\\raw\\parking-data-1.json": {
+      "bytes": 9558029,
+      "sha256": "c6144faf8eff6b98300dd6303341ef47b381c58cd4568fd2d789da8d5df1d8f8"
+    },
+    "datasets\\korea-v1\\raw\\parking-data-2.json": {
+      "bytes": 8513702,
+      "sha256": "0feee56ffadb2d8eec9fb4a04f4ba59186f3b460e21e289b2c822a34c1624837"
+    },
+    "datasets\\korea-v1\\raw\\restaurants-seoul-permit2025.csv": {
+      "bytes": 6522464,
+      "sha256": "471d4f322e537c8487c4110ef9b6a293219885b04931570fb31fe7c7521723c1"
+    },
+    "datasets\\korea-v1\\raw\\shops-20260930.zip": {
+      "bytes": 349070686,
+      "sha256": "c83b30e7a1d1144864a91d0e1818abf360f565972878d6e3c88d75ceafe2286a"
+    },
+    "datasets\\korea-v1\\raw\\shops-sejong.csv": {
+      "bytes": 9816519,
+      "sha256": "f2b8291cf26b55f91ac82385d63b417662562cce8536c80551ee2290f87c3023"
+    },
+    "datasets\\korea-v1\\derived\\markets-json-null-mask.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "datasets\\korea-v1\\derived\\markets.csv": {
+      "bytes": 399627,
+      "sha256": "a5809d4b849179eb021459cfdaa48f095fb8c8241aa49561f402fa466b082862"
+    },
+    "datasets\\korea-v1\\derived\\parking-json-null-mask.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "datasets\\korea-v1\\derived\\parking.csv": {
+      "bytes": 6564352,
+      "sha256": "a0ffcca0d08cd5657932cfc85f83c4656a18e2759c7c58b8465862b1dfeef903"
+    },
+    "datasets\\korea-v1\\pages\\15012894-columns.json": {
+      "bytes": 5531,
+      "sha256": "ac055c16654f7db1a7403e6c6c5fc533a50a40147c426831442ec31112376dce"
+    },
+    "datasets\\korea-v1\\pages\\15012896-columns.json": {
+      "bytes": 6903,
+      "sha256": "4f36b113a331b516aee44c8154dafeaab9647fdc1aaaa70f2205c86f4fc2b705"
+    },
+    "datasets\\korea-v1\\pages\\checkbox-util.js": {
+      "bytes": 2103,
+      "sha256": "132bc2c913a48e425bdd535daa32bb976bd56acef908abf0eec247966ad97926"
+    },
+    "datasets\\korea-v1\\pages\\custom.js": {
+      "bytes": 17083,
+      "sha256": "a5987e1ce557021c4e2f042ac7e79daa486a9f4a4438f58c3eb5f7481dcd4a84"
+    },
+    "datasets\\korea-v1\\pages\\file-category-util.js": {
+      "bytes": 2030,
+      "sha256": "3c0415ab00dbd5996f242b16157389c823e5d10788eee44ca00c2da00ebea13f"
+    },
+    "datasets\\korea-v1\\pages\\jquery-3.7.1.min.js": {
+      "bytes": 87533,
+      "sha256": "fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a"
+    },
+    "datasets\\korea-v1\\pages\\loading.js": {
+      "bytes": 10334,
+      "sha256": "57e3a517ef84359539a923e9d7edcf343f80381870f0f5b412c6406ff76d43b3"
+    },
+    "datasets\\korea-v1\\pages\\markets-data-1.json": {
+      "bytes": 783788,
+      "sha256": "13ffd04a946ec7eec28222c8c3762f2e77aab919cd250888cdaaf7f51cce303b"
+    },
+    "datasets\\korea-v1\\pages\\markets.html": {
+      "bytes": 1167271,
+      "sha256": "b03934d4870b55e8e859acb95614b02d62ed4833fbf210b55fa0015c764d4646"
+    },
+    "datasets\\korea-v1\\pages\\parking-data-1.json": {
+      "bytes": 9558029,
+      "sha256": "c6144faf8eff6b98300dd6303341ef47b381c58cd4568fd2d789da8d5df1d8f8"
+    },
+    "datasets\\korea-v1\\pages\\parking-data-2.json": {
+      "bytes": 8513702,
+      "sha256": "0feee56ffadb2d8eec9fb4a04f4ba59186f3b460e21e289b2c822a34c1624837"
+    },
+    "datasets\\korea-v1\\pages\\parking.html": {
+      "bytes": 2003952,
+      "sha256": "1d525a94195e6c8af9677e7ca677fc339ac5ee2ac34704ff8d513aeea8799684"
+    },
+    "datasets\\korea-v1\\pages\\restaurants-files.html": {
+      "bytes": 979,
+      "sha256": "3dc560e67611e2aee9d0092f30980c3e795b62c30ab5ddf77a95f0eb55fcac84"
+    },
+    "datasets\\korea-v1\\pages\\restaurants-official.html": {
+      "bytes": 148,
+      "sha256": "0004512307accff35c679443b6579b281a68091aaf4246721060e11fbc0ffd66"
+    },
+    "datasets\\korea-v1\\pages\\restaurants.html": {
+      "bytes": 174206,
+      "sha256": "0c340d813d27de650f50d34efd5d40c343447e84e413ac4d2f13ee1ed7f22a66"
+    },
+    "datasets\\korea-v1\\pages\\script_cmmFunction.js": {
+      "bytes": 46458,
+      "sha256": "2048e7b038d250149e9e829016c9148f186127deecdaeb4ef3b18c0285fe92cc"
+    },
+    "datasets\\korea-v1\\pages\\script_cmmPopup.js": {
+      "bytes": 9711,
+      "sha256": "d999b12d5c33ad8e58c2be673273f77ead49ea69f649367d25f83d0d624ea4c2"
+    },
+    "datasets\\korea-v1\\pages\\script_codeSetting.js": {
+      "bytes": 20159,
+      "sha256": "6531c0d131cee0bdd7d27fa3a63b322127e0619a05257b6b1357440f604a58e9"
+    },
+    "datasets\\korea-v1\\pages\\script_fileDetail.js": {
+      "bytes": 14089,
+      "sha256": "c0a16f78770cdc96f2698b1f13425696bd38b295dcda4b2a17f832bc65b6ce33"
+    },
+    "datasets\\korea-v1\\pages\\script_formUtil.js": {
+      "bytes": 671,
+      "sha256": "5ddc24d145e0017d2d9f0d7cac05c773c5e36b70c15db3a7280585267cd4e5fe"
+    },
+    "datasets\\korea-v1\\pages\\script_numberUtil.js": {
+      "bytes": 1066,
+      "sha256": "5df6112d0bb61a469547811fe332b8262bb28a9b8958815a0c6bd70a722ddff3"
+    },
+    "datasets\\korea-v1\\pages\\script_openSourceSetting.js": {
+      "bytes": 8259,
+      "sha256": "ce8b89258d0aa443232a3431c53a310a364be2c5384edc2478e83b120e13636d"
+    },
+    "datasets\\korea-v1\\pages\\script_sessionExtend.js": {
+      "bytes": 7320,
+      "sha256": "2ed6e329ebb1226966e3ae94b95deece169c965b28401051b5b7904ce6151fc8"
+    },
+    "datasets\\korea-v1\\pages\\script_stringUtil.js": {
+      "bytes": 5261,
+      "sha256": "91f32893471165395b2bc923f342b388b9acd3510521833f04c55f2ed67deb07"
+    },
+    "datasets\\korea-v1\\pages\\script_voiceCaptcha.js": {
+      "bytes": 1703,
+      "sha256": "2f8e96733278375abd6694df4bcf8ff10906bf45f9c11fc493d7c9bfbe3a6f12"
+    },
+    "datasets\\korea-v1\\pages\\seoul-restaurants.html": {
+      "bytes": 357576,
+      "sha256": "7e3726354ca95e1e120ad2170d48de9096b60ce10388a83eee6cf4e2cf7e2fbe"
+    },
+    "datasets\\korea-v1\\pages\\seoul-sheet.html": {
+      "bytes": 25192,
+      "sha256": "78a535679153ed2851663d8f061601a784acf127ea96db6d25620074b8f5e743"
+    },
+    "datasets\\korea-v1\\pages\\shops-detail.html": {
+      "bytes": 7306,
+      "sha256": "dcd2a4d09c682ad0506698b82fe1d19abd55236161640fd46aa13380a3c1c338"
+    },
+    "datasets\\korea-v1\\pages\\shops-download.json": {
+      "bytes": 10637,
+      "sha256": "004284e465c58bc6a628c658c5ccac2e8af2407a25d3eac4a7df4f122f654a7e"
+    },
+    "datasets\\korea-v1\\pages\\shops-files.html": {
+      "bytes": 19261,
+      "sha256": "d1ba04d40a263b6d12873047eae371a191311d7fe52e83dc3ae82ae05dafa54a"
+    },
+    "datasets\\korea-v1\\pages\\shops.html": {
+      "bytes": 168616,
+      "sha256": "8f8b0e28e02de12572b39855c9a0235225afda94e8340c400ed62e45bdb958ad"
+    },
+    "datasets\\korea-v1\\pages\\slick.min.js": {
+      "bytes": 42863,
+      "sha256": "0c7178cc6ca34fb18e30f070a5e7a1c287b2d7ccfcba2cfdf06e0f46eda55740"
+    },
+    "datasets\\korea-v1\\pages\\std-detail-view.js": {
+      "bytes": 1036,
+      "sha256": "e9406ca2ef348feeb86911518dc76d033120d8e69138713625364f944b26608d"
+    },
+    "datasets\\korea-v1\\pages\\std-download-manager.js": {
+      "bytes": 16234,
+      "sha256": "adc756b67b1513d2af4809c54a0e4126860e5e3e60d92b855b78bbb45cd8d356"
+    },
+    "datasets\\korea-v1\\pages\\swiper-bundle.min.js": {
+      "bytes": 148886,
+      "sha256": "b44a3f3460a97289270293d2f810c81895df9c74d605ec533a399b21691a4eb8"
+    },
+    "datasets\\korea-v1\\pages\\ui-script.js": {
+      "bytes": 88807,
+      "sha256": "223688bf9985d393e56e0c65f83ad724480a471558ccccda0d0a56fb4f53fd4a"
+    }
+  }
+}

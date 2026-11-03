@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-03T05:30:56.025495+00:00",
+  "checks": {
+    "actual_POST_full_request_output_usage_hash_verified": 26,
+    "blocked_unsubmitted": 23,
+    "saved_CSV_both_profiles_reconstructed": 18
+  },
+  "new_inferences": 0,
+  "old270_D_C_records_preserved": true,
+  "profiles_model_baseline_unchanged": true,
+  "progress": {
+    "at": "2026-11-03T05:30:56.935186+00:00",
+    "app_actual_POSTs": 1,
+    "app_slots": 1,
+    "app_reference_cost_usd": 0.0058935,
+    "global_actual_POSTs": 446,
+    "remaining_calls": 4,
+    "global_reference_cost_usd": 2.6077649999999997,
+    "remaining_reference_usd": 7.392235000000001,
+    "uncertain_ids": [],
+    "new_inferences_from_status": 0
+  },
+  "mock_tests_are_separate": true,
+  "truth_read_for_requests": false
+}

@@ -1,0 +1,10 @@
+{
+  "version": "C-kr-v1-semantic-contract-20261103",
+  "baseline": "C full v0 profile, Gemini3.8Flash/global/LOW/4096/v2 output contract unchanged",
+  "changed_information": "No profile features added/removed, no raw rows added. One generic instruction augmentation only.",
+  "additional_instruction": "Before deciding, check semantic compatibility of the described attribute, entity role, event or time point, unit, and coding scheme. Equal-looking strings or similar numerical distributions do not establish that compatibility. Distinguish an identifier from its label, one coding scheme from another, an event date from a dataset update date, a duration from a clock time, and a base charge from an incremental charge. These are general semantic checks, not mandatory rejection rules: use all supplied evidence. When metadata positively establishes that no candidate has the same attribute meaning, use no_match. When the evidence cannot establish which candidate has that meaning, use needs_review; do not guess or silently convert values. If a correspondence requires a format, unit or coordinate transformation, say so briefly rather than claiming that values are already interchangeable. Retain the existing three states and exact supplied IDs.",
+  "development_observation": "Three prespecified domestic baseline tasks all valid and provisionally correct. No error correction is claimed. This single hypothesis candidate tests a generic semantic compatibility instruction; no dataset-name/answer-specific forced mapping rules.",
+  "selection_rule": "One candidate only; freeze before candidate development calls, then final evaluation once. Never retune from evaluation results.",
+  "promotion_rule": "Require strictly greater planned-denominator Top1 without lower matched precision on heldout tasks; otherwise retain C. This small provisional reference cannot prove commercial readiness.",
+  "contact_policy": "No telephone/homepage/person/contact fields in study inputs; no actual rows in public Git. All available baseline C profile features retained for allowed columns."
+}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-03T05:35:00.339003+00:00",
+  "app_actual_POSTs": 1,
+  "app_slots": 1,
+  "app_reference_cost_usd": 0.0058935,
+  "global_actual_POSTs": 446,
+  "remaining_calls": 4,
+  "global_reference_cost_usd": 2.6077649999999997,
+  "remaining_reference_usd": 7.392235000000001,
+  "uncertain_ids": [],
+  "new_inferences_from_status": 0
+}

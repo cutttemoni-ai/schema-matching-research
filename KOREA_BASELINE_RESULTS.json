@@ -1,0 +1,623 @@
+{
+  "version": "kr-C-evaluation-v1",
+  "at": "2026-11-03T05:16:12.054667+00:00",
+  "phases": [
+    "baseline"
+  ],
+  "truth_status": "assistant provisional; NOT human-validated",
+  "totals": [
+    {
+      "method": "C",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 1,
+      "auto_correct": 1,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.3333333333333333,
+      "none_n": 2,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 10010,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 215,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 10225,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 9.372044999996433,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 11.535950400022557,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0166275,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00831375,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "dimension": "condition",
+      "value": "original",
+      "method": "C",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 1,
+      "auto_correct": 1,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.3333333333333333,
+      "none_n": 2,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 10010,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 215,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 10225,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 9.372044999996433,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 11.535950400022557,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0166275,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00831375,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_family",
+      "value": "restaurants",
+      "method": "C",
+      "planned": 1,
+      "correct": 1,
+      "top1": 1.0,
+      "categories": {
+        "correct": 1
+      },
+      "valid_output_n": 1,
+      "review_ratio": 0.0,
+      "auto_links": 0,
+      "auto_correct": 0,
+      "auto_precision": null,
+      "auto_coverage": 0.0,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 3503,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 91,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 1
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 1
+        },
+        "total_tokens": {
+          "observed_sum": 3594,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 2.914559700002428,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 3.7466725000122096,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.005937,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.0029685,
+          "observed_n": 1,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_family",
+      "value": "shops",
+      "method": "C",
+      "planned": 2,
+      "correct": 2,
+      "top1": 1.0,
+      "categories": {
+        "correct": 2
+      },
+      "valid_output_n": 2,
+      "review_ratio": 0.0,
+      "auto_links": 1,
+      "auto_correct": 1,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.5,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 6507,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 124,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 2
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 2
+        },
+        "total_tokens": {
+          "observed_sum": 6631,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 6.457485299994005,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 7.789277900010347,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0106905,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00534525,
+          "observed_n": 2,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_type",
+      "value": "date",
+      "method": "C",
+      "planned": 1,
+      "correct": 1,
+      "top1": 1.0,
+      "categories": {
+        "correct": 1
+      },
+      "valid_output_n": 1,
+      "review_ratio": 0.0,
+      "auto_links": 0,
+      "auto_correct": 0,
+      "auto_precision": null,
+      "auto_coverage": 0.0,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 3503,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 91,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 1
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 1
+        },
+        "total_tokens": {
+          "observed_sum": 3594,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 2.914559700002428,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 3.7466725000122096,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.005937,
+          "observed_n": 1,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.0029685,
+          "observed_n": 1,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "source_type",
+      "value": "string",
+      "method": "C",
+      "planned": 2,
+      "correct": 2,
+      "top1": 1.0,
+      "categories": {
+        "correct": 2
+      },
+      "valid_output_n": 2,
+      "review_ratio": 0.0,
+      "auto_links": 1,
+      "auto_correct": 1,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.5,
+      "none_n": 1,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 6507,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 124,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 2
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 2
+        },
+        "total_tokens": {
+          "observed_sum": 6631,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 6.457485299994005,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 7.789277900010347,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0106905,
+          "observed_n": 2,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00534525,
+          "observed_n": 2,
+          "missing_n": 0
+        }
+      }
+    },
+    {
+      "dimension": "test_kind",
+      "value": "cross-source",
+      "method": "C",
+      "planned": 3,
+      "correct": 3,
+      "top1": 1.0,
+      "categories": {
+        "correct": 3
+      },
+      "valid_output_n": 3,
+      "review_ratio": 0.0,
+      "auto_links": 1,
+      "auto_correct": 1,
+      "auto_precision": 1.0,
+      "auto_coverage": 0.3333333333333333,
+      "none_n": 2,
+      "none_wrong_auto": 0,
+      "none_wrong_auto_rate": 0.0,
+      "usage": {
+        "input_tokens": {
+          "observed_sum": 10010,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 215,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 3
+        },
+        "total_tokens": {
+          "observed_sum": 10225,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "model_seconds": {
+          "observed_sum": 9.372044999996433,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "local_seconds": {
+          "observed_sum": 11.535950400022557,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "standard_cost_usd": {
+          "observed_sum": 0.0166275,
+          "observed_n": 3,
+          "missing_n": 0
+        },
+        "current_no_cache_upper_usd": {
+          "observed_sum": 0.00831375,
+          "observed_n": 3,
+          "missing_n": 0
+        }
+      }
+    }
+  ],
+  "pairs": [],
+  "profile_counts": {
+    "source_columns": 3,
+    "numeric_aggregate_columns": 0,
+    "date_range_columns": 1,
+    "types": {
+      "string": 2,
+      "date": 1
+    }
+  },
+  "progress": {
+    "at": "2026-11-03T05:16:12.717206+00:00",
+    "planned": 3,
+    "categories": {
+      "valid_output": 3
+    },
+    "actual_POSTs": 3,
+    "reserved_slots": 3,
+    "prior_calls": 420,
+    "global_calls": 423,
+    "remaining_calls": 27,
+    "reference_cost_usd": 0.0166275,
+    "global_reference_cost_usd": 2.4700769999999994,
+    "remaining_reference_usd": 7.529923,
+    "retries": 0
+  },
+  "improved": 0,
+  "worsened": 0,
+  "paired_usage": {
+    "planned_pairs": 0,
+    "observed_pairs": 0,
+    "missing_pairs": 0,
+    "C_input": 0,
+    "candidate_input": 0,
+    "C_standard_cost": 0,
+    "candidate_standard_cost": 0
+  },
+  "actual_invoice_verified": false,
+  "new_inferences_in_scoring": 0,
+  "rows": [
+    {
+      "id": "c61966f5070a20a504cb302aeba99491",
+      "order": 1,
+      "task_id": "dev-shop-name",
+      "condition": "original",
+      "method": "C",
+      "source_id": "shops_001",
+      "target_id": "t_restaurants_001",
+      "status": "matched",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": true,
+      "phase": "baseline",
+      "source_family": "shops",
+      "target_family": "restaurants",
+      "test_kind": "cross-source",
+      "source_name": "상호명",
+      "source_type": "string",
+      "expected_no_match": false,
+      "expected_target": "t_restaurants_001",
+      "target_name": "사업장명",
+      "execution_category": "valid_output",
+      "input_tokens": 3517,
+      "output_tokens": 76,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3593,
+      "standard_cost_usd": 0.0058455,
+      "current_no_cache_upper_usd": 0.00292275,
+      "model_seconds": 2.8794330999953672,
+      "local_seconds": 3.6440541000047233,
+      "finished_at": "2026-11-03T05:14:42.195236+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "2ee185135b46af1a5bf6de99e7990ed8",
+      "order": 2,
+      "task_id": "dev-industry-code",
+      "condition": "original",
+      "method": "C",
+      "source_id": "shops_004",
+      "target_id": null,
+      "status": "no_match",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": false,
+      "phase": "baseline",
+      "source_family": "shops",
+      "target_family": "restaurants",
+      "test_kind": "cross-source",
+      "source_name": "상권업종소분류코드",
+      "source_type": "string",
+      "expected_no_match": true,
+      "expected_target": null,
+      "target_name": null,
+      "execution_category": "valid_output",
+      "input_tokens": 2990,
+      "output_tokens": 48,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3038,
+      "standard_cost_usd": 0.004845,
+      "current_no_cache_upper_usd": 0.0024225,
+      "model_seconds": 3.5780521999986377,
+      "local_seconds": 4.145223800005624,
+      "finished_at": "2026-11-03T05:14:49.177616+00:00",
+      "http_status": 200
+    },
+    {
+      "id": "d72b7242520c6d36d9e27212e2c6c5ac",
+      "order": 3,
+      "task_id": "dev-permit-date",
+      "condition": "original",
+      "method": "C",
+      "source_id": "restaurants_005",
+      "target_id": null,
+      "status": "no_match",
+      "correct": true,
+      "category": "correct",
+      "auto_link_eligible": false,
+      "phase": "baseline",
+      "source_family": "restaurants",
+      "target_family": "shops",
+      "test_kind": "cross-source",
+      "source_name": "인허가일자",
+      "source_type": "date",
+      "expected_no_match": true,
+      "expected_target": null,
+      "target_name": null,
+      "execution_category": "valid_output",
+      "input_tokens": 3503,
+      "output_tokens": 91,
+      "thought_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": 3594,
+      "standard_cost_usd": 0.005937,
+      "current_no_cache_upper_usd": 0.0029685,
+      "model_seconds": 2.914559700002428,
+      "local_seconds": 3.7466725000122096,
+      "finished_at": "2026-11-03T05:14:56.401530+00:00",
+      "http_status": 200
+    }
+  ],
+  "real_values_and_raw_responses_omitted": true
+}
