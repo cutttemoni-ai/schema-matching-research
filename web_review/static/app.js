@@ -16,7 +16,7 @@ async function api(path,method='GET',body=null,headers={}){
 }
 async function busy(action){if(S.busy)return;S.busy=true;$$('button[data-mutating]').forEach(b=>b.disabled=true);try{await action();}catch(e){toast(e.message);if(e.details?.issues)showIssues(e.details);}finally{S.busy=false;$$('button[data-mutating]').forEach(b=>b.disabled=false);}}
 function heading(title,sub,action=''){return `<div class="heading"><div><div class="eyebrow">데이터 연결 작업 공간</div><h1 class="task-title">${esc(title)}</h1><p>${esc(sub)}</p></div>${action}</div>`;}
-function footer(){return `<footer class="footer"><span>열잇기 · AI 추천, 사람의 최종 승인</span><span>개인 작업 분리 · 비공개 저장 · 보관7일</span></footer>`;}
+function footer(){return `<footer class="footer"><span>DataFit · AI 추천, 사람의 최종 승인</span><span>개인 작업 분리 · 비공개 저장 · 보관7일</span></footer>`;}
 function badge(text,style=''){return `<span class="badge ${style}">${esc(text)}</span>`;}
 const phaseNames={draft:'추천 준비',inferencing:'AI 추천 진행',review:'검토 대기',executing:'결과 생성 중',execution_failed:'결과 생성 실패',completed:'승인·생성 완료'};
 const aiNames={matched:'연결 추천',needs_review:'검토 필요',no_match:'연결 없음',api_failure:'API 실패',unprocessed:'미처리'};
