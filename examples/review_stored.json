@@ -1,0 +1,91 @@
+{
+  "provenance": "stored_actual_deployment_C_inference_on_synthetic_data",
+  "synthetic": true,
+  "new_inference_count": 0,
+  "wire_sha256": "769e4dbe4c7fa62d6ab49b9ee16c7d86801b41de5ccfb26ce339701a60e6416a",
+  "source_sha256": "cea3b09e17bb7e80138412c49928b5fbb200d55d4f9eb90340095b6854aec73e",
+  "source_name": "배포검증_합성상품.csv",
+  "initial_recommendations": [
+    {
+      "source_id": "src_001",
+      "target_id": "product_code",
+      "status": "matched",
+      "reason": "Column name translates to product code and sample values are zero-padded string codes."
+    },
+    {
+      "source_id": "src_002",
+      "target_id": "product_name",
+      "status": "matched",
+      "reason": "ITEM_NM and sample values '무선 마우스', '유선 키보드' clearly indicate product names."
+    }
+  ],
+  "raw_recommendations": [
+    {
+      "source_id": "src_001",
+      "target_id": "product_code",
+      "status": "matched",
+      "reason": "Column name translates to product code and sample values are zero-padded string codes."
+    },
+    {
+      "source_id": "src_002",
+      "target_id": "product_name",
+      "status": "matched",
+      "reason": "ITEM_NM and sample values '무선 마우스', '유선 키보드' clearly indicate product names."
+    }
+  ],
+  "model_id": "gemini-3.8-flash",
+  "method": "C",
+  "saved_at": "2026-11-03T04:12:30.329900+00:00",
+  "children": [
+    {
+      "request_id": "0c0877305f4b4cb49186ff8af7f288cb",
+      "saved_at": "2026-11-03T04:12:26.048873+00:00",
+      "usage": {
+        "candidates_token_count": 44,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 44
+          }
+        ],
+        "prompt_token_count": 1363,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1363
+          }
+        ],
+        "thoughts_token_count": 76,
+        "total_token_count": 1483,
+        "traffic_type": "ON_DEMAND"
+      },
+      "model_call_seconds": 3.1400493370000504,
+      "model_id": "gemini-3.8-flash"
+    },
+    {
+      "request_id": "79aca3465316454aaa912e7652c5d726",
+      "saved_at": "2026-11-03T04:12:30.329900+00:00",
+      "usage": {
+        "candidates_token_count": 52,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 52
+          }
+        ],
+        "prompt_token_count": 1363,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1363
+          }
+        ],
+        "thoughts_token_count": 80,
+        "total_token_count": 1495,
+        "traffic_type": "ON_DEMAND"
+      },
+      "model_call_seconds": 3.41836397000003,
+      "model_id": "gemini-3.8-flash"
+    }
+  ]
+}

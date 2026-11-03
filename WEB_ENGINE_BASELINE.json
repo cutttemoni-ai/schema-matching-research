@@ -1,0 +1,14 @@
+{
+  "stable_commit": "cbfecba9232b2ed089d9812478aa190862435020",
+  "previous_revision": "schema-c-web-00003-kcm",
+  "files": {
+    "schema_match/profiles.py": "9dd42eb27f7a2f18242b0ec52f1d62cf7657a4f187eef5f2a3d874ec2730cab0",
+    "schema_match/vertex_provider_v1.py": "9097af7142b9a2988e3af27049258aebd1ed62b95a649d654e8bcfc61925eb3a",
+    "schema_match/vertex_budget_v1_2.py": "684b74c3fc25ed020d7220c3d02b2250151743f38b4c3bf8faddefc8dae6ccd8",
+    "schema_match/cloud_c_service.py": "39c39ca9faf875bfdfd76a077ffd6935dfc46ed6e63de857b0c7ddb91994e420",
+    "config/comparison_v0.json": "ba5efdcaf41b6b7e791e51a15f11f57fe75508ee968be34a50e9c9b535005488",
+    "config/gcp_research_v1.json": "a02f3d1ef07a35a9c93c75681659f06ac718564cfccacee7b92576aea012a91c",
+    "config/gcp_budget_v1_2.json": "cf533cb6deb366d9991e72034d46653ef5926e4cbe7f7b06d41e494f1141ce79",
+    "schemas/product_order.json": "b0358adbb2efb8c5d75029734a09d7592d9bc592d156335696984be67660236d"
+  }
+}

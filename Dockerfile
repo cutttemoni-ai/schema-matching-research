@@ -9,6 +9,7 @@ COPY config/gcp_research_v1.json config/gcp_budget_v1_2.json config/comparison_v
 COPY schemas ./schemas
 COPY examples ./examples
 COPY cloud_app.py PROFILE_SPEC.md GEMINI_EVALUATION_RESULTS.md ./
+COPY web_review ./web_review
 USER 65532:65532
 EXPOSE 8080
-CMD ["sh", "-c", "exec streamlit run cloud_app.py --server.address=0.0.0.0 --server.port=${PORT:-8080} --server.headless=true --server.maxUploadSize=1 --browser.gatherUsageStats=false"]
+CMD ["sh", "-c", "exec uvicorn web_review.app:app --host 0.0.0.0 --port ${PORT:-8080} --workers 1 --no-access-log --timeout-keep-alive 5"]
