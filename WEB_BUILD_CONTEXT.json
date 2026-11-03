@@ -1,0 +1,173 @@
+{
+  "source_commit": "08647b96b4d3549ce2bfc1578d21e9a6ccbb2f9a",
+  "source_files": {
+    "cloud_app.py": {
+      "sha256": "39393c0e6d1b6816737d688977a04dd844758bfb82294519aa6579c8c47c53dd",
+      "bytes": 9212,
+      "matches_git_release_text": true
+    },
+    "Dockerfile": {
+      "sha256": "54f66a1f139a3c8de472e9c398432fb70d5b7cfa7bb8f6a3e9caa0d85358d1f8",
+      "bytes": 967,
+      "matches_git_release_text": true
+    },
+    "GEMINI_EVALUATION_RESULTS.md": {
+      "sha256": "2c37de2a331569fa7eb4b1e28050a3b1edab808d75f1996dae4d1d16f858fa60",
+      "bytes": 72628,
+      "matches_git_release_text": true
+    },
+    "PROFILE_SPEC.md": {
+      "sha256": "29a826d2708525bc5af402f057ed81537015c3fe0f036e2e6d1b82ac5c9fd2f8",
+      "bytes": 10530,
+      "matches_git_release_text": true
+    },
+    "requirements-gcp.lock.txt": {
+      "sha256": "f0c19073b44d8715c505fc88f0670899b1322c93995570e84be8ab02859f76e8",
+      "bytes": 1412,
+      "matches_git_release_text": true
+    },
+    "config/comparison_v0.json": {
+      "sha256": "ba5efdcaf41b6b7e791e51a15f11f57fe75508ee968be34a50e9c9b535005488",
+      "bytes": 3871,
+      "matches_git_release_text": true
+    },
+    "config/gcp_budget_v1_2.json": {
+      "sha256": "cf533cb6deb366d9991e72034d46653ef5926e4cbe7f7b06d41e494f1141ce79",
+      "bytes": 619,
+      "matches_git_release_text": true
+    },
+    "config/gcp_research_v1.json": {
+      "sha256": "a02f3d1ef07a35a9c93c75681659f06ac718564cfccacee7b92576aea012a91c",
+      "bytes": 1356,
+      "matches_git_release_text": true
+    },
+    "examples/abbreviated.csv": {
+      "sha256": "2237cdf8f0049db163fc295025f678becffda52323e4e9432ce1af8bfa970ace",
+      "bytes": 147,
+      "matches_git_release_text": true
+    },
+    "examples/extra_columns.csv": {
+      "sha256": "278a296dbcddb4b482f3a3c0a2b4cecb63e9d156ca9be0de58d23501d511bed9",
+      "bytes": 275,
+      "matches_git_release_text": true
+    },
+    "examples/normal.csv": {
+      "sha256": "c98b1c5978af66d8be1e69c8e8ecfe36e724e82b6d0c6bb3fab7d6ee616eb6dd",
+      "bytes": 213,
+      "matches_git_release_text": true
+    },
+    "examples/review_source.csv": {
+      "sha256": "cea3b09e17bb7e80138412c49928b5fbb200d55d4f9eb90340095b6854aec73e",
+      "bytes": 73,
+      "matches_git_release_text": true
+    },
+    "examples/review_stored.json": {
+      "sha256": "40a80235f5163c35821e7db5f46cde430bb5799d2f8a519577ee1be3484f2bf6",
+      "bytes": 2852,
+      "matches_git_release_text": true
+    },
+    "schemas/product_order.json": {
+      "sha256": "b0358adbb2efb8c5d75029734a09d7592d9bc592d156335696984be67660236d",
+      "bytes": 877,
+      "matches_git_release_text": true
+    },
+    "schema_match/cloud_c_service.py": {
+      "sha256": "39c39ca9faf875bfdfd76a077ffd6935dfc46ed6e63de857b0c7ddb91994e420",
+      "bytes": 16185,
+      "matches_git_release_text": true
+    },
+    "schema_match/config.py": {
+      "sha256": "371fcea934e1e3e28410380836437b7b6cf0cc3475b47b8a9ef548deb9a4ee78",
+      "bytes": 3264,
+      "matches_git_release_text": true
+    },
+    "schema_match/files.py": {
+      "sha256": "a030e98b6861b3ae8bc6fc1caad1e0df0fce5065851874fdac1cc119ee0d40c2",
+      "bytes": 4067,
+      "matches_git_release_text": true
+    },
+    "schema_match/models.py": {
+      "sha256": "4479c3629bfad8e55b8dadb1f99e7531a4033ff49674a8176e3b5930741cf5bf",
+      "bytes": 749,
+      "matches_git_release_text": true
+    },
+    "schema_match/profiles.py": {
+      "sha256": "9dd42eb27f7a2f18242b0ec52f1d62cf7657a4f187eef5f2a3d874ec2730cab0",
+      "bytes": 8347,
+      "matches_git_release_text": true
+    },
+    "schema_match/records.py": {
+      "sha256": "86c2b6a62db4d8e3bc9ac11ca392ace6f1f99bb464eb5a184a09a12c43f1a28f",
+      "bytes": 803,
+      "matches_git_release_text": true
+    },
+    "schema_match/review.py": {
+      "sha256": "8543db8dfec214c05343fbf1f9b43022a7de3b75b9a4e7ad8a63dcd950db0505",
+      "bytes": 3846,
+      "matches_git_release_text": true
+    },
+    "schema_match/vertex_budget_v1_2.py": {
+      "sha256": "684b74c3fc25ed020d7220c3d02b2250151743f38b4c3bf8faddefc8dae6ccd8",
+      "bytes": 1211,
+      "matches_git_release_text": true
+    },
+    "schema_match/vertex_provider_v1.py": {
+      "sha256": "9097af7142b9a2988e3af27049258aebd1ed62b95a649d654e8bcfc61925eb3a",
+      "bytes": 13642,
+      "matches_git_release_text": true
+    },
+    "schema_match/__init__.py": {
+      "sha256": "6be521236aa396b0dcd918cbedfbd4e21591c5ba232e6f0bccb524002897a4a6",
+      "bytes": 58,
+      "matches_git_release_text": true
+    },
+    "web_review/app.py": {
+      "sha256": "1a3ce6a57c42e0976411c73f1978d8973d0c9c0e172a00cbd7239dc395b1c422",
+      "bytes": 10553,
+      "matches_git_release_text": true
+    },
+    "web_review/auth.py": {
+      "sha256": "9514dd70605edeea4df1c7b318270a379ee07b8318d16e60c5ba7fec2529505b",
+      "bytes": 3567,
+      "matches_git_release_text": true
+    },
+    "web_review/service.py": {
+      "sha256": "6cb5371a7b67f03da3d201c102e10e9fa0d5da8a90d19d92f8ffa4a904438007",
+      "bytes": 21740,
+      "matches_git_release_text": true
+    },
+    "web_review/storage.py": {
+      "sha256": "834d66e78b13d394806807cedc4125bc1e6867fda84f61f51b8602a118518318",
+      "bytes": 5436,
+      "matches_git_release_text": true
+    },
+    "web_review/transforms.py": {
+      "sha256": "86bace72feda17aaf378dc2381893aa750e68d32ecf1d8ce71cf818827f413cd",
+      "bytes": 8206,
+      "matches_git_release_text": true
+    },
+    "web_review/__init__.py": {
+      "sha256": "08fb6342ac48ef25cb3976bd53b2487a33b9e677bdc82d66a65130d3a274607b",
+      "bytes": 90,
+      "matches_git_release_text": true
+    },
+    "web_review/static/app.css": {
+      "sha256": "11ae36027ccdf77af622691446ab5737855bb4a2a54a5227296f1b072c1038a4",
+      "bytes": 14699,
+      "matches_git_release_text": true
+    },
+    "web_review/static/app.js": {
+      "sha256": "452c44761cb2a9b04e0a261c551af7d57576f0471644de9d9d0a9158b950316d",
+      "bytes": 37272,
+      "matches_git_release_text": true
+    },
+    "web_review/static/index.html": {
+      "sha256": "d7debfe471f3fe21465ae90d80f7272ec1596b552d10a1ad88eee6a55aee0502",
+      "bytes": 3086,
+      "matches_git_release_text": true
+    }
+  },
+  "file_count": 33,
+  "credentials_raw_datasets_research_candidates_present": false,
+  "normalization_note": "All 33 source files match raw Git release bytes exactly; no newline normalization required."
+}

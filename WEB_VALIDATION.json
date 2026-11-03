@@ -1,0 +1,108 @@
+{
+  "runtime_commit": "08647b96b4d3549ce2bfc1578d21e9a6ccbb2f9a",
+  "revision": "schema-c-web-review2-08647b9",
+  "at": "2026-11-03T09:01:36.991145+00:00",
+  "tests": {
+    "passed": 259,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 15.624
+  },
+  "production_browser": {
+    "checks": [
+      "authenticated_home",
+      "real_cached_recommendations_labeled",
+      "readable_both_side_profiles_and_schema",
+      "unreviewed_approval_blocked",
+      "duplicate_and_required_target_blocked",
+      "column_search",
+      "preview_original_values",
+      "approval_executes_results",
+      "download_values_and_mapping",
+      "duplicate_approval_no_execution",
+      "refresh_reopens_without_inference",
+      "edit_revokes_approval_and_download",
+      "mobile_no_page_overflow",
+      "source_upload_custom_schema_and_reference_csv_no_inference",
+      "other_user_task_id_denied"
+    ],
+    "page_errors": [],
+    "new_inferences": 0,
+    "reference_site_interactions": 0
+  },
+  "live_model": {
+    "at": "2026-11-03T09:01:36.991145+00:00",
+    "task_id": "f76966ad4a078d8119a87ca014c145a5",
+    "app_commit": "08647b96b4d3549ce2bfc1578d21e9a6ccbb2f9a",
+    "engine_config_sha256": "388cb28951e744f51500221a8646c0c79037c1ff1b3dfc32f041791b50858581",
+    "model": "gemini-3.8-flash",
+    "new_deployment_model_calls": 1,
+    "deployment_calls_cumulative": 3,
+    "auto_inference_retries": 0,
+    "output_validation": "passed",
+    "initial_semantic_correct": true,
+    "initial_prediction": {
+      "reason": "Column name translates to product code and matches leading-zero values and format.",
+      "source_id": "src_001",
+      "status": "matched",
+      "target_id": "product_code"
+    },
+    "usage": {
+      "candidates_token_count": 73,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 73
+        }
+      ],
+      "prompt_token_count": 3776,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 3776
+        }
+      ],
+      "total_token_count": 3849,
+      "traffic_type": "ON_DEMAND"
+    },
+    "current_model_cost": {
+      "note": "No-cache upper bound, not a fabricated cache count or invoice",
+      "reason": "Cache component not reported; exact discounted charge cannot be asserted",
+      "status": "unestimated",
+      "upper_bound_usd": 0.00310575
+    },
+    "conservative_standard_cost_usd": 0.0062115,
+    "model_call_seconds": 4.2224011079999855,
+    "wall_seconds": 5.6039284909999765,
+    "target_profile_columns": 6,
+    "approval_and_download": true,
+    "source_values_preserved": true,
+    "reopen_extra_inferences": 0,
+    "research_scores_changed": false,
+    "product_budget_calls": 447,
+    "remaining_product_budget_calls": 3,
+    "global_service_quota_before": 2,
+    "global_service_quota_after": 3,
+    "auth_secrets_in_report": false,
+    "real_bill_tax_other_services_verified": false
+  },
+  "budget": {
+    "prior_calls": 446,
+    "new_calls": 1,
+    "total_calls": 447,
+    "limit_calls": 450,
+    "remaining_calls": 3,
+    "prior_conservative_usd": 2.607765,
+    "new_conservative_usd": 0.0062115,
+    "total_conservative_usd": 2.6139765,
+    "limit_usd": 10,
+    "remaining_conservative_usd": 7.3860235,
+    "new_budget_authorized": false
+  },
+  "previous_results_modified": false,
+  "accuracy_branch_merged": false,
+  "build_source_raw_bytes_match_release": true,
+  "cloud_jobs_deployed": false,
+  "auth_secrets_included": false
+}
