@@ -9,7 +9,7 @@
 - 안정 리비전 schema-c-web-00003-kcm, 트래픽100%.
 - 이미지 asia-northeast3-docker.pkg.dev/schema-match-gemini-261103/schema-web/c-web@sha256:7bec44a663fb5d43670fc3bb6528aef5115989d407ed5d2d5ff7ed5b51de4d27.
 - 실행 계정 schema-c-web@schema-match-gemini-261103.iam.gserviceaccount.com: 예측/CountTokens·서비스 사용 custom role, 전용 버킷 objectUser. 사용자 ADC/키·.env·실험 원본은 이미지에 없다.
-- IAM 인증 필요, allUsers/allAuthenticatedUsers 없음. 실제 URL 비인증403·공식 gcloud 인증 프록시의 원격 UI 접속을 확인했다. IAP/OAuth는 미적용. 승환님 이메일 미확인으로 초대·권한 부여·메시지0이다.
+- 최초 배포는 IAM 비공개였으나 2026-11-03 후속 사용자 요청으로 allUsers의 서비스 invoker를 허용했다. 실제 URL 비인증 HTTP200을 확인했고 GitHub 저장소도 PUBLIC으로 전환했다. IAP/OAuth는 미적용이며 계정 초대·메시지0이다. 전환은 PUBLIC_ACCESS.md에 별도 기록한다. 업로드 버킷·호출 상한·리비전·모델은 그대로다.
 -1CPU/1GiB, 최소0·서비스/리비전 최대1인스턴스, HTTP동시8,요청300초. GCS 전역 원자적 잠금으로 생성1개씩, UTC 일일20생성. CSV1MB/20열/10,000행, CountTokens admission20,000,파일180초 신규 호출 중단·단일 HTTP120초. 자동 재추론0이다.
 
 기존 Gemini3.8Flash/Vertex global/LOW/출력4096·SYSTEM·v2 결합 출력 계약·근거1~120자·전체 프로파일 v0를 유지한다. 원본1열/요청으로 주변 원본 문맥을 추가하지 않는다. 기본 대상6항목에는 실제 값이 없어 메타데이터만 제공하며 화면에 명시한다. 참조 CSV가 있을 때 해당 대상 프로파일을 계산한다. 연구의 양측 실제값/주석 후보 입력과 동일하지 않다.

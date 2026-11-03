@@ -6,8 +6,8 @@
 
 - 서비스: `schema-c-web`, 프로젝트 `schema-match-gemini-261103`, 서울 `asia-northeast3`.
 - 실제 URL: https://schema-c-web-392692577987.asia-northeast3.run.app
-- IAM 비공개이므로 주소를 인증 없이 열면403이 정상이다. 공개 액세스·allUsers는 허용하지 않는다.
-- 현재 연구 계정으로 인증한 공식 프록시를 통해 실제 원격 앱을 사용한다. 로컬 모델 서버를 실행하는 것이 아니다.
+- 2026-11-03 후속 사용자 요청으로 공개 전환했다. allUsers에 이 서비스의 roles/run.invoker만 부여했고, 인증 없는 실제 URL HTTP200을 확인했다.
+- 브라우저에서 실제 URL을 바로 연다. Google 로그인·인증 프록시는 필요하지 않다. 아래 프록시는 선택적인 기존 운영 경로다. 로컬 모델 서버를 실행하는 것은 아니다.
 
 ```powershell
 gcloud --configuration=schema-research-gemini run services proxy schema-c-web --project=schema-match-gemini-261103 --region=asia-northeast3 --port=8080
@@ -15,7 +15,7 @@ gcloud --configuration=schema-research-gemini run services proxy schema-c-web --
 
 접속: http://127.0.0.1:8080 . 필요하면 공식 `cloud-run-proxy` 구성 요소를 설치한다. CLI의 bundled Python 설치 제한이 발생하면 현재 프로세스에 `CLOUDSDK_PYTHON`을 설치된 Python3 경로로 지정한 뒤 재실행한다.
 
-승환님 이메일을 아직 모르므로 초대·권한 부여·메시지를 하지 않았다. 현재 연구 계정 화면으로 함께 점검한다. 추후 별도 PC 접속은 본인 Google 계정에 이 서비스의 `roles/run.invoker`만 부여하고 그 계정으로 CLI 로그인·프록시를 실행한다. 다른 사람의 ADC나 토큰을 복사하지 않는다. 일반 브라우저 Google 로그인 접속을 위한 IAP/OAuth는 이번 배포에 적용하지 않았다. IAM 인증은 유지한다.
+승환님은 계정 초대 없이 공개 웹앱에 접속하고 공개 GitHub 저장소를 복제할 수 있다. 저장소 쓰기 권한을 위한 초대·메시지는 하지 않았다. 로컬에서 Vertex를 직접 호출할 때만 본인 Google 계정의 권한과 ADC가 필요하다. 다른 사람의 ADC나 토큰을 복사하지 않는다. IAP/OAuth는 적용하지 않았다. 사용자 업로드 GCS 버킷은 계속 비공개이며 일일20생성 상한은 모든 공개 방문자의 합계다.
 
 ## 로컬 C 앱
 
