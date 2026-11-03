@@ -15,3 +15,5 @@
 
 .local-issues,.job-context p{overflow-wrap:anywhere;min-width:0}
 @media(max-width:700px){.btn{min-height:44px}.nav button{min-height:40px}.tab{min-height:40px}}
+
+.login-screen .shell{display:block}.login-screen .sidebar,.login-screen .topbar{display:none}.login-screen .main-wrap{max-width:420px;margin:12vh auto 0;padding:24px}.login-screen .heading{margin-bottom:18px}.login-screen .auth-layout{display:block;margin:0}.login-screen .auth-layout .card{padding:22px}.login-screen .field:first-child{margin-top:0}.login-screen #auth-submit{min-height:44px}

@@ -49,16 +49,19 @@ def create_app(objects=None,infer=None,executor=None):
             if not hmac.compare_digest(token,user['csrf']):raise WorkflowError('보안 세션을 확인하지 못했습니다. 새로고침해 주세요.',403)
         return user
     async def register(request):
+        if accounts.demo_only:raise WorkflowError('데모에서는 새 계정을 만들 수 없습니다.',403)
         same_origin(request);p=await payload(request,4096)
         token,u=await run_in_threadpool(accounts.register,p.get('username'),p.get('password'))
         response=JSONResponse({'user':{k:u[k] for k in ('uid','username','authentication')},'csrf':u['csrf']},201)
-        response.set_cookie(COOKIE,token,httponly=True,secure=bool(os.getenv('K_SERVICE')),samesite='lax',max_age=SESSION_SECONDS,path='/')
+        response.set_cookie(COOKIE,token,httponly=True,secure=bool(os.getenv('K_SERVICE')),samesite='lax',max_age=None if accounts.demo_only else SESSION_SECONDS,path='/')
         return response
     async def login(request):
         same_origin(request);p=await payload(request,4096)
         token,u=await run_in_threadpool(accounts.login,p.get('username'),p.get('password'))
+        previous=request.cookies.get(COOKIE)
+        if accounts.demo_only and previous:await run_in_threadpool(accounts.logout,previous)
         response=JSONResponse({'user':{k:u[k] for k in ('uid','username','authentication')},'csrf':u['csrf']})
-        response.set_cookie(COOKIE,token,httponly=True,secure=bool(os.getenv('K_SERVICE')),samesite='lax',max_age=SESSION_SECONDS,path='/')
+        response.set_cookie(COOKIE,token,httponly=True,secure=bool(os.getenv('K_SERVICE')),samesite='lax',max_age=None if accounts.demo_only else SESSION_SECONDS,path='/')
         return response
     async def session(request):
         u=await run_in_threadpool(principal,request)
@@ -70,7 +73,8 @@ def create_app(objects=None,infer=None,executor=None):
         cfg=load_config()
         return JSONResponse({'engine':'C','model':cfg['model'],'location':cfg['location'],'engine_config_sha256':digest(cfg),
             'targets':default_schema(),'transforms':TRANSFORMS,'transform_version':VERSION,'service_daily_limit':int(os.getenv('SERVICE_DAILY_CALL_LIMIT','20')),
-            'retention_days':7,'app_commit':os.getenv('APP_COMMIT','local-development'),'authentication':'app-password-session',
+            'retention_days':7,'app_commit':os.getenv('APP_COMMIT','local-development'),
+            'authentication':'demo-password-session' if accounts.demo_only else 'app-password-session','demo_mode':accounts.demo_only,
             'limits':{'csv_bytes':1048576,'source_columns':20,'target_columns':20,'rows':10000,'schema_bytes':65536}})
     async def tasks(request):
         u=await run_in_threadpool(principal,request,request.method!='GET')

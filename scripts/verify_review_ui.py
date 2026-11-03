@@ -3,12 +3,12 @@
 Only this owned app's allowlisted origins are navigated. Reference site is never
 visited or modified. Recommendation POST is blocked: this script generates0.
 """
-import argparse,csv,io,json,re,secrets,sys,uuid
+import argparse,csv,io,json,os,re,secrets,sys,uuid
 from pathlib import Path
 from urllib.parse import urlsplit
 from playwright.sync_api import sync_playwright,expect
 
-ALLOWED={'http://127.0.0.1:8504','https://schema-c-web-392692577987.asia-northeast3.run.app',
+ALLOWED={'http://127.0.0.1:8504','http://127.0.0.1:8506','https://schema-c-web-392692577987.asia-northeast3.run.app',
     'https://schema-c-web-42mhsk5ogq-du.a.run.app'}
 p=argparse.ArgumentParser();p.add_argument('--base',default='http://127.0.0.1:8504');p.add_argument('--out',default='deployment-artifacts/review-web-v2/local-ui');a=p.parse_args()
 base=a.base.rstrip('/')
@@ -27,9 +27,25 @@ with sync_playwright() as pw:
         r.continue_()
     context.route('**/*',route)
     page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
-    r=context.request.post(base+'/api/register',data={'username':username,'password':password})
-    assert r.status==201,r.status;user=r.json();csrf=user['csrf']
-    page.goto(base,wait_until='networkidle');expect(page.get_by_role('heading',name='작업 목록',exact=True)).to_be_visible()
+    cfg=context.request.get(base+'/api/config').json();demo_mode=cfg.get('demo_mode',False)
+    if demo_mode:
+        username=os.environ['DATAFIT_DEMO_USERNAME'];password=os.environ['DATAFIT_DEMO_PASSWORD']
+        page.goto(base,wait_until='networkidle')
+        expect(page.get_by_role('button',name='로그인',exact=True)).to_be_visible()
+        assert page.locator('input:visible').count()==2 and page.locator('#password').input_value()==''
+        assert page.get_by_role('button',name='계정 만들기',exact=True).count()==0
+        page.screenshot(path=str(out/'login.png'),full_page=True)
+        page.get_by_label('아이디',exact=True).fill(username);page.get_by_label('비밀번호',exact=True).fill(password+'-invalid')
+        page.get_by_role('button',name='로그인',exact=True).click()
+        expect(page.locator('#auth-error')).to_contain_text('아이디 또는 비밀번호')
+        page.get_by_label('비밀번호',exact=True).fill(password);page.get_by_role('button',name='로그인',exact=True).click()
+        expect(page.get_by_role('heading',name='파일 업로드·대상 설정',exact=True)).to_be_visible()
+        user=context.request.get(base+'/api/session').json();csrf=user['csrf'];checks.append('demo_form_server_login_and_upload_landing')
+        page.get_by_role('button',name='작업 목록',exact=True).click()
+    else:
+        r=context.request.post(base+'/api/register',data={'username':username,'password':password})
+        assert r.status==201,r.status;user=r.json();csrf=user['csrf'];page.goto(base,wait_until='networkidle')
+    expect(page.get_by_role('heading',name='작업 목록',exact=True)).to_be_visible()
     page.screenshot(path=str(out/'home.png'),full_page=True);checks.append('authenticated_home')
     page.get_by_role('button',name='저장된 합성 예제 열기',exact=True).click()
     expect(page.get_by_role('heading',name='연결 결과 검토',exact=True)).to_be_visible()
@@ -95,11 +111,33 @@ with sync_playwright() as pw:
     page.get_by_text('추천에 사용한 정보·실행 설정',exact=True).click()
     expect(page.get_by_text('대상 특징 6/6항목 제공.',exact=False)).to_be_visible();checks.append('source_upload_custom_schema_and_reference_csv_no_inference')
     page.screenshot(path=str(out/'uploaded-ready.png'),full_page=True)
-    other=browser.new_context();r=other.request.post(base+'/api/register',data={'username':'ui-'+uuid.uuid4().hex[:14],'password':secrets.token_urlsafe(30)});assert r.status==201
+    other=browser.new_context()
+    if demo_mode:
+        r=other.request.post(base+'/api/login',data={'username':username,'password':password});assert r.status==200
+        other_user=r.json();assert other_user['user']['uid']!=user['user']['uid']
+        assert other.request.get(base+'/api/tasks').json()['tasks']==[]
+        for method,path,body in [('GET',f'/api/tasks/{task_id}/files/{approval["approval_id"]}/standardized.csv',None),
+                ('POST',f'/api/tasks/{task_id}/preview',{}),('POST',f'/api/tasks/{task_id}/approve',{'version':state['version'],'rule_hash':approval['rule_hash']})]:
+            q=other.request.fetch(base+path,method=method,data=body,headers={'X-CSRF-Token':other_user['csrf']});assert q.status==404
+        checks.append('same_demo_credentials_isolate_list_approval_and_download')
+    else:
+        r=other.request.post(base+'/api/register',data={'username':'ui-'+uuid.uuid4().hex[:14],'password':secrets.token_urlsafe(30)});assert r.status==201
     assert other.request.get(base+'/api/tasks/'+task_id).status==404;checks.append('other_user_task_id_denied')
+    if demo_mode:
+        assert context.request.get(base+'/api/session').json()['user']['uid']==user['user']['uid']
+        page.get_by_role('button',name='로그아웃',exact=True).click()
+        expect(page.get_by_role('button',name='로그인',exact=True)).to_be_visible()
+        assert context.request.get(base+'/api/tasks').status==401
+        assert other.request.get(base+'/api/session').json()['user']['uid']==other_user['user']['uid']
+        page.get_by_label('아이디',exact=True).fill(username);page.get_by_label('비밀번호',exact=True).fill(password)
+        page.get_by_role('button',name='로그인',exact=True).click()
+        expect(page.get_by_role('heading',name='파일 업로드·대상 설정',exact=True)).to_be_visible()
+        fresh=context.request.get(base+'/api/session').json();assert fresh['user']['uid']!=user['user']['uid']
+        assert context.request.get(base+'/api/tasks').json()['tasks']==[] and context.request.get(base+'/api/tasks/'+task_id).status==404
+        checks.append('logout_revokes_and_next_login_has_fresh_workspace')
     assert not errors,errors
     assert not [u for u in blocked if u.endswith('/recommend')],blocked
     summary={'base':base,'checks':checks,'page_errors':errors,'new_model_calls':0,'recommendation_requests':0,
-        'task_id':task_id,'reference_site_interactions':0,'isolated_test_browser':True,'passwords_or_session_tokens_in_report':False}
+        'task_id':task_id,'demo_mode':demo_mode,'reference_site_interactions':0,'isolated_test_browser':True,'passwords_or_session_tokens_in_report':False}
     (out/'result.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf8')
     print(json.dumps(summary,ensure_ascii=False,indent=2));browser.close()
