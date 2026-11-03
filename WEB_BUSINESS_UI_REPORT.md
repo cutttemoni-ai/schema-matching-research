@@ -49,7 +49,27 @@
 
 ## 배포 기록
 
-로컬 검증 완료. 운영 반영 결과는 배포와 실제 URL 검증을 마친 뒤 기록한다. 변경 전 안정 리비전은 `schema-c-web-datafit-88104ca`, 런타임 커밋은 `88104ca4cde02d150cca8aade65fe870e9a658f1`이다.
+운영 URL: https://schema-c-web-392692577987.asia-northeast3.run.app/ . 기존 작업 계정으로 로그인하며, 처음이면 계정을 만든다. 기존 계정·업로드·승인 기록을 이전하거나 초기화하지 않았다.
+
+|항목|검증한 값|
+|---|---|
+|작업 브랜치|codex/business-review-ui|
+|런타임 커밋|ec61929358de66c5f3c83fdc3295d571e6524ad4|
+|배포 태그|deploy-business-ui-20261103|
+|리비전·트래픽|schema-c-web-business-ec61929 ·100%|
+|Cloud Build|52f6b4bb-eaaa-4dbe-8fb3-abe95b306578 ·SUCCESS|
+|이미지 digest|sha256:ed648db39101f27df95d655e8645c2de190350a34411b159eb681bf066125003|
+|실제 운영 브라우저 검사|15통과·페이지 오류0·추가 추천0|
+|이전 안정 리비전|schema-c-web-datafit-88104ca|
+
+운영 전환 전 정적 파일3개의 실제 응답 바이트가 커밋 파일과 일치함을 확인했다. 기존 C 설정 SHA256·일일20회·서비스 계정·버킷 환경 변수·CPU/메모리·동시성·요청 제한도 일치한다. 운영 전환 뒤 저장된 실제 합성 추천으로 전체 흐름15개를 다시 통과했다. 재열람·다운로드의 추가 추론0, 중복 승인의 추가 실행0이다. 상세 기록은 [WEB_BUSINESS_UI_VALIDATION.json](WEB_BUSINESS_UI_VALIDATION.json)에 남겼다.
+
+신규 유료 추론0회로 기존 제품 개선447/450회·배포 검증3/3회 예산에 증분이 없다. Cloud Build·Cloud Run·Storage 비용은 별도이며 실청구는 확인하지 않았다. 대규모 실험·새 모델·새 VM·새 유료 인프라는 만들지 않았다. 후속 문서 커밋에는 화면 코드 변경이 없으며 위 태그가 실제 런타임 커밋을 가리킨다.
+
+```powershell
+# 바로 이전 DataFit 화면으로 복구. 파일·계정·리비전은 삭제하지 않음.
+gcloud --configuration=schema-research-gemini run services update-traffic schema-c-web --project=schema-match-gemini-261103 --region=asia-northeast3 --to-revisions=schema-c-web-datafit-88104ca=100
+```
 
 ## 재현
 

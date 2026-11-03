@@ -1,0 +1,72 @@
+{
+  "runtime_commit": "ec61929358de66c5f3c83fdc3295d571e6524ad4",
+  "revision": "schema-c-web-business-ec61929",
+  "traffic_percent": 100,
+  "build_id": "52f6b4bb-eaaa-4dbe-8fb3-abe95b306578",
+  "image_digest": "sha256:ed648db39101f27df95d655e8645c2de190350a34411b159eb681bf066125003",
+  "build_created_at": "2026-11-03T11:25:31.552993265Z",
+  "build_finished_at": "2026-11-03T11:27:23.611788Z",
+  "pytest": {
+    "passed": 259,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 12.639
+  },
+  "production_browser": {
+    "base": "https://schema-c-web-392692577987.asia-northeast3.run.app",
+    "checks": [
+      "authenticated_home",
+      "real_cached_recommendations_labeled",
+      "readable_both_side_profiles_and_schema",
+      "unreviewed_approval_blocked",
+      "duplicate_and_required_target_blocked",
+      "column_search",
+      "preview_original_values",
+      "approval_executes_results",
+      "download_values_and_mapping",
+      "duplicate_approval_no_execution",
+      "refresh_reopens_without_inference",
+      "edit_revokes_approval_and_download",
+      "mobile_no_page_overflow",
+      "source_upload_custom_schema_and_reference_csv_no_inference",
+      "other_user_task_id_denied"
+    ],
+    "page_errors": [],
+    "new_model_calls": 0,
+    "recommendation_requests": 0,
+    "task_id": "03d42c936a2a91e2e057107332e2db3f",
+    "reference_site_interactions": 0,
+    "isolated_test_browser": true,
+    "passwords_or_session_tokens_in_report": false
+  },
+  "local_presentation_mocked_not_model_results": {
+    "checks": [
+      "desktop_table_above_500px_and_no_horizontal_scroll_1366_1600",
+      "mock_review_no_match_api_failure_unprocessed_are_distinct",
+      "long_names_wrap_without_overlap",
+      "empty_search_explains_next_action",
+      "table_header_stays_visible",
+      "mobile_scroll_edit_focus_unsaved_state_and_approval_reachable",
+      "pending_feedback_and_persistent_failure_without_false_success"
+    ],
+    "table_top_px": 440.03125,
+    "page_errors": [],
+    "new_model_calls": 0,
+    "presentation_states_mocked": true,
+    "not_model_predictions_or_accuracy": true,
+    "reference_site_interactions": 0
+  },
+  "preflight": {
+    "preview_static_bytes_match": true,
+    "engine_config_unchanged": true,
+    "service_env_auth_bucket_resources_unchanged": true,
+    "daily_limit": 20,
+    "new_model_calls": 0
+  },
+  "new_paid_model_calls": 0,
+  "new_model_cost_usd": 0,
+  "existing_model_budget_changed": false,
+  "build_run_storage_bill_verified": false,
+  "reference_site_interactions": 0,
+  "authentication_secrets_included": false
+}
