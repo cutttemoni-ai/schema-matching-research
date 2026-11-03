@@ -5,6 +5,7 @@ from datetime import datetime,timezone,timedelta
 from . import korea_data_v1_1 as data,korea_campaign_v1 as prior,gemini_main30 as old
 from .vertex_provider_v1 import load_config,schemas
 from .vertex_budget_v1_2 import CurrentVertexProvider
+from .usage_policy import limit,remaining,require_budget,control_hash_matches,physical_attempts,recorded_scope_usage,policy_hash
 from .records import now_iso
 from infra.remote_executor_v3 import locked
 ROOT=old.ROOT;OUT=data.OUT;RUNS=ROOT/'runs/korea-v1_1';MAX_NEW=18
@@ -16,14 +17,14 @@ def status():
     cats=Counter();calls=slots=0;fee=0
     for p in all_plans():
         for j in p['jobs']:
-            path=jobdir(j);r=result(j);calls+=(path/'transmission.json').exists();slots+=(path/'slot.json').exists()
+            path=jobdir(j);r=result(j);calls+=physical_attempts(path);slots+=(path/'slot.json').exists()
             cats[r['execution_category'] if r else 'uncertain' if (path/'slot.json').exists() else 'unexecuted']+=1
             fee+=r['budget_commitment_usd'] if r else j['conservative_cost_usd'] if (path/'slot.json').exists() else 0
     return {'at':now_iso(),'planned':18,'categories':dict(cats),'actual_POSTs':calls,'reserved_slots':slots,
-        'prior_korean_POSTs':7,'task_actual_POSTs':7+calls,'global_calls':427+calls,'remaining_calls':23-calls,
+        'prior_korean_POSTs':7,'task_actual_POSTs':7+calls,'global_calls':recorded_scope_usage(ROOT)['global_calls'],'remaining_calls':None,
         'reference_cost_usd':fee,'task_reference_cost_usd':previous['reference_cost_usd']+fee,
-        'global_reference_cost_usd':previous['global_reference_cost_usd']+fee,
-        'remaining_reference_usd':previous['remaining_reference_usd']-fee,'retries':0,'v1_blocked_unsubmitted':23}
+        'global_reference_cost_usd':recorded_scope_usage(ROOT)['global_reference_cost_usd'],
+        'remaining_reference_usd':None,'retries':0,'v1_blocked_unsubmitted':23}
 def make_plan():
     dest=OUT/'evaluation-plan.json'
     if dest.exists():return verify(old.read(dest))
@@ -65,7 +66,7 @@ def verify(p):
     assert old.filehash(OUT/'evaluation-plan.json')==old.read(OUT/'evaluation-seal.json')['sha256']
     assert old.filehash(OUT/'data.json')==p['data_sha256'] and load_config()==p['config']
     d=old.read(OUT/'data.json');tasks={t['task_id']:t for t in p['tasks']}
-    for n,h in (p['files']|d['raw_files']|d['files']).items():assert old.filehash(ROOT/n)==h,n
+    for n,h in (p['files']|d['raw_files']|d['files']).items():assert control_hash_matches(ROOT,n,h),n
     for j in p['jobs']:
         assert j['wire']==data.request(d,tasks[j['task_id']],j['condition'])
         assert j['system_instruction']==prior.system(j['method'])
@@ -78,7 +79,7 @@ def run(max_new):
             r=result(j);path=jobdir(j)
             if r and r['execution_category']=='uncertain':raise RuntimeError('Uncertain same ID; do not resubmit')
             if not r and (path/'slot.json').exists():
-                if not (path/'http-complete.json').exists():raise RuntimeError('Uncertain same ID; investigate before resume')
+                if not old.finalize_local(path,old.atomic):raise RuntimeError('Uncertain same ID; investigate before resume')
                 # Reuse transport recovery against this journal without new POST.
                 complete=old.read(path/'http-complete.json');r={'status':'failed','usage':None,'raw_response':None}
                 if complete['status_code']==200:
@@ -89,7 +90,7 @@ def run(max_new):
         for j in p['jobs']:
             if result(j):continue
             s=status()
-            if new>=max_new or s['reserved_slots']>=18 or s['global_calls']>=450 or s['global_reference_cost_usd']+j['conservative_cost_usd']>10:break
+            if max_new is not None and new>=max_new:break
             current=datetime.now(timezone(timedelta(hours=9)))
             if (current.hour,current.minute)>=(22,45):break
             path=jobdir(j);path.mkdir(parents=True,exist_ok=True);old.atomic(path/'slot.json',{'id':j['id'],'at':now_iso(),'request_hash':j['request_hash'],'reservation_usd':j['conservative_cost_usd']},True)

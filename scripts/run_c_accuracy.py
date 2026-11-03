@@ -5,13 +5,13 @@ from schema_match import c_accuracy_campaign as c
 from schema_match import gemini_main30 as old
 from schema_match.records import now_iso
 
-p=argparse.ArgumentParser();p.add_argument('action',choices=['prepare','plan','run','status','freeze']);p.add_argument('--phase',choices=['development','evaluation'],default='development');p.add_argument('--max-new',type=int,default=0);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('action',choices=['prepare','plan','run','status','freeze']);p.add_argument('--phase',choices=['development','evaluation'],default='development');p.add_argument('--max-new',type=int,default=None);a=p.parse_args()
 if a.action=='prepare':
     d=c.prepare();print(json.dumps({'development':len(d['development']),'fresh_evaluation':len(d['evaluation']),'ground_truth_read':False}))
 elif a.action=='plan':
     v=c.make_plan(a.phase);print(json.dumps({'phase':a.phase,'jobs':len(v['jobs']),'conservative_reservations_usd':v['all_conservative_reservations_usd'],'sha256':old.filehash(c.OUT/(a.phase+'-plan.json'))}))
 elif a.action=='run':
-    if not 0<a.max_new<=52:p.error('Explicit --max-new 1..52 required')
+    if a.max_new is not None and a.max_new<1:p.error('--max-new must be positive when supplied')
     print(json.dumps(c.run(a.phase,a.max_new)))
 elif a.action=='freeze':
     plan=old.read(c.OUT/'development-plan.json');c.verify(plan)

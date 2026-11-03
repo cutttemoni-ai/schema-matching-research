@@ -42,9 +42,9 @@ else:
             st.dataframe(source.frame.head(8));st.dataframe([c.model_dump() for c in targets])
             st.json(wire,expanded=False)
             st.caption('원시 행 전체 대신 계산 가능한 전체 프로파일을 사용합니다. 대상 값이 없으면 연구의 양쪽 프로파일 조건과 다릅니다.')
-            state=app.live_progress();st.caption(f"기존 누적 한도 내 잔여 생성 {state['remaining_calls']}회. 임의 대상은1열씩 검증하며 서비스 일일 제한은 변경하지 않습니다.")
+            state=app.live_progress();st.caption(f"누적 전송 {state['global_actual_POSTs']}회. 새 요청은 명시적으로 실행하며 사용량과 비용을 기록합니다.")
             consent=st.checkbox('새 유료 C 추론1회를 실행함을 확인 (재시도0)')
-            if st.button('C 실제 추천 실행',disabled=not consent or state['remaining_calls']<=0):
+            if st.button('C 실제 추천 실행',disabled=not consent):
                 source,targets,wire,r,reused=app.run_custom(src.getvalue(),sch.getvalue(),ref.getvalue() if ref else None)
                 st.session_state.kr_loaded=(source,targets,wire,r)
                 st.session_state.pop('kr_export',None)

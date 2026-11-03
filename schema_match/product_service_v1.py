@@ -2,6 +2,8 @@
 import json,time,uuid
 from copy import deepcopy
 from pathlib import Path
+from .usage_policy import limit,require_budget,remaining,exceeded,physical_attempts,control_hash_matches,recorded_scope_usage,policy_hash
+from .generation_attempts import local_journal,finalize_local
 from .config import ROOT
 from .models import Recommendation
 from .records import json_bytes,now_iso
@@ -73,7 +75,7 @@ def run_product(csv_data,sources,targets,settings,method='C',reference=None,runn
             'schema':schema,'local_schema':local,'input_budget':check,'conservative_cost_usd':transport.cost_for(check['admission_input_upper_estimate']*2,4096)}
         # Separate per-user-file soft budget; this work's real integration is injected through the global research ledger.
         used=sum(r['budget_commitment_usd'] for r in records)
-        if used+j['conservative_cost_usd']>10:raise MatchingFailure('이번 파일의 보수적 USD10 추정 예산을 초과합니다.',{'status':'failed','method':method,'usage':None,'model_calls_attempted':len(records),'partial_results':records})
+        if exceeded(used,limit('per_file_estimated_usd'),j['conservative_cost_usd']):raise MatchingFailure('설정된 파일 비용 상한에 도달했습니다.',{'status':'failed','method':method,'usage':None,'model_calls_attempted':len(records),'partial_results':records})
         d=run_dir/j['id'];d.mkdir();transport.atomic(d/'job.json',j,True);transport.atomic(d/'slot.json',{'at':now_iso(),'request_id':j['id']},True);client=None;events=[];t=time.perf_counter()
         try:
             client=transport.client_for({'config':cfg},j,d,events);p=transport.FrozenProvider({'config':cfg,'system_instruction':SYSTEM},j,client);p.http_events=events

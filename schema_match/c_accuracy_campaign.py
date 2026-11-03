@@ -8,6 +8,7 @@ from copy import deepcopy
 from pathlib import Path
 from . import gemini_main30 as old, product_campaign_v1 as stopped, product_data_v1 as previous
 from . import product_matcher_v1 as engine
+from .usage_policy import limit,remaining,require_budget,control_hash_matches,physical_attempts,recorded_scope_usage,policy_hash
 from .records import now_iso,json_bytes
 from .research_data import read_table,table_paths
 from .research_request import InputColumn,prepare_table_columns,research_baseline
@@ -119,7 +120,7 @@ def make_plan(phase):
     p={'version':'C-product-accuracy-v1','phase':phase,'at':now_iso(),'seed':SEED,'config':cfg,'system_instruction':SYSTEM,
         'tasks':data[phase],'jobs':jobs,'A_local':a_local,'methods':METHODS,'conditions':CONDITIONS,
         'data_sha256':old.filehash(OUT/'data.json'),'files':{n:old.filehash(ROOT/n) for n in files},
-        'actual_generation_limit':MAX_NEW,'global_limit_including_deployment':450,'global_budget_usd':10,
+        'actual_generation_limit':MAX_NEW,'global_limit_including_deployment':limit('cumulative_generation_calls'),'global_budget_usd':limit('cumulative_estimated_usd'),
         'prior_experiment_calls':366,'deployment_calls':2,'prior_cost_standard_usd':1.789818,'deployment_standard_usd':.005979,
         'automatic_retries':0,'SDK_attempts_including_first':1,'all_conservative_reservations_usd':sum(j['conservative_cost_usd'] for j in jobs),
         'evaluation_scope':'5 fresh known families: 3 positive,2 verified generated-lineage none,0 natural none; small evaluation, not 30-source target or whole benchmark',
@@ -146,7 +147,7 @@ def write_plan_doc(p):
 def verify(p):
     assert old.filehash(OUT/(p['phase']+'-plan.json'))==old.read(OUT/(p['phase']+'-seal.json'))['sha256']
     assert old.filehash(OUT/'data.json')==p['data_sha256']
-    for n,h in p['files'].items():assert old.filehash(ROOT/n)==h,n
+    for n,h in p['files'].items():assert control_hash_matches(ROOT,n,h),n
     data=old.read(OUT/'data.json')
     for n,h in data['files'].items():assert old.filehash(ROOT/n)==h,n
     taskmap={t['task_id']:t for t in p['tasks']}
@@ -160,7 +161,7 @@ def progress():
     categories=Counter();calls=0;slots=0;fee=0.;durations=[]
     for plan in OUT.glob('*-plan.json'):
         for j in old.read(plan)['jobs']:
-            d=jobdir(j);r=result(j);slots+=(d/'slot.json').exists();calls+=(d/'transmission.json').exists()
+            d=jobdir(j);r=result(j);slots+=(d/'slot.json').exists();calls+=physical_attempts(d)
             categories[r['execution_category'] if r else 'uncertain' if (d/'slot.json').exists() else 'unexecuted']+=1
             if r:
                 fee+=r['budget_commitment_usd'];durations.append(r.get('local_total_seconds',0))
@@ -168,15 +169,15 @@ def progress():
     prior=stopped.global_status()
     assert prior['physical_POST_attempts']==366, 'Stopped D campaign changed; stop new C work'
     return {'at':now_iso(),'categories':dict(categories),'C_actual_POSTs':calls,'C_reserved_slots':slots,
-        'previous_D_experiment_POSTs':366,'deployment_POSTs':2,'global_actual_POSTs':368+calls,
-        'C_reference_cost_usd':fee,'global_reference_commitment_usd':1.789818+.005979+fee,
-        'remaining_global_calls':450-368-calls,'remaining_reference_usd':10-1.789818-.005979-fee,
+        'previous_D_experiment_POSTs':366,'deployment_POSTs':2,'global_actual_POSTs':recorded_scope_usage(ROOT)['global_calls'],
+        'C_reference_cost_usd':fee,'global_reference_commitment_usd':recorded_scope_usage(ROOT)['global_reference_cost_usd'],
+        'remaining_global_calls':None,'remaining_reference_usd':None,
         'recorded_C_seconds':sum(durations),'automatic_inference_retries':0}
 
 
 def recover(p,j):
     d=jobdir(j)
-    if not (d/'http-complete.json').exists():raise RuntimeError('Uncertain same ID blocks new inference: '+j['id'])
+    if not old.finalize_local(d,old.atomic):raise RuntimeError('Uncertain same ID blocks new inference: '+j['id'])
     raw=old.read(d/'http-complete.json');r={'status':'failed','usage':None,'raw_response':None}
     if raw['status_code']==200:
         response=old.types.GenerateContentResponse.model_validate(json.loads((d/'http-response.bin').read_bytes()))
@@ -197,7 +198,7 @@ def run(phase,max_new):
         for j in p['jobs']:
             if result(j):continue
             state=progress()
-            if new>=max_new or state['C_reserved_slots']>=MAX_NEW or state['global_actual_POSTs']>=450 or state['global_reference_commitment_usd']+j['conservative_cost_usd']>10:break
+            if max_new is not None and new>=max_new:break
             # Existing Azure 23h schedule remains; managed API has no VM shutdown.
             # For consistent operator control, keep 22:45 KST scheduling cutoff.
             from datetime import datetime,timezone,timedelta

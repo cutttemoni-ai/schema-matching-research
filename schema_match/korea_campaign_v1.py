@@ -11,6 +11,7 @@ from . import gemini_main30 as old, c_accuracy_campaign as previous
 from . import korea_data_v1 as data
 from .vertex_provider_v1 import load_config,SYSTEM,schemas
 from .vertex_budget_v1_2 import CurrentVertexProvider
+from .usage_policy import limit,remaining,require_budget,control_hash_matches,physical_attempts,recorded_scope_usage,policy_hash
 from .records import now_iso,json_bytes
 from infra.remote_executor_v3 import locked
 
@@ -19,27 +20,28 @@ def jobdir(j):return RUNS/'jobs'/j['id']
 def result(j):return old.read(jobdir(j)/'result.json') if (jobdir(j)/'result.json').exists() else None
 def all_plans():return [old.read(p) for p in sorted(OUT.glob('*-plan.json'))]
 def status():
-    baseline=previous.progress();assert baseline['global_actual_POSTs']==420,'Earlier study changed; investigate before submission'
+    baseline=previous.progress();assert baseline['C_actual_POSTs']==52,'Earlier study changed; investigate before submission'
     cats=Counter();post=slots=0;fee=0
     for p in all_plans():
         for j in p['jobs']:
-            d=jobdir(j);r=result(j);slots+=(d/'slot.json').exists();post+=(d/'transmission.json').exists()
+            d=jobdir(j);r=result(j);slots+=(d/'slot.json').exists();post+=physical_attempts(d)
             cats[r['execution_category'] if r else 'uncertain' if (d/'slot.json').exists() else 'unexecuted']+=1
             fee+=r['budget_commitment_usd'] if r else j['conservative_cost_usd'] if (d/'slot.json').exists() else 0
     return {'at':now_iso(),'planned':sum(len(p['jobs']) for p in all_plans()),'categories':dict(cats),'actual_POSTs':post,'reserved_slots':slots,
-        'prior_calls':420,'global_calls':420+post,'remaining_calls':30-post,'reference_cost_usd':fee,
-        'global_reference_cost_usd':baseline['global_reference_commitment_usd']+fee,
-        'remaining_reference_usd':10-baseline['global_reference_commitment_usd']-fee,'retries':0}
+        'prior_calls':420,'global_calls':recorded_scope_usage(ROOT)['global_calls'],'remaining_calls':None,'reference_cost_usd':fee,
+        'global_reference_cost_usd':recorded_scope_usage(ROOT)['global_reference_cost_usd'],
+        'remaining_reference_usd':None,'retries':0}
 def gate(action):
-    """Use existing private bucket, one global service lock; do not alter daily20."""
+    """Use existing private bucket, one global service lock; no cumulative/day cap."""
     import google.auth
     from google.cloud import storage
     creds,_=google.auth.load_credentials_from_file(str(ROOT/'.runtime/gcloud-research/application_default_credentials.json'),scopes=['https://www.googleapis.com/auth/cloud-platform'])
     b=storage.Client(project=load_config()['project'],credentials=creds).bucket('schema-match-gemini-261103-service')
     lock=b.blob('control/active-generation.json')
     if action=='pause':
-        count=sum(1 for _ in b.list_blobs(prefix='quota/'))
-        if count!=2:raise RuntimeError(f'Service quota reservations now {count}, not previous2. Reconcile global budget before new study.')
+        from .usage_observations import cloud_usage
+        observed=cloud_usage(b)
+        old.atomic(ROOT/'research-artifacts/usage-control-v2/cloud-snapshot.json',observed)
         lock.upload_from_string(json_bytes({'kind':'research_exclusive','campaign':'korea-v1','at':now_iso()}),if_generation_match=0)
     else:
         lock.reload();gen=lock.generation;v=json.loads(lock.download_as_bytes(if_generation_match=gen))
@@ -47,7 +49,7 @@ def gate(action):
         if action=='resume':
             assert status()['categories'].get('uncertain',0)==0,'Uncertain request: retain lock'
             lock.delete(if_generation_match=gen)
-    return {'action':action,'lock_owned':action!='resume','service_daily_cap_unchanged':20}
+    return {'action':action,'lock_owned':action!='resume','service_daily_limit':limit('service_daily_generation_calls')}
 def system(method):
     if method=='C':return SYSTEM
     if method!='C-kr-v1':raise ValueError('Unknown method')
@@ -81,14 +83,14 @@ def make_plan(phase):
     p={'version':'kr-full-C-v1','phase':phase,'at':now_iso(),'seed':data.SEED,'config':cfg,'tasks':tasks,'jobs':jobs,
         'data_sha256':old.filehash(OUT/'data.json'),'files':{n:old.filehash(ROOT/n) for n in files},
         'all_request_reservations_usd':sum(j['conservative_cost_usd'] for j in jobs),'planned':len(jobs),
-        'global_generation_budget':450,'global_reference_budget_usd':10,'prior_calls':420,'max_new':30,'SDK_attempts_including_first':1,
+        'global_generation_budget':limit('cumulative_generation_calls'),'global_reference_budget_usd':limit('cumulative_estimated_usd'),'prior_calls':420,'max_new':30,'SDK_attempts_including_first':1,
         'conditions':'source header only; both descriptions retained, targets unchanged; not a description-removal experiment',
         'family_split':d['split'],'reference_status':'assistant provisional mappings; not human-validated, not benchmark gold',
         'scoring':'all planned slots in denominator, review/failure/unexecuted not correct; only initial predictions',
         'selection':'all7 prespecified conceptual tasks, 3 development/4 evaluation; not selected using model scores',
         'candidate_order':'SHA(seed, task_id, target_id), common for both engines; target IDs original positional, unrelated to answer',
         'method_order':'C,candidate or candidate,C rotating (task_index+condition_index)%2',
-        'automatic_inference_retries':0,'service_daily_cap_unchanged':20,'deployment_change':False}
+        'automatic_inference_retries':0,'service_daily_limit':limit('service_daily_generation_calls'),'deployment_change':False}
     old.atomic(dest,p,True);old.atomic(OUT/(phase+'-seal.json'),{'sha256':old.filehash(dest),'at':now_iso()},True)
     lines=[f'# 국내 공개데이터 {phase} 호출 전 동결','',f"UTC {p['at']}, seed `{data.SEED}`, 데이터 SHA `{p['data_sha256']}`.",
         '',f"이번 단계 {len(jobs)}회. 전체 기존420 + 개발3+3 + 평가24 = 최대450회, 추가30회. 기존 USD10 누적 예산을 유지. 자동 재추론0, SDK attempts1, 직렬, 미확정 같은 ID부터 회수. 22:45 KST 이후 신규 예약 중단. 다음 보수 예약을 합해 USD10 초과 시 중단. 할인 전1.5/7.5 perM, 캐시 차감 없이 출력·추론 total-prompt 한 번. 현행 공시0.75/3.75의 무캐시 상한 별도 보고. 세금/실청구/Cloud Run 비용 아님.",
@@ -102,7 +104,7 @@ def make_plan(phase):
 def verify(p):
     assert old.filehash(OUT/(p['phase']+'-plan.json'))==old.read(OUT/(p['phase']+'-seal.json'))['sha256']
     assert old.filehash(OUT/'data.json')==p['data_sha256'];assert load_config()==p['config']
-    for n,h in p['files'].items():assert old.filehash(ROOT/n)==h,n
+    for n,h in p['files'].items():assert control_hash_matches(ROOT,n,h),n
     d=old.read(OUT/'data.json');tasks={t['task_id']:t for t in p['tasks']}
     for n,h in (d['raw_files']|d['files']).items():assert old.filehash(ROOT/n)==h,n
     for j in p['jobs']:
@@ -112,7 +114,7 @@ def verify(p):
     return p
 def recover(p,j):
     path=jobdir(j)
-    if not (path/'http-complete.json').exists():raise RuntimeError('Uncertain existing ID; no automatic resubmission '+j['id'])
+    if not old.finalize_local(path,old.atomic):raise RuntimeError('Uncertain existing ID; no automatic resubmission '+j['id'])
     complete=old.read(path/'http-complete.json');r={'status':'failed','usage':None,'raw_response':None}
     if complete['status_code']==200:
         response=old.types.GenerateContentResponse.model_validate(json.loads((path/'http-response.bin').read_bytes()))
@@ -132,7 +134,7 @@ def run(phase,max_new):
         for j in p['jobs']:
             if result(j):continue
             s=status()
-            if new>=max_new or s['reserved_slots']>=MAX_NEW or s['global_calls']>=450 or s['global_reference_cost_usd']+j['conservative_cost_usd']>10:break
+            if max_new is not None and new>=max_new:break
             current=datetime.now(timezone(timedelta(hours=9)))
             if (current.hour,current.minute)>=(22,45):break
             d=jobdir(j);d.mkdir(parents=True,exist_ok=True)

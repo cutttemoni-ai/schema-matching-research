@@ -1,15 +1,17 @@
-"""Durable serial campaigns sharing one450-call/USD10 ledger. No truth access."""
+"""Durable serial campaigns sharing append-only usage accounting without aggregate caps. No truth access."""
 import gzip,json,time,os
 from pathlib import Path
 from collections import Counter
 from copy import deepcopy
+from .usage_policy import limit,require_budget,remaining,exceeded,physical_attempts,control_hash_matches,recorded_scope_usage,policy_hash
+from .generation_attempts import local_journal,finalize_local
 from . import gemini_main30 as old
 from . import product_data_v1 as data
 from .records import now_iso,json_bytes
 from .vertex_provider_v1 import SYSTEM,load_config,schemas
 from .vertex_budget_v1_2 import CurrentVertexProvider
 from infra.remote_executor_v3 import locked
-ROOT=old.ROOT;OUT=data.OUT;RUNS=ROOT/'runs/product-quality-v1';LIMIT=450;BUDGET=10.
+ROOT=old.ROOT;OUT=data.OUT;RUNS=ROOT/'runs/product-quality-v1';LIMIT=limit('cumulative_generation_calls');BUDGET=limit('cumulative_estimated_usd')
 
 def path(j):return RUNS/'jobs'/j['id']
 def read_result(j):return old.read(path(j)/'result.json') if (path(j)/'result.json').exists() else None
@@ -21,7 +23,7 @@ def global_status():
         for j in p['jobs']:
             d=path(j);r=read_result(j)
             if (d/'slot.json').exists():slots+=1;phases[p['phase']]+=1
-            transmissions+=(d/'transmission.json').exists()
+            transmissions+=physical_attempts(d)
             if r:
                 categories[r['execution_category']]+=1;commitment+=r['budget_commitment_usd']
                 fee=r['no_discount_cost']['amount']
@@ -39,10 +41,10 @@ def verify(p):
     assert old.filehash(OUT/(p['phase']+'-plan.json'))==old.read(OUT/(p['phase']+'-seal.json'))['plan_sha256']
     assert load_config()==p['config']
     for name,h in p['files'].items():
-        if old.filehash(ROOT/name)!=h:raise ValueError('Frozen file changed: '+name)
+        if not control_hash_matches(ROOT,name,h):raise ValueError('Frozen file changed: '+name)
     prior=old.read(OUT/'past-preservation.json')
     for name,h in prior['files'].items():
-        if old.filehash(ROOT/name)!=h:raise ValueError('Prior evaluation changed: '+name)
+        if not control_hash_matches(ROOT,name,h):raise ValueError('Prior evaluation changed: '+name)
     tasks=old.read(OUT/'tasks.json')
     for name,h in tasks['raw_files'].items():
         if old.filehash(ROOT/name)!=h:raise ValueError('Original data changed: '+name)
@@ -92,12 +94,12 @@ def make_plan(phase):
     p={'version':'product-quality-Gemini-v1','phase':phase,'created_at':now_iso(),'config':cfg,'system_instruction':SYSTEM,'seed':data.SEED,
         'jobs':jobs,'methods':methods,'conditions':conditions,'A_local':a_local,'tasks':registry['tasks'][phase],
         'files':{n:old.filehash(ROOT/n) for n in files},'expected_standard_reference_usd':sum(j['expected_cost_usd'] for j in jobs),
-        'all_reservations_usd':sum(j['conservative_cost_usd'] for j in jobs),'budget_global':10,'maximum_global_generations':450,
+        'all_reservations_usd':sum(j['conservative_cost_usd'] for j in jobs),'budget_global':limit('cumulative_estimated_usd'),'maximum_global_generations':limit('cumulative_generation_calls'),
         'automatic_retries':0,'SDK_attempts_including_first':1,'final_choice':choice,'prior_results_not_merged':True,
         'common_policy':'validated matched is auto-link-eligible; no_match/needs_review require user review; user confirmation still mandatory for actual exports',
         'development_choice_rule':'Select D0_representatives or D1 by dev reference-hit count, then auto-link precision lower bound, then coverage, then lower observed input tokens. At most2 candidates; no further retuning.',
         'product_selection_rule':data.rules()['selection_after_final']}
-    if p['expected_standard_reference_usd']+global_status()['cost_commitment_usd']>10:raise ValueError('Expected campaign fee exceeds remaining authorized budget')
+    require_budget(cost=global_status()['cost_commitment_usd'],next_cost=p['expected_standard_reference_usd'])
     if phase=='development':assert len(jobs)==60
     else:assert len(jobs)==360 and len({t['family_id'] for t in p['tasks']})==30
     old.atomic(dest,p,True);document(p)
@@ -106,7 +108,7 @@ def make_plan(phase):
 
 def document(p):
     lines=[f"# Product quality {p['phase']} frozen plan",'',f"Frozen UTC {p['created_at']}; seed {p['seed']}. Model/config unchanged: Vertex Gemini3.8Flash/global/LOW/4096; same SYSTEM/schema/target order and common policy. One source per request, serial, SDK attempts1, inference retries0. Planned{len(p['jobs'])}; families{len(p['tasks'])}. Prior270 not merged.",
-        '',f"Methods {p['methods']}, conditions{p['conditions']}. Expected undiscounted standard-reference fee${p['expected_standard_reference_usd']:.6f}; all maximum reservations${p['all_reservations_usd']:.6f}. Global cap450, dev60, USD10 including thinking; no credits/cache discounts; not a billing hardcap. Current0.75/3.75 vs conservative standard1.5/7.5 USD/M. Actual total-prompt accounts output/thought once; missing components stay null. Before every new request reserve twice admission estimate and4096 output.",
+        '',f"Methods {p['methods']}, conditions{p['conditions']}. Expected undiscounted standard-reference fee${p['expected_standard_reference_usd']:.6f}; all maximum reservations${p['all_reservations_usd']:.6f}. Current application cumulative caps are disabled; original finite development plan60; cost accounting includes thinking; no credits/cache discounts; not a billing hardcap. Current0.75/3.75 vs conservative standard1.5/7.5 USD/M. Actual total-prompt accounts output/thought once; missing components stay null. Before every new request reserve twice admission estimate and4096 output.",
         '', 'A local. Raw first outputs scored before user edits. Top1 includes reviews/errors/unexecuted; no unannotated pair assumed negative. Natural none not available: generated none explicitly separate. Magellan development-only positive references are not exhaustive negatives. Same source variants not independent. Candidate ordering seed hashes opaque IDs; method starts rotate before outcomes.',
         '', 'C is original full profile v0; D0 original fixed selection. D1 candidates use additional value-only partial numeric/unit/date/format evidence, so a D1 vs C difference is not selection alone. C_no_categories removes only category VALUE STRINGS and retains counts/ratios. D0_representatives adds only up to3 actual representative values with frequencies/roles. No extra same-token random control in the60-call budget; do not claim isolated numeric-feature or exact-token-matched effects.',
         '', f"Development D1 choice: {p['development_choice_rule']}. Product default criterion fixed: {p['product_selection_rule']}. No confidence percentages used.",
@@ -117,7 +119,7 @@ def document(p):
 
 def recover(p,j):
     d=path(j)
-    if not (d/'http-complete.json').exists():raise RuntimeError('Uncertain SAME request; do not resubmit: '+j['id'])
+    if not old.finalize_local(d,old.atomic):raise RuntimeError('Uncertain SAME request; do not resubmit: '+j['id'])
     raw=old.read(d/'http-complete.json');r={'status':'failed','usage':None,'raw_response':None}
     if raw['status_code']==200:
         response=old.types.GenerateContentResponse.model_validate(json.loads((d/'http-response.bin').read_bytes()))
@@ -126,7 +128,7 @@ def recover(p,j):
             raw_sdk_response=response.model_dump(mode='json',exclude_none=True),finish_reasons=[v.finish_reason.value for v in response.candidates or []])
     return old.finish(p,j,r,d,time.perf_counter(),True)
 
-def run(phase,max_new=450):
+def run(phase,max_new=None):
     p=old.read(OUT/(phase+'-plan.json'));verify(p);RUNS.mkdir(exist_ok=True,parents=True);new=0;previous_start=0.
     with locked(RUNS/'global-driver.lock'):
         # Any incomplete slot in any phase blocks new generation.
@@ -137,11 +139,10 @@ def run(phase,max_new=450):
                 if (d/'slot.json').exists() and r is None:recover(prior,job)
         for j in p['jobs']:
             if read_result(j):continue
-            if new>=max_new:break
+            if max_new is not None and new>=max_new:break
             state=global_status()
-            if state['slots']>=LIMIT or state['cost_commitment_usd']+j['conservative_cost_usd']>BUDGET+1e-12:
+            if exceeded(state['physical_POST_attempts'],LIMIT,1) or exceeded(state['cost_commitment_usd'],BUDGET,j['conservative_cost_usd']):
                 old.atomic(OUT/'stop.json',{'at':now_iso(),'reason':'global count/cost next-reservation guard','next':j['id'],'state':state});break
-            if phase=='development' and state['phase_slots'].get('development',0)>=60:break
             time.sleep(max(0,5-(time.perf_counter()-previous_start)));previous_start=time.perf_counter()
             d=path(j);d.mkdir(parents=True,exist_ok=True)
             with (d/'slot.json').open('xb') as h:h.write(json_bytes({'at':now_iso(),'request_id':j['id'],'wire_hash':old.digest(j['wire']),'reservation_usd':j['conservative_cost_usd']}));h.flush();os.fsync(h.fileno())
