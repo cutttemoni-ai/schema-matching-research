@@ -4,13 +4,15 @@
 
 이 브랜치(feat/c-accuracy-v1)의 개선 후보/별도 평가 결과는 [C 제품 품질 보고서](C_PRODUCT_QUALITY_REPORT.md)와 [실험 실행 안내](C_ACCURACY_RUNBOOK.md)에 있습니다. 미노출5계열·2조건의 C8/10→후보9/10 관측이며 개발에서는12/16→11/16으로 악화했습니다. 후보는 운영 배포에 반영하지 않았고 main과 안정 C는 그대로입니다. 공유 가능한 집계는 C_ACCURACY_SUMMARY.csv/json이며 원 요청·응답은 Git에서 제외했습니다.
 
-실제 Cloud Run: https://schema-c-web-392692577987.asia-northeast3.run.app . **IAM 비공개**이므로 비인증 접속403이 정상입니다. 현재 연구 계정으로 아래 공식 프록시를 실행하고 http://127.0.0.1:8080 에 접속합니다.
+실제 Cloud Run: **https://schema-c-web-392692577987.asia-northeast3.run.app** . 2026-11-03 사용자 요청으로 **공개 접속**으로 전환했습니다. Google 로그인이나 프록시 없이 브라우저에서 열 수 있습니다. GitHub 저장소도 PUBLIC입니다. 업로드 데이터 버킷은 비공개이며 전체 서비스 일일20생성·중복 요청 차단은 유지합니다. [전환 기록](PUBLIC_ACCESS.md).
+
+다음 프록시 명령은 선택 사항이며 공개 앱 접속에는 필요하지 않습니다.
 
 ```powershell
 gcloud --configuration=schema-research-gemini run services proxy schema-c-web --project=schema-match-gemini-261103 --region=asia-northeast3 --port=8080
 ```
 
-새 PC 설치: Python3.13에서 가상환경을 만들고 requirements-gcp.lock.txt를 설치합니다. 본인 Google 계정의 권한과 ADC를 설정하며 키·토큰·ADC를 공유/커밋하지 않습니다. 로컬 추론에는 Vertex 예측/서비스 사용 권한이, 원격 프록시에는 Cloud Run invoker 권한만 필요합니다. 승환님은 아직 초대하지 않았습니다.
+새 PC 로컬 설치: Python3.13에서 가상환경을 만들고 requirements-gcp.lock.txt를 설치합니다. 로컬 실제 추론에는 본인 Google 계정의 Vertex 예측·서비스 사용 권한과 ADC가 필요합니다. 키·토큰·ADC를 공유/커밋하지 않습니다. 공개 웹앱과 저장소 열람에는 승환님 계정 초대가 필요하지 않습니다. 저장소 쓰기 권한은 별도입니다.
 
 ```powershell
 py -3.13 -m venv .venv
