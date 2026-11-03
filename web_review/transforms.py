@@ -11,7 +11,8 @@ TRANSFORMS={
  'number_uncomma':'숫자: 천 단위 쉼표 제거',
  'date_compact_iso':'날짜: YYYYMMDD → YYYY-MM-DD',
  'date_slash_iso':'날짜: YYYY/MM/DD → YYYY-MM-DD',
- 'date_dot_iso':'날짜: YYYY.MM.DD → YYYY-MM-DD'}
+ 'date_dot_iso':'날짜: YYYY.MM.DD → YYYY-MM-DD',
+ 'date_iso_year':'날짜: YYYY-MM-DD → 연도 (월·일 정보 손실)'}
 
 class Target(Column):
     required:bool=False
@@ -40,6 +41,10 @@ def convert(value,method):
     if method not in TRANSFORMS:raise ValueError('지원하지 않는 변환입니다.')
     if value=='':return value
     if method=='identity':return value
+    if method=='date_iso_year':
+        if not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}',value):raise ValueError('유효한 YYYY-MM-DD 날짜만 연도로 추출합니다.')
+        try:return str(date.fromisoformat(value).year).zfill(4)
+        except ValueError:raise ValueError('실제로 존재하지 않는 날짜입니다.')
     if method=='number_uncomma':
         if len(value)>256 or not re.fullmatch(r'[+-]?(?:[0-9]{1,3}(?:,[0-9]{3})+|[0-9]+)(?:\.[0-9]+)?',value):raise ValueError('쉼표가 있는 숫자 형식이 아닙니다. 단위·통화는 추정하지 않습니다.')
         return value.replace(',','')
@@ -88,7 +93,7 @@ def evaluate(data,targets,rules,initial,*,require_review=True):
         if r.target_id not in candidates:issue('candidate','허용되지 않은 대상 ID입니다.');continue
         if r.target_id in seen:issue('duplicate',f'대상 {candidates[r.target_id].name}에 중복 연결됐습니다.')
         seen[r.target_id]=r.source_id;mapped[r.target_id]=r
-        if r.transform_id.startswith('date_') and candidates[r.target_id].data_type not in ('date','string'):issue('transform_type','날짜 변환과 대상 자료형이 맞지 않습니다.')
+        if r.transform_id.startswith('date_') and candidates[r.target_id].data_type not in (('integer','number','string') if r.transform_id=='date_iso_year' else ('date','string')):issue('transform_type','날짜 변환과 대상 자료형이 맞지 않습니다.')
         if r.transform_id=='number_uncomma' and candidates[r.target_id].data_type not in ('integer','number','string'):issue('transform_type','숫자 변환과 대상 자료형이 맞지 않습니다.')
     for target in targets:
         if target.required and target.id not in mapped:issues.append({'code':'required_target','target_id':target.id,'message':f'필수 대상 {target.name}이 연결되지 않았습니다.'})

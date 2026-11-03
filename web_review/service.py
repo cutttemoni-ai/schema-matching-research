@@ -16,6 +16,7 @@ from schema_match.vertex_provider_v1 import digest,load_config
 from schema_match.records import now_iso
 from .storage import read_json,immutable,encode,Conflict,InferenceStore
 from .transforms import Target,Rule,parse_targets,evaluate,files_for,csvbytes,TRANSFORMS,VERSION
+from .conversion import connections,VERSION as ASSESSMENT_VERSION
 
 class WorkflowError(Exception):
     def __init__(self,message,status=400,details=None):super().__init__(message);self.status=status;self.details=details or {}
@@ -120,7 +121,10 @@ class Workflow:
             cols.append({**col.model_dump(),'examples':[x[:80] for x in values],
                 'initial':deepcopy(item) if item else {'source_id':col.id,'target_id':None,'status':state,'reason':None}})
         out={k:deepcopy(value) for k,value in v.items() if k not in ('input_hash',)}
-        out.update(columns=cols,counts={k:counts[k] for k in ['matched','needs_review','no_match','api_failure','unprocessed']},
+        reference=checked_csv(self.objects.read(self.prefix(uid,task)+'reference.csv')[0]) if v.get('reference_sha256') else None
+        assessments=connections(source,targets,[Rule.model_validate(x) for x in v['rules']],initial,reference)
+        out.update(connections=assessments,connection_assessment_version=ASSESSMENT_VERSION,
+            columns=cols,counts={k:counts[k] for k in ['matched','needs_review','no_match','api_failure','unprocessed']},
             profile=self._json(uid,task,'wire.json'),unlinked_policy='연결하지 않은 원본 열은 unmapped.csv에 값 그대로 별도 보존합니다.')
         return out
     def list(self,uid):
@@ -179,6 +183,11 @@ class Workflow:
         v,_=self.load(uid,task);source,targets,_,_=self.inputs(uid,task)
         result=self._json(uid,task,'initial.json');initial={r['source_id']:r for r in (result or {}).get('initial_recommendations',[])}
         out=evaluate(source,targets,[Rule.model_validate(x) for x in v['rules']],initial,require_review=require_review)
+        reference=checked_csv(self.objects.read(self.prefix(uid,task)+'reference.csv')[0]) if v.get('reference_sha256') else None
+        out['connections']=connections(source,targets,[Rule.model_validate(x) for x in v['rules']],initial,reference)
+        for item in out['connections']:
+            if item['semantic']['user_selected_target_id'] and item['conversion']['status'] in ('blocked','rule_required'):
+                out['issues'].append({'code':'conversion_unresolved','source_id':item['source_id'],'message':item['conversion']['reason']})
         if v['inference_state'] in ('running','uncertain'):out['issues'].append({'code':'inference_pending','message':'완료 여부 미확정 추천이 있어 승인을 차단합니다. 기존 ID부터 회수하세요.'})
         return out
     def preview(self,uid,task):
@@ -187,7 +196,7 @@ class Workflow:
             errors=csvbytes(['row_number','source_name','target_name','reason'],[[r[k] for k in ['row_number','source_name','target_name','reason']] for r in ev['row_errors']])
             immutable(self.objects,self.prefix(uid,task)+f'validation/{rule_hash}.csv',errors)
         return {'version':v['version'],'rules_version':v['rules_version'],'rule_hash':rule_hash,
-            'issues':ev['issues'],'row_errors':ev['row_errors'][:100],'total_row_errors':len(ev['row_errors']),
+            'issues':ev['issues'],'connections':ev['connections'],'row_errors':ev['row_errors'][:100],'total_row_errors':len(ev['row_errors']),
             'all_rows_checked':ev.get('all_rows_checked',v['row_count']),'no_rows_dropped':True,'headers':ev['headers'],'rows':ev['rows'][:20],
             'preview_limit':20,'can_approve':not ev['issues'] and not ev['row_errors'],
             'unlinked_policy':'미연결 열은 unmapped.csv로 별도 보존','row_number_basis':ev.get('row_number_basis')}
@@ -195,6 +204,8 @@ class Workflow:
         uid=owner['uid'];v,gen=self.load(uid,task);current_hash=self.rule_hash(v)
         if current_hash!=expected_hash:raise WorkflowError('미리보기 이후 규칙이 바뀌었습니다. 다시 확인해 주세요.',409)
         if v['active_approval'] and v['active_approval'].get('rule_hash')==current_hash:
+            ev=self.validation(uid,task)
+            if ev['issues'] or ev['row_errors']:raise WorkflowError('현재 변환 검사를 통과하지 못했습니다.',422,{'issues':ev['issues']})
             return self.public(uid,task),True
         if v['phase'] in ('executing','inferencing'):raise WorkflowError('기존 실행의 완료 상태를 먼저 확인해 주세요.',409)
         if version!=v['version']:raise WorkflowError('작업 버전이 변경됐습니다. 다시 미리보기해 주세요.',409)
@@ -204,7 +215,8 @@ class Workflow:
         approval={'approval_id':aid,'rule_hash':current_hash,'rules_version':v['rules_version'],'rules':deepcopy(v['rules']),
             'approved_at':now_iso(),'approved_by':uid,'approved_username':owner['username'],'authentication':owner['authentication'],
             'source_sha256':v['source_sha256'],'source_name':v['source_name'],'target_schema_sha256':v['target_schema_sha256'],
-            'reference_sha256':v['reference_sha256'],'engine_config_sha256':digest(load_config()),'transform_version':VERSION,'execution_id':aid,'status':'running'}
+            'reference_sha256':v['reference_sha256'],'engine_config_sha256':digest(load_config()),'transform_version':VERSION,
+            'connection_assessment_version':ASSESSMENT_VERSION,'connections':ev['connections'],'execution_id':aid,'status':'running'}
         v.update(phase='executing',active_approval=approval,version=v['version']+1,execution_count=v['execution_count']+1,updated_at=now_iso())
         # Exactly one contender obtains the generation; losers never execute.
         try:claimed=self.objects.write(self.state_key(uid,task),v,gen)
@@ -235,6 +247,8 @@ class Workflow:
     def download(self,uid,task,approval_id,filename):
         v,_=self.load(uid,task);a=v.get('active_approval')
         if not a or a['approval_id']!=approval_id or a['status']!='completed' or a['rule_hash']!=self.rule_hash(v):raise WorkflowError('현재 규칙에 대해 최종 승인·생성이 완료된 파일만 다운로드할 수 있습니다.',409)
+        ev=self.validation(uid,task)
+        if ev['issues'] or ev['row_errors']:raise WorkflowError('현재 의미 연결·변환 검사를 통과하지 못했습니다. 다시 검토하세요.',409)
         if filename not in a['result_files']:raise WorkflowError('파일을 찾을 수 없습니다.',404)
         raw=self.objects.read(a['result_files'][filename])[0]
         if raw is None or sha(raw)!=a['file_sha256'][filename]:raise WorkflowError('파일 보관기간이 만료됐거나 무결성이 일치하지 않습니다.',409)
