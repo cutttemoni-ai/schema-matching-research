@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-03T17:05:45.892438+00:00",
+  "status": "offline_and_local_ui_ready",
+  "production_engine": "C",
+  "candidate": "C-b2b-v1-candidate",
+  "model_accuracy": null,
+  "target_90_verified": false,
+  "B2B_new_generation_POSTs": 0,
+  "previous_authorized_semantic_campaign": {
+    "POSTs": 20,
+    "valid_outputs": 20,
+    "API_failures": 0,
+    "output_errors": 0,
+    "reference_usd": 0.116349
+  },
+  "former_scope_cumulative": {
+    "local_attempts": 488,
+    "service_attempts": 20,
+    "total_attempts": 508,
+    "observed_standard_reference_usd": 3.0289245,
+    "cost_missing_attempts": 0,
+    "complete_service_observation": true
+  },
+  "tests": {
+    "passed": 285,
+    "failed": 0,
+    "warnings": [
+      "Existing Starlette TestClient httpx deprecation"
+    ]
+  },
+  "legacy_browser_scenarios": 15,
+  "B2B_browser_scenarios": 2,
+  "browser_page_errors": 0,
+  "browser_recommendation_POSTs": 0,
+  "source_families_split_without_overlap": true,
+  "provisional_truth_not_human_reviewed": true,
+  "raw_public_sources_and_private_requests_excluded_from_git": true,
+  "local_preview": "http://127.0.0.1:8508/",
+  "main_merged": false,
+  "Cloud_Run_redeployed": false,
+  "CS_Flow_interactions": 0,
+  "human_review_time_measured": false
+}

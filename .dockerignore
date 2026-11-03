@@ -65,3 +65,10 @@ web_review/static/*
 !web_review/static/index.html
 !web_review/static/app.css
 !web_review/static/app.js
+
+!web_review/conversion.py
+!web_review/standards.py
+!schemas/product_catalog_v1.json
+!schemas/order_lines_v1.json
+!examples/b2b_products.csv
+!examples/b2b_orders.csv

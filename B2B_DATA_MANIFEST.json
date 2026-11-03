@@ -1,0 +1,147 @@
+{
+  "version": "b2b-corpus-v1",
+  "at": "2026-11-03T16:58:33.890318+00:00",
+  "actual_private_company_files": 0,
+  "new_model_calls": 0,
+  "source_families": [
+    {
+      "id": "uci-online-retail-root",
+      "split": "development",
+      "origin": "public_real_transactions",
+      "source": "https://archive.ics.uci.edu/dataset/352/online+retail",
+      "citation": "Chen, D. (2015). Online Retail. DOI10.24432/C5BW33",
+      "license": "CC BY 4.0",
+      "version": "UCI352, 2010-12-01..2011-12-09; acquisition snapshot",
+      "limitations": "One historical UK retailer; many wholesalers, not a verified current B2B partner template. Invoice event is not automatically an order event."
+    },
+    {
+      "id": "openfoodfacts-root",
+      "split": "evaluation",
+      "origin": "public_crowdsourced_catalog",
+      "source": "https://world.openfoodfacts.org/",
+      "license": "ODbL-1.0 database; DbCL individual contents; no images acquired",
+      "version": "APIv2 read-only30-product snapshot; live catalog not fixed release",
+      "limitations": "One catalog family; popularity-ranked convenience sample, not a supplier template. Not manually checked. No independent order holdout."
+    },
+    {
+      "id": "legacy-handwritten-demo",
+      "split": "development",
+      "origin": "authored_synthetic_and_header_subset_variants",
+      "source": "repository examples/normal.csv,abbreviated.csv,extra_columns.csv,review_source.csv",
+      "license": "Project-authored fixtures",
+      "version": "existing frozen example bytes",
+      "limitations": "Previously developed/tested. Header/row derivatives are not separate real companies."
+    },
+    {
+      "id": "b2b-handwritten-demo-v1",
+      "split": "development",
+      "origin": "authored_synthetic",
+      "source": "examples/b2b_products.csv and b2b_orders.csv",
+      "license": "Project-authored fixtures",
+      "version": "b2b-fixtures-v1",
+      "limitations": "Two task shapes from one author family; not independent real suppliers."
+    }
+  ],
+  "files": [
+    {
+      "file_id": "uci-orders-first1000",
+      "family_id": "uci-online-retail-root",
+      "split": "development",
+      "standard_id": "order_lines_v1",
+      "path": "datasets\\b2b-v1\\derived\\uci-orders-first1000.csv",
+      "sha256": "bd71df7333b37220ea96fbdfe8f4e5b8ebe8305e9235e660c10c9ffe22752cd9",
+      "rows": 1000,
+      "columns": 6,
+      "raw_values_publicly_committed": false,
+      "privacy": "UCI CustomerID and Country excluded from derivative; originals preserved privately."
+    },
+    {
+      "file_id": "off-catalog-first30",
+      "family_id": "openfoodfacts-root",
+      "split": "evaluation",
+      "standard_id": "product_catalog_v1",
+      "path": "datasets\\b2b-v1\\derived\\off-catalog-first30.csv",
+      "sha256": "7a610c70f057ab13315ac55cd841fe27de6fec6db695446bdf9c014677817b88",
+      "rows": 30,
+      "columns": 6,
+      "raw_values_publicly_committed": false,
+      "privacy": "Only product attributes; no contributor/contact identifiers requested."
+    },
+    {
+      "file_id": "b2b_products",
+      "family_id": "b2b-handwritten-demo-v1",
+      "split": "development",
+      "standard_id": "product_catalog_v1",
+      "path": "examples/b2b_products.csv",
+      "sha256": "2099334bd2f4a3d035c12b461f833c4709c9b141fb09400a45c8609c7dd0da38",
+      "rows": 2,
+      "columns": 11,
+      "raw_values_publicly_committed": true,
+      "privacy": "Only product attributes; no contributor/contact identifiers requested."
+    },
+    {
+      "file_id": "b2b_orders",
+      "family_id": "b2b-handwritten-demo-v1",
+      "split": "development",
+      "standard_id": "order_lines_v1",
+      "path": "examples/b2b_orders.csv",
+      "sha256": "44deefdb4e5fa69ab1eb058751d44aebec3f378be32ae706a55ffae40e404362",
+      "rows": 2,
+      "columns": 11,
+      "raw_values_publicly_committed": true,
+      "privacy": "Only product attributes; no contributor/contact identifiers requested."
+    },
+    {
+      "file_id": "legacy-normal.csv",
+      "family_id": "legacy-handwritten-demo",
+      "split": "development",
+      "path": "examples/normal.csv",
+      "sha256": "c98b1c5978af66d8be1e69c8e8ecfe36e724e82b6d0c6bb3fab7d6ee616eb6dd",
+      "rows": 3,
+      "derived_header_or_subset": false,
+      "selected_for_new_evaluation": false
+    },
+    {
+      "file_id": "legacy-abbreviated.csv",
+      "family_id": "legacy-handwritten-demo",
+      "split": "development",
+      "path": "examples/abbreviated.csv",
+      "sha256": "2237cdf8f0049db163fc295025f678becffda52323e4e9432ce1af8bfa970ace",
+      "rows": 3,
+      "derived_header_or_subset": true,
+      "selected_for_new_evaluation": false
+    },
+    {
+      "file_id": "legacy-extra_columns.csv",
+      "family_id": "legacy-handwritten-demo",
+      "split": "development",
+      "path": "examples/extra_columns.csv",
+      "sha256": "278a296dbcddb4b482f3a3c0a2b4cecb63e9d156ca9be0de58d23501d511bed9",
+      "rows": 3,
+      "derived_header_or_subset": true,
+      "selected_for_new_evaluation": false
+    },
+    {
+      "file_id": "legacy-review_source.csv",
+      "family_id": "legacy-handwritten-demo",
+      "split": "development",
+      "path": "examples/review_source.csv",
+      "sha256": "cea3b09e17bb7e80138412c49928b5fbb200d55d4f9eb90340095b6854aec73e",
+      "rows": 2,
+      "derived_header_or_subset": true,
+      "selected_for_new_evaluation": false
+    }
+  ],
+  "truth_review": "Assistant-authored provisional mappings from field documentation; no human business review.",
+  "splitting": "All derivatives/header variants/row subsets from one root family stay in one split; no random row split.",
+  "legacy_research": "WDC/Korean public/Valentine/temporal/semantic studies preserved as reference; not B2B validation.",
+  "raw_hashes": {
+    "off-http-status.json": "7d49b70a9da4cd76b0d44d6755e8392e8820ef85f3e0def6e4aa39f3909f9c49",
+    "off-products.json": "ab0b36226a8ba6a11c3ecbf693965967b4d0eab5d783bd0e8bd9d732076cb800",
+    "uci-metadata.json": "9b1a75b4ee044da8b2f108c31acf6ebf3fe5eddce75a1fe03032c6781b80f2e1",
+    "uci-online-retail.csv": "a2f79bbdd4463df6db8a3f5a50b9c980ae8f645a370bf5e2c0d6097f9e817b05"
+  },
+  "task_count": 34,
+  "ambiguous_truth_columns": 2,
+  "no_match_columns": 4
+}

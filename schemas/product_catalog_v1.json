@@ -1,0 +1,111 @@
+{
+  "schema_id": "product_catalog_v1",
+  "label": "상품 목록",
+  "description": "상품·옵션별 한 행. 상품코드·바코드와 판매가·매입가를 구분합니다.",
+  "version": "b2b-standards-v1",
+  "scope": "열 연결과 명시적 형식 변환. 상품 동일성 판별·마스터 병합 제외.",
+  "fields": [
+    {
+      "id": "product_code",
+      "name": "상품코드",
+      "description": "거래처 또는 회사가 상품·옵션을 식별하는 SKU 코드. 바코드와 구분하고 앞자리 0을 보존한다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "product_name",
+      "name": "상품명",
+      "description": "상품 표시 이름. 이름이 같아도 동일 상품 코드라고 판단하지 않는다.",
+      "data_type": "string",
+      "required": true,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "option",
+      "name": "옵션",
+      "description": "색상·용량·선택 옵션. 상품명에서 임의 분리하지 않는다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "specification",
+      "name": "규격",
+      "description": "치수·모델·포장 내용량 등 원문 규격. 판매 단위나 주문 수량과 다르며 단위 환산하지 않는다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "sales_unit",
+      "name": "판매단위",
+      "description": "개·박스·세트 등 주문·가격이 적용되는 판매 단위. 박스 입수량을 추정하지 않는다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "sale_price",
+      "name": "판매가",
+      "description": "상품 1판매단위의 판매 가격. 매입가·원가·행 합계·주문 총액과 다르다. 할인·세금 포함 기준은 원 정의 확인.",
+      "data_type": "number",
+      "required": false,
+      "allowed_transforms": [
+        "identity",
+        "number_uncomma"
+      ]
+    },
+    {
+      "id": "purchase_price",
+      "name": "매입가",
+      "description": "상품 1판매단위의 매입 가격. 판매가를 대신 넣지 않는다.",
+      "data_type": "number",
+      "required": false,
+      "allowed_transforms": [
+        "identity",
+        "number_uncomma"
+      ]
+    },
+    {
+      "id": "barcode",
+      "name": "바코드",
+      "description": "제품에 표기된 바코드 식별 문자열. 회사 SKU와 별개이며 0을 보존한다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "currency",
+      "name": "통화",
+      "description": "가격 표시 통화. KRW·GBP 등 원문 보존. 없는 통화를 만들거나 환율 환산하지 않는다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "brand",
+      "name": "브랜드",
+      "description": "제품 브랜드 표시. 제조사·공급사와 동일하다고 추정하지 않는다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    }
+  ]
+}

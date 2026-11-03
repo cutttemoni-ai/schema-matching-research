@@ -8,7 +8,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from playwright.sync_api import sync_playwright,expect
 
-ALLOWED={'http://127.0.0.1:8504','http://127.0.0.1:8506','https://schema-c-web-392692577987.asia-northeast3.run.app',
+ALLOWED={'http://127.0.0.1:8504','http://127.0.0.1:8506','http://127.0.0.1:8508','https://schema-c-web-392692577987.asia-northeast3.run.app',
     'https://schema-c-web-42mhsk5ogq-du.a.run.app'}
 p=argparse.ArgumentParser();p.add_argument('--base',default='http://127.0.0.1:8504');p.add_argument('--out',default='deployment-artifacts/review-web-v2/local-ui');a=p.parse_args()
 base=a.base.rstrip('/')

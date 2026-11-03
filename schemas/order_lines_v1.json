@@ -1,0 +1,116 @@
+{
+  "schema_id": "order_lines_v1",
+  "label": "주문 내역",
+  "description": "주문 상품별 한 행. 상품별 금액과 주문 전체 금액을 구분합니다.",
+  "version": "b2b-standards-v1",
+  "scope": "열 연결과 명시적 형식 변환. 상품 동일성 판별·마스터 병합 제외.",
+  "fields": [
+    {
+      "id": "order_number",
+      "name": "주문번호",
+      "description": "고객 주문·발주 건을 식별하는 번호. 송장·청구서 번호와 동일한지 업무 확인이 필요하다.",
+      "data_type": "string",
+      "required": true,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "order_date",
+      "name": "주문일",
+      "description": "주문이 접수·발주된 달력 날짜. 청구일·배송일·상품 출시일과 구분한다. 시간·시간대는 추정하지 않는다.",
+      "data_type": "date",
+      "required": false,
+      "allowed_transforms": [
+        "identity",
+        "date_compact_iso",
+        "date_slash_iso",
+        "date_dot_iso"
+      ]
+    },
+    {
+      "id": "product_code",
+      "name": "상품코드",
+      "description": "해당 주문 행의 상품·옵션 SKU. 바코드와 다르며 0을 보존한다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "product_name",
+      "name": "상품명",
+      "description": "해당 주문 행의 상품 이름. 이름으로 다른 코드를 병합하지 않는다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "option",
+      "name": "옵션",
+      "description": "해당 주문 행에 선택된 옵션.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    },
+    {
+      "id": "quantity",
+      "name": "수량",
+      "description": "주문 행의 판매단위 기준 수량. 중량 등은 소수 가능. 반품 음수는 보존하며 임의 절댓값 처리하지 않는다.",
+      "data_type": "number",
+      "required": true,
+      "allowed_transforms": [
+        "identity",
+        "number_uncomma"
+      ]
+    },
+    {
+      "id": "unit_price",
+      "name": "단가",
+      "description": "해당 주문 행의 상품 1판매단위 거래 판매 단가. 매입가·상품 카탈로그 기준 가격·행 금액과 구분한다.",
+      "data_type": "number",
+      "required": false,
+      "allowed_transforms": [
+        "identity",
+        "number_uncomma"
+      ]
+    },
+    {
+      "id": "line_amount",
+      "name": "상품별금액",
+      "description": "한 주문 행의 상품 금액. 수량×단가와 할인·세금 때문에 다를 수 있다. 주문 전체 총액과 구분한다.",
+      "data_type": "number",
+      "required": false,
+      "allowed_transforms": [
+        "identity",
+        "number_uncomma"
+      ]
+    },
+    {
+      "id": "order_total",
+      "name": "주문총액",
+      "description": "주문 전체 상품·할인·배송·세금을 반영한 총액. 여러 행에 반복돼도 더하지 않는다.",
+      "data_type": "number",
+      "required": false,
+      "allowed_transforms": [
+        "identity",
+        "number_uncomma"
+      ]
+    },
+    {
+      "id": "currency",
+      "name": "통화",
+      "description": "거래 금액의 통화. 원문 보존. 자동 환산하지 않는다.",
+      "data_type": "string",
+      "required": false,
+      "allowed_transforms": [
+        "identity"
+      ]
+    }
+  ]
+}

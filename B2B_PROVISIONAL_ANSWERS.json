@@ -1,0 +1,277 @@
+{
+  "answers": [
+    {
+      "id": "8f4812eafb6b34ec252a3f452970f207",
+      "file_id": "uci-orders-first1000",
+      "truth_status": "ambiguous",
+      "expected_target_id": "order_number",
+      "basis": "Invoice ID is not necessarily purchase order ID.",
+      "human_reviewed": false
+    },
+    {
+      "id": "6ac82664a75a20895aac1263c1065e05",
+      "file_id": "uci-orders-first1000",
+      "truth_status": "defined",
+      "expected_target_id": "product_code",
+      "basis": "UCI dictionary: distinct product item code; not barcode.",
+      "human_reviewed": false
+    },
+    {
+      "id": "6427984483079e50499b934ce2058b6f",
+      "file_id": "uci-orders-first1000",
+      "truth_status": "defined",
+      "expected_target_id": "product_name",
+      "basis": "UCI dictionary: product name.",
+      "human_reviewed": false
+    },
+    {
+      "id": "a89fc956f1e5d4c0559f6a75cf9b8389",
+      "file_id": "uci-orders-first1000",
+      "truth_status": "defined",
+      "expected_target_id": "quantity",
+      "basis": "UCI dictionary: quantity per transaction item; preserve returns.",
+      "human_reviewed": false
+    },
+    {
+      "id": "983feb0c0d43a0354a9ffb465444d8c7",
+      "file_id": "uci-orders-first1000",
+      "truth_status": "ambiguous",
+      "expected_target_id": "order_date",
+      "basis": "Invoice timestamp is not necessarily order reception date; date-only conversion is separate.",
+      "human_reviewed": false
+    },
+    {
+      "id": "041e48e3568b697cc087fc49f6af6c52",
+      "file_id": "uci-orders-first1000",
+      "truth_status": "defined",
+      "expected_target_id": "unit_price",
+      "basis": "UCI dictionary: transaction price per unit in sterling. Currency not inferred as a new source column.",
+      "human_reviewed": false
+    },
+    {
+      "id": "8821c2ad32785ed59cb74eb71316c1a0",
+      "file_id": "off-catalog-first30",
+      "truth_status": "defined",
+      "expected_target_id": "barcode",
+      "basis": "Official field dictionary calls code a product barcode/internal reserved identifier; preserve exact string, no SKU equivalence.",
+      "human_reviewed": false
+    },
+    {
+      "id": "3f9c63b38aed229e232c64b47f22dbd2",
+      "file_id": "off-catalog-first30",
+      "truth_status": "defined",
+      "expected_target_id": "product_name",
+      "basis": "Official field dictionary: product name.",
+      "human_reviewed": false
+    },
+    {
+      "id": "d9d7547bc8d20f6f39271423d0f79d7b",
+      "file_id": "off-catalog-first30",
+      "truth_status": "defined",
+      "expected_target_id": "specification",
+      "basis": "Official dictionary: package quantity AND unit; content specification, not order count or sales unit.",
+      "human_reviewed": false
+    },
+    {
+      "id": "dd220319811e7a69f6df5b6e307c37fb",
+      "file_id": "off-catalog-first30",
+      "truth_status": "defined",
+      "expected_target_id": "brand",
+      "basis": "Official brands field; not manufacturer or supplier.",
+      "human_reviewed": false
+    },
+    {
+      "id": "9ab7211a2f11b58c07c46fe323fb3d03",
+      "file_id": "off-catalog-first30",
+      "truth_status": "defined",
+      "expected_target_id": null,
+      "basis": "No category standard field supplied.",
+      "human_reviewed": false
+    },
+    {
+      "id": "e52b3b3610873e5e11b93cb27b6492fe",
+      "file_id": "off-catalog-first30",
+      "truth_status": "defined",
+      "expected_target_id": null,
+      "basis": "Packaging shape/material is not a sales counting unit. No supplied corresponding standard field.",
+      "human_reviewed": false
+    },
+    {
+      "id": "4101255a4a38c1598a400c0e2a9922d3",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "product_code",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "2e8dab2c7d2a25a434e245728ea1aef1",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "product_name",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "1df018694021dd3329920767fd31cdb0",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "option",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "2267dd47ae1d896827c4f01e21413659",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "specification",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "7dd9dffe772b6efb96c37ea50941ffc5",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "sales_unit",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "03d00f605e8c41b522a1a7fd4940740f",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "sale_price",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "e05d04b0fdedcd941bde6c724f5db47c",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "purchase_price",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "92351a060d7a1e28913cf1cd1ee9e54f",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "barcode",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "45894fcf5f81d7dc0bc002527425b5e4",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "currency",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "cd58b686059b37856bcc03dd761fd641",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": "brand",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "7b85d0868a91c7ec43c620732d5b3ef2",
+      "file_id": "b2b_products",
+      "truth_status": "defined",
+      "expected_target_id": null,
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "d11dd554624725817a2ff1f0316b8a6e",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "order_number",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "c340d21dd981e0772941d9a4fd35a079",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "order_date",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "f4b2f1b37933dfc62fa6ca5947ba3d8f",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "product_code",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "68dd47ac3413ddf90732827997fee341",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "product_name",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "b4672d89f81dde40d120cb832a904f8b",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "option",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "fcc791d93cd3f14f0da694465aef48df",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "quantity",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "a9a8aa5e5373784872ad88bf9c2fd75b",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "unit_price",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "d0151d32aa745dab4993fc0c06a56f06",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "line_amount",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "73cd3ee9db8ff83e09ccae09e8f22b32",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "order_total",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "ea065868b98d2d0c8c7ca690333f9a4a",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": "currency",
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    },
+    {
+      "id": "c51899b0e9c7445f9b086149b1b94651",
+      "file_id": "b2b_orders",
+      "truth_status": "defined",
+      "expected_target_id": null,
+      "basis": "Synthetic author-defined field; not human-verified real data.",
+      "human_reviewed": false
+    }
+  ],
+  "human_reviewed": false
+}

@@ -7,7 +7,7 @@ from schema_match.records import now_iso
 from schema_match.usage_policy import policy,physical_attempts
 from schema_match.usage_observations import cloud_usage
 
-GROUPS=['product-quality-v1','c-accuracy-v1','korea-v1','korea-v1_1','korea-app-v1']
+GROUPS=['product-quality-v1','c-accuracy-v1','korea-v1','korea-v1_1','korea-app-v1','c-temporal-v2','semantic-product-v1']
 FIELDS=['prompt_token_count','candidates_token_count','thoughts_token_count','cached_content_token_count','total_token_count']
 MAP={'promptTokenCount':'prompt_token_count','candidatesTokenCount':'candidates_token_count','thoughtsTokenCount':'thoughts_token_count','cachedContentTokenCount':'cached_content_token_count','totalTokenCount':'total_token_count'}
 

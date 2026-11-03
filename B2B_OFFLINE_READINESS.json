@@ -1,0 +1,271 @@
+{
+  "version": "b2b-offline-readiness-v1",
+  "at": "2026-11-03T17:00:22.361327+00:00",
+  "engine_default": "C",
+  "candidate": "C-b2b-v1-candidate",
+  "model_calls": 0,
+  "model_accuracy": null,
+  "target_90_percent_verified": false,
+  "plans": {
+    "development": {
+      "cases": 10,
+      "planned_generation_calls": 20,
+      "plan_sha256": "d12e2a3f0633f92a83ce202134f167603a3d819301fe152b7173ff97249e011b",
+      "task_ids": [
+        "6ac82664a75a20895aac1263c1065e05",
+        "6427984483079e50499b934ce2058b6f",
+        "a89fc956f1e5d4c0559f6a75cf9b8389",
+        "041e48e3568b697cc087fc49f6af6c52",
+        "03d00f605e8c41b522a1a7fd4940740f",
+        "e05d04b0fdedcd941bde6c724f5db47c",
+        "92351a060d7a1e28913cf1cd1ee9e54f",
+        "d0151d32aa745dab4993fc0c06a56f06",
+        "73cd3ee9db8ff83e09ccae09e8f22b32",
+        "c51899b0e9c7445f9b086149b1b94651"
+      ],
+      "family_count": 2,
+      "source_types": {
+        "uci-online-retail-root": 4,
+        "b2b-handwritten-demo-v1": 6
+      },
+      "inference_exposure": "0 calls in this B2B campaign; public corpus parsing and provisional truth preparation disclosed."
+    },
+    "heldout_product": {
+      "cases": 6,
+      "planned_generation_calls": 12,
+      "plan_sha256": "79cbdb6e5efbbacab556173677f4e57e51fe780d4ba5b7f767890427758734bf",
+      "task_ids": [
+        "8821c2ad32785ed59cb74eb71316c1a0",
+        "3f9c63b38aed229e232c64b47f22dbd2",
+        "d9d7547bc8d20f6f39271423d0f79d7b",
+        "dd220319811e7a69f6df5b6e307c37fb",
+        "9ab7211a2f11b58c07c46fe323fb3d03",
+        "e52b3b3610873e5e11b93cb27b6492fe"
+      ],
+      "family_count": 1,
+      "source_types": {
+        "openfoodfacts-root": 6
+      },
+      "inference_exposure": "0 calls in this B2B campaign; public corpus parsing and provisional truth preparation disclosed."
+    }
+  },
+  "input_checks": [
+    {
+      "phase": "development",
+      "task_id": "6ac82664a75a20895aac1263c1065e05",
+      "file_id": "uci-orders-first1000",
+      "source_name": "StockCode",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 1000,
+      "baseline_bytes": 3292,
+      "candidate_bytes": 3817,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "development",
+      "task_id": "6427984483079e50499b934ce2058b6f",
+      "file_id": "uci-orders-first1000",
+      "source_name": "Description",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 1000,
+      "baseline_bytes": 3512,
+      "candidate_bytes": 4037,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "development",
+      "task_id": "a89fc956f1e5d4c0559f6a75cf9b8389",
+      "file_id": "uci-orders-first1000",
+      "source_name": "Quantity",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 1000,
+      "baseline_bytes": 3569,
+      "candidate_bytes": 4094,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "development",
+      "task_id": "041e48e3568b697cc087fc49f6af6c52",
+      "file_id": "uci-orders-first1000",
+      "source_name": "UnitPrice",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 1000,
+      "baseline_bytes": 3583,
+      "candidate_bytes": 4108,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "development",
+      "task_id": "03d00f605e8c41b522a1a7fd4940740f",
+      "file_id": "b2b_products",
+      "source_name": "판매가",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 2,
+      "baseline_bytes": 3334,
+      "candidate_bytes": 3720,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "development",
+      "task_id": "e05d04b0fdedcd941bde6c724f5db47c",
+      "file_id": "b2b_products",
+      "source_name": "매입가",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 2,
+      "baseline_bytes": 3328,
+      "candidate_bytes": 3714,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "development",
+      "task_id": "92351a060d7a1e28913cf1cd1ee9e54f",
+      "file_id": "b2b_products",
+      "source_name": "바코드",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 2,
+      "baseline_bytes": 3439,
+      "candidate_bytes": 3825,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "development",
+      "task_id": "d0151d32aa745dab4993fc0c06a56f06",
+      "file_id": "b2b_orders",
+      "source_name": "행금액",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 2,
+      "baseline_bytes": 3404,
+      "candidate_bytes": 4138,
+      "arithmetic_relationships": 1
+    },
+    {
+      "phase": "development",
+      "task_id": "73cd3ee9db8ff83e09ccae09e8f22b32",
+      "file_id": "b2b_orders",
+      "source_name": "주문전체금액",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 2,
+      "baseline_bytes": 3369,
+      "candidate_bytes": 4103,
+      "arithmetic_relationships": 1
+    },
+    {
+      "phase": "development",
+      "task_id": "c51899b0e9c7445f9b086149b1b94651",
+      "file_id": "b2b_orders",
+      "source_name": "내부메모",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 2,
+      "baseline_bytes": 3170,
+      "candidate_bytes": 3904,
+      "arithmetic_relationships": 1
+    },
+    {
+      "phase": "heldout_product",
+      "task_id": "8821c2ad32785ed59cb74eb71316c1a0",
+      "file_id": "off-catalog-first30",
+      "source_name": "code",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 30,
+      "baseline_bytes": 3342,
+      "candidate_bytes": 3646,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "heldout_product",
+      "task_id": "3f9c63b38aed229e232c64b47f22dbd2",
+      "file_id": "off-catalog-first30",
+      "source_name": "product_name",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 30,
+      "baseline_bytes": 3437,
+      "candidate_bytes": 3741,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "heldout_product",
+      "task_id": "d9d7547bc8d20f6f39271423d0f79d7b",
+      "file_id": "off-catalog-first30",
+      "source_name": "quantity",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 30,
+      "baseline_bytes": 3320,
+      "candidate_bytes": 3624,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "heldout_product",
+      "task_id": "dd220319811e7a69f6df5b6e307c37fb",
+      "file_id": "off-catalog-first30",
+      "source_name": "brands",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 30,
+      "baseline_bytes": 3348,
+      "candidate_bytes": 3652,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "heldout_product",
+      "task_id": "9ab7211a2f11b58c07c46fe323fb3d03",
+      "file_id": "off-catalog-first30",
+      "source_name": "categories",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 30,
+      "baseline_bytes": 3440,
+      "candidate_bytes": 3744,
+      "arithmetic_relationships": 0
+    },
+    {
+      "phase": "heldout_product",
+      "task_id": "e52b3b3610873e5e11b93cb27b6492fe",
+      "file_id": "off-catalog-first30",
+      "source_name": "packaging",
+      "same_baseline_fields": true,
+      "same_response_schema": true,
+      "all_source_rows_profiled": 30,
+      "baseline_bytes": 3461,
+      "candidate_bytes": 3765,
+      "arithmetic_relationships": 0
+    }
+  ],
+  "all_input_invariants_passed": true,
+  "saved_C_fixture": "Existing review_stored.json is retained and verified by workflow regression tests; not reused as new B2B improvement evidence.",
+  "budget_proposal": {
+    "additional_development_calls": 20,
+    "additional_product_holdout_calls": 12,
+    "development_reference_usd_scenario": 0.2568,
+    "development_full_output_usd_scenario": 0.7944,
+    "product_holdout_reference_usd_scenario": 0.15408,
+    "product_holdout_full_output_usd_scenario": 0.47664,
+    "assumed_prompt_tokens_per_call": 6000,
+    "assumed_normal_output_tokens": 512,
+    "configured_max_output": 4096,
+    "reference_rates_per_million": {
+      "input": 1.5,
+      "output_including_thoughts": 7.5
+    },
+    "basis": "Planning scenarios only; CountTokens admission must run before any authorized generation; no discount/credit or invoice assertion."
+  },
+  "limits": [
+    "No independent real order template in holdout.",
+    "Provisional truth is not human-reviewed.",
+    "10-case development subset cannot certify90%.",
+    "No user review-time study."
+  ],
+  "automatic_generation": false
+}

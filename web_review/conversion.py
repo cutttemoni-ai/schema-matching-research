@@ -7,7 +7,7 @@ import re
 from collections import Counter
 from schema_match.profiles import strict_date
 
-VERSION='connection-conversion-v1'
+VERSION='connection-conversion-v2'
 
 
 def year_only(values):
@@ -39,6 +39,9 @@ def assess(values,target,reference_values,transform_id):
             'precision_loss':False,'checked_rows':len(values)}
     if target is None:
         return {**result,'required':None,'status':'not_assessed','supported':False,'reason':'의미 연결 대상을 먼저 선택하세요.'}
+    allowed=getattr(target,'allowed_transforms',None)
+    if allowed is not None and transform_id not in allowed:
+        return {**result,'required':True,'status':'blocked','supported':False,'reason':'이 대상 항목의 정의에서 허용하지 않는 변환입니다. 식별 코드·바코드·단위를 임의 변경할 수 없습니다.'}
     reference_values=reference_values or []
     target_dates=target.data_type=='date' or date_evidence(reference_values)
     if year_only(values) and target_dates:
@@ -63,7 +66,7 @@ def assess(values,target,reference_values,transform_id):
         if transform_id!='identity':
             result.update(required=True,status='supported',reason='선택한 허용 규칙으로 전체 행을 변환·검증할 수 있습니다.')
         return result
-    suggestions=[name for name in TRANSFORMS if name!='identity' and passes(name)]
+    suggestions=[name for name in TRANSFORMS if name!='identity' and (allowed is None or name in allowed) and passes(name)]
     return {**result,'required':True,'status':'rule_required' if suggestions else 'blocked',
             'supported':bool(suggestions),'suggested_rules':suggestions,
             'reason':'형식 변환이 필요합니다. 지원 가능한 규칙을 직접 선택하세요.' if suggestions else '전체 행을 처리할 수 있는 지원 변환이 없습니다. 원본·대상 정의를 확인하세요.'}

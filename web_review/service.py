@@ -66,7 +66,7 @@ class Workflow:
         if {c.id for c in source.columns}&{t.id for t in targets}:raise WorkflowError('원본·대상 ID는 구분해야 합니다. 대상 ID를 t_ 등으로 지정하세요.')
         if reference_name is not None and (not isinstance(reference_name,str) or len(reference_name)>200):raise WorkflowError('대상 참고 파일 이름은200자 이하입니다.')
         if reference is not None and not {t.name for t in targets}<=set(reference.frame.columns):raise WorkflowError('대상 참고 CSV에는 정의한 모든 대상 열이 있어야 합니다.')
-        wire=evidence(source,[Column(**t.model_dump(exclude={'required'})) for t in targets],reference)
+        wire=evidence(source,[Column(**t.model_dump(exclude={'required','allowed_transforms'})) for t in targets],reference)
         input_hash=digest([sha(raw),[t.model_dump() for t in targets],sha(rawref) if rawref is not None else None,name,filename])
         task=digest(['review-v2',uid,nonce])[:32];key=self.state_key(uid,task)
         existing,_=read_json(self.objects,key)

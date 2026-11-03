@@ -16,6 +16,7 @@ TRANSFORMS={
 
 class Target(Column):
     required:bool=False
+    allowed_transforms:list[str]|None=None
 
 class Rule(BaseModel):
     model_config=ConfigDict(extra='forbid',strict=True)
@@ -91,6 +92,8 @@ def evaluate(data,targets,rules,initial,*,require_review=True):
             if r.transform_id!='identity':issue('unlinked_transform','제외 항목에는 변환을 적용할 수 없습니다.')
             continue
         if r.target_id not in candidates:issue('candidate','허용되지 않은 대상 ID입니다.');continue
+        if candidates[r.target_id].allowed_transforms is not None and r.transform_id not in candidates[r.target_id].allowed_transforms:
+            issue('transform_policy','이 대상 항목 정의에서 허용하지 않는 변환입니다. 코드·바코드·단위를 임의 변경할 수 없습니다.')
         if r.target_id in seen:issue('duplicate',f'대상 {candidates[r.target_id].name}에 중복 연결됐습니다.')
         seen[r.target_id]=r.source_id;mapped[r.target_id]=r
         if r.transform_id.startswith('date_') and candidates[r.target_id].data_type not in (('integer','number','string') if r.transform_id=='date_iso_year' else ('date','string')):issue('transform_type','날짜 변환과 대상 자료형이 맞지 않습니다.')

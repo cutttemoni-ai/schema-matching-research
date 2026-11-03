@@ -16,6 +16,7 @@ from .auth import Accounts,AuthError,Throttled,COOKIE,SESSION_SECONDS
 from .storage import GCSObjects,LocalObjects,Conflict
 from .service import Workflow,WorkflowError,default_schema
 from .transforms import TRANSFORMS,VERSION
+from .standards import presets
 
 STATIC=Path(__file__).parent/'static'
 def objects_from_env():
@@ -73,7 +74,7 @@ def create_app(objects=None,infer=None,executor=None):
     async def config(request):
         cfg=load_config()
         return JSONResponse({'engine':'C','model':cfg['model'],'location':cfg['location'],'engine_config_sha256':digest(cfg),
-            'targets':default_schema(),'transforms':TRANSFORMS,'transform_version':VERSION,'service_daily_limit':limit('service_daily_generation_calls'),'usage_limits':policy()['limits'],'retry_429':policy()['retry_429'],
+            'targets':default_schema(),'schema_presets':presets(),'transforms':TRANSFORMS,'transform_version':VERSION,'service_daily_limit':limit('service_daily_generation_calls'),'usage_limits':policy()['limits'],'retry_429':policy()['retry_429'],
             'retention_days':7,'app_commit':os.getenv('APP_COMMIT','local-development'),
             'authentication':'demo-password-session' if accounts.demo_only else 'app-password-session','demo_mode':accounts.demo_only,
             'limits':{'csv_bytes':1048576,'source_columns':20,'target_columns':20,'rows':10000,'schema_bytes':65536}})
@@ -116,6 +117,11 @@ def create_app(objects=None,infer=None,executor=None):
         u=await run_in_threadpool(principal,request)
         return Response(await run_in_threadpool(flow.errors_file,u['uid'],request.path_params['task_id']),media_type='text/csv',headers={'Content-Disposition':'attachment; filename="validation-errors.csv"'})
     async def health(request):return Response('ok',media_type='text/plain')
+    async def example(request):
+        await run_in_threadpool(principal,request)
+        name=request.path_params['name']
+        if name not in ('b2b_orders.csv','b2b_products.csv'):raise WorkflowError('예제를 찾을 수 없습니다.',404)
+        return FileResponse(ROOT/'examples'/name,media_type='text/csv',filename=name)
     async def index(request):return FileResponse(STATIC/'index.html')
     async def workflow_error(request,e):return JSONResponse({'error':str(e),**e.details},e.status)
     async def auth_error(request,e):return JSONResponse({'error':str(e)},400)
@@ -127,7 +133,7 @@ def create_app(objects=None,infer=None,executor=None):
         return JSONResponse({'error':'저장소 또는 서버 요청에 실패했습니다. 새 추론을 반복하지 말고 기존 작업 상태를 확인하세요.'},500)
     routes=[Route('/',index),Route('/health',health),Route('/_stcore/health',health),Route('/api/config',config),
         Route('/api/register',register,methods=['POST']),Route('/api/login',login,methods=['POST']),Route('/api/session',session),Route('/api/logout',logout,methods=['POST']),
-        Route('/api/tasks',tasks,methods=['GET','POST']),Route('/api/demo',demo,methods=['POST']),
+        Route('/api/tasks',tasks,methods=['GET','POST']),Route('/api/demo',demo,methods=['POST']),Route('/api/examples/{name:str}',example),
         Route('/api/tasks/{task_id:str}',task,methods=['GET','DELETE']),Route('/api/tasks/{task_id:str}/review',rules,methods=['PUT']),
         Route('/api/tasks/{task_id:str}/recommend',recommend,methods=['POST']),Route('/api/tasks/{task_id:str}/recover',recover,methods=['POST']),
         Route('/api/tasks/{task_id:str}/preview',preview,methods=['POST']),Route('/api/tasks/{task_id:str}/approve',approve,methods=['POST']),
