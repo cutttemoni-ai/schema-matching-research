@@ -17,6 +17,7 @@ from schema_match.gemini_main30 import SEED, filehash
 from schema_match.research_data import read_table
 from schema_match.research_request import prepare_table_columns, task_input, wire_request
 from schema_match.vertex_provider_v1 import SYSTEM, digest, load_config, schemas
+from schema_match.usage_policy import control_hash_matches
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,7 +38,8 @@ def prepare(archive_path):
     for filename in ("schema_match/gemini_main30.py", "schema_match/vertex_provider_v1.py"):
         source = (ROOT / filename).read_bytes()
         valid = {sha256(source).hexdigest(), sha256(source.replace(b"\r\n", b"\n")).hexdigest()}
-        if frozen_hashes.get(filename) not in valid:
+        expected = frozen_hashes.get(filename)
+        if expected not in valid and not (expected and control_hash_matches(ROOT, filename, expected)):
             raise ValueError(f"Frozen historical request/provider code differs: {filename}")
     task_plan, request_plan = plan.split("## 예정270요청·후보 순서", 1)
     rows = [line.strip("|").split("|") for line in task_plan.splitlines() if line.startswith("|")]

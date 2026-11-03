@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-03T16:38:03.463560+00:00",
+  "target_commit": "2999686f61c1a3b5ce442b4dccbcf68de5239a7f",
+  "offline_tests": {
+    "passed": 52,
+    "failed": 0,
+    "command": "python -m pytest tests/test_profiles.py tests/test_research.py tests/test_research_contract_v2.py tests/test_vertex_v1.py tests/test_vertex_budget_v1_2.py tests/test_c_temporal_evidence.py tests/test_c_temporal_execution.py tests/test_gemini_main30.py -q"
+  },
+  "early_out_of_scope_web_probe": {
+    "passed": 6,
+    "failed": 4,
+    "note": "Temporary latest-web-only test file against older unevolved web service; not included in evaluation changes; web integration not claimed."
+  },
+  "original_augmentation_code_unchanged": true,
+  "approved_control_files_exact_copy": true,
+  "historical_archive_verified": true,
+  "historical_request_ids_verified": 3,
+  "historical_baseline_contents_exact": 3,
+  "planned_jobs": 24,
+  "complete_http_and_payload_verified": 24,
+  "valid_outputs": 24,
+  "API_failures": 0,
+  "output_errors": 0,
+  "uncertain": 0,
+  "retries": 0,
+  "improved_payloads_with_temporal_evidence": 12,
+  "baseline_payloads_without_temporal_evidence": 12,
+  "model_system_schema_generation_settings_preserved": true,
+  "additional_truth_sealed_separately_before_generation": true,
+  "public_results_exclude_raw_cells_responses_and_reasons": true,
+  "final_scope_attempts": 488,
+  "final_scope_standard_reference_usd": 2.9125755,
+  "service_lock_active": false,
+  "local_pending_ids": [],
+  "production_redeployment": false,
+  "main_merge": false,
+  "line_endings": "Copied operational files retain exact CRLF bytes required by approved hash amendment. Git diff checked with cr-at-eol."
+}

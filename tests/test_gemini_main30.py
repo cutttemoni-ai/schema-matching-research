@@ -81,14 +81,14 @@ def test_http_hook_blocks_second_post_and_saves_complete_bytes(tmp_path):
     import httpx
     from types import SimpleNamespace
     cfg=s.load_config();captured={}
-    def client(**kw):captured.update(kw);return object()
+    def client(**kw):captured.update(kw);return SimpleNamespace()
     with patch.object(s.google.auth,'load_credentials_from_file',return_value=(SimpleNamespace(quota_project_id=cfg['project']),None)),patch.object(s.genai,'Client',side_effect=client):
         s.client_for({'config':cfg},{'id':'id'},tmp_path,[])
     options=captured['http_options'];assert options.retry_options.attempts==1
     hooks=options.client_args['event_hooks'];url=f"https://aiplatform.googleapis.com/v1/projects/{cfg['project']}/locations/global/publishers/google/models/{cfg['model']}:generateContent"
     req=httpx.Request('POST',url,headers={'x-goog-user-project':cfg['project']},content=b'{}')
     hooks['request'][0](req)
-    with pytest.raises(FileExistsError):hooks['request'][0](req)
+    with pytest.raises(ValueError,match='Duplicate'):hooks['request'][0](req)
     hooks['response'][0](httpx.Response(200,content=b'{"large":"'+b'x'*100000+b'"}'))
     receipt=s.read(tmp_path/'http-complete.json');assert receipt['bytes']>100000
     assert receipt['sha256']==s.filehash(tmp_path/'http-response.bin')

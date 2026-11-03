@@ -1,4 +1,4 @@
-"""Managed Vertex AI provider. No VM, API key, fallback, or inference retry."""
+"""Managed Vertex AI provider. No VM/key/fallback; only bounded complete429 transport retry."""
 from copy import deepcopy
 from dataclasses import dataclass
 from hashlib import sha256
@@ -10,6 +10,7 @@ from google import genai
 from google.genai import types
 from jsonschema import Draft202012Validator
 from .config import ROOT
+from .usage_policy import retry_delay,policy_hash
 from .records import now_iso,json_bytes
 from .models import MatchResponse
 from .review import validate_recommendations,conservative_guard
@@ -144,7 +145,17 @@ class VertexProvider:
             'retry_count':0,'model_calls_attempted':1,'usage':None,'raw_response':None,'status':'failed'}
         api=time.perf_counter()
         try:
-            response=self.client.models.generate_content(model=self.config['model'],contents=contents,config=config)
+            outcomes=[]
+            while True:
+                try:
+                    response=self.client.models.generate_content(model=self.config['model'],contents=contents,config=config)
+                    outcomes.append({'attempt':len(outcomes)+1,'http_code':200});break
+                except Exception as api_error:
+                    outcomes.append({'attempt':len(outcomes)+1,'http_code':getattr(api_error,'code',None),'error_type':type(api_error).__name__})
+                    delay=retry_delay(api_error,record['retry_count'],time.perf_counter()-started)
+                    guard=getattr(self.client,'_usage_retry_guard',None)
+                    if delay is None or (guard is not None and not guard()):raise
+                    record['retry_count']+=1;time.sleep(delay)
             record['model_call_seconds']=time.perf_counter()-api
             record['raw_sdk_response']=response.model_dump(mode='json',exclude_none=True)
             record['raw_response']=response.text;record['usage']=response.usage_metadata.model_dump(mode='json',exclude_none=True) if response.usage_metadata else None
@@ -158,8 +169,14 @@ class VertexProvider:
             record['error_type']=type(error).__name__;record['http_code']=getattr(error,'code',None)
             # Structured provider errors are useful without arbitrary token/header text.
             record['error']=str(error)[:1600] if isinstance(error,ValueError) else 'Provider request failed; inspect HTTP code/API/IAM/billing/quota/region'
+        record['physical_attempt_outcomes']=outcomes;record['model_calls_attempted']=len(outcomes)
+        record['rate_limit_retry_count']=record['retry_count'];record['automatic_inference_retries']=0;record['execution_policy_sha256']=policy_hash()
+        record['usage_scope']='Final attempt metadata; earlier complete non-200 responses unbilled by published price policy, no fabricated usage'
         record['http_events']=list(self.http_events);record['total_seconds']=time.perf_counter()-started
-        record['cost']=estimate_cost(record.get('usage'),self.config);record['finished_at']=now_iso()
+        record['cost']=estimate_cost(record.get('usage'),self.config)
+        if isinstance(record.get('http_code'),int) and record['http_code']!=200:
+            record['cost']={'status':'estimated','amount':0.,'basis':'Complete non-200 response: published Vertex input/output noncharge policy; API usage not fabricated'}
+        record['finished_at']=now_iso()
         return record
 
     def run(self,wire,*,system=None):

@@ -1,0 +1,2697 @@
+{
+  "version": "c-temporal-evaluation-v1",
+  "at": "2026-11-03T16:35:25.986593+00:00",
+  "evaluated_commit": "2999686f61c1a3b5ce442b4dccbcf68de5239a7f",
+  "operational_controls_source_commit": "81afdd574bf75542f76f267087452bcf3f05eb6b",
+  "model_config": {
+    "version": "vertex-gemini-research-v1.1",
+    "project": "schema-match-gemini-261103",
+    "location": "global",
+    "model": "gemini-3.8-flash",
+    "api_version": "v1",
+    "context_tokens": 1048576,
+    "max_model_output_tokens": 65536,
+    "max_output_tokens": 4096,
+    "thinking_level": "LOW",
+    "reason_max_chars": 120,
+    "automatic_retries": 0,
+    "migration_inference_cap": 6,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": 0.75,
+      "cached_input_per_million": 0.075,
+      "output_including_thoughts_per_million": 3.75,
+      "effective_through": "2026-12-31",
+      "checked_at": "2026-11-03",
+      "source": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing"
+    },
+    "model_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash",
+    "parameter_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash",
+    "schema_policy": "Supported JSON Schema enum/anyOf; reason length additionally validated in Python. No inferred target repairs.",
+    "token_policy": "CountTokens real request plus a separate budget-only message/schema representation. max(two counts)+256 service framing+output4096; messages and system not added twice. CountTokens26 vs real prompt60 in smoke means not exact. No byte-based admission or content clipping."
+  },
+  "groups": {
+    "historical": {
+      "baseline": {
+        "planned": 3,
+        "correct": 0,
+        "accuracy": 0.0,
+        "needs_review": 3,
+        "needs_review_rate": 1.0,
+        "statuses": {
+          "needs_review": 3
+        },
+        "execution_categories": {
+          "valid_output": 3
+        },
+        "target_id_correct_ignoring_status": 3,
+        "wrong_matched_links": 0,
+        "generation_attempts": 3,
+        "input_tokens": 12281,
+        "visible_output_tokens": 265,
+        "output_including_thoughts_tokens": 265,
+        "thought_tokens_observed": 0,
+        "thought_tokens_missing_records": 3,
+        "total_tokens": 12546,
+        "standard_reference_usd": 0.020409,
+        "cost_missing_records": 0,
+        "model_seconds": 19.270879000017885,
+        "local_seconds": 21.201644100015983,
+        "mean_model_seconds": 6.423626333339295
+      },
+      "temporal": {
+        "planned": 3,
+        "correct": 1,
+        "accuracy": 0.3333333333333333,
+        "needs_review": 2,
+        "needs_review_rate": 0.6666666666666666,
+        "statuses": {
+          "needs_review": 2,
+          "matched": 1
+        },
+        "execution_categories": {
+          "valid_output": 3
+        },
+        "target_id_correct_ignoring_status": 3,
+        "wrong_matched_links": 0,
+        "generation_attempts": 3,
+        "input_tokens": 13021,
+        "visible_output_tokens": 273,
+        "output_including_thoughts_tokens": 545,
+        "thought_tokens_observed": 272,
+        "thought_tokens_missing_records": 2,
+        "total_tokens": 13566,
+        "standard_reference_usd": 0.023619,
+        "cost_missing_records": 0,
+        "model_seconds": 19.513118300004862,
+        "local_seconds": 20.95752230004291,
+        "mean_model_seconds": 6.504372766668287
+      },
+      "comparison": {
+        "counts": {
+          "same": 2,
+          "improved": 1
+        },
+        "pairs": [
+          {
+            "task_id": "45016c822cac97e043c9e380",
+            "origin": "real",
+            "phase": "historical",
+            "pair_id": "38428277_0_1311643810102462607",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "d104d7706e8a9360711c5f4d",
+            "origin": "real",
+            "phase": "historical",
+            "pair_id": "50245608_0_871275842592178099",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "7c414f731b01f1d772bb96fd",
+            "origin": "real",
+            "phase": "historical",
+            "pair_id": "27466715_0_3913547177671701530",
+            "outcome": "improved",
+            "baseline_status": "needs_review",
+            "temporal_status": "matched",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": true,
+            "target_id_changed": false
+          }
+        ]
+      }
+    },
+    "additional_real": {
+      "baseline": {
+        "planned": 5,
+        "correct": 2,
+        "accuracy": 0.4,
+        "needs_review": 3,
+        "needs_review_rate": 0.6,
+        "statuses": {
+          "needs_review": 3,
+          "matched": 2
+        },
+        "execution_categories": {
+          "valid_output": 5
+        },
+        "target_id_correct_ignoring_status": 5,
+        "wrong_matched_links": 0,
+        "generation_attempts": 5,
+        "input_tokens": 18653,
+        "visible_output_tokens": 489,
+        "output_including_thoughts_tokens": 489,
+        "thought_tokens_observed": 0,
+        "thought_tokens_missing_records": 5,
+        "total_tokens": 19142,
+        "standard_reference_usd": 0.031647,
+        "cost_missing_records": 0,
+        "model_seconds": 39.84920079994481,
+        "local_seconds": 42.23384110000916,
+        "mean_model_seconds": 7.969840159988962
+      },
+      "temporal": {
+        "planned": 5,
+        "correct": 2,
+        "accuracy": 0.4,
+        "needs_review": 3,
+        "needs_review_rate": 0.6,
+        "statuses": {
+          "needs_review": 3,
+          "matched": 2
+        },
+        "execution_categories": {
+          "valid_output": 5
+        },
+        "target_id_correct_ignoring_status": 5,
+        "wrong_matched_links": 0,
+        "generation_attempts": 5,
+        "input_tokens": 19817,
+        "visible_output_tokens": 461,
+        "output_including_thoughts_tokens": 461,
+        "thought_tokens_observed": 0,
+        "thought_tokens_missing_records": 5,
+        "total_tokens": 20278,
+        "standard_reference_usd": 0.033183,
+        "cost_missing_records": 0,
+        "model_seconds": 35.05650340000284,
+        "local_seconds": 37.3697876999795,
+        "mean_model_seconds": 7.011300680000568
+      },
+      "comparison": {
+        "counts": {
+          "same": 5
+        },
+        "pairs": [
+          {
+            "task_id": "59647f210f4ae5eed592bb5b",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "39759273_0_1427898308030295194",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "7404648a5ef8fa7e0026834a",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "35188621_0_6058553107571275232",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "a11e540d800d4a02a325910f",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "66329615_0_3585856495110277641",
+            "outcome": "same",
+            "baseline_status": "matched",
+            "temporal_status": "matched",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "3228d853e01c347ee75d562d",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "84548468_0_5955155464119382182",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "e919d7616444a91815184641",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "58891288_0_1117541047012405958",
+            "outcome": "same",
+            "baseline_status": "matched",
+            "temporal_status": "matched",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          }
+        ]
+      }
+    },
+    "additional_synthetic": {
+      "baseline": {
+        "planned": 4,
+        "correct": 4,
+        "accuracy": 1.0,
+        "needs_review": 0,
+        "needs_review_rate": 0.0,
+        "statuses": {
+          "no_match": 3,
+          "matched": 1
+        },
+        "execution_categories": {
+          "valid_output": 4
+        },
+        "target_id_correct_ignoring_status": 4,
+        "wrong_matched_links": 0,
+        "generation_attempts": 4,
+        "input_tokens": 9818,
+        "visible_output_tokens": 356,
+        "output_including_thoughts_tokens": 356,
+        "thought_tokens_observed": 0,
+        "thought_tokens_missing_records": 4,
+        "total_tokens": 10174,
+        "standard_reference_usd": 0.017397,
+        "cost_missing_records": 0,
+        "model_seconds": 17.800776999996742,
+        "local_seconds": 19.430750700004864,
+        "mean_model_seconds": 4.450194249999186
+      },
+      "temporal": {
+        "planned": 4,
+        "correct": 4,
+        "accuracy": 1.0,
+        "needs_review": 0,
+        "needs_review_rate": 0.0,
+        "statuses": {
+          "no_match": 3,
+          "matched": 1
+        },
+        "execution_categories": {
+          "valid_output": 4
+        },
+        "target_id_correct_ignoring_status": 4,
+        "wrong_matched_links": 0,
+        "generation_attempts": 4,
+        "input_tokens": 10965,
+        "visible_output_tokens": 319,
+        "output_including_thoughts_tokens": 319,
+        "thought_tokens_observed": 0,
+        "thought_tokens_missing_records": 4,
+        "total_tokens": 11284,
+        "standard_reference_usd": 0.01884,
+        "cost_missing_records": 0,
+        "model_seconds": 14.021449299994856,
+        "local_seconds": 15.8932476999762,
+        "mean_model_seconds": 3.505362324998714
+      },
+      "comparison": {
+        "counts": {
+          "same": 4
+        },
+        "pairs": [
+          {
+            "task_id": "b9163ae4e6b9a0d352521b3c",
+            "origin": "synthetic",
+            "phase": "additional",
+            "pair_id": "synthetic-temporal-01",
+            "outcome": "same",
+            "baseline_status": "no_match",
+            "temporal_status": "no_match",
+            "baseline_target": null,
+            "temporal_target": null,
+            "expected_target": null,
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "838e9a97a1e0f2c82057236c",
+            "origin": "synthetic",
+            "phase": "additional",
+            "pair_id": "synthetic-temporal-02",
+            "outcome": "same",
+            "baseline_status": "no_match",
+            "temporal_status": "no_match",
+            "baseline_target": null,
+            "temporal_target": null,
+            "expected_target": null,
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "3829e25015f51d478c8a7451",
+            "origin": "synthetic",
+            "phase": "additional",
+            "pair_id": "synthetic-temporal-03",
+            "outcome": "same",
+            "baseline_status": "no_match",
+            "temporal_status": "no_match",
+            "baseline_target": null,
+            "temporal_target": null,
+            "expected_target": null,
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "f8ab1ab53e1a050fd0dd0e74",
+            "origin": "synthetic",
+            "phase": "additional",
+            "pair_id": "synthetic-temporal-04",
+            "outcome": "same",
+            "baseline_status": "matched",
+            "temporal_status": "matched",
+            "baseline_target": "Contract start year",
+            "temporal_target": "Contract start year",
+            "expected_target": "Contract start year",
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          }
+        ]
+      }
+    },
+    "all_real": {
+      "baseline": {
+        "planned": 8,
+        "correct": 2,
+        "accuracy": 0.25,
+        "needs_review": 6,
+        "needs_review_rate": 0.75,
+        "statuses": {
+          "needs_review": 6,
+          "matched": 2
+        },
+        "execution_categories": {
+          "valid_output": 8
+        },
+        "target_id_correct_ignoring_status": 8,
+        "wrong_matched_links": 0,
+        "generation_attempts": 8,
+        "input_tokens": 30934,
+        "visible_output_tokens": 754,
+        "output_including_thoughts_tokens": 754,
+        "thought_tokens_observed": 0,
+        "thought_tokens_missing_records": 8,
+        "total_tokens": 31688,
+        "standard_reference_usd": 0.052056,
+        "cost_missing_records": 0,
+        "model_seconds": 59.120079799962696,
+        "local_seconds": 63.43548520002514,
+        "mean_model_seconds": 7.390009974995337
+      },
+      "temporal": {
+        "planned": 8,
+        "correct": 3,
+        "accuracy": 0.375,
+        "needs_review": 5,
+        "needs_review_rate": 0.625,
+        "statuses": {
+          "needs_review": 5,
+          "matched": 3
+        },
+        "execution_categories": {
+          "valid_output": 8
+        },
+        "target_id_correct_ignoring_status": 8,
+        "wrong_matched_links": 0,
+        "generation_attempts": 8,
+        "input_tokens": 32838,
+        "visible_output_tokens": 734,
+        "output_including_thoughts_tokens": 1006,
+        "thought_tokens_observed": 272,
+        "thought_tokens_missing_records": 7,
+        "total_tokens": 33844,
+        "standard_reference_usd": 0.056802,
+        "cost_missing_records": 0,
+        "model_seconds": 54.5696217000077,
+        "local_seconds": 58.32731000002241,
+        "mean_model_seconds": 6.821202712500963
+      },
+      "comparison": {
+        "counts": {
+          "same": 7,
+          "improved": 1
+        },
+        "pairs": [
+          {
+            "task_id": "45016c822cac97e043c9e380",
+            "origin": "real",
+            "phase": "historical",
+            "pair_id": "38428277_0_1311643810102462607",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "d104d7706e8a9360711c5f4d",
+            "origin": "real",
+            "phase": "historical",
+            "pair_id": "50245608_0_871275842592178099",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "7c414f731b01f1d772bb96fd",
+            "origin": "real",
+            "phase": "historical",
+            "pair_id": "27466715_0_3913547177671701530",
+            "outcome": "improved",
+            "baseline_status": "needs_review",
+            "temporal_status": "matched",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "59647f210f4ae5eed592bb5b",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "39759273_0_1427898308030295194",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "7404648a5ef8fa7e0026834a",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "35188621_0_6058553107571275232",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "a11e540d800d4a02a325910f",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "66329615_0_3585856495110277641",
+            "outcome": "same",
+            "baseline_status": "matched",
+            "temporal_status": "matched",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "3228d853e01c347ee75d562d",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "84548468_0_5955155464119382182",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "e919d7616444a91815184641",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "58891288_0_1117541047012405958",
+            "outcome": "same",
+            "baseline_status": "matched",
+            "temporal_status": "matched",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          }
+        ]
+      }
+    },
+    "all_including_synthetic": {
+      "baseline": {
+        "planned": 12,
+        "correct": 6,
+        "accuracy": 0.5,
+        "needs_review": 6,
+        "needs_review_rate": 0.5,
+        "statuses": {
+          "needs_review": 6,
+          "matched": 3,
+          "no_match": 3
+        },
+        "execution_categories": {
+          "valid_output": 12
+        },
+        "target_id_correct_ignoring_status": 12,
+        "wrong_matched_links": 0,
+        "generation_attempts": 12,
+        "input_tokens": 40752,
+        "visible_output_tokens": 1110,
+        "output_including_thoughts_tokens": 1110,
+        "thought_tokens_observed": 0,
+        "thought_tokens_missing_records": 12,
+        "total_tokens": 41862,
+        "standard_reference_usd": 0.069453,
+        "cost_missing_records": 0,
+        "model_seconds": 76.92085679995944,
+        "local_seconds": 82.86623590003,
+        "mean_model_seconds": 6.41007139999662
+      },
+      "temporal": {
+        "planned": 12,
+        "correct": 7,
+        "accuracy": 0.5833333333333334,
+        "needs_review": 5,
+        "needs_review_rate": 0.4166666666666667,
+        "statuses": {
+          "needs_review": 5,
+          "matched": 4,
+          "no_match": 3
+        },
+        "execution_categories": {
+          "valid_output": 12
+        },
+        "target_id_correct_ignoring_status": 12,
+        "wrong_matched_links": 0,
+        "generation_attempts": 12,
+        "input_tokens": 43803,
+        "visible_output_tokens": 1053,
+        "output_including_thoughts_tokens": 1325,
+        "thought_tokens_observed": 272,
+        "thought_tokens_missing_records": 11,
+        "total_tokens": 45128,
+        "standard_reference_usd": 0.075642,
+        "cost_missing_records": 0,
+        "model_seconds": 68.59107100000256,
+        "local_seconds": 74.22055769999861,
+        "mean_model_seconds": 5.715922583333547
+      },
+      "comparison": {
+        "counts": {
+          "same": 11,
+          "improved": 1
+        },
+        "pairs": [
+          {
+            "task_id": "45016c822cac97e043c9e380",
+            "origin": "real",
+            "phase": "historical",
+            "pair_id": "38428277_0_1311643810102462607",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "d104d7706e8a9360711c5f4d",
+            "origin": "real",
+            "phase": "historical",
+            "pair_id": "50245608_0_871275842592178099",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "7c414f731b01f1d772bb96fd",
+            "origin": "real",
+            "phase": "historical",
+            "pair_id": "27466715_0_3913547177671701530",
+            "outcome": "improved",
+            "baseline_status": "needs_review",
+            "temporal_status": "matched",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "59647f210f4ae5eed592bb5b",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "39759273_0_1427898308030295194",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "7404648a5ef8fa7e0026834a",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "35188621_0_6058553107571275232",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "a11e540d800d4a02a325910f",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "66329615_0_3585856495110277641",
+            "outcome": "same",
+            "baseline_status": "matched",
+            "temporal_status": "matched",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "3228d853e01c347ee75d562d",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "84548468_0_5955155464119382182",
+            "outcome": "same",
+            "baseline_status": "needs_review",
+            "temporal_status": "needs_review",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": false,
+            "temporal_correct": false,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "e919d7616444a91815184641",
+            "origin": "real",
+            "phase": "additional",
+            "pair_id": "58891288_0_1117541047012405958",
+            "outcome": "same",
+            "baseline_status": "matched",
+            "temporal_status": "matched",
+            "baseline_target": "releaseDate",
+            "temporal_target": "releaseDate",
+            "expected_target": "releaseDate",
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "b9163ae4e6b9a0d352521b3c",
+            "origin": "synthetic",
+            "phase": "additional",
+            "pair_id": "synthetic-temporal-01",
+            "outcome": "same",
+            "baseline_status": "no_match",
+            "temporal_status": "no_match",
+            "baseline_target": null,
+            "temporal_target": null,
+            "expected_target": null,
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "838e9a97a1e0f2c82057236c",
+            "origin": "synthetic",
+            "phase": "additional",
+            "pair_id": "synthetic-temporal-02",
+            "outcome": "same",
+            "baseline_status": "no_match",
+            "temporal_status": "no_match",
+            "baseline_target": null,
+            "temporal_target": null,
+            "expected_target": null,
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "3829e25015f51d478c8a7451",
+            "origin": "synthetic",
+            "phase": "additional",
+            "pair_id": "synthetic-temporal-03",
+            "outcome": "same",
+            "baseline_status": "no_match",
+            "temporal_status": "no_match",
+            "baseline_target": null,
+            "temporal_target": null,
+            "expected_target": null,
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          },
+          {
+            "task_id": "f8ab1ab53e1a050fd0dd0e74",
+            "origin": "synthetic",
+            "phase": "additional",
+            "pair_id": "synthetic-temporal-04",
+            "outcome": "same",
+            "baseline_status": "matched",
+            "temporal_status": "matched",
+            "baseline_target": "Contract start year",
+            "temporal_target": "Contract start year",
+            "expected_target": "Contract start year",
+            "baseline_correct": true,
+            "temporal_correct": true,
+            "target_id_changed": false
+          }
+        ]
+      }
+    }
+  },
+  "historical_comparison": {
+    "past_baseline": {
+      "planned": 3,
+      "correct": 0,
+      "accuracy": 0.0,
+      "needs_review": 3,
+      "needs_review_rate": 1.0,
+      "statuses": {
+        "needs_review": 3
+      },
+      "execution_categories": {
+        "valid_output": 3
+      },
+      "target_id_correct_ignoring_status": 3,
+      "wrong_matched_links": 0,
+      "generation_attempts": 3,
+      "input_tokens": 12281,
+      "visible_output_tokens": 289,
+      "output_including_thoughts_tokens": 768,
+      "thought_tokens_observed": 479,
+      "thought_tokens_missing_records": 2,
+      "total_tokens": 13049,
+      "standard_reference_usd": 0.0241815,
+      "cost_missing_records": 0,
+      "model_seconds": 15.02004719999968,
+      "local_seconds": 16.475788399999146,
+      "mean_model_seconds": 5.006682399999893
+    },
+    "temporal_now": {
+      "planned": 3,
+      "correct": 1,
+      "accuracy": 0.3333333333333333,
+      "needs_review": 2,
+      "needs_review_rate": 0.6666666666666666,
+      "statuses": {
+        "needs_review": 2,
+        "matched": 1
+      },
+      "execution_categories": {
+        "valid_output": 3
+      },
+      "target_id_correct_ignoring_status": 3,
+      "wrong_matched_links": 0,
+      "generation_attempts": 3,
+      "input_tokens": 13021,
+      "visible_output_tokens": 273,
+      "output_including_thoughts_tokens": 545,
+      "thought_tokens_observed": 272,
+      "thought_tokens_missing_records": 2,
+      "total_tokens": 13566,
+      "standard_reference_usd": 0.023619,
+      "cost_missing_records": 0,
+      "model_seconds": 19.513118300004862,
+      "local_seconds": 20.95752230004291,
+      "mean_model_seconds": 6.504372766668287
+    },
+    "comparison_label": "과거 결과 대비; 동일 시점 무작위 대조가 아님",
+    "improved": 1
+  },
+  "new_calls_totals": {
+    "planned": 24,
+    "correct": 13,
+    "accuracy": 0.5416666666666666,
+    "needs_review": 11,
+    "needs_review_rate": 0.4583333333333333,
+    "statuses": {
+      "needs_review": 11,
+      "matched": 7,
+      "no_match": 6
+    },
+    "execution_categories": {
+      "valid_output": 24
+    },
+    "target_id_correct_ignoring_status": 24,
+    "wrong_matched_links": 0,
+    "generation_attempts": 24,
+    "input_tokens": 84555,
+    "visible_output_tokens": 2163,
+    "output_including_thoughts_tokens": 2435,
+    "thought_tokens_observed": 272,
+    "thought_tokens_missing_records": 23,
+    "total_tokens": 86990,
+    "standard_reference_usd": 0.145095,
+    "cost_missing_records": 0,
+    "model_seconds": 145.511927799962,
+    "local_seconds": 157.0867936000286,
+    "mean_model_seconds": 6.062996991665083
+  },
+  "rows": [
+    {
+      "phase": "historical",
+      "origin": "real",
+      "variant": "temporal",
+      "task_id": "45016c822cac97e043c9e380",
+      "pair_id": "38428277_0_1311643810102462607",
+      "component_id": "afe628c5b86e51c00393",
+      "request_id": "e259b721a67669cbe1694f97553f73b2",
+      "historical_slot": 23,
+      "condition": "abbreviated",
+      "source_name": "yea",
+      "candidate_ids": [
+        "t_1f6cef73203a6c0b",
+        "t_385fac2484722f1c",
+        "t_31fba0b21667b521",
+        "t_8213550952931218"
+      ],
+      "candidate_names": {
+        "t_1f6cef73203a6c0b": "rdf-schema#label",
+        "t_385fac2484722f1c": "releaseDate",
+        "t_31fba0b21667b521": "language",
+        "t_8213550952931218": "director"
+      },
+      "status": "needs_review",
+      "target_id": "t_385fac2484722f1c",
+      "target_name": "releaseDate",
+      "expected_id": "t_385fac2484722f1c",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 4294,
+      "output_tokens": 106,
+      "thought_tokens": null,
+      "total_tokens": 4400,
+      "billable_output_tokens": 106,
+      "standard_reference_usd": 0.007236,
+      "model_seconds": 3.333870600006776,
+      "local_seconds": 3.7725270000228193,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 113,
+          "year_only": 113,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_385fac2484722f1c",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 217,
+              "year_only": 0,
+              "single_iso": 212,
+              "multi_iso": 5
+            },
+            "distinct_years_source": 54,
+            "distinct_years_target": 93,
+            "shared_distinct_years": 49
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": "developer-selected historical case; not independent",
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "historical",
+      "origin": "real",
+      "variant": "temporal",
+      "task_id": "d104d7706e8a9360711c5f4d",
+      "pair_id": "50245608_0_871275842592178099",
+      "component_id": "21b709baf7ae7e49ce3f",
+      "request_id": "3f9a941546dda8355cd50b87e85b813d",
+      "historical_slot": 44,
+      "condition": "opaque",
+      "source_name": "column_0007",
+      "candidate_ids": [
+        "t_b7fb5039990699c4",
+        "t_b8ebd3a60e01012b",
+        "t_d0e021c12366df70",
+        "t_ab6f48720b2b9baf"
+      ],
+      "candidate_names": {
+        "t_b7fb5039990699c4": "rdf-schema#label",
+        "t_b8ebd3a60e01012b": "releaseDate",
+        "t_d0e021c12366df70": "Work/runtime",
+        "t_ab6f48720b2b9baf": "director"
+      },
+      "status": "needs_review",
+      "target_id": "t_b8ebd3a60e01012b",
+      "target_name": "releaseDate",
+      "expected_id": "t_b8ebd3a60e01012b",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 4235,
+      "output_tokens": 97,
+      "thought_tokens": 272,
+      "total_tokens": 4604,
+      "billable_output_tokens": 369,
+      "standard_reference_usd": 0.00912,
+      "model_seconds": 12.887314899999183,
+      "local_seconds": 13.4606780000031,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 293,
+          "year_only": 293,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_b8ebd3a60e01012b",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 335,
+              "year_only": 0,
+              "single_iso": 317,
+              "multi_iso": 18
+            },
+            "distinct_years_source": 47,
+            "distinct_years_target": 102,
+            "shared_distinct_years": 44
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": "developer-selected historical case; not independent",
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "historical",
+      "origin": "real",
+      "variant": "temporal",
+      "task_id": "7c414f731b01f1d772bb96fd",
+      "pair_id": "27466715_0_3913547177671701530",
+      "component_id": "5f2afb77866331014979",
+      "request_id": "baa03b7b64191bdff0b7eb62288ef6df",
+      "historical_slot": 91,
+      "condition": "original",
+      "source_name": "Year first released [10][11][14][15]",
+      "candidate_ids": [
+        "t_70707be2b3d9b5bb",
+        "t_31fd139f2efb9ae1",
+        "t_3e71f58b0bbb9f51",
+        "t_6d16eb0bcf78dd35"
+      ],
+      "candidate_names": {
+        "t_70707be2b3d9b5bb": "released",
+        "t_31fd139f2efb9ae1": "series",
+        "t_3e71f58b0bbb9f51": "releaseDate",
+        "t_6d16eb0bcf78dd35": "modes"
+      },
+      "status": "matched",
+      "target_id": "t_3e71f58b0bbb9f51",
+      "target_name": "releaseDate",
+      "expected_id": "t_3e71f58b0bbb9f51",
+      "expected_name": "releaseDate",
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 4492,
+      "output_tokens": 70,
+      "thought_tokens": null,
+      "total_tokens": 4562,
+      "billable_output_tokens": 70,
+      "standard_reference_usd": 0.007263,
+      "model_seconds": 3.2919327999989036,
+      "local_seconds": 3.724317300016992,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 387,
+          "year_only": 387,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_70707be2b3d9b5bb",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 242,
+              "year_only": 1,
+              "single_iso": 13,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 7,
+            "distinct_years_target": 10,
+            "shared_distinct_years": 2
+          },
+          {
+            "target_id": "t_3e71f58b0bbb9f51",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 238,
+              "year_only": 0,
+              "single_iso": 159,
+              "multi_iso": 79
+            },
+            "distinct_years_source": 7,
+            "distinct_years_target": 39,
+            "shared_distinct_years": 7
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": "developer-selected historical case; not independent",
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "historical",
+      "origin": "real",
+      "variant": "baseline",
+      "task_id": "45016c822cac97e043c9e380",
+      "pair_id": "38428277_0_1311643810102462607",
+      "component_id": "afe628c5b86e51c00393",
+      "request_id": "4ec8c3b788047537e319ad5f9f17fee0",
+      "historical_slot": 23,
+      "condition": "abbreviated",
+      "source_name": "yea",
+      "candidate_ids": [
+        "t_1f6cef73203a6c0b",
+        "t_385fac2484722f1c",
+        "t_31fba0b21667b521",
+        "t_8213550952931218"
+      ],
+      "candidate_names": {
+        "t_1f6cef73203a6c0b": "rdf-schema#label",
+        "t_385fac2484722f1c": "releaseDate",
+        "t_31fba0b21667b521": "language",
+        "t_8213550952931218": "director"
+      },
+      "status": "needs_review",
+      "target_id": "t_385fac2484722f1c",
+      "target_name": "releaseDate",
+      "expected_id": "t_385fac2484722f1c",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 4076,
+      "output_tokens": 90,
+      "thought_tokens": null,
+      "total_tokens": 4166,
+      "billable_output_tokens": 90,
+      "standard_reference_usd": 0.006789,
+      "model_seconds": 12.074981600017054,
+      "local_seconds": 12.604521000001114,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": "developer-selected historical case; not independent",
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "historical",
+      "origin": "real",
+      "variant": "baseline",
+      "task_id": "d104d7706e8a9360711c5f4d",
+      "pair_id": "50245608_0_871275842592178099",
+      "component_id": "21b709baf7ae7e49ce3f",
+      "request_id": "6467dd0e4eabaafa50481b2f5bcc2619",
+      "historical_slot": 44,
+      "condition": "opaque",
+      "source_name": "column_0007",
+      "candidate_ids": [
+        "t_b7fb5039990699c4",
+        "t_b8ebd3a60e01012b",
+        "t_d0e021c12366df70",
+        "t_ab6f48720b2b9baf"
+      ],
+      "candidate_names": {
+        "t_b7fb5039990699c4": "rdf-schema#label",
+        "t_b8ebd3a60e01012b": "releaseDate",
+        "t_d0e021c12366df70": "Work/runtime",
+        "t_ab6f48720b2b9baf": "director"
+      },
+      "status": "needs_review",
+      "target_id": "t_b8ebd3a60e01012b",
+      "target_name": "releaseDate",
+      "expected_id": "t_b8ebd3a60e01012b",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 4015,
+      "output_tokens": 72,
+      "thought_tokens": null,
+      "total_tokens": 4087,
+      "billable_output_tokens": 72,
+      "standard_reference_usd": 0.0065625,
+      "model_seconds": 3.5028354999958538,
+      "local_seconds": 4.131179500021972,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": "developer-selected historical case; not independent",
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "historical",
+      "origin": "real",
+      "variant": "baseline",
+      "task_id": "7c414f731b01f1d772bb96fd",
+      "pair_id": "27466715_0_3913547177671701530",
+      "component_id": "5f2afb77866331014979",
+      "request_id": "acf7db39fdbdaf933ccfc8b1bbcea986",
+      "historical_slot": 91,
+      "condition": "original",
+      "source_name": "Year first released [10][11][14][15]",
+      "candidate_ids": [
+        "t_70707be2b3d9b5bb",
+        "t_31fd139f2efb9ae1",
+        "t_3e71f58b0bbb9f51",
+        "t_6d16eb0bcf78dd35"
+      ],
+      "candidate_names": {
+        "t_70707be2b3d9b5bb": "released",
+        "t_31fd139f2efb9ae1": "series",
+        "t_3e71f58b0bbb9f51": "releaseDate",
+        "t_6d16eb0bcf78dd35": "modes"
+      },
+      "status": "needs_review",
+      "target_id": "t_3e71f58b0bbb9f51",
+      "target_name": "releaseDate",
+      "expected_id": "t_3e71f58b0bbb9f51",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 4190,
+      "output_tokens": 103,
+      "thought_tokens": null,
+      "total_tokens": 4293,
+      "billable_output_tokens": 103,
+      "standard_reference_usd": 0.0070575,
+      "model_seconds": 3.6930619000049774,
+      "local_seconds": 4.465943599992897,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": "developer-selected historical case; not independent",
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "baseline",
+      "task_id": "59647f210f4ae5eed592bb5b",
+      "pair_id": "39759273_0_1427898308030295194",
+      "component_id": "6c8b61f48ac15360ea33",
+      "request_id": "f5579e0324ef3565ff1041150c9f49af",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Year",
+      "candidate_ids": [
+        "t_120e2255307278f7",
+        "t_bf4878dc55924e42",
+        "t_d6c10730f83983a4"
+      ],
+      "candidate_names": {
+        "t_120e2255307278f7": "releaseDate",
+        "t_bf4878dc55924e42": "rdf-schema#label",
+        "t_d6c10730f83983a4": "music"
+      },
+      "status": "needs_review",
+      "target_id": "t_120e2255307278f7",
+      "target_name": "releaseDate",
+      "expected_id": "t_120e2255307278f7",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 3347,
+      "output_tokens": 111,
+      "thought_tokens": null,
+      "total_tokens": 3458,
+      "billable_output_tokens": 111,
+      "standard_reference_usd": 0.005853,
+      "model_seconds": 3.364361199986888,
+      "local_seconds": 3.8893529000051785,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": {
+        "known_generation_campaigns": [
+          "gemini-main30-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "temporal",
+      "task_id": "59647f210f4ae5eed592bb5b",
+      "pair_id": "39759273_0_1427898308030295194",
+      "component_id": "6c8b61f48ac15360ea33",
+      "request_id": "5c6a1b5d1be3900d2b0e24278b7b731f",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Year",
+      "candidate_ids": [
+        "t_120e2255307278f7",
+        "t_bf4878dc55924e42",
+        "t_d6c10730f83983a4"
+      ],
+      "candidate_names": {
+        "t_120e2255307278f7": "releaseDate",
+        "t_bf4878dc55924e42": "rdf-schema#label",
+        "t_d6c10730f83983a4": "music"
+      },
+      "status": "needs_review",
+      "target_id": "t_120e2255307278f7",
+      "target_name": "releaseDate",
+      "expected_id": "t_120e2255307278f7",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 3565,
+      "output_tokens": 102,
+      "thought_tokens": null,
+      "total_tokens": 3667,
+      "billable_output_tokens": 102,
+      "standard_reference_usd": 0.0061125,
+      "model_seconds": 6.035162799991667,
+      "local_seconds": 6.653248899994651,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 100,
+          "year_only": 100,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_120e2255307278f7",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 72,
+              "year_only": 0,
+              "single_iso": 66,
+              "multi_iso": 6
+            },
+            "distinct_years_source": 43,
+            "distinct_years_target": 54,
+            "shared_distinct_years": 21
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": {
+        "known_generation_campaigns": [
+          "gemini-main30-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "temporal",
+      "task_id": "7404648a5ef8fa7e0026834a",
+      "pair_id": "35188621_0_6058553107571275232",
+      "component_id": "6ee6821b3bcd3d47e0c5",
+      "request_id": "fda749da51a3e5566fb8b3796c1176e2",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Year",
+      "candidate_ids": [
+        "t_523d467450b899db",
+        "t_3277afdfd001fa9b",
+        "t_03a406286b2a2b5a"
+      ],
+      "candidate_names": {
+        "t_523d467450b899db": "releaseDate",
+        "t_3277afdfd001fa9b": "director",
+        "t_03a406286b2a2b5a": "gross"
+      },
+      "status": "needs_review",
+      "target_id": "t_523d467450b899db",
+      "target_name": "releaseDate",
+      "expected_id": "t_523d467450b899db",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 3589,
+      "output_tokens": 106,
+      "thought_tokens": null,
+      "total_tokens": 3695,
+      "billable_output_tokens": 106,
+      "standard_reference_usd": 0.0061785,
+      "model_seconds": 19.781832700013183,
+      "local_seconds": 20.22076830000151,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 113,
+          "year_only": 113,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_523d467450b899db",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 81,
+              "year_only": 0,
+              "single_iso": 77,
+              "multi_iso": 4
+            },
+            "distinct_years_source": 59,
+            "distinct_years_target": 55,
+            "shared_distinct_years": 29
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": {
+        "known_generation_campaigns": [
+          "gemini-main30-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "baseline",
+      "task_id": "7404648a5ef8fa7e0026834a",
+      "pair_id": "35188621_0_6058553107571275232",
+      "component_id": "6ee6821b3bcd3d47e0c5",
+      "request_id": "9a41b1a588ee2ed8fa813ec3630efb5c",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Year",
+      "candidate_ids": [
+        "t_523d467450b899db",
+        "t_3277afdfd001fa9b",
+        "t_03a406286b2a2b5a"
+      ],
+      "candidate_names": {
+        "t_523d467450b899db": "releaseDate",
+        "t_3277afdfd001fa9b": "director",
+        "t_03a406286b2a2b5a": "gross"
+      },
+      "status": "needs_review",
+      "target_id": "t_523d467450b899db",
+      "target_name": "releaseDate",
+      "expected_id": "t_523d467450b899db",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 3372,
+      "output_tokens": 106,
+      "thought_tokens": null,
+      "total_tokens": 3478,
+      "billable_output_tokens": 106,
+      "standard_reference_usd": 0.005853,
+      "model_seconds": 14.778551499999594,
+      "local_seconds": 15.442654000013135,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": {
+        "known_generation_campaigns": [
+          "gemini-main30-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "baseline",
+      "task_id": "a11e540d800d4a02a325910f",
+      "pair_id": "66329615_0_3585856495110277641",
+      "component_id": "f6367ceee7c4948f18eb",
+      "request_id": "c0c45646c5dfce49b63809a08befa303",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Release date",
+      "candidate_ids": [
+        "t_68acab5cdc517397",
+        "t_49971b1221acbef1",
+        "t_0f816e251f481027",
+        "t_29532a49f89a64f7",
+        "t_9c68c88ca39d7afb",
+        "t_c384f70faafe6455"
+      ],
+      "candidate_names": {
+        "t_68acab5cdc517397": "manufacturer",
+        "t_49971b1221acbef1": "computingPlatform",
+        "t_0f816e251f481027": "genre",
+        "t_29532a49f89a64f7": "publisher",
+        "t_9c68c88ca39d7afb": "released",
+        "t_c384f70faafe6455": "releaseDate"
+      },
+      "status": "matched",
+      "target_id": "t_c384f70faafe6455",
+      "target_name": "releaseDate",
+      "expected_id": "t_c384f70faafe6455",
+      "expected_name": "releaseDate",
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 5246,
+      "output_tokens": 97,
+      "thought_tokens": null,
+      "total_tokens": 5343,
+      "billable_output_tokens": 97,
+      "standard_reference_usd": 0.0085965,
+      "model_seconds": 4.617245000001276,
+      "local_seconds": 5.018458300008206,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": {
+        "known_generation_campaigns": [
+          "gemini-main30-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "temporal",
+      "task_id": "a11e540d800d4a02a325910f",
+      "pair_id": "66329615_0_3585856495110277641",
+      "component_id": "f6367ceee7c4948f18eb",
+      "request_id": "eeb95c8525d5cd07bd13b403b1a74fda",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Release date",
+      "candidate_ids": [
+        "t_68acab5cdc517397",
+        "t_49971b1221acbef1",
+        "t_0f816e251f481027",
+        "t_29532a49f89a64f7",
+        "t_9c68c88ca39d7afb",
+        "t_c384f70faafe6455"
+      ],
+      "candidate_names": {
+        "t_68acab5cdc517397": "manufacturer",
+        "t_49971b1221acbef1": "computingPlatform",
+        "t_0f816e251f481027": "genre",
+        "t_29532a49f89a64f7": "publisher",
+        "t_9c68c88ca39d7afb": "released",
+        "t_c384f70faafe6455": "releaseDate"
+      },
+      "status": "matched",
+      "target_id": "t_c384f70faafe6455",
+      "target_name": "releaseDate",
+      "expected_id": "t_c384f70faafe6455",
+      "expected_name": "releaseDate",
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 5543,
+      "output_tokens": 100,
+      "thought_tokens": null,
+      "total_tokens": 5643,
+      "billable_output_tokens": 100,
+      "standard_reference_usd": 0.0090645,
+      "model_seconds": 3.2813946999958716,
+      "local_seconds": 3.7434296999999788,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 44,
+          "year_only": 41,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_9c68c88ca39d7afb",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 60,
+              "year_only": 1,
+              "single_iso": 5,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 20,
+            "distinct_years_target": 5,
+            "shared_distinct_years": 3
+          },
+          {
+            "target_id": "t_c384f70faafe6455",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 59,
+              "year_only": 0,
+              "single_iso": 41,
+              "multi_iso": 18
+            },
+            "distinct_years_source": 20,
+            "distinct_years_target": 32,
+            "shared_distinct_years": 17
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": {
+        "known_generation_campaigns": [
+          "gemini-main30-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "temporal",
+      "task_id": "3228d853e01c347ee75d562d",
+      "pair_id": "84548468_0_5955155464119382182",
+      "component_id": "fe9f5a3293561a8d22ed",
+      "request_id": "cb067af3b749eb149281275de14cbb37",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Year",
+      "candidate_ids": [
+        "t_26890ea27108c788",
+        "t_744078ede127ee8b",
+        "t_951e02f5f59f5da2"
+      ],
+      "candidate_names": {
+        "t_26890ea27108c788": "musicComposer",
+        "t_744078ede127ee8b": "rdf-schema#label",
+        "t_951e02f5f59f5da2": "releaseDate"
+      },
+      "status": "needs_review",
+      "target_id": "t_951e02f5f59f5da2",
+      "target_name": "releaseDate",
+      "expected_id": "t_951e02f5f59f5da2",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 3612,
+      "output_tokens": 84,
+      "thought_tokens": null,
+      "total_tokens": 3696,
+      "billable_output_tokens": 84,
+      "standard_reference_usd": 0.006048,
+      "model_seconds": 3.1246161999879405,
+      "local_seconds": 3.523516799992649,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 99,
+          "year_only": 99,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_951e02f5f59f5da2",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 68,
+              "year_only": 0,
+              "single_iso": 64,
+              "multi_iso": 4
+            },
+            "distinct_years_source": 50,
+            "distinct_years_target": 49,
+            "shared_distinct_years": 29
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": {
+        "known_generation_campaigns": [
+          "product-quality-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "baseline",
+      "task_id": "3228d853e01c347ee75d562d",
+      "pair_id": "84548468_0_5955155464119382182",
+      "component_id": "fe9f5a3293561a8d22ed",
+      "request_id": "341ba7303c6a3883f63a1a4e67e2f6d5",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Year",
+      "candidate_ids": [
+        "t_26890ea27108c788",
+        "t_744078ede127ee8b",
+        "t_951e02f5f59f5da2"
+      ],
+      "candidate_names": {
+        "t_26890ea27108c788": "musicComposer",
+        "t_744078ede127ee8b": "rdf-schema#label",
+        "t_951e02f5f59f5da2": "releaseDate"
+      },
+      "status": "needs_review",
+      "target_id": "t_951e02f5f59f5da2",
+      "target_name": "releaseDate",
+      "expected_id": "t_951e02f5f59f5da2",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 3397,
+      "output_tokens": 106,
+      "thought_tokens": null,
+      "total_tokens": 3503,
+      "billable_output_tokens": 106,
+      "standard_reference_usd": 0.0058905,
+      "model_seconds": 5.264801299985265,
+      "local_seconds": 5.664481599989813,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": {
+        "known_generation_campaigns": [
+          "product-quality-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "baseline",
+      "task_id": "e919d7616444a91815184641",
+      "pair_id": "58891288_0_1117541047012405958",
+      "component_id": "c53c34034a135098e764",
+      "request_id": "11865d9d2a1c57b26acae64fcf412711",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Year",
+      "candidate_ids": [
+        "t_99f3f95961c3ee84",
+        "t_0f74eed7e3a041f8",
+        "t_b8eb66049e0e1e4e"
+      ],
+      "candidate_names": {
+        "t_99f3f95961c3ee84": "releaseDate",
+        "t_0f74eed7e3a041f8": "rdf-schema#label",
+        "t_b8eb66049e0e1e4e": "musicComposer"
+      },
+      "status": "matched",
+      "target_id": "t_99f3f95961c3ee84",
+      "target_name": "releaseDate",
+      "expected_id": "t_99f3f95961c3ee84",
+      "expected_name": "releaseDate",
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 3291,
+      "output_tokens": 69,
+      "thought_tokens": null,
+      "total_tokens": 3360,
+      "billable_output_tokens": 69,
+      "standard_reference_usd": 0.005454,
+      "model_seconds": 11.824241799971787,
+      "local_seconds": 12.218894299992826,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": {
+        "known_generation_campaigns": [
+          "gemini-main30-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "real",
+      "variant": "temporal",
+      "task_id": "e919d7616444a91815184641",
+      "pair_id": "58891288_0_1117541047012405958",
+      "component_id": "c53c34034a135098e764",
+      "request_id": "2a2f79a23750687a799bbe989fc49bec",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Year",
+      "candidate_ids": [
+        "t_99f3f95961c3ee84",
+        "t_0f74eed7e3a041f8",
+        "t_b8eb66049e0e1e4e"
+      ],
+      "candidate_names": {
+        "t_99f3f95961c3ee84": "releaseDate",
+        "t_0f74eed7e3a041f8": "rdf-schema#label",
+        "t_b8eb66049e0e1e4e": "musicComposer"
+      },
+      "status": "matched",
+      "target_id": "t_99f3f95961c3ee84",
+      "target_name": "releaseDate",
+      "expected_id": "t_99f3f95961c3ee84",
+      "expected_name": "releaseDate",
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 3508,
+      "output_tokens": 69,
+      "thought_tokens": null,
+      "total_tokens": 3577,
+      "billable_output_tokens": 69,
+      "standard_reference_usd": 0.0057795,
+      "model_seconds": 2.8334970000141766,
+      "local_seconds": 3.228823999990709,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 100,
+          "year_only": 100,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_99f3f95961c3ee84",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 82,
+              "year_only": 0,
+              "single_iso": 74,
+              "multi_iso": 8
+            },
+            "distinct_years_source": 59,
+            "distinct_years_target": 51,
+            "shared_distinct_years": 32
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": {
+        "known_generation_campaigns": [
+          "gemini-main30-v1"
+        ],
+        "unused_verified": false,
+        "limitation": "Existing pool was fully parsed/profiled. Broad cross-study/template independence not proven."
+      },
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "synthetic",
+      "variant": "temporal",
+      "task_id": "b9163ae4e6b9a0d352521b3c",
+      "pair_id": "synthetic-temporal-01",
+      "component_id": "synthetic-temporal-01",
+      "request_id": "fd93da56dd7fb36b12be43d092bbfdb5",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Product code",
+      "candidate_ids": [
+        "t_0c307c6c3dc9bee1",
+        "t_5dec19571dacd0f8"
+      ],
+      "candidate_names": {
+        "t_0c307c6c3dc9bee1": "Release date",
+        "t_5dec19571dacd0f8": "Invoice issue date"
+      },
+      "status": "no_match",
+      "target_id": null,
+      "target_name": null,
+      "expected_id": null,
+      "expected_name": null,
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 2724,
+      "output_tokens": 84,
+      "thought_tokens": null,
+      "total_tokens": 2808,
+      "billable_output_tokens": 84,
+      "standard_reference_usd": 0.004716,
+      "model_seconds": 2.680183299991768,
+      "local_seconds": 3.0800006999925245,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 4,
+          "year_only": 4,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_0c307c6c3dc9bee1",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 4,
+              "year_only": 0,
+              "single_iso": 4,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 4,
+            "distinct_years_target": 4,
+            "shared_distinct_years": 4
+          },
+          {
+            "target_id": "t_5dec19571dacd0f8",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 4,
+              "year_only": 0,
+              "single_iso": 4,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 4,
+            "distinct_years_target": 4,
+            "shared_distinct_years": 4
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": {
+        "unused_verified": false,
+        "known_generation_campaigns": [],
+        "limitation": "New hand-authored diagnostic; not real-data independent evaluation"
+      },
+      "conversion_note": "four-digit identifiers overlap date years; no semantic target",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "synthetic",
+      "variant": "baseline",
+      "task_id": "b9163ae4e6b9a0d352521b3c",
+      "pair_id": "synthetic-temporal-01",
+      "component_id": "synthetic-temporal-01",
+      "request_id": "9208f3c3176e90910b18895e1e4b6437",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Product code",
+      "candidate_ids": [
+        "t_0c307c6c3dc9bee1",
+        "t_5dec19571dacd0f8"
+      ],
+      "candidate_names": {
+        "t_0c307c6c3dc9bee1": "Release date",
+        "t_5dec19571dacd0f8": "Invoice issue date"
+      },
+      "status": "no_match",
+      "target_id": null,
+      "target_name": null,
+      "expected_id": null,
+      "expected_name": null,
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 2439,
+      "output_tokens": 87,
+      "thought_tokens": null,
+      "total_tokens": 2526,
+      "billable_output_tokens": 87,
+      "standard_reference_usd": 0.004311,
+      "model_seconds": 2.860330499999691,
+      "local_seconds": 3.269523199996911,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": {
+        "unused_verified": false,
+        "known_generation_campaigns": [],
+        "limitation": "New hand-authored diagnostic; not real-data independent evaluation"
+      },
+      "conversion_note": "four-digit identifiers overlap date years; no semantic target",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "synthetic",
+      "variant": "baseline",
+      "task_id": "838e9a97a1e0f2c82057236c",
+      "pair_id": "synthetic-temporal-02",
+      "component_id": "synthetic-temporal-02",
+      "request_id": "deeb671956ba1ef0608988ead111115b",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Invoice total USD",
+      "candidate_ids": [
+        "t_b0bdb4e38cc5ce64",
+        "t_de4be2c7bb7a2e62"
+      ],
+      "candidate_names": {
+        "t_b0bdb4e38cc5ce64": "Payment due date",
+        "t_de4be2c7bb7a2e62": "Invoice issue date"
+      },
+      "status": "no_match",
+      "target_id": null,
+      "target_name": null,
+      "expected_id": null,
+      "expected_name": null,
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 2445,
+      "output_tokens": 85,
+      "thought_tokens": null,
+      "total_tokens": 2530,
+      "billable_output_tokens": 85,
+      "standard_reference_usd": 0.004305,
+      "model_seconds": 7.256696700002067,
+      "local_seconds": 7.651836999983061,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": {
+        "unused_verified": false,
+        "known_generation_campaigns": [],
+        "limitation": "New hand-authored diagnostic; not real-data independent evaluation"
+      },
+      "conversion_note": "four-digit currency amounts overlap years; no semantic target",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "synthetic",
+      "variant": "temporal",
+      "task_id": "838e9a97a1e0f2c82057236c",
+      "pair_id": "synthetic-temporal-02",
+      "component_id": "synthetic-temporal-02",
+      "request_id": "65ceff048e7e554cf741e1288962f752",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Invoice total USD",
+      "candidate_ids": [
+        "t_b0bdb4e38cc5ce64",
+        "t_de4be2c7bb7a2e62"
+      ],
+      "candidate_names": {
+        "t_b0bdb4e38cc5ce64": "Payment due date",
+        "t_de4be2c7bb7a2e62": "Invoice issue date"
+      },
+      "status": "no_match",
+      "target_id": null,
+      "target_name": null,
+      "expected_id": null,
+      "expected_name": null,
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 2730,
+      "output_tokens": 57,
+      "thought_tokens": null,
+      "total_tokens": 2787,
+      "billable_output_tokens": 57,
+      "standard_reference_usd": 0.0045225,
+      "model_seconds": 2.926784300012514,
+      "local_seconds": 3.5687455000006594,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 4,
+          "year_only": 4,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_b0bdb4e38cc5ce64",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 4,
+              "year_only": 0,
+              "single_iso": 4,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 4,
+            "distinct_years_target": 4,
+            "shared_distinct_years": 4
+          },
+          {
+            "target_id": "t_de4be2c7bb7a2e62",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 4,
+              "year_only": 0,
+              "single_iso": 4,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 4,
+            "distinct_years_target": 4,
+            "shared_distinct_years": 4
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": {
+        "unused_verified": false,
+        "known_generation_campaigns": [],
+        "limitation": "New hand-authored diagnostic; not real-data independent evaluation"
+      },
+      "conversion_note": "four-digit currency amounts overlap years; no semantic target",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "synthetic",
+      "variant": "temporal",
+      "task_id": "3829e25015f51d478c8a7451",
+      "pair_id": "synthetic-temporal-03",
+      "component_id": "synthetic-temporal-03",
+      "request_id": "398d72e0da66dee30de09e68bfac3f4b",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Contract start year",
+      "candidate_ids": [
+        "t_d2a5499ce954c789",
+        "t_a2e1b99c2499363c"
+      ],
+      "candidate_names": {
+        "t_d2a5499ce954c789": "Invoice issue date",
+        "t_a2e1b99c2499363c": "Contract end date"
+      },
+      "status": "no_match",
+      "target_id": null,
+      "target_name": null,
+      "expected_id": null,
+      "expected_name": null,
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 2758,
+      "output_tokens": 85,
+      "thought_tokens": null,
+      "total_tokens": 2843,
+      "billable_output_tokens": 85,
+      "standard_reference_usd": 0.0047745,
+      "model_seconds": 4.700342500000261,
+      "local_seconds": 5.135907499992754,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 4,
+          "year_only": 4,
+          "single_iso": 0,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_d2a5499ce954c789",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 4,
+              "year_only": 0,
+              "single_iso": 4,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 4,
+            "distinct_years_target": 4,
+            "shared_distinct_years": 4
+          },
+          {
+            "target_id": "t_a2e1b99c2499363c",
+            "direction": "year_to_iso",
+            "target_rows": {
+              "non_missing": 4,
+              "year_only": 0,
+              "single_iso": 4,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 4,
+            "distinct_years_target": 4,
+            "shared_distinct_years": 4
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": {
+        "unused_verified": false,
+        "known_generation_campaigns": [],
+        "limitation": "New hand-authored diagnostic; not real-data independent evaluation"
+      },
+      "conversion_note": "overlapping calendar years do not make start/end/issue dates equivalent",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "synthetic",
+      "variant": "baseline",
+      "task_id": "3829e25015f51d478c8a7451",
+      "pair_id": "synthetic-temporal-03",
+      "component_id": "synthetic-temporal-03",
+      "request_id": "c1e9d104c9c101ebeefe7fb1b0bac558",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Contract start year",
+      "candidate_ids": [
+        "t_d2a5499ce954c789",
+        "t_a2e1b99c2499363c"
+      ],
+      "candidate_names": {
+        "t_d2a5499ce954c789": "Invoice issue date",
+        "t_a2e1b99c2499363c": "Contract end date"
+      },
+      "status": "no_match",
+      "target_id": null,
+      "target_name": null,
+      "expected_id": null,
+      "expected_name": null,
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 2467,
+      "output_tokens": 85,
+      "thought_tokens": null,
+      "total_tokens": 2552,
+      "billable_output_tokens": 85,
+      "standard_reference_usd": 0.004338,
+      "model_seconds": 3.4163546999916434,
+      "local_seconds": 3.815741900005378,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": {
+        "unused_verified": false,
+        "known_generation_campaigns": [],
+        "limitation": "New hand-authored diagnostic; not real-data independent evaluation"
+      },
+      "conversion_note": "overlapping calendar years do not make start/end/issue dates equivalent",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "synthetic",
+      "variant": "baseline",
+      "task_id": "f8ab1ab53e1a050fd0dd0e74",
+      "pair_id": "synthetic-temporal-04",
+      "component_id": "synthetic-temporal-04",
+      "request_id": "2a1953de765b4b971788647fc0dbea59",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Contract start date",
+      "candidate_ids": [
+        "t_cdaa8b3613df44d2",
+        "t_df51586dae729fd3"
+      ],
+      "candidate_names": {
+        "t_cdaa8b3613df44d2": "Contract start year",
+        "t_df51586dae729fd3": "Invoice year"
+      },
+      "status": "matched",
+      "target_id": "t_cdaa8b3613df44d2",
+      "target_name": "Contract start year",
+      "expected_id": "t_cdaa8b3613df44d2",
+      "expected_name": "Contract start year",
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 2467,
+      "output_tokens": 99,
+      "thought_tokens": null,
+      "total_tokens": 2566,
+      "billable_output_tokens": 99,
+      "standard_reference_usd": 0.004443,
+      "model_seconds": 4.267395100003341,
+      "local_seconds": 4.693648600019515,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": false,
+      "temporal_evidence": null,
+      "exposure": {
+        "unused_verified": false,
+        "known_generation_campaigns": [],
+        "limitation": "New hand-authored diagnostic; not real-data independent evaluation"
+      },
+      "conversion_note": "same meaning supports date-to-year but drops month/day; no reversible conversion",
+      "cost_scope": "new call"
+    },
+    {
+      "phase": "additional",
+      "origin": "synthetic",
+      "variant": "temporal",
+      "task_id": "f8ab1ab53e1a050fd0dd0e74",
+      "pair_id": "synthetic-temporal-04",
+      "component_id": "synthetic-temporal-04",
+      "request_id": "9225ec29b66540128d34678812f46569",
+      "historical_slot": null,
+      "condition": "original",
+      "source_name": "Contract start date",
+      "candidate_ids": [
+        "t_cdaa8b3613df44d2",
+        "t_df51586dae729fd3"
+      ],
+      "candidate_names": {
+        "t_cdaa8b3613df44d2": "Contract start year",
+        "t_df51586dae729fd3": "Invoice year"
+      },
+      "status": "matched",
+      "target_id": "t_cdaa8b3613df44d2",
+      "target_name": "Contract start year",
+      "expected_id": "t_cdaa8b3613df44d2",
+      "expected_name": "Contract start year",
+      "correct": true,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "correct",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 2753,
+      "output_tokens": 93,
+      "thought_tokens": null,
+      "total_tokens": 2846,
+      "billable_output_tokens": 93,
+      "standard_reference_usd": 0.004827,
+      "model_seconds": 3.7141391999903135,
+      "local_seconds": 4.108593999990262,
+      "temporal_evidence_present": true,
+      "temporal_evidence_verified_in_actual_request": true,
+      "temporal_evidence": {
+        "source_rows": {
+          "non_missing": 4,
+          "year_only": 0,
+          "single_iso": 4,
+          "multi_iso": 0
+        },
+        "pairs": [
+          {
+            "target_id": "t_cdaa8b3613df44d2",
+            "direction": "iso_to_year",
+            "target_rows": {
+              "non_missing": 4,
+              "year_only": 4,
+              "single_iso": 0,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 4,
+            "distinct_years_target": 4,
+            "shared_distinct_years": 4
+          },
+          {
+            "target_id": "t_df51586dae729fd3",
+            "direction": "iso_to_year",
+            "target_rows": {
+              "non_missing": 4,
+              "year_only": 4,
+              "single_iso": 0,
+              "multi_iso": 0
+            },
+            "distinct_years_source": 4,
+            "distinct_years_target": 4,
+            "shared_distinct_years": 4
+          }
+        ],
+        "interpretation": "Four-digit shapes (1000–2999) can also be codes or amounts. ISO years use the written date, including fully valid comma-separated date lists. Overlap compares distinct years, with no row alignment. Consider it alongside field meaning. Semantic correspondence and conversion readiness are separate: year-to-date lacks month and day; date-to-year loses precision. Never invent dates."
+      },
+      "exposure": {
+        "unused_verified": false,
+        "known_generation_campaigns": [],
+        "limitation": "New hand-authored diagnostic; not real-data independent evaluation"
+      },
+      "conversion_note": "same meaning supports date-to-year but drops month/day; no reversible conversion",
+      "cost_scope": "new call"
+    }
+  ],
+  "past_rows": [
+    {
+      "phase": "past_result",
+      "origin": "real",
+      "variant": "historical_baseline",
+      "task_id": "45016c822cac97e043c9e380",
+      "pair_id": "38428277_0_1311643810102462607",
+      "component_id": "afe628c5b86e51c00393",
+      "request_id": "1885986b8a55a86b81331d2f5cc6554e",
+      "historical_slot": 23,
+      "condition": "abbreviated",
+      "source_name": "yea",
+      "candidate_ids": [
+        "t_1f6cef73203a6c0b",
+        "t_385fac2484722f1c",
+        "t_31fba0b21667b521",
+        "t_8213550952931218"
+      ],
+      "candidate_names": {
+        "t_1f6cef73203a6c0b": "rdf-schema#label",
+        "t_385fac2484722f1c": "releaseDate",
+        "t_31fba0b21667b521": "language",
+        "t_8213550952931218": "director"
+      },
+      "status": "needs_review",
+      "target_id": "t_385fac2484722f1c",
+      "target_name": "releaseDate",
+      "expected_id": "t_385fac2484722f1c",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 4076,
+      "output_tokens": 80,
+      "thought_tokens": null,
+      "total_tokens": 4156,
+      "billable_output_tokens": 80,
+      "standard_reference_usd": 0.006714,
+      "model_seconds": 4.777260200004093,
+      "local_seconds": 5.27890920000209,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": null,
+      "temporal_evidence": null,
+      "exposure": "developer-selected historical case; not independent",
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "historical reused cost; excluded from new totals"
+    },
+    {
+      "phase": "past_result",
+      "origin": "real",
+      "variant": "historical_baseline",
+      "task_id": "d104d7706e8a9360711c5f4d",
+      "pair_id": "50245608_0_871275842592178099",
+      "component_id": "21b709baf7ae7e49ce3f",
+      "request_id": "486f8c81f9f6630e88f83015ed9c3693",
+      "historical_slot": 44,
+      "condition": "opaque",
+      "source_name": "column_0007",
+      "candidate_ids": [
+        "t_b7fb5039990699c4",
+        "t_b8ebd3a60e01012b",
+        "t_d0e021c12366df70",
+        "t_ab6f48720b2b9baf"
+      ],
+      "candidate_names": {
+        "t_b7fb5039990699c4": "rdf-schema#label",
+        "t_b8ebd3a60e01012b": "releaseDate",
+        "t_d0e021c12366df70": "Work/runtime",
+        "t_ab6f48720b2b9baf": "director"
+      },
+      "status": "needs_review",
+      "target_id": "t_b8ebd3a60e01012b",
+      "target_name": "releaseDate",
+      "expected_id": "t_b8ebd3a60e01012b",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 4015,
+      "output_tokens": 107,
+      "thought_tokens": 479,
+      "total_tokens": 4601,
+      "billable_output_tokens": 586,
+      "standard_reference_usd": 0.0104175,
+      "model_seconds": 5.9491219999908935,
+      "local_seconds": 6.417061100000865,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": null,
+      "temporal_evidence": null,
+      "exposure": "developer-selected historical case; not independent",
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "historical reused cost; excluded from new totals"
+    },
+    {
+      "phase": "past_result",
+      "origin": "real",
+      "variant": "historical_baseline",
+      "task_id": "7c414f731b01f1d772bb96fd",
+      "pair_id": "27466715_0_3913547177671701530",
+      "component_id": "5f2afb77866331014979",
+      "request_id": "56b70cc3d9119633cf50d0bef4ae8e6c",
+      "historical_slot": 91,
+      "condition": "original",
+      "source_name": "Year first released [10][11][14][15]",
+      "candidate_ids": [
+        "t_70707be2b3d9b5bb",
+        "t_31fd139f2efb9ae1",
+        "t_3e71f58b0bbb9f51",
+        "t_6d16eb0bcf78dd35"
+      ],
+      "candidate_names": {
+        "t_70707be2b3d9b5bb": "released",
+        "t_31fd139f2efb9ae1": "series",
+        "t_3e71f58b0bbb9f51": "releaseDate",
+        "t_6d16eb0bcf78dd35": "modes"
+      },
+      "status": "needs_review",
+      "target_id": "t_3e71f58b0bbb9f51",
+      "target_name": "releaseDate",
+      "expected_id": "t_3e71f58b0bbb9f51",
+      "expected_name": "releaseDate",
+      "correct": false,
+      "target_id_correct_ignoring_status": true,
+      "execution_category": "valid_output",
+      "category": "needs_review",
+      "http_status": 200,
+      "generation_attempts": 1,
+      "input_tokens": 4190,
+      "output_tokens": 102,
+      "thought_tokens": null,
+      "total_tokens": 4292,
+      "billable_output_tokens": 102,
+      "standard_reference_usd": 0.00705,
+      "model_seconds": 4.293665000004694,
+      "local_seconds": 4.7798180999961914,
+      "temporal_evidence_present": false,
+      "temporal_evidence_verified_in_actual_request": null,
+      "temporal_evidence": null,
+      "exposure": "developer-selected historical case; not independent",
+      "conversion_note": "year-to-date: month/day unavailable; correspondence does not establish conversion readiness",
+      "cost_scope": "historical reused cost; excluded from new totals"
+    }
+  ],
+  "former_450_scope_before": {
+    "local_attempts": 444,
+    "service_attempts": 20,
+    "total_attempts": 464,
+    "observed_standard_reference_usd": 2.7674805,
+    "cost_missing_attempts": 0,
+    "complete_service_observation": true
+  },
+  "former_450_scope_plus_this_campaign": {
+    "attempts": 488,
+    "standard_reference_usd": 2.9125755,
+    "scope": "Pre-run service observation plus append-only temporal journal. Not project lifetime; earlier270 excluded; other concurrent future calls not asserted."
+  },
+  "plan_seals": {
+    "historical": "13ac27d45888cd649e522693cb2599d02d70865ee5f86a2fcfd51c12dfbb2cd5",
+    "additional": "fa7facbf51a263ac8ff4a424d2059ab78814dbabc040bf60bd4069fadba2ea4b"
+  },
+  "truth_seal": "ab09514e0473437d5f2339396e30a8bfcd14476668a1ebeb07d4dd6c024f4abd",
+  "pricing_reference": {
+    "input_per_million": 1.5,
+    "output_including_thoughts_per_million": 7.5,
+    "basis": "Frozen conservative research reference, no cache/credit discounts; not invoice or live price verification."
+  },
+  "limitations": [
+    "All real cases previously exposed in research; no independent evaluation.",
+    "Five available extra known components; broad movie/game schema family overlap remains unverified.",
+    "Real risk negatives/code/amount/date-to-year coverage unavailable in selected annotated pool; four synthetic diagnostics reported separately.",
+    "One generation per variant/case; model nondeterminism and execution order prevent causal certainty.",
+    "No value transformation or production multi-column integration tested."
+  ],
+  "main_merged": false,
+  "production_redeployed": false
+}
