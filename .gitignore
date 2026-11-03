@@ -5,6 +5,14 @@
 !.env.example
 !.env.web.example
 .streamlit/secrets.toml
+.streamlit/
+/FINAL_EVALUATION_RESULTS.csv
+/FINAL_EVALUATION_RESULTS.json
+/GEMINI_EVALUATION_PAIRS.csv
+/GEMINI_EVALUATION_RESULTS.csv
+/GEMINI_EVALUATION_RESULTS.json
+/PILOT_COMPARISON.csv
+/PILOT_COMPARISON.json
 __pycache__/
 .pytest_cache/
 .pytest_tmp/

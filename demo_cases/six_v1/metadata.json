@@ -1,0 +1,97 @@
+{
+  "version": "six-development-v1",
+  "synthetic": true,
+  "family": "six_synthetic_demo_v1",
+  "cases": [
+    {
+      "case_id": "S01",
+      "input_path": "demo_cases/six_v1/inputs/S01.csv",
+      "source": {
+        "id": "src_001",
+        "name": "product_name",
+        "description": "판매 상품의 이름",
+        "data_type": "string"
+      },
+      "method_order": [
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "case_id": "S02",
+      "input_path": "demo_cases/six_v1/inputs/S02.csv",
+      "source": {
+        "id": "src_001",
+        "name": "주문수량",
+        "description": "이 주문에 포함된 상품 개수",
+        "data_type": "integer"
+      },
+      "method_order": [
+        "C",
+        "D",
+        "B"
+      ]
+    },
+    {
+      "case_id": "S03",
+      "input_path": "demo_cases/six_v1/inputs/S03.csv",
+      "source": {
+        "id": "src_001",
+        "name": "COL_A",
+        "description": "",
+        "data_type": "unknown"
+      },
+      "method_order": [
+        "D",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "case_id": "S04",
+      "input_path": "demo_cases/six_v1/inputs/S04.csv",
+      "source": {
+        "id": "src_001",
+        "name": "COL_B",
+        "description": "주문 접수 이력의 기록 시점. 날짜 형식 정보 없음",
+        "data_type": "unknown"
+      },
+      "method_order": [
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "case_id": "S05",
+      "input_path": "demo_cases/six_v1/inputs/S05.csv",
+      "source": {
+        "id": "src_001",
+        "name": "배송요청메모",
+        "description": "고객이 남긴 배송 요청 문장",
+        "data_type": "string"
+      },
+      "method_order": [
+        "C",
+        "D",
+        "B"
+      ]
+    },
+    {
+      "case_id": "S06",
+      "input_path": "demo_cases/six_v1/inputs/S06.csv",
+      "source": {
+        "id": "src_001",
+        "name": "AMT",
+        "description": "금액",
+        "data_type": "number"
+      },
+      "method_order": [
+        "D",
+        "B",
+        "C"
+      ]
+    }
+  ]
+}

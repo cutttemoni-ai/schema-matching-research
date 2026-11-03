@@ -1,0 +1,23 @@
+{
+  "version": "development-manifest-v0",
+  "notice": "All three variants belong to one existing synthetic generation family. No independent evaluation split or public benchmark has been acquired.",
+  "datasets": {
+    "abbreviated.csv": {
+      "sha256": "2237cdf8f0049db163fc295025f678becffda52323e4e9432ce1af8bfa970ace",
+      "role": "development",
+      "family": "synthetic_product_order_demo_v1"
+    },
+    "extra_columns.csv": {
+      "sha256": "278a296dbcddb4b482f3a3c0a2b4cecb63e9d156ca9be0de58d23501d511bed9",
+      "role": "development",
+      "family": "synthetic_product_order_demo_v1"
+    },
+    "normal.csv": {
+      "sha256": "c98b1c5978af66d8be1e69c8e8ecfe36e724e82b6d0c6bb3fab7d6ee616eb6dd",
+      "role": "development",
+      "family": "synthetic_product_order_demo_v1"
+    }
+  },
+  "target_schema_sha256": "b0358adbb2efb8c5d75029734a09d7592d9bc592d156335696984be67660236d",
+  "independent_evaluation_datasets": []
+}

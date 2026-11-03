@@ -1,0 +1,7 @@
+{
+  "notice": "직접 생성한 합성 시연용 정답표. 실제 기업 데이터나 독립 연구 평가 데이터가 아님. 앱과 모델 요청에서 읽지 않음.",
+  "normal.csv": {"src_001":"product_code","src_002":"product_name","src_003":"quantity","src_004":"unit_price","src_005":"total_amount","src_006":"order_date"},
+  "abbreviated.csv": {"src_001":"product_code","src_002":"product_name","src_003":"quantity","src_004":"total_amount","src_005":"order_date"},
+  "extra_columns.csv": {"src_001":"product_code","src_002":"product_name","src_003":"quantity","src_004":"unit_price","src_005":"total_amount","src_006":"order_date","src_007":null,"src_008":null},
+  "ambiguity_note": "abbreviated.csv의 AMT와 DT는 생성 의도와 별개로 B 입력만으로 확정하기 부족할 수 있음. 정답표를 아는 것처럼 추천해서는 안 됨."
+}
