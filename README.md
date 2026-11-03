@@ -2,6 +2,8 @@
 
 안정 제품 진입점은 **cloud_app.py**, 실행은 **.\start-web.ps1**(로컬8502)입니다. 기존 app.py/start-gcp.ps1은 과거 서비스와 A~D 연구 경로로 보존했습니다. 미완성 D 엔진은 배포 이미지에 포함하지 않았습니다.
 
+이 브랜치(feat/c-accuracy-v1)의 개선 후보/별도 평가 결과는 [C 제품 품질 보고서](C_PRODUCT_QUALITY_REPORT.md)와 [실험 실행 안내](C_ACCURACY_RUNBOOK.md)에 있습니다. 미노출5계열·2조건의 C8/10→후보9/10 관측이며 개발에서는12/16→11/16으로 악화했습니다. 후보는 운영 배포에 반영하지 않았고 main과 안정 C는 그대로입니다. 공유 가능한 집계는 C_ACCURACY_SUMMARY.csv/json이며 원 요청·응답은 Git에서 제외했습니다.
+
 실제 Cloud Run: https://schema-c-web-392692577987.asia-northeast3.run.app . **IAM 비공개**이므로 비인증 접속403이 정상입니다. 현재 연구 계정으로 아래 공식 프록시를 실행하고 http://127.0.0.1:8080 에 접속합니다.
 
 ```powershell

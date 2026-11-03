@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-03T04:40:48.092011+00:00",
+  "seed": "c-product-accuracy-family-v1-20261103",
+  "development_families": [
+    "1ae354ba757bb8920b4a",
+    "ad4d06d5914e90a82275",
+    "749de5f3409895e1641d",
+    "787e546126b5571fffca",
+    "3cc627f6ab5aefb28fdc",
+    "Magellan-ALL-original-and-variants",
+    "7f4ecdb45b875b71a07a",
+    "6a6a63168965998af6e3"
+  ],
+  "evaluated_families": [
+    "0f47d8ef3f6607c2c28b",
+    "OpenData-ALL-original-and-variants",
+    "TPC-DI-ALL-original-and-variants",
+    "ChEMBL-ALL-original-and-variants",
+    "c08c43f482e430e76d44"
+  ],
+  "future_final_evaluation_exclude_all_above_and_prior_families": true,
+  "data_sha256": "e53d4f11ba4846aa1b6e3f7d09b4f91b6638d15c64285c3e52825a2d50d9a2d0",
+  "development_plan_sha256": "9cdafdc1c545067d6e794ddbac8694f18c2c215ca04271e692c727e5ea5a2af5",
+  "evaluation_plan_sha256": "3a3d90fcde401abd5479c7f827d0b9c9fba8a8ece4382058b328c667d74e5f0b",
+  "local_parsing_alone_is_not_development_use": true,
+  "all_known_strict_T2D_components_now_consumed": true
+}

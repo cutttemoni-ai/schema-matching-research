@@ -1,0 +1,13 @@
+﻿phase,condition,method,correct,planned,top1,matched_correct,matched_count,matched_coverage,review,semantic_error,output_error,API_failure,input_tokens_observed,input_tokens_missing,standard_reference_usd,cost_missing
+development,original,A,3,8,0.375,3,3,0.375,0,5,0,0,0,8,0.0,0
+development,original,C,7,8,0.875,7,7,0.875,0,1,0,0,33208,0,0.0566895,0
+development,original,product-matcher-v1,7,8,0.875,7,7,0.875,0,1,0,0,55779,0,0.0907035,0
+development,opaque,A,0,8,0.0,0,0,0.0,0,8,0,0,0,8,0.0,0
+development,opaque,C,5,8,0.625,5,5,0.625,3,0,0,0,33239,0,0.055701,0
+development,opaque,product-matcher-v1,4,8,0.5,4,4,0.5,3,1,0,0,55810,0,0.0896025,0
+evaluation,original,A,5,5,1.0,3,3,0.6,0,0,0,0,0,5,0.0,0
+evaluation,original,C,5,5,1.0,3,3,0.6,0,0,0,0,42075,0,0.0675825,0
+evaluation,original,product-matcher-v1,5,5,1.0,3,3,0.6,0,0,0,0,75086,0,0.1154115,0
+evaluation,opaque,A,2,5,0.4,0,0,0.0,0,3,0,0,0,5,0.0,0
+evaluation,opaque,C,3,5,0.6,2,2,0.4,2,0,0,0,42091,0,0.0663165,0
+evaluation,opaque,product-matcher-v1,4,5,0.8,3,3,0.6,1,0,0,0,75102,0,0.1156455,0

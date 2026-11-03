@@ -1,0 +1,1729 @@
+{
+  "version": "C-product-reporting-v1.1",
+  "at": "2026-11-03T04:40:48.084184+00:00",
+  "development": {
+    "groups": [
+      {
+        "condition": "original",
+        "method": "A",
+        "planned": 8,
+        "correct": 3,
+        "top1": 0.375,
+        "categories": {
+          "semantic_error": 5,
+          "correct": 3
+        },
+        "auto_links": 3,
+        "correct_auto_links": 3,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.375,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 0.625,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 8,
+          "correct": 3,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "output_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "total_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "model_call_seconds": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "local_total_seconds": {
+          "observed_sum": 0.005410000012489036,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0,
+          "observed_n": 8,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "original",
+        "method": "C",
+        "planned": 8,
+        "correct": 7,
+        "top1": 0.875,
+        "categories": {
+          "semantic_error": 1,
+          "correct": 7
+        },
+        "auto_links": 7,
+        "correct_auto_links": 7,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.875,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 0.125,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 8,
+          "correct": 7,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 33208,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 631,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 286,
+          "observed_n": 1,
+          "missing_n": 7
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "total_tokens": {
+          "observed_sum": 34125,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 31.053529199998593,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 34.3867634999624,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0566895,
+          "observed_n": 8,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "original",
+        "method": "product-matcher-v1",
+        "planned": 8,
+        "correct": 7,
+        "top1": 0.875,
+        "categories": {
+          "semantic_error": 1,
+          "correct": 7
+        },
+        "auto_links": 7,
+        "correct_auto_links": 7,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.875,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 0.125,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 8,
+          "correct": 7,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 55779,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 717,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 221,
+          "observed_n": 1,
+          "missing_n": 7
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "total_tokens": {
+          "observed_sum": 56717,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 40.86926629998197,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 44.07412430000841,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0907035,
+          "observed_n": 8,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "opaque",
+        "method": "A",
+        "planned": 8,
+        "correct": 0,
+        "top1": 0.0,
+        "categories": {
+          "semantic_error": 8
+        },
+        "auto_links": 0,
+        "correct_auto_links": 0,
+        "auto_link_precision_lower_bound": null,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.0,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 1.0,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 8,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "output_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "total_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "model_call_seconds": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "local_total_seconds": {
+          "observed_sum": 0.005295799957821146,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0,
+          "observed_n": 8,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "opaque",
+        "method": "C",
+        "planned": 8,
+        "correct": 5,
+        "top1": 0.625,
+        "categories": {
+          "needs_review": 3,
+          "correct": 5
+        },
+        "auto_links": 5,
+        "correct_auto_links": 5,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.625,
+        "model_needs_review_ratio": 0.375,
+        "user_review_required_ratio": 0.375,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 8,
+          "correct": 5,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 33239,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 779,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "total_tokens": {
+          "observed_sum": 34018,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 24.31048169998394,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 27.482066600001417,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.055701,
+          "observed_n": 8,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "opaque",
+        "method": "product-matcher-v1",
+        "planned": 8,
+        "correct": 4,
+        "top1": 0.5,
+        "categories": {
+          "semantic_error": 1,
+          "correct": 4,
+          "needs_review": 3
+        },
+        "auto_links": 4,
+        "correct_auto_links": 4,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.5,
+        "model_needs_review_ratio": 0.375,
+        "user_review_required_ratio": 0.5,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 8,
+          "correct": 4,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 55810,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 785,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 8
+        },
+        "total_tokens": {
+          "observed_sum": 56595,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 32.27364739998302,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 35.64140939997742,
+          "observed_n": 8,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0896025,
+          "observed_n": 8,
+          "missing_n": 0
+        }
+      }
+    ],
+    "totals": [
+      {
+        "method": "A",
+        "planned": 16,
+        "correct": 3,
+        "top1": 0.1875,
+        "categories": {
+          "semantic_error": 13,
+          "correct": 3
+        },
+        "auto_links": 3,
+        "correct_auto_links": 3,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.1875,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 0.8125,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 16,
+          "correct": 3,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 16
+        },
+        "output_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 16
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 16
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 16
+        },
+        "total_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 16
+        },
+        "model_call_seconds": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 16
+        },
+        "local_total_seconds": {
+          "observed_sum": 0.010705799970310181,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0,
+          "observed_n": 16,
+          "missing_n": 0
+        }
+      },
+      {
+        "method": "C",
+        "planned": 16,
+        "correct": 12,
+        "top1": 0.75,
+        "categories": {
+          "semantic_error": 1,
+          "needs_review": 3,
+          "correct": 12
+        },
+        "auto_links": 12,
+        "correct_auto_links": 12,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.75,
+        "model_needs_review_ratio": 0.1875,
+        "user_review_required_ratio": 0.25,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 16,
+          "correct": 12,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 66447,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 1410,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 286,
+          "observed_n": 1,
+          "missing_n": 15
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 16
+        },
+        "total_tokens": {
+          "observed_sum": 68143,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 55.36401089998253,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 61.868830099963816,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.1123905,
+          "observed_n": 16,
+          "missing_n": 0
+        }
+      },
+      {
+        "method": "product-matcher-v1",
+        "planned": 16,
+        "correct": 11,
+        "top1": 0.6875,
+        "categories": {
+          "semantic_error": 2,
+          "correct": 11,
+          "needs_review": 3
+        },
+        "auto_links": 11,
+        "correct_auto_links": 11,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.6875,
+        "model_needs_review_ratio": 0.1875,
+        "user_review_required_ratio": 0.3125,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 16,
+          "correct": 11,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 111589,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 1502,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 221,
+          "observed_n": 1,
+          "missing_n": 15
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 16
+        },
+        "total_tokens": {
+          "observed_sum": 113312,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 73.14291369996499,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 79.71553369998583,
+          "observed_n": 16,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.180306,
+          "observed_n": 16,
+          "missing_n": 0
+        }
+      }
+    ],
+    "paired_usage": {
+      "planned": 16,
+      "observed": 16,
+      "missing": 0,
+      "C_input": 66447,
+      "v1_input": 111589,
+      "input_change_ratio": 0.679368519270998,
+      "C_standard_cost": 0.1123905,
+      "v1_standard_cost": 0.180306,
+      "cost_change_ratio": 0.604281500660643
+    },
+    "improved": 0,
+    "worsened": 1
+  },
+  "evaluation": {
+    "groups": [
+      {
+        "condition": "original",
+        "method": "A",
+        "planned": 5,
+        "correct": 5,
+        "top1": 1.0,
+        "categories": {
+          "correct": 5
+        },
+        "auto_links": 3,
+        "correct_auto_links": 3,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.6,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 0.4,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 3,
+          "correct": 3,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 2,
+          "correct": 2,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "output_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "total_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "model_call_seconds": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "local_total_seconds": {
+          "observed_sum": 0.004256200001691468,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0,
+          "observed_n": 5,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "original",
+        "method": "C",
+        "planned": 5,
+        "correct": 5,
+        "top1": 1.0,
+        "categories": {
+          "correct": 5
+        },
+        "auto_links": 3,
+        "correct_auto_links": 3,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.6,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 0.4,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 3,
+          "correct": 3,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 2,
+          "correct": 2,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 42075,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 437,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 159,
+          "observed_n": 1,
+          "missing_n": 4
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "total_tokens": {
+          "observed_sum": 42671,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 22.36542640000698,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 24.43733290002274,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0675825,
+          "observed_n": 5,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "original",
+        "method": "product-matcher-v1",
+        "planned": 5,
+        "correct": 5,
+        "top1": 1.0,
+        "categories": {
+          "correct": 5
+        },
+        "auto_links": 3,
+        "correct_auto_links": 3,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.6,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 0.4,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 3,
+          "correct": 3,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 2,
+          "correct": 2,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 75086,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 371,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "total_tokens": {
+          "observed_sum": 75457,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 72.32625949999783,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 74.30850140000985,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.1154115,
+          "observed_n": 5,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "opaque",
+        "method": "A",
+        "planned": 5,
+        "correct": 2,
+        "top1": 0.4,
+        "categories": {
+          "semantic_error": 3,
+          "correct": 2
+        },
+        "auto_links": 0,
+        "correct_auto_links": 0,
+        "auto_link_precision_lower_bound": null,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.0,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 1.0,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 3,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 2,
+          "correct": 2,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "output_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "total_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "model_call_seconds": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "local_total_seconds": {
+          "observed_sum": 0.003560299999662675,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0,
+          "observed_n": 5,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "opaque",
+        "method": "C",
+        "planned": 5,
+        "correct": 3,
+        "top1": 0.6,
+        "categories": {
+          "correct": 3,
+          "needs_review": 2
+        },
+        "auto_links": 2,
+        "correct_auto_links": 2,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.4,
+        "model_needs_review_ratio": 0.4,
+        "user_review_required_ratio": 0.6,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 3,
+          "correct": 2,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 2,
+          "correct": 1,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 42091,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 424,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "total_tokens": {
+          "observed_sum": 42515,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 14.979466999997385,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 16.957231599997613,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0663165,
+          "observed_n": 5,
+          "missing_n": 0
+        }
+      },
+      {
+        "condition": "opaque",
+        "method": "product-matcher-v1",
+        "planned": 5,
+        "correct": 4,
+        "top1": 0.8,
+        "categories": {
+          "correct": 4,
+          "needs_review": 1
+        },
+        "auto_links": 3,
+        "correct_auto_links": 3,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.6,
+        "model_needs_review_ratio": 0.2,
+        "user_review_required_ratio": 0.4,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 3,
+          "correct": 3,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 2,
+          "correct": 1,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 75102,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 399,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 5
+        },
+        "total_tokens": {
+          "observed_sum": 75501,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 97.51511919997574,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 99.53689379998832,
+          "observed_n": 5,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.1156455,
+          "observed_n": 5,
+          "missing_n": 0
+        }
+      }
+    ],
+    "totals": [
+      {
+        "method": "A",
+        "planned": 10,
+        "correct": 7,
+        "top1": 0.7,
+        "categories": {
+          "correct": 7,
+          "semantic_error": 3
+        },
+        "auto_links": 3,
+        "correct_auto_links": 3,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.3,
+        "model_needs_review_ratio": 0.0,
+        "user_review_required_ratio": 0.7,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 6,
+          "correct": 3,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 4,
+          "correct": 4,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 10
+        },
+        "output_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 10
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 10
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 10
+        },
+        "total_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 10
+        },
+        "model_call_seconds": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 10
+        },
+        "local_total_seconds": {
+          "observed_sum": 0.007816500001354143,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.0,
+          "observed_n": 10,
+          "missing_n": 0
+        }
+      },
+      {
+        "method": "C",
+        "planned": 10,
+        "correct": 8,
+        "top1": 0.8,
+        "categories": {
+          "correct": 8,
+          "needs_review": 2
+        },
+        "auto_links": 5,
+        "correct_auto_links": 5,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.5,
+        "model_needs_review_ratio": 0.2,
+        "user_review_required_ratio": 0.5,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 6,
+          "correct": 5,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 4,
+          "correct": 3,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 84166,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 861,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 159,
+          "observed_n": 1,
+          "missing_n": 9
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 10
+        },
+        "total_tokens": {
+          "observed_sum": 85186,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 37.344893400004366,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 41.39456450002035,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.133899,
+          "observed_n": 10,
+          "missing_n": 0
+        }
+      },
+      {
+        "method": "product-matcher-v1",
+        "planned": 10,
+        "correct": 9,
+        "top1": 0.9,
+        "categories": {
+          "correct": 9,
+          "needs_review": 1
+        },
+        "auto_links": 6,
+        "correct_auto_links": 6,
+        "auto_link_precision_lower_bound": 1.0,
+        "auto_link_unjudged": 0,
+        "auto_link_coverage": 0.6,
+        "model_needs_review_ratio": 0.1,
+        "user_review_required_ratio": 0.4,
+        "valid_output_rate": 1.0,
+        "main": {
+          "planned": 6,
+          "correct": 6,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "generated_none": {
+          "planned": 4,
+          "correct": 3,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": 0.0
+        },
+        "natural_none": {
+          "planned": 0,
+          "correct": 0,
+          "wrong_auto_links": 0,
+          "wrong_auto_link_rate": null
+        },
+        "input_tokens": {
+          "observed_sum": 150188,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "output_tokens": {
+          "observed_sum": 770,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "thought_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 10
+        },
+        "cached_input_tokens": {
+          "observed_sum": 0,
+          "observed_n": 0,
+          "missing_n": 10
+        },
+        "total_tokens": {
+          "observed_sum": 150958,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "model_call_seconds": {
+          "observed_sum": 169.84137869997357,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "local_total_seconds": {
+          "observed_sum": 173.84539519999817,
+          "observed_n": 10,
+          "missing_n": 0
+        },
+        "cost_usd": {
+          "observed_sum": 0.231057,
+          "observed_n": 10,
+          "missing_n": 0
+        }
+      }
+    ],
+    "paired_usage": {
+      "planned": 10,
+      "observed": 10,
+      "missing": 0,
+      "C_input": 84166,
+      "v1_input": 150188,
+      "input_change_ratio": 0.7844260152555664,
+      "C_standard_cost": 0.133899,
+      "v1_standard_cost": 0.231057,
+      "cost_change_ratio": 0.7256066139403583
+    },
+    "improved": 1,
+    "worsened": 0,
+    "promotion_gate_passed_descriptively": true
+  },
+  "evaluation_cases": [
+    {
+      "task_id": "94531a433c298b302692b4f0",
+      "family_id": "0f47d8ef3f6607c2c28b",
+      "condition": "original",
+      "source": "Capital City",
+      "C_correct": true,
+      "v1_correct": true,
+      "C_status": "matched",
+      "v1_status": "matched",
+      "C_category": "correct",
+      "v1_category": "correct",
+      "C_target": "capital",
+      "v1_target": "capital",
+      "C_input": 3199,
+      "v1_input": 5226,
+      "C_cost": 0.0055035,
+      "v1_cost": 0.008334,
+      "C_reason": "Both represent capital cities with matching semantic names and string data.",
+      "v1_reason": "Both columns represent capital cities with matching semantic names and string data types.",
+      "improved": false,
+      "worsened": false
+    },
+    {
+      "task_id": "94531a433c298b302692b4f0",
+      "family_id": "0f47d8ef3f6607c2c28b",
+      "condition": "opaque",
+      "source": "Capital City",
+      "C_correct": true,
+      "v1_correct": true,
+      "C_status": "matched",
+      "v1_status": "matched",
+      "C_category": "correct",
+      "v1_category": "correct",
+      "C_target": "capital",
+      "v1_target": "capital",
+      "C_input": 3203,
+      "v1_input": 5230,
+      "C_cost": 0.0055845,
+      "v1_cost": 0.0084225,
+      "C_reason": "Source values (Accra, Athens, Banjul, Berlin) are capital cities, matching target 'capital'.",
+      "v1_reason": "Source values (Accra, Athens, Banjul, Berlin) are capital cities, matching the capital column semantics and types.",
+      "improved": false,
+      "worsened": false
+    },
+    {
+      "task_id": "5aa42efe70d35d6e05d97a3c",
+      "family_id": "OpenData-ALL-original-and-variants",
+      "condition": "original",
+      "source": "Participatory development and good governance",
+      "C_correct": true,
+      "v1_correct": true,
+      "C_status": "no_match",
+      "v1_status": "no_match",
+      "C_category": "correct",
+      "v1_category": "correct",
+      "C_target": null,
+      "v1_target": null,
+      "C_input": 18326,
+      "v1_input": 33280,
+      "C_cost": 0.028119,
+      "v1_cost": 0.0505275,
+      "C_reason": "No policy marker field corresponding to participatory development and good governance exists among targets.",
+      "v1_reason": "No target column represents participatory development and good governance policy marker.",
+      "improved": false,
+      "worsened": false
+    },
+    {
+      "task_id": "5aa42efe70d35d6e05d97a3c",
+      "family_id": "OpenData-ALL-original-and-variants",
+      "condition": "opaque",
+      "source": "Participatory development and good governance",
+      "C_correct": false,
+      "v1_correct": false,
+      "C_status": "needs_review",
+      "v1_status": "needs_review",
+      "C_category": "needs_review",
+      "v1_category": "needs_review",
+      "C_target": null,
+      "v1_target": null,
+      "C_input": 18326,
+      "v1_input": 33280,
+      "C_cost": 0.0279465,
+      "v1_cost": 0.0504225,
+      "C_reason": "Multiple integer issue marker columns share similar 0/1/2/99 distributions without distinct labels.",
+      "v1_reason": "Multiple integer issue indicator columns share the same domain (0, 1, 2, 99) but lack distinguishing metadata.",
+      "improved": false,
+      "worsened": false
+    },
+    {
+      "task_id": "2f96874d14f7d72b277297e8",
+      "family_id": "TPC-DI-ALL-original-and-variants",
+      "condition": "original",
+      "source": "AgencyID",
+      "C_correct": true,
+      "v1_correct": true,
+      "C_status": "matched",
+      "v1_status": "matched",
+      "C_category": "correct",
+      "v1_category": "correct",
+      "C_target": "AgID",
+      "v1_target": "AgID",
+      "C_input": 9419,
+      "v1_input": 16663,
+      "C_cost": 0.0158385,
+      "v1_cost": 0.025512,
+      "C_reason": "AgencyID strongly matches AgID in semantic naming and unique alphanumeric code format.",
+      "v1_reason": "AgencyID directly matches AgID by semantic name abbreviation and alphanumeric identifier format",
+      "improved": false,
+      "worsened": false
+    },
+    {
+      "task_id": "2f96874d14f7d72b277297e8",
+      "family_id": "TPC-DI-ALL-original-and-variants",
+      "condition": "opaque",
+      "source": "AgencyID",
+      "C_correct": false,
+      "v1_correct": true,
+      "C_status": "needs_review",
+      "v1_status": "matched",
+      "C_category": "needs_review",
+      "v1_category": "correct",
+      "C_target": "AgID",
+      "v1_target": "AgID",
+      "C_input": 9423,
+      "v1_input": 16667,
+      "C_cost": 0.014937,
+      "v1_cost": 0.0257505,
+      "C_reason": "Both are unique alphanumeric identifier codes with similar format, but generic column_0001 requires review.",
+      "v1_reason": "Both contain unique alphanumeric identifiers with identical row counts and letter-digit pattern structure.",
+      "improved": true,
+      "worsened": false
+    },
+    {
+      "task_id": "64602266d6cba952d721d61a",
+      "family_id": "ChEMBL-ALL-original-and-variants",
+      "condition": "original",
+      "source": "doc_id",
+      "C_correct": true,
+      "v1_correct": true,
+      "C_status": "no_match",
+      "v1_status": "no_match",
+      "C_category": "correct",
+      "v1_category": "correct",
+      "C_target": null,
+      "v1_target": null,
+      "C_input": 7819,
+      "v1_input": 14260,
+      "C_cost": 0.0124185,
+      "v1_cost": 0.0218175,
+      "C_reason": "doc_id represents document identifiers; no target field corresponds to document ID (T is target, ASI is assay ID).",
+      "v1_reason": "doc_id represents document identifiers; target columns do not contain a corresponding document ID field.",
+      "improved": false,
+      "worsened": false
+    },
+    {
+      "task_id": "64602266d6cba952d721d61a",
+      "family_id": "ChEMBL-ALL-original-and-variants",
+      "condition": "opaque",
+      "source": "doc_id",
+      "C_correct": true,
+      "v1_correct": true,
+      "C_status": "no_match",
+      "v1_status": "no_match",
+      "C_category": "correct",
+      "v1_category": "correct",
+      "C_target": null,
+      "v1_target": null,
+      "C_input": 7822,
+      "v1_input": 14263,
+      "C_cost": 0.012168,
+      "v1_cost": 0.0218295,
+      "C_reason": "Generic numeric column with 0.23 unique ratio has no corresponding match among target fields.",
+      "v1_reason": "Source integer identifier values do not align with any ChEMBL target field values or cardinalities.",
+      "improved": false,
+      "worsened": false
+    },
+    {
+      "task_id": "5ad4091fce0a7cb71f31fd1d",
+      "family_id": "c08c43f482e430e76d44",
+      "condition": "original",
+      "source": "Population",
+      "C_correct": true,
+      "v1_correct": true,
+      "C_status": "matched",
+      "v1_status": "matched",
+      "C_category": "correct",
+      "v1_category": "correct",
+      "C_target": "populationTotal",
+      "v1_target": "populationTotal",
+      "C_input": 3312,
+      "v1_input": 5657,
+      "C_cost": 0.005703,
+      "v1_cost": 0.0092205,
+      "C_reason": "Source Population matches target populationTotal semantically, with formatted string vs numeric values.",
+      "v1_reason": "Matches semantic concept and distribution; source contains formatted string numbers of total population counts.",
+      "improved": false,
+      "worsened": false
+    },
+    {
+      "task_id": "5ad4091fce0a7cb71f31fd1d",
+      "family_id": "c08c43f482e430e76d44",
+      "condition": "opaque",
+      "source": "Population",
+      "C_correct": true,
+      "v1_correct": true,
+      "C_status": "matched",
+      "v1_status": "matched",
+      "C_category": "correct",
+      "v1_category": "correct",
+      "C_target": "populationTotal",
+      "v1_target": "populationTotal",
+      "C_input": 3317,
+      "v1_input": 5662,
+      "C_cost": 0.0056805,
+      "v1_cost": 0.0092205,
+      "C_reason": "Source contains comma-separated formatted population numbers matching populationTotal.",
+      "v1_reason": "Source comma-separated integers match the scale and range of target population counts.",
+      "improved": false,
+      "worsened": false
+    }
+  ],
+  "profile_coverage": {
+    "source": {
+      "unique_columns": 5,
+      "types": {
+        "string": 3,
+        "integer": 2
+      },
+      "numeric_aggregate_columns": 2,
+      "date_range_columns": 0,
+      "partial_numeric_columns": 4,
+      "columns_with_non_bare_unit_looking_labels": 1,
+      "numeric_or_unit_group_columns": 4
+    },
+    "target": {
+      "unique_columns": 56,
+      "types": {
+        "integer": 26,
+        "string": 24,
+        "number": 4,
+        "unknown": 2
+      },
+      "numeric_aggregate_columns": 30,
+      "date_range_columns": 0,
+      "partial_numeric_columns": 33,
+      "columns_with_non_bare_unit_looking_labels": 0,
+      "numeric_or_unit_group_columns": 33
+    }
+  },
+  "timing": {
+    "C": {
+      "sdk_seconds": {
+        "sum": 37.344893400004366,
+        "median": 3.302824899998086,
+        "max": 8.72427510000125
+      },
+      "post_to_complete_seconds": {
+        "sum": 32.79304,
+        "median": 2.8711305,
+        "max": 8.315821
+      },
+      "local_seconds": {
+        "sum": 41.39456450002035,
+        "median": 3.746215150007629,
+        "max": 9.118958700011717
+      }
+    },
+    "product-matcher-v1": {
+      "sdk_seconds": {
+        "sum": 169.84137869997357,
+        "median": 2.837502050002513,
+        "max": 80.48800800000026
+      },
+      "post_to_complete_seconds": {
+        "sum": 164.951593,
+        "median": 2.416181,
+        "max": 79.84585
+      },
+      "local_seconds": {
+        "sum": 173.84539519999817,
+        "median": 3.2360964000035892,
+        "max": 80.92179680000118
+      }
+    }
+  },
+  "budget": {
+    "at": "2026-11-03T04:40:47.954699+00:00",
+    "categories": {
+      "valid_output": 52
+    },
+    "C_actual_POSTs": 52,
+    "C_reserved_slots": 52,
+    "previous_D_experiment_POSTs": 366,
+    "deployment_POSTs": 2,
+    "global_actual_POSTs": 420,
+    "C_reference_cost_usd": 0.6576525,
+    "global_reference_commitment_usd": 2.4534494999999996,
+    "remaining_global_calls": 30,
+    "remaining_reference_usd": 7.5465504999999995,
+    "recorded_C_seconds": 356.82432349996816,
+    "automatic_inference_retries": 0
+  },
+  "code_main_unchanged": true,
+  "deployment_default": "C",
+  "actual_invoice_verified": false,
+  "auxiliary_reporting_correction": "Sealed scorer unit_label_columns includes bare numeric groups; corrected descriptive counts here explicitly exclude bare. Accuracy/usage/outcomes unchanged."
+}

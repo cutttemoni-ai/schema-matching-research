@@ -1,0 +1,57 @@
+# C accuracy evaluation frozen plan
+
+Frozen 2026-11-03T04:30:55.717975+00:00. New model POST maximum 20; cumulative new C maximum52, previous366+deployment2+52=420/450. USD10 cumulative standard-reference budget; no new budget. Serial, SDK attempts1/retries0, no fallback. Code/config/data hashes below are fixed before generation.
+
+Same Gemini3.8Flash/global/LOW/4096, SYSTEM/output schema, candidate order, one source per request. C exactly preserves deployed profile/metadata input shape. Product-matcher-v1 retains ALL C features and adds all calculable partial parsing, lexical format/unit evidence and up to3 whole representative strings. No D feature selection or D generation. No claim of isolated single-feature causality.
+
+Development8 known-used families (6 stopped-development +2 exposed numeric chosen by type/hash),2headers/2methods=32. Evaluation5 fresh families (4 never-submitted heldout +1 untouched reserve),2headers/2methods=20. Variants are clustered within original family, not independent. Old270/D development/26 exposed evaluation families and related known duplicates excluded from fresh evaluation. Family broad/partial overlap remains uncertain. No results used for selection.
+
+Final only3positive+2generated-lineage no-match; natural none unavailable. No unannotated pair becomes a negative. Final truth read only offline after calls. Top1 denominator includes errors/review/unexecuted. User corrections not used. Auto-link metrics are validated matched eligibility, actual exports still require user confirmation.
+
+|order|ID|task|condition|method|candidate IDs|
+|---:|---|---|---|---|---|
+|1|bdbe71ae1c95394b9f99e007234f5ad2|94531a433c298b302692b4f0|original|C|t_28f7a5e9d7d7b5b3,t_bd95b34e91c2441a,t_d245da3370e61e29|
+|2|8d11c9f9b32a05849c0c1926beb5aecb|94531a433c298b302692b4f0|original|product-matcher-v1|t_28f7a5e9d7d7b5b3,t_bd95b34e91c2441a,t_d245da3370e61e29|
+|3|41f19b00ccac295ebea66b28b58df19d|94531a433c298b302692b4f0|opaque|product-matcher-v1|t_28f7a5e9d7d7b5b3,t_bd95b34e91c2441a,t_d245da3370e61e29|
+|4|90b896be874ba42abdda8cb4209e3746|94531a433c298b302692b4f0|opaque|C|t_28f7a5e9d7d7b5b3,t_bd95b34e91c2441a,t_d245da3370e61e29|
+|5|bef2eec6b4ce49542ead05fd38c48eff|5aa42efe70d35d6e05d97a3c|original|product-matcher-v1|t_bc42247b9e08abd5,t_b3df7938a8f0055a,t_0cc2d34c18256af1,t_ca92015297e8b3c4,t_3d01c2322ae9ea38,t_8866946f1a567c0f,t_24d198e56eb00bd5,t_d58b8fc224d9e53c,t_37225aa3c4acec64,t_e73c0ca73f0a5c39,t_be6899665c83fa1e,t_b9884b351c7d75e9,t_739097b57144faf8,t_86da0638f5e0af68,t_417cd631fccc2584,t_5083d61eb2ae13cc,t_fe7ad0f365d854ee,t_e08f897eaf19c884,t_591e6f07ba80cad7,t_d528ea18b7747df3,t_6ea1a5fcce524ba9,t_c4b47669c1e33c7e,t_6327f59f0a33f380,t_0be6b3b4342e5c93,t_8d339ac3906a906b,t_821e899f48d41c6e|
+|6|9a22cf706eac08e1e6ce9ba901503add|5aa42efe70d35d6e05d97a3c|original|C|t_bc42247b9e08abd5,t_b3df7938a8f0055a,t_0cc2d34c18256af1,t_ca92015297e8b3c4,t_3d01c2322ae9ea38,t_8866946f1a567c0f,t_24d198e56eb00bd5,t_d58b8fc224d9e53c,t_37225aa3c4acec64,t_e73c0ca73f0a5c39,t_be6899665c83fa1e,t_b9884b351c7d75e9,t_739097b57144faf8,t_86da0638f5e0af68,t_417cd631fccc2584,t_5083d61eb2ae13cc,t_fe7ad0f365d854ee,t_e08f897eaf19c884,t_591e6f07ba80cad7,t_d528ea18b7747df3,t_6ea1a5fcce524ba9,t_c4b47669c1e33c7e,t_6327f59f0a33f380,t_0be6b3b4342e5c93,t_8d339ac3906a906b,t_821e899f48d41c6e|
+|7|90665edc12ce5c17a8f33410ffe97ad4|5aa42efe70d35d6e05d97a3c|opaque|C|t_bc42247b9e08abd5,t_b3df7938a8f0055a,t_0cc2d34c18256af1,t_ca92015297e8b3c4,t_3d01c2322ae9ea38,t_8866946f1a567c0f,t_24d198e56eb00bd5,t_d58b8fc224d9e53c,t_37225aa3c4acec64,t_e73c0ca73f0a5c39,t_be6899665c83fa1e,t_b9884b351c7d75e9,t_739097b57144faf8,t_86da0638f5e0af68,t_417cd631fccc2584,t_5083d61eb2ae13cc,t_fe7ad0f365d854ee,t_e08f897eaf19c884,t_591e6f07ba80cad7,t_d528ea18b7747df3,t_6ea1a5fcce524ba9,t_c4b47669c1e33c7e,t_6327f59f0a33f380,t_0be6b3b4342e5c93,t_8d339ac3906a906b,t_821e899f48d41c6e|
+|8|00890d16ebb3858ec33ee8654903b92e|5aa42efe70d35d6e05d97a3c|opaque|product-matcher-v1|t_bc42247b9e08abd5,t_b3df7938a8f0055a,t_0cc2d34c18256af1,t_ca92015297e8b3c4,t_3d01c2322ae9ea38,t_8866946f1a567c0f,t_24d198e56eb00bd5,t_d58b8fc224d9e53c,t_37225aa3c4acec64,t_e73c0ca73f0a5c39,t_be6899665c83fa1e,t_b9884b351c7d75e9,t_739097b57144faf8,t_86da0638f5e0af68,t_417cd631fccc2584,t_5083d61eb2ae13cc,t_fe7ad0f365d854ee,t_e08f897eaf19c884,t_591e6f07ba80cad7,t_d528ea18b7747df3,t_6ea1a5fcce524ba9,t_c4b47669c1e33c7e,t_6327f59f0a33f380,t_0be6b3b4342e5c93,t_8d339ac3906a906b,t_821e899f48d41c6e|
+|9|269814a1ad7d2502de723a6024af2d56|2f96874d14f7d72b277297e8|original|C|t_9e1ee764b5e96a8d,t_dcef3f51c158e371,t_22a3cb9f17e8bdac,t_03f3faf4055afe7e,t_e7e3eba853a833ca,t_34150735e86a9bb5,t_60931fb724646f35,t_cefa3dbab0e67a9c,t_492653c38d305954,t_39917abc1c985c74,t_9b798fbe3db7b8ff,t_0e5a2aa86de67f96|
+|10|d376d4c0219bbf1db5fe64b64703251e|2f96874d14f7d72b277297e8|original|product-matcher-v1|t_9e1ee764b5e96a8d,t_dcef3f51c158e371,t_22a3cb9f17e8bdac,t_03f3faf4055afe7e,t_e7e3eba853a833ca,t_34150735e86a9bb5,t_60931fb724646f35,t_cefa3dbab0e67a9c,t_492653c38d305954,t_39917abc1c985c74,t_9b798fbe3db7b8ff,t_0e5a2aa86de67f96|
+|11|3255e6ff9aa6027c0824de4250f669e6|2f96874d14f7d72b277297e8|opaque|product-matcher-v1|t_9e1ee764b5e96a8d,t_dcef3f51c158e371,t_22a3cb9f17e8bdac,t_03f3faf4055afe7e,t_e7e3eba853a833ca,t_34150735e86a9bb5,t_60931fb724646f35,t_cefa3dbab0e67a9c,t_492653c38d305954,t_39917abc1c985c74,t_9b798fbe3db7b8ff,t_0e5a2aa86de67f96|
+|12|d82d43d3d0aa283e0e70163b36b04df8|2f96874d14f7d72b277297e8|opaque|C|t_9e1ee764b5e96a8d,t_dcef3f51c158e371,t_22a3cb9f17e8bdac,t_03f3faf4055afe7e,t_e7e3eba853a833ca,t_34150735e86a9bb5,t_60931fb724646f35,t_cefa3dbab0e67a9c,t_492653c38d305954,t_39917abc1c985c74,t_9b798fbe3db7b8ff,t_0e5a2aa86de67f96|
+|13|05b44e579b1cd21daafd25547395a896|64602266d6cba952d721d61a|original|product-matcher-v1|t_83de80a94325f050,t_7ec2fae688f9864a,t_4812fe0f6a7cea61,t_2927a5fe7960eb29,t_42dd77419df46021,t_914363bdfc0fd7ed,t_9a47246618169fcd,t_064aa439d2513969,t_4cb94b7a864db766,t_941d84c5a9348bbb,t_eab11d5d17756e2e,t_22d9d4e1eac68cec|
+|14|b0aeab22eeac8f6a8355dc619c5ccf9c|64602266d6cba952d721d61a|original|C|t_83de80a94325f050,t_7ec2fae688f9864a,t_4812fe0f6a7cea61,t_2927a5fe7960eb29,t_42dd77419df46021,t_914363bdfc0fd7ed,t_9a47246618169fcd,t_064aa439d2513969,t_4cb94b7a864db766,t_941d84c5a9348bbb,t_eab11d5d17756e2e,t_22d9d4e1eac68cec|
+|15|c872a7166c112ff78114d1827a4e4181|64602266d6cba952d721d61a|opaque|C|t_83de80a94325f050,t_7ec2fae688f9864a,t_4812fe0f6a7cea61,t_2927a5fe7960eb29,t_42dd77419df46021,t_914363bdfc0fd7ed,t_9a47246618169fcd,t_064aa439d2513969,t_4cb94b7a864db766,t_941d84c5a9348bbb,t_eab11d5d17756e2e,t_22d9d4e1eac68cec|
+|16|19e8730d6bb1b4b898ba24d0e84123c3|64602266d6cba952d721d61a|opaque|product-matcher-v1|t_83de80a94325f050,t_7ec2fae688f9864a,t_4812fe0f6a7cea61,t_2927a5fe7960eb29,t_42dd77419df46021,t_914363bdfc0fd7ed,t_9a47246618169fcd,t_064aa439d2513969,t_4cb94b7a864db766,t_941d84c5a9348bbb,t_eab11d5d17756e2e,t_22d9d4e1eac68cec|
+|17|deed0196b83be250c95497617e4612a0|5ad4091fce0a7cb71f31fd1d|original|C|t_a995e0c459caee28,t_74efd3fb90ad39a2,t_1511250f17aca1fd|
+|18|ff4de12bdad8cbd3d2a23b1cdeb4cc42|5ad4091fce0a7cb71f31fd1d|original|product-matcher-v1|t_a995e0c459caee28,t_74efd3fb90ad39a2,t_1511250f17aca1fd|
+|19|d751e638c416166897737f1a20b83f78|5ad4091fce0a7cb71f31fd1d|opaque|product-matcher-v1|t_a995e0c459caee28,t_74efd3fb90ad39a2,t_1511250f17aca1fd|
+|20|7bb42532fa773a4bd66e68d1edf8d61f|5ad4091fce0a7cb71f31fd1d|opaque|C|t_a995e0c459caee28,t_74efd3fb90ad39a2,t_1511250f17aca1fd|
+
+## Included source families
+
+- 0f47d8ef3f6607c2c28b / test / 55004961_0_2904467548072189860 / column 2 / main
+- OpenData-ALL-original-and-variants / external / OpenData / column 25 / generated_none
+- TPC-DI-ALL-original-and-variants / external / TPC-DI / column 0 / main
+- ChEMBL-ALL-original-and-variants / external / ChEMBL / column 1 / generated_none
+- c08c43f482e430e76d44 / test / 41194422_1_1172256090552737974 / column 1 / main
+
+## Hashes
+
+- data e53d4f11ba4846aa1b6e3f7d09b4f91b6638d15c64285c3e52825a2d50d9a2d0
+- schema_match/product_matcher_v1.py: 75863b578d6b0382b945434d2f2cbf395bc3cd8fcc4d3c9d646d27b86accad26
+- schema_match/c_accuracy_campaign.py: 18c11213951d0fbab675b4be2fb043e1139febb4c22d4e9a988ff3d08aac9470
+- schema_match/product_profiles_v1.py: 20041b79fc5497f13ed77a19f8c4a217f7cfab05aad8afd7f86015ecb2b8f3fc
+- schema_match/cloud_c_service.py: 39c39ca9faf875bfdfd76a077ffd6935dfc46ed6e63de857b0c7ddb91994e420
+- schema_match/profiles.py: 9dd42eb27f7a2f18242b0ec52f1d62cf7657a4f187eef5f2a3d874ec2730cab0
+- schema_match/research_request.py: 56efeb5f96bd799c0ade4e4b66a4acc19048311c997b0a9fb86b032287f10ead
+- schema_match/vertex_provider_v1.py: 9097af7142b9a2988e3af27049258aebd1ed62b95a649d654e8bcfc61925eb3a
+- schema_match/vertex_budget_v1_2.py: 684b74c3fc25ed020d7220c3d02b2250151743f38b4c3bf8faddefc8dae6ccd8
+- config/comparison_v0.json: ba5efdcaf41b6b7e791e51a15f11f57fe75508ee968be34a50e9c9b535005488
+- config/gcp_research_v1.json: a02f3d1ef07a35a9c93c75681659f06ac718564cfccacee7b92576aea012a91c
+- config/gcp_budget_v1_2.json: cf533cb6deb366d9991e72034d46653ef5926e4cbe7f7b06d41e494f1141ce79
+- config/product_matcher_v1.json: 84dfc68ed9add0dc78391806609c5fbdf538908a5c9c684275aeced7f51a9bfc
+- schema_match/c_accuracy_score.py: 45998fcc4d53cdaf2564eec5f12ee299f16088f9d35b65ffb3037beb16d534a2

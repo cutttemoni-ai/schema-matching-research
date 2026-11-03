@@ -1,0 +1,16 @@
+{
+  "version": "product-matcher-v1",
+  "baseline": "cloud-c-product-v1 / column-profile-v0",
+  "policy": "Retain every baseline C feature and category string. Add all calculable value-only extension features; no D feature selection, names/labels/row context/hidden truncation.",
+  "representative_seed": "representative-values-v1-20261103",
+  "representative_max_chars": 80,
+  "representative_max_count": 3,
+  "numeric_literal_max_chars": 100,
+  "numeric_pattern": "[+-]?(?:[0-9]+(?:\\.[0-9]+)?|\\.[0-9]+)(?:[eE][+-]?[0-9]+)?",
+  "recognized_units": ["%", "cm", "mm", "m", "km", "kg", "g", "mg", "L", "mL", "Hz", "kHz", "MHz", "ms", "s", "min", "h", "USD", "KRW", "EUR", "$", "€", "£", "₩"],
+  "radio_band_prefixes": ["AM", "FM"],
+  "year_shape_range": [1000, 2999],
+  "representative_policy": "Up to3 whole values: most frequent/lexical tie; seeded uniform distinct; maximally lexically different. >80-char values omitted only from additional representatives, counted explicitly; baseline C top categories remain uncut.",
+  "decision_policy": "Same SYSTEM/output schema/common policy as frozen C. No confidence percentage or name exception. Partial parsing does not prove semantic equivalence, business units or date granularity.",
+  "promotion_gate": "Do not deploy automatically. Candidate must improve planned-denominator Top1 strictly, with no reduction in matched precision or matched coverage. Even a pass is descriptive, not commercial certification."
+}
