@@ -1,0 +1,30 @@
+{
+  "archive": "deployment-artifacts/b2b-cloud/public-review-bundle.zip",
+  "sha256": "5b08e222da41f1ed228775d0477b03ed79a885b7de05f001ba4bbf4a96eda63f",
+  "bytes": 129468,
+  "entries": 19,
+  "private_credentials_included": false,
+  "raw_model_responses_or_evaluation_truth_included": false,
+  "synthetic_demo_only": true,
+  "files": {
+    "B2B_CLOUD_DEPLOYMENT_REPORT.md": "73446be3dbc541dfc64e0627bf66a43e55ca6c61cf6cfcef09241a66bf18f364",
+    "B2B_CLOUD_DEPLOYMENT.json": "8747e35bcfead6cc96e47ee609096d930a9760e3c8f05add4bbd8736d7dad160",
+    "B2B_CLOUD_CALL_PLAN.json": "4652492b575289364b8b3c6091926bdda2cf78a080fc3d78f7290ac3d50f66af",
+    "B2B_CLOUD_CALL_AUDIT.json": "1b98e2be0c9d2e5b77e3dc6b4d343a40e9c2e4adc9f1c0b3e5663e0876ffeff5",
+    "B2B_CLOUD_CUMULATIVE_REQUEST_LEDGER.csv": "67a19620ddb8e64a9eb9488af68ab2b10aa27a3951b164abdb2f8d2d941577e8",
+    "examples/b2b-web/orders-changed.csv": "44d8106082323c88f6b35a8369d47f85f2d430818224c34f5263578ea4d32cd2",
+    "examples/b2b-web/orders-next.csv": "3a158479f9df8da6eae48868368507d4282dfa27f19b102aaf06b9ed88c701ba",
+    "examples/b2b-web/orders.csv": "fe65ca9e19f25d3f0438ba749d8d5b2522297dc4624e9b9c68e11a45e0e04303",
+    "examples/b2b-web/products-changed.csv": "cb2202d3b30d9c8dc142b3b739e48cff5431294432c5bed75cd13a29e4ace2cf",
+    "examples/b2b-web/products-next.csv": "f4ed45ff805edf75aa83a6edb7be71213228f281d82753a95f66a1c1ff1e8ebc",
+    "examples/b2b-web/products-unit-changed.csv": "e60a64a1a8f9abc7410ed755d02e87b3238b9e4a70f39b236cc1c0f8385b4d5e",
+    "examples/b2b-web/products.csv": "39f92e6ec64df75b6c8a37e5ba0c85d1d47283e8753cc616f188c6964e7f1924",
+    "deployment-artifacts/b2b-cloud/browser/products-standardized.csv": "0cb0e6bd89587da5bfcb3bda2aaf1987f6d926eee85c40e1bae49aacb12aab05",
+    "deployment-artifacts/b2b-cloud/browser/orders-standardized.csv": "173cc1ab477cd2631fc9f91bc066b270aab4fe8684093713f242d04c9b8dafe0",
+    "deployment-artifacts/b2b-cloud/browser/final-approved.png": "a3c800e16093046bf3207e75254dd64e4e8d66c6e517d0e6c6385d4f85a6d674",
+    "deployment-artifacts/b2b-cloud/browser/products-preview.png": "36056973944dddc888e7af7cc3645c2ba5feaa416bbe44eb18be655729592127",
+    "deployment-artifacts/b2b-cloud/browser/orders-preview.png": "d87f7deeb8b8616194218983b7b3a49caaafb76c6e47f108bd26d8ff22756497",
+    "deployment-artifacts/b2b-cloud/browser/products-download-check.json": "190f34d278b6c5bb02cf1787b102eadcebaa55e2d0f6bba0443f533b5796d5bb",
+    "deployment-artifacts/b2b-cloud/browser/orders-download-check.json": "4629a53a2d43f38052b89b56f6f4ff07b7c3a8dcc7390f035a7a43f0d5a78a80"
+  }
+}

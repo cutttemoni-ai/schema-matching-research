@@ -1,0 +1,50 @@
+{
+  "new_POSTs": 2,
+  "new_requests": [
+    {
+      "campaign": "b2b-cloud",
+      "phase": "deployment_check",
+      "task_id": "45fc0d550b262431877da7059887d166",
+      "arm": "B2B-v3-web",
+      "request_id": "8f08c52fe49a48ccac4f0098a59ef2da",
+      "POSTs": 1,
+      "category": "success",
+      "http_status": 200,
+      "input_tokens": 5946,
+      "visible_output_tokens": 373,
+      "thought_tokens": null,
+      "combined_output_tokens": 373,
+      "total_tokens": 6319,
+      "cached_tokens": null,
+      "no_cache_estimated_usd": "0.00585825",
+      "standard_reference_usd": "0.01171650",
+      "seconds": 5.121890414000063
+    },
+    {
+      "campaign": "b2b-cloud",
+      "phase": "deployment_check",
+      "task_id": "4fdd24f56c7eb90d2cad3d1bd98b4f09",
+      "arm": "B2B-v3-web",
+      "request_id": "5462c7d30d9249768e23bfe85e2b9edb",
+      "POSTs": 1,
+      "category": "success",
+      "http_status": 200,
+      "input_tokens": 3619,
+      "visible_output_tokens": 285,
+      "thought_tokens": null,
+      "combined_output_tokens": 285,
+      "total_tokens": 3904,
+      "cached_tokens": null,
+      "no_cache_estimated_usd": "0.003783",
+      "standard_reference_usd": "0.007566",
+      "seconds": 8.743539026999997
+    }
+  ],
+  "new_known_estimated_usd": "0.00964125",
+  "cumulative_POSTs": 76,
+  "cumulative_known_estimated_usd": "1.13373375",
+  "prior_unknown_charge_requests": 1,
+  "previous_ledger_sha256": "d9f7117b6c343cccb04a52cc50e40ef3f68e7961261b47b9016997f15177b7ec",
+  "scope": "synthetic B2B campaigns and web deployment checks; not project lifetime",
+  "actual_invoice": false
+}

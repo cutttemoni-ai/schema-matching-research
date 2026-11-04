@@ -1,0 +1,228 @@
+{
+  "project": "schema-match-gemini-261103",
+  "project_number": "392692577987",
+  "region": "asia-northeast3",
+  "service": "schema-b2b-v3-candidate",
+  "url": "https://schema-b2b-v3-candidate-42mhsk5ogq-du.a.run.app/b2b",
+  "runtime_service_account": "schema-b2b-candidate@schema-match-gemini-261103.iam.gserviceaccount.com",
+  "runtime_commit": "a59179a450d21f3576548fbe82adc10d34bff5df",
+  "image": "asia-northeast3-docker.pkg.dev/schema-match-gemini-261103/schema-web/b2b-candidate@sha256:4c9e61d6249a4964610b315136036a46a8282b56ca96bae1461c75a2926c2252",
+  "revisions": [
+    "schema-b2b-v3-candidate-first",
+    "schema-b2b-v3-candidate-persist"
+  ],
+  "current_revision": "schema-b2b-v3-candidate-persist",
+  "traffic": [
+    {
+      "latestRevision": true,
+      "percent": 100,
+      "revisionName": "schema-b2b-v3-candidate-persist"
+    }
+  ],
+  "build": {
+    "id": "96b915ea-9808-4b8b-84be-0c94e6367b33",
+    "region": "asia-northeast3",
+    "status": "SUCCESS",
+    "seconds": 94.68069,
+    "source_files": 57,
+    "image_files": 56,
+    "source_archive_sha256": "5c88f5956bb5baaeca23f1a41ef38838b19734c33254caee87c23214d72b3927",
+    "container_http_and_private_data_smoke": true
+  },
+  "limits": {
+    "cpu": "1",
+    "memory": "1Gi",
+    "min_instances": 0,
+    "max_instances_per_revision": 1,
+    "concurrency": 8,
+    "timeout_seconds": 300,
+    "cpu_throttling": "true"
+  },
+  "runtime_project_roles": [
+    "projects/schema-match-gemini-261103/roles/schemaB2BCandidateVertex"
+  ],
+  "buckets": {
+    "schema-match-gemini-261103-b2b-candidate-tasks": {
+      "location": "ASIA-NORTHEAST3",
+      "public_access_prevention": "enforced",
+      "uniform_access": true,
+      "lifecycle": {
+        "rule": [
+          {
+            "action": {
+              "type": "Delete"
+            },
+            "condition": {
+              "age": 7
+            }
+          }
+        ]
+      },
+      "soft_delete": {
+        "retentionDurationSeconds": "0"
+      },
+      "runtime_roles": [
+        "projects/schema-match-gemini-261103/roles/schemaB2BCandidateStore"
+      ],
+      "object_count": 153,
+      "observed_bytes": 3081409
+    },
+    "schema-match-gemini-261103-b2b-candidate-rules": {
+      "location": "ASIA-NORTHEAST3",
+      "public_access_prevention": "enforced",
+      "uniform_access": true,
+      "lifecycle": null,
+      "soft_delete": {
+        "retentionDurationSeconds": "0"
+      },
+      "runtime_roles": [
+        "projects/schema-match-gemini-261103/roles/schemaB2BCandidateStore"
+      ],
+      "object_count": 4,
+      "observed_bytes": 46297
+    }
+  },
+  "personal_account_uid_preserved_after_revision": true,
+  "personal_account_uid_sha256": "6562aebc24dc933c85ba5a98590a370ec1c8fe1c30ff1f022731970154f18abe",
+  "supplier_versions": [
+    {
+      "name": "합성 클라우드 시연 거래처",
+      "versions": [
+        {
+          "kind": "products",
+          "version": 1
+        },
+        {
+          "kind": "products",
+          "version": 2
+        },
+        {
+          "kind": "orders",
+          "version": 3
+        },
+        {
+          "kind": "orders",
+          "version": 4
+        },
+        {
+          "kind": "products",
+          "version": 5
+        }
+      ]
+    },
+    {
+      "name": "합성 분리 확인 거래처",
+      "versions": []
+    }
+  ],
+  "dedicated_personal_mode": true,
+  "plaintext_password_publication": false,
+  "private_handoff_excluded_from_git_image_and_public_bundle": true,
+  "actual_runtime_gcs_write_conflict_log_count": 1,
+  "real_http_guard_results": {
+    "real_cloud_run": true,
+    "backend": "dedicated GCS bucket",
+    "unauthenticated": 401,
+    "missing_csrf": 403,
+    "cross_owner_statuses": {
+      "GET ": 404,
+      "POST /preview": 404,
+      "POST /approve": 404,
+      "GET /files/00cd50c7f148a36992ab94ff6b3dd320/standardized.csv": 404,
+      "cross_owner_supplier_create": 404
+    },
+    "duplicate_approval_reused": true,
+    "duplicate_approval_execution_count": 1,
+    "cas_responses": [
+      {
+        "status": 409,
+        "error": "다른 창에서 변경됐습니다. 다시 열어 주세요."
+      },
+      {
+        "status": 409,
+        "error": "다른 요청이 먼저 저장됐습니다. 새로고침 후 현재 버전을 확인해 주세요."
+      },
+      {
+        "status": 409,
+        "error": "다른 창에서 변경됐습니다. 다시 열어 주세요."
+      },
+      {
+        "status": 409,
+        "error": "다른 창에서 변경됐습니다. 다시 열어 주세요."
+      },
+      {
+        "status": 409,
+        "error": "다른 창에서 변경됐습니다. 다시 열어 주세요."
+      },
+      {
+        "status": 409,
+        "error": "다른 창에서 변경됐습니다. 다시 열어 주세요."
+      },
+      {
+        "status": 409,
+        "error": "다른 창에서 변경됐습니다. 다시 열어 주세요."
+      },
+      {
+        "status": 200,
+        "error": null
+      }
+    ],
+    "stale_preview_status": 409,
+    "cas_task_execution_count": 0,
+    "cas_state_key_sha256": "c5797c75f5d254fa7a586a3a3ffe820957ffb76d356416feff911616a3e6045f",
+    "new_model_calls": 0
+  },
+  "historical_files_unchanged": {
+    "SYNTHETIC_EVALUATION_RESULTS.json": "796cca1d365031b1b9d78de437953566665710b473e47b15148f2d7ea2a91a6d",
+    "SYNTHETIC_EVALUATION_RESULTS.csv": "e1499b9359cdda28f4f01c49094173ddcd97c4b8f1699e04bdc6b2a0a9119244",
+    "B2B_V3_EVALUATION_RESULTS.json": "6fcba90ae11063124b060c71fdd296bebc225ef127af86ef09c56c5ce0d2e6d9",
+    "B2B_V3_EVALUATION_RESULTS.csv": "8a110a293588413804e4168e5a709ed4f96f8ff4ab7dad88fe9c70d810dd5ae8",
+    "B2B_WEB_CUMULATIVE_REQUEST_LEDGER.csv": "d9f7117b6c343cccb04a52cc50e40ef3f68e7961261b47b9016997f15177b7ec",
+    "schema_match/b2b_v3.py": "6b0d5f78ac3e10d26c221aad7cf8db45f36babc0a723924a76807c218d4c09ca",
+    "schema_match/cloud_c_service.py": "ff8dab600599335279fbb2d3c7ff5ee5c15c9511e843c973afd0bb278564a78c",
+    "config/gcp_research_v1.json": "a02f3d1ef07a35a9c93c75681659f06ac718564cfccacee7b92576aea012a91c"
+  },
+  "production_preserved": {
+    "service_spec": true,
+    "traffic": true,
+    "service_iam": true,
+    "bucket_metadata": true,
+    "bucket_iam": true
+  },
+  "tests": {
+    "offline_passed": 104,
+    "warnings": 1,
+    "live_browser_and_GCS_separately_verified": true
+  },
+  "browser_checks": [
+    "products_actual_Gemini_questions_preview_approve_download",
+    "orders_actual_Gemini_date_code_quantity_price_composites_approve_download",
+    "unknown_unanswered_blocks",
+    "two_tabs_stale_preview_denied",
+    "repeated_approval_same_execution",
+    "same_supplier_new_products_and_orders_rule_reuse_then_new_approval",
+    "changed_headers_units_packs_invalid_values_blocks",
+    "other_supplier_no_rule_inheritance",
+    "other_user_empty_lists_and_task_URL_denied",
+    "logout_relogin_rule_versions_retained",
+    "new_revision_existing_download_byte_identical",
+    "new_revision_new_upload_reuse_and_approval"
+  ],
+  "new_accuracy_claim": false,
+  "main_merged": false,
+  "existing_production_changed": false,
+  "verified_at": "2026-11-04T03:52:37.751169+00:00",
+  "public_paths_and_error_log_check": {
+    "responses": {
+      "/static/review_stored.json": 404,
+      "/examples/review_stored.json": 404,
+      "/static/GEMINI_EVALUATION_RESULTS.md": 404,
+      "/.env": 404,
+      "/datasets/": 404,
+      "authenticated_legacy_stored_response_demo": 404
+    },
+    "candidate_error_log_count": 0,
+    "production_health": 200
+  },
+  "new_model_POSTs": 2
+}

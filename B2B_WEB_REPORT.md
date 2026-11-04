@@ -1,3 +1,5 @@
+> 2026-11-04: 별도 Cloud Run 후보 배포와 실제 환경 검증을 완료했습니다. [외부 /b2b](https://schema-b2b-v3-candidate-42mhsk5ogq-du.a.run.app/b2b), [배포·시연·비용·롤백 보고서](B2B_CLOUD_DEPLOYMENT_REPORT.md). 기존 운영 서비스와 main은 유지합니다. 아래 배포 미실행/로컬 검증 설명은 이전 단계의 기록이며 현재 배포 상태는 새 보고서를 따릅니다.
+
 # B2B-v3 거래처 승인 규칙 웹 구현·검증 보고서
 
 기준은 `codex/b2b-v3-evidence`의 `fae8168eb82714cc17c1e47d15c90b0f2f5e393f`다. 원격 fetch 후 최신 `origin/main` f26576f가 기준 커밋의 조상임을 확인하고, 별도 worktree `schema-b2b-web` / 브랜치 `codex/b2b-v3-web-workflow`에서 구현했다. 기존 worktree의 작업과 과거 결과는 수정하지 않았다. main 병합·운영 배포·CS Flow 변경은 없다.
