@@ -1,0 +1,92 @@
+{
+  "synthetic": true,
+  "notice": "합성 자료: 모든 거래처·상품·주문은 가상이며 실제 기업·거래 자료가 아닙니다.",
+  "schema_version": 1,
+  "events": [
+    {
+      "event_id": "synthetic-creation-20261104",
+      "date": "2026-11-04",
+      "actor": "dataset_author",
+      "purpose": "generation_and_offline_validation",
+      "task_ids": [
+        "D01_products",
+        "D01_orders",
+        "D02_products",
+        "D02_orders",
+        "D03_products",
+        "D03_orders",
+        "D04_products",
+        "D04_orders",
+        "D05_products",
+        "D05_orders",
+        "D06_products",
+        "D06_orders",
+        "D07_products",
+        "D07_orders",
+        "D08_products",
+        "D08_orders",
+        "E09_products",
+        "E09_orders",
+        "E10_products",
+        "E10_orders",
+        "E11_products",
+        "E11_orders",
+        "E12_products",
+        "E12_orders",
+        "demo_products",
+        "demo_orders"
+      ],
+      "access": "authoring_only",
+      "used_for_engine_improvement": false,
+      "explanation": "합성 데이터 생성·기계 검증만 수행. 엔진 개발·평가 모델 호출 없음"
+    },
+    {
+      "event_id": "synthetic-b2b-v1-development",
+      "recorded_at_utc": "2026-11-04T00:47:56.740292+00:00",
+      "actor": "Codex B2B campaign",
+      "purpose": "development_comparison_and_one_general_revision",
+      "task_ids": [
+        "D01_products",
+        "D01_orders",
+        "D02_products",
+        "D02_orders",
+        "D03_products",
+        "D03_orders",
+        "D04_products",
+        "D04_orders",
+        "D05_products",
+        "D05_orders",
+        "D06_products",
+        "D06_orders",
+        "D07_products",
+        "D07_orders",
+        "D08_products",
+        "D08_orders"
+      ],
+      "access": "truth_after_predictions",
+      "used_for_engine_improvement": true,
+      "commit": "b05257d7054906492f96642aef08c3b55fd513d7",
+      "prior_dataset_authoring_exposure": true
+    },
+    {
+      "event_id": "synthetic-b2b-v1-evaluation",
+      "recorded_at_utc": "2026-11-04T00:51:45.544661+00:00",
+      "actor": "Codex B2B campaign",
+      "purpose": "frozen_predictions_then_separate_scoring",
+      "task_ids": [
+        "E09_products",
+        "E09_orders",
+        "E10_products",
+        "E10_orders",
+        "E11_products",
+        "E11_orders",
+        "E12_products",
+        "E12_orders"
+      ],
+      "access": "truth_after_predictions",
+      "used_for_engine_improvement": false,
+      "commit": "0322a601482fc4af22e7c1f326160bf5f777367a",
+      "prior_dataset_authoring_exposure": true
+    }
+  ]
+}

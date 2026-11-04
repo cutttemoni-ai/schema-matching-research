@@ -1,0 +1,52 @@
+{
+  "commit": "0322a601482fc4af22e7c1f326160bf5f777367a",
+  "code": {
+    "schema_match/synthetic_adapter.py": "0a0502be7dfbfa82e4a5091e3a13e1818a030f98e93d63afeede66e352024290",
+    "scripts/synthetic_campaign.py": "226b9a358da9c940fd15edfe558324b64fbbf9fbd2d68e163fcc7508a5403bac",
+    "scripts/score_synthetic.py": "a600c3df2f7f305246845b6c18c70bfa04548e9ca5534564d21197fb520ff9a1",
+    "schema_match/vertex_provider_v1.py": "70764a3a393810615f7d59c1f3f37bd086f538231213f07148731fc031a96aa0",
+    "schema_match/vertex_budget_v1_2.py": "684b74c3fc25ed020d7220c3d02b2250151743f38b4c3bf8faddefc8dae6ccd8",
+    "schema_match/b2b_engine.py": "ad2da908e85ea604096187d2f309ac194618f62cd7d5eba416152e0bb260861f",
+    "schema_match/semantic_engine.py": "78130fcad54ec5621e841873d64504437c626ec1f23c22de4572d2bd1826a46d",
+    "schema_match/profiles.py": "9dd42eb27f7a2f18242b0ec52f1d62cf7657a4f187eef5f2a3d874ec2730cab0",
+    "schema_match/review.py": "8543db8dfec214c05343fbf1f9b43022a7de3b75b9a4e7ad8a63dcd950db0505",
+    "schema_match/models.py": "4479c3629bfad8e55b8dadb1f99e7531a4033ff49674a8176e3b5930741cf5bf",
+    "schema_match/files.py": "a030e98b6861b3ae8bc6fc1caad1e0df0fce5065851874fdac1cc119ee0d40c2",
+    "schema_match/cloud_c_service.py": "ff8dab600599335279fbb2d3c7ff5ee5c15c9511e843c973afd0bb278564a78c",
+    "schema_match/synthetic_transforms.py": "ecbb00cbc3321d1800cc8d42fd7684ab876eb79ced1a762a05423745036ba4da",
+    "schema_match/synthetic_refiner.py": "2807325a3c75da62c6e008f5c2d5b234622afa40312af14c3d05bb64d3ae1a5b",
+    "schema_match/synthetic_revision.py": "c6b4dcbca97bdd0c0d6f69eefef01bbc075105f7cac678170ea4003e939ba392"
+  },
+  "config": {
+    "version": "vertex-gemini-research-v1.1",
+    "project": "schema-match-gemini-261103",
+    "location": "global",
+    "model": "gemini-3.8-flash",
+    "api_version": "v1",
+    "context_tokens": 1048576,
+    "max_model_output_tokens": 65536,
+    "max_output_tokens": 8192,
+    "thinking_level": "LOW",
+    "reason_max_chars": 120,
+    "automatic_retries": 0,
+    "migration_inference_cap": 6,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": 0.75,
+      "cached_input_per_million": 0.075,
+      "output_including_thoughts_per_million": 3.75,
+      "effective_through": "2026-12-31",
+      "checked_at": "2026-11-03",
+      "source": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing"
+    },
+    "model_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash",
+    "parameter_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash",
+    "schema_policy": "Supported JSON Schema enum/anyOf; reason length additionally validated in Python. No inferred target repairs.",
+    "token_policy": "CountTokens real request plus a separate budget-only message/schema representation. max(two counts)+256 service framing+output4096; messages and system not added twice. CountTokens26 vs real prompt60 in smoke means not exact. No byte-based admission or content clipping."
+  },
+  "at": "2026-11-04T00:48:29.159366+00:00",
+  "evaluation_inputs_seen_in_this_campaign": false,
+  "evaluation_truth_seen_in_this_campaign": false,
+  "prior_authoring_exposure": true,
+  "independent_real_world_evaluation": false
+}

@@ -1,0 +1,120 @@
+{
+  "scope": "public synthetic comparison reports, metrics, plans and usage snapshot; excludes manifest itself",
+  "files": [
+    {
+      "path": "SYNTHETIC_COMPARISON_PLAN.md",
+      "bytes": 6293,
+      "sha256": "960548554a6f490136d20519b877616b7e377d38273cdf79d39a95e41a6fc973"
+    },
+    {
+      "path": "SYNTHETIC_COMPARISON_REPORT.md",
+      "bytes": 15780,
+      "sha256": "59dd682cde10749cce253bd398e9b8c354d143784126384476b93be29aa04041"
+    },
+    {
+      "path": "SYNTHETIC_COMPATIBILITY_RESULTS.csv",
+      "bytes": 29665,
+      "sha256": "9f6df81e17d92fde31feb054ee2bfd0f9f2794fd6523b59401f4875c964d3061"
+    },
+    {
+      "path": "SYNTHETIC_COMPATIBILITY_RESULTS.json",
+      "bytes": 312453,
+      "sha256": "1180fcefee76ca55538ccff3da9b72ccc7b73db02605428eccd02a008905d479"
+    },
+    {
+      "path": "SYNTHETIC_DEVELOPMENT_ADMISSION.json",
+      "bytes": 14705,
+      "sha256": "7775484ea15d64d8408e35554bb9d9fe667f1ece7d94c21709bede8ca9ac343d"
+    },
+    {
+      "path": "SYNTHETIC_DEVELOPMENT_RESULTS.csv",
+      "bytes": 57205,
+      "sha256": "5b2a5d80d24efe15f5b290c1c16f721838d024942124b4838f3929427214f7ff"
+    },
+    {
+      "path": "SYNTHETIC_DEVELOPMENT_RESULTS.json",
+      "bytes": 509701,
+      "sha256": "54f9a112b04cd66adfbd8beb4feb22cbe4863ab6d5c46eb0fc07c16607b3b11a"
+    },
+    {
+      "path": "SYNTHETIC_EVALUATION_ADMISSION.json",
+      "bytes": 9689,
+      "sha256": "c8041c5eaa30736529e5e0f9bfe943ead00868f902ddab5697d53fc27385443b"
+    },
+    {
+      "path": "SYNTHETIC_EVALUATION_PREDICTION_SEAL.json",
+      "bytes": 1884,
+      "sha256": "fa8815601b74ebb0536d64f3c05838eaa552f25364c7c6b49779ffaac763e5d3"
+    },
+    {
+      "path": "SYNTHETIC_EVALUATION_RESULTS.csv",
+      "bytes": 29014,
+      "sha256": "e1499b9359cdda28f4f01c49094173ddcd97c4b8f1699e04bdc6b2a0a9119244"
+    },
+    {
+      "path": "SYNTHETIC_EVALUATION_RESULTS.json",
+      "bytes": 291804,
+      "sha256": "796cca1d365031b1b9d78de437953566665710b473e47b15148f2d7ea2a91a6d"
+    },
+    {
+      "path": "SYNTHETIC_EXECUTION_AUDIT.json",
+      "bytes": 45964,
+      "sha256": "571482afd3c437f78abf5a1df14a9edebb371ee815215295621219bd52eb10fb"
+    },
+    {
+      "path": "SYNTHETIC_FINAL_FREEZE.json",
+      "bytes": 3300,
+      "sha256": "7dc54db43e6b235d17593b77673b0f6917091a876c42b90118c9e2bf2289d6e9"
+    },
+    {
+      "path": "SYNTHETIC_METRICS_PROTOCOL.json",
+      "bytes": 4511,
+      "sha256": "44c4a2040106668f64bd2ac51edf65d031fef045f15d77446c1a28132c402b2f"
+    },
+    {
+      "path": "SYNTHETIC_REQUEST_LEDGER.csv",
+      "bytes": 8728,
+      "sha256": "df65f0fa72ae1f5e5b2adc4644140e63cf23c07ff41dd0ed2db5e1b3c85ecc4f"
+    },
+    {
+      "path": "SYNTHETIC_REVISION_ADMISSION.json",
+      "bytes": 15137,
+      "sha256": "f41db386762012a2165a55222b636811c1950e048b18544f59d8b3b640ca6269"
+    },
+    {
+      "path": "SYNTHETIC_REVISION_DECISION.md",
+      "bytes": 3714,
+      "sha256": "68e17755d00a3a177ea2775a2ff84ddf4c4eaea4c7cf7b0f81ac0abcfc99f0bd"
+    },
+    {
+      "path": "SYNTHETIC_REVISION_RESULTS.csv",
+      "bytes": 30536,
+      "sha256": "01647a12e81ab0e084f2fe881c312464e83798c269126143b381788917847ac9"
+    },
+    {
+      "path": "SYNTHETIC_REVISION_RESULTS.json",
+      "bytes": 217307,
+      "sha256": "ef211417a7908d07e024d9f474a4891aed9ddf9b28c2e8283f99702e5c183302"
+    },
+    {
+      "path": "SYNTHETIC_SMOKE_RESULTS.csv",
+      "bytes": 7106,
+      "sha256": "bb5285e7f64449bbc9731bf7520ea95a3cd9debe6bb2b4109584a706742f259d"
+    },
+    {
+      "path": "SYNTHETIC_SMOKE_RESULTS.json",
+      "bytes": 61491,
+      "sha256": "0e35271fd1d48384a0ca982f108036fdef15af10ef20759229b79264c636b4a5"
+    },
+    {
+      "path": "SYNTHETIC_TRANSPORT_AMENDMENT.md",
+      "bytes": 3028,
+      "sha256": "151b768a1254ae578beab7a1098b1da5d579b4529d4563ad629b5e0ba0ea1ad6"
+    },
+    {
+      "path": "SYNTHETIC_USAGE_HISTORY.json",
+      "bytes": 2633,
+      "sha256": "6e727b14ba3b58cd3dbe5f017112d1ad788ea00c164500c0681e4c5348bcd98e"
+    }
+  ]
+}

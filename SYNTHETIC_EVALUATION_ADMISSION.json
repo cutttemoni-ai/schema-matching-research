@@ -1,0 +1,258 @@
+{
+  "phase": "evaluation",
+  "at": "2026-11-04T00:48:45.834523+00:00",
+  "commit": "0322a601482fc4af22e7c1f326160bf5f777367a",
+  "code": {
+    "schema_match/synthetic_adapter.py": "0a0502be7dfbfa82e4a5091e3a13e1818a030f98e93d63afeede66e352024290",
+    "scripts/synthetic_campaign.py": "226b9a358da9c940fd15edfe558324b64fbbf9fbd2d68e163fcc7508a5403bac",
+    "scripts/score_synthetic.py": "a600c3df2f7f305246845b6c18c70bfa04548e9ca5534564d21197fb520ff9a1",
+    "schema_match/vertex_provider_v1.py": "70764a3a393810615f7d59c1f3f37bd086f538231213f07148731fc031a96aa0",
+    "schema_match/vertex_budget_v1_2.py": "684b74c3fc25ed020d7220c3d02b2250151743f38b4c3bf8faddefc8dae6ccd8",
+    "schema_match/b2b_engine.py": "ad2da908e85ea604096187d2f309ac194618f62cd7d5eba416152e0bb260861f",
+    "schema_match/semantic_engine.py": "78130fcad54ec5621e841873d64504437c626ec1f23c22de4572d2bd1826a46d",
+    "schema_match/profiles.py": "9dd42eb27f7a2f18242b0ec52f1d62cf7657a4f187eef5f2a3d874ec2730cab0",
+    "schema_match/review.py": "8543db8dfec214c05343fbf1f9b43022a7de3b75b9a4e7ad8a63dcd950db0505",
+    "schema_match/models.py": "4479c3629bfad8e55b8dadb1f99e7531a4033ff49674a8176e3b5930741cf5bf",
+    "schema_match/files.py": "a030e98b6861b3ae8bc6fc1caad1e0df0fce5065851874fdac1cc119ee0d40c2",
+    "schema_match/cloud_c_service.py": "ff8dab600599335279fbb2d3c7ff5ee5c15c9511e843c973afd0bb278564a78c",
+    "schema_match/synthetic_transforms.py": "ecbb00cbc3321d1800cc8d42fd7684ab876eb79ced1a762a05423745036ba4da",
+    "schema_match/synthetic_refiner.py": "2807325a3c75da62c6e008f5c2d5b234622afa40312af14c3d05bb64d3ae1a5b",
+    "schema_match/synthetic_revision.py": "c6b4dcbca97bdd0c0d6f69eefef01bbc075105f7cac678170ea4003e939ba392"
+  },
+  "config": {
+    "version": "vertex-gemini-research-v1.1",
+    "project": "schema-match-gemini-261103",
+    "location": "global",
+    "model": "gemini-3.8-flash",
+    "api_version": "v1",
+    "context_tokens": 1048576,
+    "max_model_output_tokens": 65536,
+    "max_output_tokens": 8192,
+    "thinking_level": "LOW",
+    "reason_max_chars": 120,
+    "automatic_retries": 0,
+    "migration_inference_cap": 6,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": 0.75,
+      "cached_input_per_million": 0.075,
+      "output_including_thoughts_per_million": 3.75,
+      "effective_through": "2026-12-31",
+      "checked_at": "2026-11-03",
+      "source": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing"
+    },
+    "model_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash",
+    "parameter_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash",
+    "schema_policy": "Supported JSON Schema enum/anyOf; reason length additionally validated in Python. No inferred target repairs.",
+    "token_policy": "CountTokens real request plus a separate budget-only message/schema representation. max(two counts)+256 service framing+output4096; messages and system not added twice. CountTokens26 vs real prompt60 in smoke means not exact. No byte-based admission or content clipping."
+  },
+  "maximum_generation_POSTs": 16,
+  "automatic_retries": 0,
+  "CountTokens_requests": 32,
+  "compatibility": {
+    "legacy_semantics": "one target per source; repeated target collision -> needs_review",
+    "legacy_conversion": "not supported in the recommendation contract",
+    "complex_relations": "not representable by legacy output; retained in scoring denominator",
+    "supplied_ids": "fields[*].id preserved without aliasing or dropping fields",
+    "dispatch": "one generation per complete CSV task; differs from deployed per-column dispatch",
+    "information_condition": "same full v0 profiles, target reference, schema, supplied headers,12 joint rows and arithmetic evidence for every arm"
+  },
+  "input_checks": [
+    {
+      "task_id": "E09_products",
+      "hashes": {
+        "source.csv": "a671681131c0277c604314f61e88c57d82ff67283eb8f155622a3b6ba9e1082c",
+        "target_reference.csv": "02c4ff370d905dcdc7d86efce16aed71639ae8775a9d543c5427679a99b02190",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 9,
+      "rows": 356,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "E09_orders",
+      "hashes": {
+        "source.csv": "254ddcf2e119c3e413ad0cfa3d488f5e1f68bf392d06b363f1721f9c3db7c596",
+        "target_reference.csv": "bf1bbcc7d52e82834dfc9e1d0f5f45f23afab64134cab78efb5dbef3dce1926c",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 16,
+      "rows": 375,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "E10_products",
+      "hashes": {
+        "source.csv": "3359943f5156d0d22b2164d73b555b5bcab763fb89ccfeb3d02935bb4d83628c",
+        "target_reference.csv": "952344dfceca0580dc15c77402122b90088f89740a0d47e1d6f720cd0b17bb84",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 11,
+      "rows": 373,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "E10_orders",
+      "hashes": {
+        "source.csv": "d516c4a3faf46b74bd42de2a3f7da5b9bd55321be3f76a91f7e885ad28c34620",
+        "target_reference.csv": "7c669e484b95ed97bb6650d3c31c911e269b8b24c7011f164b1534e5ccb99add",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 16,
+      "rows": 392,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "E11_products",
+      "hashes": {
+        "source.csv": "e9ad599d8ec7bbaef11ff556d2df704a584ab48af8390952cd8626b8b12c5fa1",
+        "target_reference.csv": "888cd12b1e22de6e379461cbc14ff30054c939d57c43036d7ec1ca1f28b933d0",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 12,
+      "rows": 390,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "E11_orders",
+      "hashes": {
+        "source.csv": "5b4cf4be3163b19e5fb39d25156f05623533757c11d54ca1f2d7d75c840e234a",
+        "target_reference.csv": "fc505775600915f1edecd3772673980034c94862a20c35bcbd431d54ecc216dc",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 17,
+      "rows": 409,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "E12_products",
+      "hashes": {
+        "source.csv": "fdf9ece5b13652115e11ec4f908088f6c6ca8e64740e4f150620dd34c4eeb1b3",
+        "target_reference.csv": "3b26d535e8157a3f540c8b49366f46bb969aefeec6d71fb93048d6edd2f93f29",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 11,
+      "rows": 407,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "E12_orders",
+      "hashes": {
+        "source.csv": "1e792b0664f8dbaa126174e765ff1dd1c8696e70c09a688d992c20456c6c16d1",
+        "target_reference.csv": "e6a4250654c9c8a34c56f8fc0f2f7bad6400893c19d077bada0481b273eef98a",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 16,
+      "rows": 426,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    }
+  ],
+  "planning_cost_usd": 0.722187,
+  "price_source": "https://cloud.google.com/model-garden/pricing",
+  "price_checked_date": "2026-11-04",
+  "pricing_note": "No-cache rate scenario, USD0.75/M input,3.75/M output including thoughts. Not an invoice or proven upper bound."
+}
