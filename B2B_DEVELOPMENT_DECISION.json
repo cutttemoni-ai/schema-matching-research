@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-04T00:27:32.114128+00:00",
+  "decision": "candidate_unchanged_no_revision_needed",
+  "candidate": "C-b2b-v1-candidate",
+  "development_results_sha256": "274f741c1f91d1dd749e77000c2d3a9d78ea8314a737bca61b950345caaffd16",
+  "basis": "Both arms10/10, reviews0, wrong links0, failures0. No observed error warrants a development prompt change. Candidate adds tokens/cost; no accuracy gain established.",
+  "additional_development_calls_used": 0,
+  "additional_development_calls_authorized_but_unused": 20,
+  "invoice_relationships": "UCI InvoiceNo and InvoiceDate remain ambiguous and excluded from these10 tasks. No label changes.",
+  "heldout_results_seen": false,
+  "future_prompt_search": false
+}

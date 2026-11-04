@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-04T00:32:20.881668+00:00",
+  "prepared_commit": "1ce390ebb6d29a5cf59aa6643061acc82047aadf",
+  "development_cases": 10,
+  "development_generation_POSTs": 20,
+  "candidate_revision_count": 0,
+  "optional_development_POSTs_used": 0,
+  "heldout_cases": 6,
+  "heldout_generation_POSTs": 12,
+  "new_generation_POSTs": 32,
+  "CountTokens_successful_requests": 64,
+  "valid_outputs": 32,
+  "API_failures": 0,
+  "output_errors": 0,
+  "unknown_completion": 0,
+  "429_retransmissions": 0,
+  "development_correct": {
+    "C": 10,
+    "C-b2b-v1-candidate": 10
+  },
+  "heldout_correct": {
+    "C": 5,
+    "C-b2b-v1-candidate": 5
+  },
+  "improved": 0,
+  "worsened": 0,
+  "same": 16,
+  "real_enterprise_90_verified": false,
+  "input_tokens": 64868,
+  "visible_output_tokens": 2017,
+  "output_including_thoughts": 2017,
+  "reported_thought_field_missing_records": 32,
+  "reference_usd": 0.1124295,
+  "frozen_input_ID_schema_config_verified": true,
+  "actual_payloads_verified": 32,
+  "complete_HTTP_hashes_verified": 32,
+  "unchanged_ambiguous_InvoiceNo_InvoiceDate": true,
+  "completed_development_reopen_extra_generations": 0,
+  "final_candidate_frozen_before_heldout": true,
+  "candidate_or_truth_tuned_after_heldout": false,
+  "offline_tests": {
+    "passed": 26,
+    "failures": 0,
+    "existing_warning": "Starlette TestClient httpx deprecation"
+  },
+  "initial_test_environment_issue": "New worktree lacked .runtime parent; initial12 fixture setup errors resolved before generation by creating it.",
+  "cumulative_scope": {
+    "local_attempts": 520,
+    "service_attempts": 20,
+    "total_attempts": 540,
+    "observed_standard_reference_usd": 3.1413539999999998,
+    "cost_missing_attempts": 0,
+    "complete_service_observation": true
+  },
+  "active_generation_lock": false,
+  "private_raw_requests_responses_in_git": false,
+  "production_default": "C",
+  "main_merge": false,
+  "deployment": false
+}
