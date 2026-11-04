@@ -1,0 +1,20 @@
+{
+  "event_id": "b2b-v3-exposed-holdout-reclassified",
+  "recorded_at_utc": "2026-11-04T01:12:56.144616+00:00",
+  "actor": "Codex B2B-v3",
+  "purpose": "disclosed failure analysis and regression development",
+  "task_ids": [
+    "E09_products",
+    "E09_orders",
+    "E10_products",
+    "E10_orders",
+    "E11_products",
+    "E11_orders",
+    "E12_products",
+    "E12_orders"
+  ],
+  "access": "authoring_only",
+  "used_for_engine_improvement": true,
+  "effective_split": "development_regression",
+  "preserved_prior_result_commit": "685a51e23bd7a17398dd001f4897401ccf0e3cc4"
+}
