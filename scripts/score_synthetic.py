@@ -158,7 +158,7 @@ def score(phase,partial=False):
     arms=sorted({r['arm'] for r in rows})
     summary={a:aggregate([r for r in rows if r['arm']==a]) for a in arms}
     per_vendor={a:{v:aggregate([r for r in rows if r['arm']==a and r['vendor']==v]) for v in sorted({r['vendor'] for r in rows})} for a in arms}
-    obj=dict(synthetic=True,notice='합성 주문·상품 평가 자료에서의 결과. 실제 거래처 독립 평가가 아님.',phase=phase,partial=partial,
+    obj=dict(synthetic=True,notice='합성 주문·상품 평가 자료에서의 결과. 실제 거래처 독립 평가가 아님.',phase=phase,partial=partial,scored_at=__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat(),
              input_plan_sha256=hash_file(ART/f'{phase}-plan.json'),truth_hashes=truth_hashes,summary=summary,per_vendor=per_vendor,rows=rows,requests=cost,
              POSTs=sum(c['POSTs'] for c in cost),no_cache_estimated_usd=sum(c['no_cache_estimated_usd'] or 0 for c in cost),
              unknown_cost_requests=sum(c['no_cache_estimated_usd'] is None for c in cost),
@@ -173,7 +173,7 @@ def score(phase,partial=False):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--phase',choices=['development','revision','evaluation'])
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--phase',choices=['development','revision','compatibility','evaluation'])
     parser.add_argument('--inventory',action='store_true');parser.add_argument('--partial',action='store_true');args=parser.parse_args()
     if args.inventory:inventory()
     elif args.phase:score(args.phase,args.partial)

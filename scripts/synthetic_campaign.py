@@ -35,8 +35,8 @@ DATA=ROOT.parent/'schema-synthetic-dataset-20261104'/'dataset'
 ART=ROOT/'research-artifacts'/'synthetic-b2b-v1'
 RUN=ROOT/'runs'/'synthetic-b2b-v1'
 HISTORY=ROOT.parent/'schema-matching-prototype'
-PHASES={'development':['C','B2B_v1'],'revision':['B2B_v2'],'evaluation':['C','B2B_v2']}
-MAX_CALLS={'development':32,'revision':16,'evaluation':16}
+PHASES={'development':['C','B2B_v1'],'revision':['B2B_v2'],'compatibility':['B2B_v2'],'evaluation':['C','B2B_v2']}
+MAX_CALLS={'development':32,'revision':16,'compatibility':0,'evaluation':16}
 INPUT_RATE=.75
 OUTPUT_RATE=3.75
 
@@ -57,15 +57,17 @@ def config():
 def systems(arm,wire):
     if arm=='C':return SYSTEM,schemas(wire)
     if arm=='B2B_v1':return B2B_SYSTEM,schemas(wire)
-    from schema_match.synthetic_revision import SYSTEM as REVISION, response_schemas
-    return REVISION,response_schemas(wire)
+    # API compatibility amendment: retain the already-working legacy model
+    # contract/prompt, then apply an explicit deterministic grouped layer.
+    return B2B_SYSTEM,schemas(wire)
 
 
 def code_hashes():
     names=['schema_match/synthetic_adapter.py','scripts/synthetic_campaign.py','scripts/score_synthetic.py',
            'schema_match/vertex_provider_v1.py','schema_match/vertex_budget_v1_2.py','schema_match/b2b_engine.py',
            'schema_match/semantic_engine.py','schema_match/profiles.py','schema_match/review.py','schema_match/models.py',
-           'schema_match/files.py','schema_match/cloud_c_service.py','schema_match/synthetic_transforms.py']
+           'schema_match/files.py','schema_match/cloud_c_service.py','schema_match/synthetic_transforms.py',
+           'schema_match/synthetic_refiner.py']
     if (ROOT/'schema_match/synthetic_revision.py').exists():names.append('schema_match/synthetic_revision.py')
     return {n:hash_file(ROOT/n) for n in names if (ROOT/n).exists()}
 
@@ -150,7 +152,7 @@ class FrozenProvider(VertexProvider):
 def normalize(p,j,record):
     value=json.loads(record['raw_response']);Draft202012Validator(j['local_schema']).validate(value)
     if record['finish_reasons']!=['STOP']:raise ValueError('Incomplete output')
-    if j['arm']=='B2B_v2':
+    if j['arm']=='B2B_v2' and 'relations' in j['schema']['properties']:
         from schema_match.synthetic_revision import validate_output
         relations=validate_output(value,j['wire'])
     else:
@@ -160,6 +162,9 @@ def normalize(p,j,record):
         guarded,warnings=conservative_guard(parsed.mappings,sources)
         record.update(raw_recommendations=[m.model_dump() for m in parsed.mappings],policy_recommendations=[m.model_dump() for m in guarded],warnings=warnings)
         relations=legacy_relations(record)
+        if j['arm']=='B2B_v2':
+            from schema_match.synthetic_refiner import refine
+            relations=refine(j['wire'],record)
     record['relations']=relations
 
 
@@ -229,18 +234,60 @@ def run(phase,limit=None):
                     if client:client.close()
                 r=finish(p,j,d,r,started);new+=1;safe=r['execution_category']!='uncertain'
                 print(pack({'phase':phase,'task':j['task_id'],'arm':j['arm'],'category':r['execution_category'],'POSTs':r['actual_POST_attempts'],'no_cache_usd':r['no_cache_estimated_usd'],'seconds':r['local_seconds']}),flush=True)
-                if not safe or r['execution_category']=='client_failure_before_transmission' or r.get('http_status') in (401,403,404,429):break
+                if not safe or r['execution_category']=='client_failure_before_transmission' or (r.get('http_status') or 0)>=400:break
         finally:
             if safe:lock.delete(if_generation_match=generation)
 
 
+def abandon_native():
+    """Account for stopped experiment without replaying any completed/unknown ID."""
+    p=read(ART/'revision-plan.json')
+    for j in p['jobs']:
+        d=RUN/'jobs'/j['id']
+        if (d/'result.json').exists():continue
+        if (d/'slot.json').exists():
+            finish(p,j,d,{'error':'Interrupted native-contract attempt; completion unknown; permanently no replay'},time.perf_counter())
+        else:
+            write(d/'result.json',dict(request_id=j['id'],task_id=j['task_id'],arm=j['arm'],source_names=j['source_names'],
+                 execution_category='cancelled_native_contract',relations=[],usage=None,actual_POST_attempts=0,
+                 no_cache_estimated_usd=0.,standard_reference_usd=0.,automatic_retries=0),True)
+    write(ART/'native-abandonment.json',{'at':journal.now_iso(),'reason':'400 INVALID_ARGUMENT; no semantic retries, no unknown-ID replay','accounted':16},True)
+
+
+def derive_compatibility():
+    """Reuse original B2B-v1 outputs on every development task; zero new calls."""
+    from schema_match.synthetic_refiner import refine
+    path=ART/'compatibility-plan.json'
+    if path.exists():return verify_plan('compatibility')
+    original=verify_plan('development');jobs=[]
+    for old in original['jobs']:
+        if old['arm']!='B2B_v1':continue
+        record=read(RUN/'jobs'/old['id']/'result.json')
+        if record['execution_category']!='valid_output':raise ValueError('Cannot derive from a failed original response')
+        j=deepcopy(old);j['arm']='B2B_v2';j['reused_model_request_id']=old['id']
+        j['id']=hashlib.sha256(pack([old['id'],'compatibility',hash_file(ROOT/'schema_match/synthetic_refiner.py')]).encode()).hexdigest()[:32]
+        jobs.append(j)
+        r=deepcopy(record);r.update(request_id=j['id'],arm='B2B_v2',reused_model_request_id=old['id'],
+            prediction_derivation='deterministic explicit-evidence refinement of saved original B2B-v1 output',
+            actual_POST_attempts=0,usage=None,source_model_usage_already_accounted_in=old['id'],
+            no_cache_estimated_usd=0.,standard_reference_usd=0.,local_seconds=0.,relations=refine(j['wire'],record))
+        write(RUN/'jobs'/j['id']/'result.json',r,True)
+    obj=dict(phase='compatibility',at=journal.now_iso(),commit=git_head(),code=code_hashes(),config=config(),jobs=jobs,
+             maximum_generation_POSTs=0,CountTokens_requests=0,compatibility=compatibility(),planning_cost_usd=0.,
+             note='All16 source model outputs reused, no new inference or prompt search; native failure experiment retained separately')
+    write(path,obj,True);write(ART/'compatibility-seal.json',{'sha256':hash_file(path)},True)
+    print(pack({'phase':'compatibility','derived_tasks':len(jobs),'new_POSTs':0}))
+
+
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action',choices=['prepare','run','freeze'])
+    parser.add_argument('action',choices=['prepare','run','freeze','abandon-native','derive'])
     parser.add_argument('--phase',choices=list(PHASES),default='development')
     parser.add_argument('--limit',type=int)
     args=parser.parse_args()
     os.environ.setdefault('GOOGLE_APPLICATION_CREDENTIALS',str(HISTORY/'.runtime/gcloud-research/application_default_credentials.json'))
     if args.action=='freeze':freeze_evaluation()
+    elif args.action=='abandon-native':abandon_native()
+    elif args.action=='derive':derive_compatibility()
     elif args.action=='prepare':prepare(args.phase)
     else:run(args.phase,args.limit)

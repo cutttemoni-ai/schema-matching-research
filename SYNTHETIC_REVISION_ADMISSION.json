@@ -1,0 +1,449 @@
+{
+  "phase": "revision",
+  "at": "2026-11-04T00:41:47.649681+00:00",
+  "commit": "b05257d7054906492f96642aef08c3b55fd513d7",
+  "code": {
+    "schema_match/synthetic_adapter.py": "0a0502be7dfbfa82e4a5091e3a13e1818a030f98e93d63afeede66e352024290",
+    "scripts/synthetic_campaign.py": "431aabefa197f972eaf4f67bdac4409aee0f3f6de574f823f99c9002cfb3cf0b",
+    "scripts/score_synthetic.py": "b40118036c4fd9dca33ed8f90a2cac2dceba038c756503cc5c8fe187f44ba76d",
+    "schema_match/vertex_provider_v1.py": "70764a3a393810615f7d59c1f3f37bd086f538231213f07148731fc031a96aa0",
+    "schema_match/vertex_budget_v1_2.py": "684b74c3fc25ed020d7220c3d02b2250151743f38b4c3bf8faddefc8dae6ccd8",
+    "schema_match/b2b_engine.py": "ad2da908e85ea604096187d2f309ac194618f62cd7d5eba416152e0bb260861f",
+    "schema_match/semantic_engine.py": "78130fcad54ec5621e841873d64504437c626ec1f23c22de4572d2bd1826a46d",
+    "schema_match/profiles.py": "9dd42eb27f7a2f18242b0ec52f1d62cf7657a4f187eef5f2a3d874ec2730cab0",
+    "schema_match/review.py": "8543db8dfec214c05343fbf1f9b43022a7de3b75b9a4e7ad8a63dcd950db0505",
+    "schema_match/models.py": "4479c3629bfad8e55b8dadb1f99e7531a4033ff49674a8176e3b5930741cf5bf",
+    "schema_match/files.py": "a030e98b6861b3ae8bc6fc1caad1e0df0fce5065851874fdac1cc119ee0d40c2",
+    "schema_match/cloud_c_service.py": "ff8dab600599335279fbb2d3c7ff5ee5c15c9511e843c973afd0bb278564a78c",
+    "schema_match/synthetic_transforms.py": "ecbb00cbc3321d1800cc8d42fd7684ab876eb79ced1a762a05423745036ba4da",
+    "schema_match/synthetic_revision.py": "c6b4dcbca97bdd0c0d6f69eefef01bbc075105f7cac678170ea4003e939ba392"
+  },
+  "config": {
+    "version": "vertex-gemini-research-v1.1",
+    "project": "schema-match-gemini-261103",
+    "location": "global",
+    "model": "gemini-3.8-flash",
+    "api_version": "v1",
+    "context_tokens": 1048576,
+    "max_model_output_tokens": 65536,
+    "max_output_tokens": 8192,
+    "thinking_level": "LOW",
+    "reason_max_chars": 120,
+    "automatic_retries": 0,
+    "migration_inference_cap": 6,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": 0.75,
+      "cached_input_per_million": 0.075,
+      "output_including_thoughts_per_million": 3.75,
+      "effective_through": "2026-12-31",
+      "checked_at": "2026-11-03",
+      "source": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing"
+    },
+    "model_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash",
+    "parameter_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash",
+    "schema_policy": "Supported JSON Schema enum/anyOf; reason length additionally validated in Python. No inferred target repairs.",
+    "token_policy": "CountTokens real request plus a separate budget-only message/schema representation. max(two counts)+256 service framing+output4096; messages and system not added twice. CountTokens26 vs real prompt60 in smoke means not exact. No byte-based admission or content clipping."
+  },
+  "maximum_generation_POSTs": 16,
+  "automatic_retries": 0,
+  "CountTokens_requests": 32,
+  "compatibility": {
+    "legacy_semantics": "one target per source; repeated target collision -> needs_review",
+    "legacy_conversion": "not supported in the recommendation contract",
+    "complex_relations": "not representable by legacy output; retained in scoring denominator",
+    "supplied_ids": "fields[*].id preserved without aliasing or dropping fields",
+    "dispatch": "one generation per complete CSV task; differs from deployed per-column dispatch",
+    "information_condition": "same full v0 profiles, target reference, schema, supplied headers,12 joint rows and arithmetic evidence for every arm"
+  },
+  "input_checks": [
+    {
+      "task_id": "D01_products",
+      "hashes": {
+        "source.csv": "c173db5b6194912689a21db8035744e6677157299155d7115dff4c2045719a12",
+        "target_reference.csv": "d47bb1cb0257b0df939e3fb578c4d71e530034ae60a68420c58d5e2550f58186",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 11,
+      "rows": 220,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "D01_orders",
+      "hashes": {
+        "source.csv": "28cabcd450ff21667268e2114bb40db58731c305c96cb8a92e147bec607543d5",
+        "target_reference.csv": "f7263bcb497d405b18cf519cf04938bb5967bf451756fc276b4d0745e701cace",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 15,
+      "rows": 239,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "D02_products",
+      "hashes": {
+        "source.csv": "9ae4650312539fd17baa244ef70d562cb85f4d29633909e62910374da38d928e",
+        "target_reference.csv": "c083ce0a710d74b31b5d213565ba27969731db814e3382d83426269a10866dad",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 11,
+      "rows": 237,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "D02_orders",
+      "hashes": {
+        "source.csv": "0a0854b62c78535732d426d0fda46c4cba715dd43296d8a271dbafd1bf627975",
+        "target_reference.csv": "6db0baa02d84da067eab5da877d254135c9ebc6cefc4e03c5139960ffe2432e8",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 15,
+      "rows": 256,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "D03_products",
+      "hashes": {
+        "source.csv": "9f70d8e2f55ec860e3d2938f000fc9c2b25a9142e1b585ce2f7f83c22caefd32",
+        "target_reference.csv": "1624588c8dda3e2f0430b33359cc1a75db6f0f709b29b441c74a92b44e6c2406",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 12,
+      "rows": 254,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "D03_orders",
+      "hashes": {
+        "source.csv": "73acd31fd6db5c611da920c88d1671fb1385e557f513688ec94a86e04ec97897",
+        "target_reference.csv": "895beaa414dd0f021a2a9919b1e4a593cd4d4024241344f0af72a454aa3555bb",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 15,
+      "rows": 273,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "D04_products",
+      "hashes": {
+        "source.csv": "7124f70543a42e60873f61db24010c9f7a06fdefb4a80dfc63c8d0365592719d",
+        "target_reference.csv": "6b31d508c82cda7cb87c82576e3a50f62ca73083b9b49843144e6dda3185334d",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 10,
+      "rows": 271,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "D04_orders",
+      "hashes": {
+        "source.csv": "c8889415e8f10117be7ab9ed92c8b8e4c82140af6ae7ccb7d38d96904031a325",
+        "target_reference.csv": "98080097484218b50ee2524ff37fdca3ea5a0b191c7a85aa993fb40daddd8536",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 15,
+      "rows": 290,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "D05_products",
+      "hashes": {
+        "source.csv": "c93499495d5ecb2cd33ee38270baae3c010d81f1f5e328e8772047091e30b182",
+        "target_reference.csv": "b8465845ec05ac3895c27d1a936e2323c78dd95d250e012ad8fc05f9435ceb44",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 12,
+      "rows": 288,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "D05_orders",
+      "hashes": {
+        "source.csv": "c0ddc049386b39d62b0d267558f760f3a3508265aafb720afd17644f3a607e4b",
+        "target_reference.csv": "ad93c0662574d0ccdaf2d6e4e57a06924cf4fdac93c113cf9aed0331c92ce9a2",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 15,
+      "rows": 307,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "D06_products",
+      "hashes": {
+        "source.csv": "e259f8c58ec32f51e29f16498134c2375aa0a3e5b9b2a41a61cfea425ea76200",
+        "target_reference.csv": "75adcd8406aa9e0becd3858bbfcffe1e95ad070dbe00fba1c1944205e781f8b6",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 11,
+      "rows": 305,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "D06_orders",
+      "hashes": {
+        "source.csv": "0358e6ff0d2465543e8db647c4f086eea20e8c6f04604701d908aeb1ed843177",
+        "target_reference.csv": "6fdcf30c7c7cd5aa16f318ac47efd76e9ed3b528789401883162a247245bc82f",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 15,
+      "rows": 324,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "D07_products",
+      "hashes": {
+        "source.csv": "79ddeb8504ecb882c526a236f5f785e4452b359a05d5755cb9c78b5d66b60b3f",
+        "target_reference.csv": "bfc5ed4e8961f8b4dfbaa1a8bd65d5f8ab30a631e25b58c90eec4e88ae53628d",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 12,
+      "rows": 322,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "D07_orders",
+      "hashes": {
+        "source.csv": "b05c21b70e72cbc2d61075f2fe9f79937dbbe7f239f970f1a4c9a76aed2a68db",
+        "target_reference.csv": "e1f0fffb8d28b46cc7d03d8c10ee00926a60f1f44dc1ef0eb0f528b9ce814d1f",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 15,
+      "rows": 341,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    },
+    {
+      "task_id": "D08_products",
+      "hashes": {
+        "source.csv": "a429d6c4b4f88fbbb9bd229e55cebe5678d1c635ccca414d684b24df520bbd4a",
+        "target_reference.csv": "acdc1e1e57b91ada0e37f54b5b298da1304b01f5e33498ee031e6d18cd7359f0",
+        "target_schema.json": "d3206bed0e2ae3c03c32393917fd3842959fdeab5c78a4610b00f788d6c884aa"
+      },
+      "columns": 10,
+      "rows": 339,
+      "target_ids": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "option",
+        "specification",
+        "sales_unit",
+        "pack_size",
+        "sale_price",
+        "purchase_price",
+        "category"
+      ]
+    },
+    {
+      "task_id": "D08_orders",
+      "hashes": {
+        "source.csv": "431b83482c0993362c754aa21bba1125ddbc7328bbfc65059fe77720dc61a93f",
+        "target_reference.csv": "71cbe802e6640e52f275b69ad746b79e1cb77ddb36b1ff7fa8b703d6ea2330c7",
+        "target_schema.json": "092d4390ea83b32c2a914a8ddbcb6e5f7e83a5e343c16c8679b8c40bbaa41a65"
+      },
+      "columns": 16,
+      "rows": 358,
+      "target_ids": [
+        "order_id",
+        "line_id",
+        "order_date",
+        "product_code",
+        "quantity",
+        "quantity_unit",
+        "pack_size",
+        "unit_price",
+        "line_amount",
+        "discount_amount",
+        "tax_amount",
+        "line_total",
+        "order_total",
+        "tax_rate"
+      ]
+    }
+  ],
+  "planning_cost_usd": 0.7286287499999999,
+  "price_source": "https://cloud.google.com/model-garden/pricing",
+  "price_checked_date": "2026-11-04",
+  "pricing_note": "No-cache rate scenario, USD0.75/M input,3.75/M output including thoughts. Not an invoice or proven upper bound."
+}
