@@ -1,0 +1,9 @@
+{
+  "review_bundle": "outputs\\b2b-web\\review_bundle.zip",
+  "entries": 81,
+  "bytes": 324051,
+  "sha256": "507de36992dd80494c6f33599818710932edf71bfd76e6bd1dc6ec231d3370d7",
+  "private_accounts_sessions_credentials_or_model_truth_included": false,
+  "local_preview": "http://127.0.0.1:8510/b2b",
+  "source_branch": "codex/b2b-v3-web-workflow"
+}

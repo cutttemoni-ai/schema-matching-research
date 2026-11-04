@@ -72,3 +72,23 @@ web_review/static/*
 !schemas/order_lines_v1.json
 !examples/b2b_products.csv
 !examples/b2b_orders.csv
+
+# B2B web candidate: executable code and synthetic demo CSV only.
+!schema_match/b2b_v3.py
+!schema_match/synthetic_refiner.py
+!schema_match/synthetic_transforms.py
+!schema_match/b2b_engine.py
+!schema_match/semantic_engine.py
+!web_review/b2b_precision.py
+!web_review/b2b_contract.py
+!web_review/b2b_workflow.py
+!web_review/b2b_inference.py
+!web_review/static/b2b.html
+!web_review/static/b2b.js
+!web_review/static/b2b.css
+!examples/b2b-web/
+!examples/b2b-web/products.csv
+!examples/b2b-web/products-next.csv
+!examples/b2b-web/products-changed.csv
+!examples/b2b-web/orders.csv
+!examples/b2b-web/products-unit-changed.csv

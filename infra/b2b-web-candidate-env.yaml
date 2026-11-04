@@ -1,0 +1,9 @@
+# Candidate configuration only. Not applied to the production service.
+GOOGLE_CLOUD_PROJECT: schema-match-gemini-261103
+GOOGLE_CLOUD_LOCATION: global
+SERVICE_BUCKET: schema-match-gemini-261103-service
+B2B_WEB_ENABLED: 'true'
+# Replace with an existing/private rules bucket that has NO Delete lifecycle.
+# It must differ from SERVICE_BUCKET. Bucket metadata read permission required.
+B2B_RULES_BUCKET: REPLACE_WITH_PRIVATE_DURABLE_RULES_BUCKET
+DEMO_LOGIN_ONLY: 'false'

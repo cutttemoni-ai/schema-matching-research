@@ -1,0 +1,48 @@
+{
+  "prior_ledger_sha256": "d85376c3e9d4bd5b06f992b5c905f6755e1cea918a311c5c3663e1b81e8b5342",
+  "prior_ledger_unchanged": true,
+  "new_generate_POSTs": 1,
+  "new_requests": [
+    {
+      "campaign": "b2b-web-v3",
+      "phase": "connection_check",
+      "task_id": "11cd4d5b357a3ee13ae203af3d800062",
+      "arm": "B2B-v3-web",
+      "request_id": "76da445f77214a1c8ae867173e52ec5c",
+      "POSTs": 1,
+      "category": "success",
+      "http_status": 200,
+      "input_tokens": 3619,
+      "visible_output_tokens": 312,
+      "thought_tokens": null,
+      "combined_output_tokens": 312,
+      "total_tokens": 3931,
+      "cached_tokens": null,
+      "no_cache_estimated_usd": 0.00388425,
+      "standard_reference_usd": 0.0077685,
+      "seconds": 4.88129079999635
+    }
+  ],
+  "local_application_failures_before_generation": [
+    {
+      "request_id": "711a344115984699a3776efa49b310bf",
+      "error": "ClientError",
+      "POSTs": 0
+    },
+    {
+      "request_id": "112622b052114e9c8107247a52ffaa3d",
+      "error": "Quota project differs from Vertex project",
+      "POSTs": 0
+    }
+  ],
+  "connection_success_CountTokens_requests": 2,
+  "failed_preflight_CountTokens_requests": null,
+  "failed_preflight_count_note": "One ClientError before generation; the physical preflight HTTP count is not durably observed",
+  "cumulative_campaign_POST_attempts": 74,
+  "cumulative_known_no_cache_estimated_usd": 1.1240925,
+  "prior_unknown_charge_requests": 1,
+  "scope": "Synthetic B2B campaigns plus local web connection check; not entire project lifetime",
+  "actual_invoice_verified": false,
+  "automatic_retries": 0,
+  "pricing_source": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing"
+}

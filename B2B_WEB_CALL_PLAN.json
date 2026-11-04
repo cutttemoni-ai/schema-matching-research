@@ -1,0 +1,18 @@
+{
+  "scope": "Local web connection verification; synthetic CSV only",
+  "expected_generate_content_POSTs": 1,
+  "unit_of_request": "one uploaded file, all source columns jointly",
+  "automatic_retries": 0,
+  "expected_CountTokens_requests": 2,
+  "model": "gemini-3.8-flash",
+  "location": "global",
+  "input_admission_tokens": 20000,
+  "output_token_limit": 4096,
+  "planning_scenario_no_cache_usd": 0.03036,
+  "pricing_input_usd_per_million": 0.75,
+  "pricing_output_including_reasoning_usd_per_million": 3.75,
+  "pricing_checked_at": "2026-11-04",
+  "pricing_source": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+  "cost_caveat": "Scenario estimate, not invoice or a guaranteed usage upper bound",
+  "reuse_first": "Offline API/transform tests use stored or fixture responses; no model calls. Repeated file previews and rule reuse do not call a model."
+}

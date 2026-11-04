@@ -1,0 +1,10 @@
+# Suggested role on the candidate rules bucket only; not applied.
+title: Schema B2B Approved Rule Store
+description: Private approved rules and stable personal identities, generation CAS
+stage: GA
+includedPermissions:
+  - storage.buckets.get
+  - storage.objects.get
+  - storage.objects.list
+  - storage.objects.create
+  - storage.objects.delete

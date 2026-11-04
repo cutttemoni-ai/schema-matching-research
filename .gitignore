@@ -44,6 +44,7 @@ datasets/
 *.bin
 research-artifacts-audit-console.json
 *.log
+/outputs/b2b-web/
 credentials*.json
 *service-account*.json
 

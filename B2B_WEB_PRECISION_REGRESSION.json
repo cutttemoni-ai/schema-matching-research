@@ -1,0 +1,90 @@
+{
+  "at": "2026-11-04T02:50:56.939655+00:00",
+  "synthetic": true,
+  "scope": "same exposed synthetic data / saved-plan safety regression, not an accuracy evaluation",
+  "new_model_calls": 0,
+  "previous_commit": "fae8168eb82714cc17c1e47d15c90b0f2f5e393f",
+  "historical_hashes": {
+    "B2B_V3_EVALUATION_RESULTS.json": "6fcba90ae11063124b060c71fdd296bebc225ef127af86ef09c56c5ce0d2e6d9",
+    "B2B_V3_EVALUATION_RESULTS.csv": "8a110a293588413804e4168e5a709ed4f96f8ff4ab7dad88fe9c70d810dd5ae8",
+    "SYNTHETIC_EVALUATION_RESULTS.json": "796cca1d365031b1b9d78de437953566665710b473e47b15148f2d7ea2a91a6d",
+    "B2B_V3_DATA_PRECISION_ERRATA.json": "39f61e08e7f564b7e93a174a40ecd5a805967218fc05d67a4d0a95707b869c53",
+    "B2B_V3_PREDICTION_SEAL.json": "3d8a9df4f3713a38f004d0d76a58fa1badd71649c070ed59ff9822cbd5beff90",
+    "schema_match/b2b_v3.py": "6b0d5f78ac3e10d26c221aad7cf8db45f36babc0a723924a76807c218d4c09ca"
+  },
+  "historical_bytes_unchanged": true,
+  "rounding_scenario_is_not_user_confirmation": true,
+  "tasks": [
+    {
+      "task_id": "N01_products",
+      "sealed_ready_cells": 2133,
+      "exact_replay_success": 1956,
+      "needs_approved_rounding": 177,
+      "explicit_zero_digits_half_up_scenario_success": 177,
+      "other_errors": 0
+    },
+    {
+      "task_id": "N01_orders",
+      "sealed_ready_cells": 3598,
+      "exact_replay_success": 3598,
+      "needs_approved_rounding": 0,
+      "explicit_zero_digits_half_up_scenario_success": 0,
+      "other_errors": 0
+    },
+    {
+      "task_id": "N02_products",
+      "sealed_ready_cells": 2250,
+      "exact_replay_success": 2250,
+      "needs_approved_rounding": 0,
+      "explicit_zero_digits_half_up_scenario_success": 0,
+      "other_errors": 0
+    },
+    {
+      "task_id": "N02_orders",
+      "sealed_ready_cells": 3780,
+      "exact_replay_success": 3780,
+      "needs_approved_rounding": 0,
+      "explicit_zero_digits_half_up_scenario_success": 0,
+      "other_errors": 0
+    },
+    {
+      "task_id": "N03_products",
+      "sealed_ready_cells": 2367,
+      "exact_replay_success": 2170,
+      "needs_approved_rounding": 197,
+      "explicit_zero_digits_half_up_scenario_success": 197,
+      "other_errors": 0
+    },
+    {
+      "task_id": "N03_orders",
+      "sealed_ready_cells": 3962,
+      "exact_replay_success": 3962,
+      "needs_approved_rounding": 0,
+      "explicit_zero_digits_half_up_scenario_success": 0,
+      "other_errors": 0
+    },
+    {
+      "task_id": "N04_products",
+      "sealed_ready_cells": 2484,
+      "exact_replay_success": 2484,
+      "needs_approved_rounding": 0,
+      "explicit_zero_digits_half_up_scenario_success": 0,
+      "other_errors": 0
+    },
+    {
+      "task_id": "N04_orders",
+      "sealed_ready_cells": 4144,
+      "exact_replay_success": 4144,
+      "needs_approved_rounding": 0,
+      "explicit_zero_digits_half_up_scenario_success": 0,
+      "other_errors": 0
+    }
+  ],
+  "totals": {
+    "sealed_ready_cells": 24718,
+    "exact_replay_success": 24344,
+    "needs_approved_rounding": 374,
+    "explicit_zero_digits_half_up_scenario_success": 374,
+    "other_errors": 0
+  }
+}

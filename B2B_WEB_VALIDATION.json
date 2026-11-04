@@ -1,0 +1,246 @@
+{
+  "at": "2026-11-04T02:49:29.709962+00:00",
+  "synthetic": true,
+  "base_commit": "fae8168eb82714cc17c1e47d15c90b0f2f5e393f",
+  "branch": "codex/b2b-v3-web-workflow",
+  "tests": {
+    "passed": 101,
+    "failed": 0,
+    "warnings": 1,
+    "warning": "Existing Starlette TestClient httpx deprecation",
+    "network_model_calls": 0
+  },
+  "browser": "Actual in-app browser localhost:8510; CSV uploads and form answers, no source_context.json",
+  "browser_checks": [
+    "new_supplier_upload_actual_AI_response_questions_preview_approval_download_rule_save",
+    "unknown_or_unanswered_blocks_execution",
+    "same_format_new_file_rule_reuse_and_new_approval",
+    "changed_headers_money_units_pack_size_invalid_values_require_review",
+    "two_tabs_stale_preview_409",
+    "edited_rule_new_version_and_old_versions_retained",
+    "real_process_restart_and_personal_relogin_preserves_rules",
+    "other_user_empty_lists_and_other_task_404",
+    "other_supplier_or_business_does_not_inherit_rule",
+    "orders_date_identifier_quantity_composites_with_explicit_excluded_columns",
+    "completed_repreview_repeat_approval_execution_count_one"
+  ],
+  "api_checks": [
+    "CSRF",
+    "owner_isolation",
+    "missing_required",
+    "duplicate_target",
+    "full_row_validation",
+    "fractional_or_conflicting_pack",
+    "epoch_origin_timezone",
+    "input_tax_rate_column",
+    "exact_70_digit_quantity",
+    "CAS_parallel_approval_one_execution",
+    "storage_failure_keeps_inflight_no_auto_rerun",
+    "same_completion_repreview_idempotence"
+  ],
+  "tasks": [
+    {
+      "task_id": "8a60da007cf58468c1596254f73dbb51",
+      "supplier_name": "합성 웹 검증 거래처",
+      "source_name": "products-next.csv",
+      "kind": "products",
+      "phase": "completed",
+      "execution_count": 1,
+      "reused_rule": true,
+      "all_rows": 2,
+      "can_execute": false,
+      "review_or_row_errors": 0,
+      "approved_rule_version": 2
+    },
+    {
+      "task_id": "37fb866c3f2bcfffcbb941ecb5324407",
+      "supplier_name": "합성 웹 검증 거래처",
+      "source_name": "products-next.csv",
+      "kind": "products",
+      "phase": "completed",
+      "execution_count": 1,
+      "decisions_version": 2,
+      "reused_rule": true,
+      "all_rows": 2,
+      "can_execute": true,
+      "review_or_row_errors": 0,
+      "approved_rule_version": 3
+    },
+    {
+      "task_id": "bfdc87cd89d44abd0b3c50ff450c1b71",
+      "supplier_name": "합성 웹 검증 거래처",
+      "source_name": "products-unit-changed.csv",
+      "kind": "products",
+      "phase": "review",
+      "execution_count": 0,
+      "reused_rule": false,
+      "all_rows": 2,
+      "can_execute": false,
+      "review_or_row_errors": 1,
+      "approved_rule_version": null
+    },
+    {
+      "task_id": "d464f698e8ea6243e97c3339418bd5d0",
+      "supplier_name": "합성 웹 검증 거래처",
+      "source_name": "products.csv",
+      "kind": "products",
+      "phase": "review",
+      "execution_count": 0,
+      "reused_rule": false,
+      "all_rows": 2,
+      "can_execute": false,
+      "review_or_row_errors": 0,
+      "approved_rule_version": null
+    },
+    {
+      "task_id": "4a55ee7b319b1a0516d8002ef4854989",
+      "supplier_name": "합성 웹 검증 거래처",
+      "source_name": "orders.csv",
+      "kind": "orders",
+      "phase": "completed",
+      "execution_count": 1,
+      "reused_rule": false,
+      "all_rows": 2,
+      "can_execute": true,
+      "review_or_row_errors": 0,
+      "approved_rule_version": null
+    },
+    {
+      "task_id": "11cd4d5b357a3ee13ae203af3d800062",
+      "supplier_name": "합성 웹 검증 거래처",
+      "source_name": "products.csv",
+      "kind": "products",
+      "phase": "completed",
+      "execution_count": 1,
+      "reused_rule": false,
+      "all_rows": 2,
+      "can_execute": false,
+      "review_or_row_errors": 0,
+      "approved_rule_version": 1
+    },
+    {
+      "task_id": "732e5079827be38f2cd46d40a888362b",
+      "supplier_name": "합성 웹 검증 거래처",
+      "source_name": "products-changed.csv",
+      "kind": "products",
+      "phase": "review",
+      "execution_count": 0,
+      "reused_rule": true,
+      "all_rows": 2,
+      "can_execute": false,
+      "review_or_row_errors": 1,
+      "approved_rule_version": null
+    },
+    {
+      "task_id": "911fdc051e48d6b57f70742d7ae43db5",
+      "supplier_name": "합성 웹 검증 거래처",
+      "source_name": "products.csv",
+      "kind": "products",
+      "phase": "review",
+      "execution_count": 0,
+      "reused_rule": false,
+      "all_rows": 2,
+      "can_execute": false,
+      "review_or_row_errors": 0,
+      "approved_rule_version": null
+    },
+    {
+      "task_id": "90d18944deb2276dd3bffd800b96f4bf",
+      "supplier_name": "합성 분리 검증 거래처",
+      "source_name": "products-next.csv",
+      "kind": "products",
+      "phase": "draft",
+      "execution_count": 0,
+      "reused_rule": false,
+      "all_rows": 2,
+      "can_execute": false,
+      "review_or_row_errors": 0,
+      "approved_rule_version": null
+    }
+  ],
+  "suppliers": [
+    {
+      "synthetic_name": "합성 분리 검증 거래처",
+      "versions": []
+    },
+    {
+      "synthetic_name": "합성 웹 검증 거래처",
+      "versions": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "examples": {
+    "orders.csv": {
+      "rows": 2,
+      "columns": 10,
+      "sha256": "fe65ca9e19f25d3f0438ba749d8d5b2522297dc4624e9b9c68e11a45e0e04303",
+      "synthetic": true
+    },
+    "products-changed.csv": {
+      "rows": 2,
+      "columns": 5,
+      "sha256": "cb2202d3b30d9c8dc142b3b739e48cff5431294432c5bed75cd13a29e4ace2cf",
+      "synthetic": true
+    },
+    "products-next.csv": {
+      "rows": 2,
+      "columns": 5,
+      "sha256": "f4ed45ff805edf75aa83a6edb7be71213228f281d82753a95f66a1c1ff1e8ebc",
+      "synthetic": true
+    },
+    "products-unit-changed.csv": {
+      "rows": 2,
+      "columns": 5,
+      "sha256": "e60a64a1a8f9abc7410ed755d02e87b3238b9e4a70f39b236cc1c0f8385b4d5e",
+      "synthetic": true
+    },
+    "products.csv": {
+      "rows": 2,
+      "columns": 5,
+      "sha256": "39f92e6ec64df75b6c8a37e5ba0c85d1d47283e8753cc616f188c6964e7f1924",
+      "synthetic": true
+    }
+  },
+  "historical_and_C_bytes_unchanged": {
+    "SYNTHETIC_EVALUATION_RESULTS.json": "796cca1d365031b1b9d78de437953566665710b473e47b15148f2d7ea2a91a6d",
+    "SYNTHETIC_EVALUATION_RESULTS.csv": "e1499b9359cdda28f4f01c49094173ddcd97c4b8f1699e04bdc6b2a0a9119244",
+    "B2B_V3_EVALUATION_RESULTS.json": "6fcba90ae11063124b060c71fdd296bebc225ef127af86ef09c56c5ce0d2e6d9",
+    "B2B_V3_EVALUATION_RESULTS.csv": "8a110a293588413804e4168e5a709ed4f96f8ff4ab7dad88fe9c70d810dd5ae8",
+    "B2B_V3_REPORT.md": "4148d2b3d4424b90c78575d6b833dc0c8b025c3ccd1cab297a02ac6c2a058da9",
+    "B2B_V3_DATA_PRECISION_ERRATA.json": "39f61e08e7f564b7e93a174a40ecd5a805967218fc05d67a4d0a95707b869c53",
+    "schema_match/b2b_v3.py": "6b0d5f78ac3e10d26c221aad7cf8db45f36babc0a723924a76807c218d4c09ca",
+    "schema_match/cloud_c_service.py": "ff8dab600599335279fbb2d3c7ff5ee5c15c9511e843c973afd0bb278564a78c",
+    "schema_match/vertex_provider_v1.py": "70764a3a393810615f7d59c1f3f37bd086f538231213f07148731fc031a96aa0",
+    "schema_match/vertex_budget_v1_2.py": "684b74c3fc25ed020d7220c3d02b2250151743f38b4c3bf8faddefc8dae6ccd8",
+    "schema_match/profiles.py": "9dd42eb27f7a2f18242b0ec52f1d62cf7657a4f187eef5f2a3d874ec2730cab0",
+    "config/gcp_research_v1.json": "a02f3d1ef07a35a9c93c75681659f06ac718564cfccacee7b92576aea012a91c"
+  },
+  "local_artifacts": {
+    "outputs\\b2b-web\\approved-result.png": {
+      "bytes": 60911,
+      "sha256": "c93955f060c8e575aae19c8c4f5fbd5411660dec3177de4a5d7fe041a7dba45a"
+    },
+    "outputs\\b2b-web\\final-preview.png": {
+      "bytes": 65762,
+      "sha256": "7f0e755ee0231f984dfd345130839fb54c720576fa0375d33dc9d46b20ad3613"
+    },
+    "outputs\\b2b-web\\order-preview.png": {
+      "bytes": 54995,
+      "sha256": "2f0935eeed0fcca34ba7ebb4584cc1a6cd99ac8f7277bf589b27f6bf8932ed11"
+    },
+    "outputs\\b2b-web\\browser-downloaded-standardized.csv": {
+      "bytes": 199,
+      "sha256": "e6f9cf0207468b8eda0b68800c14f874c9f6b1bb7b7792d642cecee66b63e247"
+    }
+  },
+  "production_deployment": false,
+  "main_merge": false,
+  "new_accuracy_claim": false,
+  "cloud_run_or_real_GCS_restart_tested": false,
+  "docker_image_build_performed": false,
+  "browser_final_rule_version": 3,
+  "browser_final_execution_count_after_repeat_approval": 1
+}

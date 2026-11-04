@@ -8,8 +8,9 @@ class AuthError(Exception):pass
 class Throttled(Exception):pass
 
 class Accounts:
-    def __init__(self,objects,*,demo_only=None,demo_key=None):
+    def __init__(self,objects,*,demo_only=None,demo_key=None,identity_objects=None):
         self.objects=objects
+        self.identities=identity_objects or objects
         self.demo_only=os.getenv('DEMO_LOGIN_ONLY','').lower()=='true' if demo_only is None else demo_only
         self.demo_key=demo_key or os.getenv('DEMO_CREDENTIALS_OBJECT','review-v2/config/demo-login.json')
     def _demo_config(self):
@@ -34,13 +35,27 @@ class Accounts:
         if not isinstance(name,str) or not re.fullmatch(r'[a-zA-Z0-9가-힣][a-zA-Z0-9가-힣_.-]{2,31}',name):raise AuthError('아이디는 한글·영문·숫자와 ._- 조합3~32자입니다.')
         return name.casefold()
     def _key(self,name):return 'review-v2/accounts/'+hashlib.sha256(name.encode()).hexdigest()+'.json'
+    def _account(self,normal):
+        key=self._key(normal);account,_=read_json(self.identities,key)
+        if account is None and self.identities is not self.objects:
+            # Retain an existing personal UID on first use of durable identities.
+            # Do not migrate sessions/demo identities or create an alias UID.
+            previous,_=read_json(self.objects,key)
+            if previous:
+                try:self.identities.write(key,previous,0)
+                except Conflict:
+                    account,_=read_json(self.identities,key)
+                    if account!=previous:raise AuthError('계정 이전 충돌을 담당자에게 확인해 주세요.')
+                account=previous
+        return account
     def _hash(self,password,salt):return hashlib.scrypt(password.encode(),salt=bytes.fromhex(salt),n=16384,r=8,p=1,maxmem=64*1024*1024).hex()
     def register(self,name,password):
         if self.demo_only:raise AuthError('데모에서는 새 계정을 만들 수 없습니다.')
         self.rate('registration',20,86400);normal=self._username(name)
         if not isinstance(password,str) or not 12<=len(password)<=128:raise AuthError('비밀번호는12~128자여야 합니다.')
+        if self._account(normal):raise AuthError('이미 사용 중인 아이디입니다.')
         salt=secrets.token_hex(16);account={'uid':uuid.uuid4().hex,'username':name,'password_hash':self._hash(password,salt),'salt':salt,'created_at':time.time(),'scheme':'scrypt-n16384-r8-p1'}
-        try:self.objects.write(self._key(normal),account,0)
+        try:self.identities.write(self._key(normal),account,0)
         except Conflict:raise AuthError('이미 사용 중인 아이디입니다.')
         return self.session(account)
     def login(self,name,password):
@@ -57,7 +72,7 @@ class Accounts:
             # random owner on each login prevents cross-browser account sharing.
             return self.session({'uid':uuid.uuid4().hex,'username':config['username']},
                 authentication='demo-password-session',credential_revision=self._demo_revision(config))
-        account,_=read_json(self.objects,self._key(normal))
+        account=self._account(normal)
         salt=account['salt'] if account else '00'*16;expected=account['password_hash'] if account else '00'*64
         if not hmac.compare_digest(self._hash(password,salt),expected) or not account:raise AuthError('아이디 또는 비밀번호를 확인해 주세요.')
         return self.session(account)
