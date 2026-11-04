@@ -1,0 +1,21 @@
+{
+  "purpose": "Candidate Cloud Run deployment connectivity and workflow verification, synthetic data only",
+  "baseline_commit": "c967e3ff2e53d2b5cfa885c5185f8165ec66cc0b",
+  "expected_generation_POSTs": 2,
+  "tasks": ["products.csv", "orders.csv"],
+  "request_unit": "one grouped request per uploaded file",
+  "automatic_retries": 0,
+  "expected_success_CountTokens_requests": 4,
+  "model": "gemini-3.8-flash",
+  "model_location": "global",
+  "input_admission_tokens_per_request": 20000,
+  "output_tokens_per_request": 4096,
+  "planning_no_cache_scenario_usd": 0.06072,
+  "pricing_input_per_million_usd": 0.75,
+  "pricing_output_including_reasoning_per_million_usd": 3.75,
+  "caveat": "Planning scenario, not invoice or guaranteed upper bound. Extra generation only if a discovered failure needs a corrected connection check; preserve every failed/unknown attempt.",
+  "previous_ledger": "B2B_WEB_CUMULATIVE_REQUEST_LEDGER.csv",
+  "previous_known_campaign_POSTs": 74,
+  "previous_known_campaign_estimate_usd": 1.1240925,
+  "previous_unknown_charge_requests": 1
+}

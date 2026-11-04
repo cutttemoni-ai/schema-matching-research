@@ -1,9 +1,6 @@
 *
 !Dockerfile
 !requirements-gcp.lock.txt
-!cloud_app.py
-!PROFILE_SPEC.md
-!GEMINI_EVALUATION_RESULTS.md
 !schema_match/
 schema_match/*
 !schema_match/__init__.py
@@ -31,7 +28,6 @@ config/*
 !examples/abbreviated.csv
 !examples/extra_columns.csv
 !examples/review_source.csv
-!examples/review_stored.json
 !web_review/
 web_review/*
 !web_review/__init__.py
@@ -72,3 +68,5 @@ web_review/static/*
 !examples/b2b-web/products-changed.csv
 !examples/b2b-web/orders.csv
 !examples/b2b-web/products-unit-changed.csv
+!examples/b2b-web/orders-next.csv
+!examples/b2b-web/orders-changed.csv

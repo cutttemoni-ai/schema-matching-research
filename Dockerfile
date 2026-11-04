@@ -9,7 +9,6 @@ COPY schema_match/b2b_v3.py schema_match/synthetic_refiner.py schema_match/synth
 COPY config/gcp_research_v1.json config/gcp_budget_v1_2.json config/comparison_v0.json config/usage_policy_v2.json ./config/
 COPY schemas ./schemas
 COPY examples ./examples
-COPY cloud_app.py PROFILE_SPEC.md GEMINI_EVALUATION_RESULTS.md ./
 COPY web_review ./web_review
 USER 65532:65532
 EXPOSE 8080

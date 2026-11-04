@@ -89,7 +89,8 @@ def create_app(objects=None,infer=None,executor=None,*,rule_objects=None,b2b_inf
         cfg=load_config()
         return JSONResponse({'engine':'C','model':cfg['model'],'location':cfg['location'],'engine_config_sha256':digest(cfg),
             'targets':default_schema(),'schema_presets':presets(),'transforms':TRANSFORMS,'transform_version':VERSION,'service_daily_limit':limit('service_daily_generation_calls'),'usage_limits':policy()['limits'],'retry_429':policy()['retry_429'],
-            'retention_days':7,'app_commit':os.getenv('APP_COMMIT','local-development'),
+            'retention_days':7,'app_commit':os.getenv('APP_COMMIT','local-development'),'revision':os.getenv('K_REVISION','local'),
+            'stored_demo_available':(ROOT/'examples/review_stored.json').is_file(),
             'authentication':'demo-password-session' if accounts.demo_only else 'app-password-session','demo_mode':accounts.demo_only,
             'b2b_enabled':b2b_enabled,'b2b_standards':{k:b2b_standards(k) for k in ('products','orders')},
             'limits':{'csv_bytes':1048576,'source_columns':20,'target_columns':20,'rows':10000,'schema_bytes':65536}})
@@ -101,6 +102,7 @@ def create_app(objects=None,infer=None,executor=None,*,rule_objects=None,b2b_inf
         return JSONResponse(v,201)
     async def demo(request):
         u=await run_in_threadpool(principal,request,True)
+        if not (ROOT/'examples/review_stored.json').is_file():raise WorkflowError('이 후보에서는 저장 모델 응답 시연을 제공하지 않습니다. 합성 CSV를 등록해 주세요.',404)
         v=await run_in_threadpool(flow.create,u,{},request.headers.get('idempotency-key'),stored_demo=True)
         return JSONResponse(v,201)
     async def task(request):
@@ -173,7 +175,7 @@ def create_app(objects=None,infer=None,executor=None,*,rule_objects=None,b2b_inf
     async def b2b_example(request):
         await run_in_threadpool(principal,request)
         name=request.path_params['name']
-        if name not in ('products.csv','orders.csv','products-next.csv','products-changed.csv'):raise WorkflowError('합성 예제를 찾을 수 없습니다.',404)
+        if name not in ('products.csv','orders.csv','products-next.csv','products-changed.csv','products-unit-changed.csv','orders-next.csv','orders-changed.csv'):raise WorkflowError('합성 예제를 찾을 수 없습니다.',404)
         return FileResponse(ROOT/'examples'/'b2b-web'/name,media_type='text/csv',filename=name)
     async def b2b_errors(request):
         u=await run_in_threadpool(principal,request);tid=request.path_params['task_id']

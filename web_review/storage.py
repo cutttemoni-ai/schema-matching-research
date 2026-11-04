@@ -1,10 +1,16 @@
 """Private object storage with generation compare-and-swap, also for local tests."""
-import base64,hashlib,json,os,re,secrets,threading,time
+import base64,hashlib,json,os,re,secrets,threading,time,logging
 from pathlib import Path
 from google.api_core.exceptions import NotFound,PreconditionFailed
 from google.cloud import storage
 
 class Conflict(Exception):pass
+
+def gcs_conflict(operation,key,generation):
+    # Correlate a real GCS412 with a deployed request without logging CSV data,
+    # account IDs, paths, credentials or the contents of the conflicting object.
+    logging.getLogger('review-web').warning(json.dumps({'event':'gcs_precondition_conflict',
+        'operation':operation,'key_sha256':hashlib.sha256(key.encode()).hexdigest(),'expected_generation':generation}))
 
 def encode(value):
     return value if isinstance(value,bytes) else json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode('utf8')
@@ -26,7 +32,9 @@ class GCSObjects:
     def write(self,key,value,expected=0):
         blob=self.bucket.blob(valid_key(key))
         try:blob.upload_from_string(encode(value),if_generation_match=expected,content_type='application/octet-stream')
-        except PreconditionFailed:raise Conflict('Stale object generation')
+        except PreconditionFailed:
+            gcs_conflict('write',key,expected)
+            raise Conflict('Stale object generation')
         return int(blob.generation)
     def delete(self,key,expected):
         try:self.bucket.blob(valid_key(key)).delete(if_generation_match=expected)
