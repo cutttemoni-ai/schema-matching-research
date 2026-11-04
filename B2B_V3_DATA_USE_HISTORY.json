@@ -1,0 +1,15 @@
+{
+  "synthetic": true,
+  "original_old_E_tasks": "development_regression",
+  "new_N_tasks": {
+    "state": "completed_scored_and_results_exposed",
+    "used_for_engine_improvement_after_score": false,
+    "not_eligible_for_future_claim_of_unseen_evaluation_without_disclosure": true
+  },
+  "repaired_N_tasks": {
+    "state": "same_family_development_regression",
+    "not_new_structures": true,
+    "new_model_calls": 0
+  },
+  "original_86_02_sha256": "796cca1d365031b1b9d78de437953566665710b473e47b15148f2d7ea2a91a6d"
+}

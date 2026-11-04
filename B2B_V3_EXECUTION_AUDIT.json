@@ -1,0 +1,127 @@
+{
+  "synthetic": true,
+  "candidate_commit": "542d7365a9c4f17f376d5829a123a401c8fd000a",
+  "candidate_frozen_at": "2026-11-04T01:23:29.350342+00:00",
+  "holdout_generated_at": "2026-11-04T01:26:56.565399+00:00",
+  "inputs_prepared_at": "2026-11-04T01:28:04.276336+00:00",
+  "predictions_sealed_at": "2026-11-04T01:33:11.910099+00:00",
+  "scored_at": "2026-11-04T01:33:13.882149+00:00",
+  "old_86_02_sha256": "796cca1d365031b1b9d78de437953566665710b473e47b15148f2d7ea2a91a6d",
+  "old_result_unchanged": true,
+  "old_E09_E12_split": "development_regression",
+  "new_raw_POSTs": 16,
+  "new_methods_predictions": 24,
+  "reused_development_B2B_outputs": 24,
+  "duplicate_model_requests": 0,
+  "new_automatic_retries": 0,
+  "new_unknown_completions": 0,
+  "new_known_no_cache_usd": 0.319449,
+  "cumulative_POSTs": 73,
+  "cumulative_known_no_cache_usd": 1.1202082500000001,
+  "inherited_unknown_request_ids": [
+    "6650a175e0b52777b766e7b87c84068f"
+  ],
+  "new_reported_input_tokens": 353732,
+  "new_reported_combined_output_tokens": 14440,
+  "cumulative_reported_input_tokens": 1235686,
+  "cumulative_reported_combined_output_tokens": 51585,
+  "CountTokens_requests_new": 32,
+  "CountTokens_requests_cumulative": 160,
+  "input_checks": [
+    {
+      "task": "N01_orders",
+      "hashes": {
+        "source_context.json": "bf7139c1a7085402baf52aef66a3a79bd522556a77e78b3f914d6291e2242079",
+        "target_reference.csv": "a10e6406d36925c8b8546d9939d23f82a61cd3402d6ad84b0745675e8302ef0f",
+        "target_schema.json": "7d81735ab823589cf559b5da7af6e1e09e1dd1f0519b0d8c6d0f97c49c196baf",
+        "source.csv": "45ff3ad279391b7aff762f6f85b526b3efc51dbc6896180e993fe01de839adee"
+      },
+      "identical_wire": true
+    },
+    {
+      "task": "N01_products",
+      "hashes": {
+        "source_context.json": "ec32c558b57a280aaf848b802a6e97c1f19822801d12d54bc21e2b6d566c7ceb",
+        "target_reference.csv": "824283fbde76f38a19330b8671c40f5b44143cae7dbb75e0c1afedbc4a39bca5",
+        "target_schema.json": "2de31d49373c43b1875b90ca139dfc52e531e668a9bd8785d55b2ba72310cbfa",
+        "source.csv": "41ca1924aa69efa50f3d7d5ca3f5475c541ff834885ad0391e2769544b69cbd5"
+      },
+      "identical_wire": true
+    },
+    {
+      "task": "N02_orders",
+      "hashes": {
+        "source_context.json": "42f5ee6fe7339de31be82d4e02dbc2133d495a3a050431fc9bd2c506a5ed244b",
+        "target_reference.csv": "deaf890f72002a803ffd18b7cd203194f7242642f74b0b12a4f95c423388f1c4",
+        "target_schema.json": "7d81735ab823589cf559b5da7af6e1e09e1dd1f0519b0d8c6d0f97c49c196baf",
+        "source.csv": "6b78b2b5300ced99d7e4f81abdbd214fbd0bca6f2fbab4874186c4fe41112598"
+      },
+      "identical_wire": true
+    },
+    {
+      "task": "N02_products",
+      "hashes": {
+        "source_context.json": "668e204e1ff75009cf38e25aea6d028b4d2581c430eb3b7557188b67019d5f58",
+        "target_reference.csv": "b961512d10dd4ba1f94e3d49411c3d542edf657b5d071aaf0dac97c0c1692b77",
+        "target_schema.json": "2de31d49373c43b1875b90ca139dfc52e531e668a9bd8785d55b2ba72310cbfa",
+        "source.csv": "4ae691c6e3d99d022f45b71521c672e7d1af1e57e892da2eb8207a4df25c7b96"
+      },
+      "identical_wire": true
+    },
+    {
+      "task": "N03_orders",
+      "hashes": {
+        "source_context.json": "02de743362b43cfbe7d77ff1f9fbc5f1352452d3b6ff7c131c8ac78051b4e53b",
+        "target_reference.csv": "b0ab38a76178d84c8cb79083ba3d409b88dfbf7b61769eee6aa988ead0541a63",
+        "target_schema.json": "7d81735ab823589cf559b5da7af6e1e09e1dd1f0519b0d8c6d0f97c49c196baf",
+        "source.csv": "c1e8d3595b52546200a3ab774ba2d45f657248ce8d9887a60a2889aa17ba227d"
+      },
+      "identical_wire": true
+    },
+    {
+      "task": "N03_products",
+      "hashes": {
+        "source_context.json": "18c46da39ea6e881280e88adceffcb7923ffa6aa064a1eefe0a8eb25e3285684",
+        "target_reference.csv": "b93865521d41cc7421624f9369d9ff2a8b755290b9a3fc6cf53ef5173f89c558",
+        "target_schema.json": "2de31d49373c43b1875b90ca139dfc52e531e668a9bd8785d55b2ba72310cbfa",
+        "source.csv": "123633b842724caeae3edeefa4fca62d452fb594fecfc576bfc01af9dc44d8b0"
+      },
+      "identical_wire": true
+    },
+    {
+      "task": "N04_orders",
+      "hashes": {
+        "source_context.json": "d4858cfe1ea8f06bc7bef922344820b6aa39d61c451a9c9a0b3995b4f2124a4d",
+        "target_reference.csv": "acdd8bd02919f044f477ef99ad80425f916edfafc4a59c672e6a72147cea1912",
+        "target_schema.json": "7d81735ab823589cf559b5da7af6e1e09e1dd1f0519b0d8c6d0f97c49c196baf",
+        "source.csv": "ea3cf6c7ba216651d3b9d5015325fe925470060c948f23c67e425b916f1604c4"
+      },
+      "identical_wire": true
+    },
+    {
+      "task": "N04_products",
+      "hashes": {
+        "source_context.json": "4814e50511a97b396a9d23b5bb2097262ba9d4e14b8a132da82e13bae0ffdbb2",
+        "target_reference.csv": "8e9f813ba8562dee26ab8a99dae2c86265c3be10f5860190e6dc3253d37a3d84",
+        "target_schema.json": "2de31d49373c43b1875b90ca139dfc52e531e668a9bd8785d55b2ba72310cbfa",
+        "source.csv": "ecb071e9cbbb7114e52679f9e3f8e1a84f4e81df235fa790649f5dbdc30b33a0"
+      },
+      "identical_wire": true
+    }
+  ],
+  "generator_sha256": "a89de7b43831253ba10f2afa5215a241c96584a52e3df3e6ffb3933ff640b0fa",
+  "source_metadata_condition": "All methods receive the same natural source descriptions and typed format evidence, no target IDs or truth",
+  "author_exposure": "Same author designed generic capabilities and structural families; structured business metadata authored for test; not author-blind independent validation",
+  "generation_rule_exposure": {
+    "private_generator_seed_truth_in_model_input": false,
+    "public_source_format_definitions_deliberately_provided": true,
+    "same_author_capability_and_family_design": true,
+    "template_code_written_after_candidate_freeze": true,
+    "author_blind_independence": false,
+    "source_descriptions_use_company_standard_label_vocabulary": true,
+    "source_context_contains_no_counterpart_and_undefined_role_hints": true,
+    "unmatched_ambiguity_metrics_are_assisted_policy_checks_not_blind_discovery": true
+  },
+  "all_predictions_before_truth": true,
+  "candidate_changed_after_evaluation": false
+}

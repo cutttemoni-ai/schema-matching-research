@@ -1,0 +1,156 @@
+{
+  "scope": "public v3 implementation/reports; immutable dataset file hashes are in each dataset manifest; excludes self",
+  "files": [
+    {
+      "path": "authoring/build_v3_holdout.py",
+      "bytes": 24574,
+      "sha256": "a66985e9bd13d4ac9ef85822932a361afe243d91b87baaa502d44604cefefb33"
+    },
+    {
+      "path": "authoring/build_v3_holdout_observed_v1.py",
+      "bytes": 23803,
+      "sha256": "a89de7b43831253ba10f2afa5215a241c96584a52e3df3e6ffb3933ff640b0fa"
+    },
+    {
+      "path": "B2B_V3_ADMISSION.json",
+      "bytes": 1861,
+      "sha256": "ec89b1eb5b4a6b7d21fbd6dbafb7ca78845e95c037e4fdbf7f327579e2ccfd5d"
+    },
+    {
+      "path": "B2B_V3_CUMULATIVE_REQUEST_LEDGER.csv",
+      "bytes": 11846,
+      "sha256": "d85376c3e9d4bd5b06f992b5c905f6755e1cea918a311c5c3663e1b81e8b5342",
+      "rows": 80,
+      "columns": 17
+    },
+    {
+      "path": "B2B_V3_DATA_PRECISION_ERRATA.json",
+      "bytes": 1558,
+      "sha256": "39f61e08e7f564b7e93a174a40ecd5a805967218fc05d67a4d0a95707b869c53"
+    },
+    {
+      "path": "B2B_V3_DATA_USE_HISTORY.json",
+      "bytes": 536,
+      "sha256": "5407bdd454709c733d2e6ccf6e6b70e55a7b3b53224081667eca3728aa458f27"
+    },
+    {
+      "path": "B2B_V3_EVALUATION_RESULTS.csv",
+      "bytes": 54036,
+      "sha256": "8a110a293588413804e4168e5a709ed4f96f8ff4ab7dad88fe9c70d810dd5ae8",
+      "rows": 351,
+      "columns": 21
+    },
+    {
+      "path": "B2B_V3_EVALUATION_RESULTS.json",
+      "bytes": 572949,
+      "sha256": "6fcba90ae11063124b060c71fdd296bebc225ef127af86ef09c56c5ce0d2e6d9"
+    },
+    {
+      "path": "B2B_V3_EXECUTION_AUDIT.json",
+      "bytes": 6156,
+      "sha256": "77360e112af0ef6aa4c303ca0860c7fb8fd17a08411fe2d559951206da9c9cd3"
+    },
+    {
+      "path": "B2B_V3_FREEZE.json",
+      "bytes": 3555,
+      "sha256": "d5b3640af0332457e6e78acd1db593a30928ea94ca54a4e1fb043dd30aaa8cbd"
+    },
+    {
+      "path": "B2B_V3_HOLDOUT_PROVENANCE.json",
+      "bytes": 4524,
+      "sha256": "270134b10234e8ed102a1c70e46ef2464e417f7622d6f3e01b25787471571e0f"
+    },
+    {
+      "path": "B2B_V3_OLD_DATA_EFFECTIVE_SPLITS.json",
+      "bytes": 1067,
+      "sha256": "818d7da3e6a5cb8951c7b9da8c0876f4d81d5d4bf1a7e4424f1eb599f04b041b"
+    },
+    {
+      "path": "B2B_V3_PLAN.md",
+      "bytes": 4725,
+      "sha256": "d8048bda2eb9d2c0f4c5488a73c3b084b87d50635894245d3b462379c9b31d97"
+    },
+    {
+      "path": "B2B_V3_PRECISION_REPAIR_CHECK.json",
+      "bytes": 490,
+      "sha256": "0570276aab0da028f719e5de7c88f73c1c5cdb0827fed4e14da93dfbff224582"
+    },
+    {
+      "path": "B2B_V3_PREDICTION_SEAL.json",
+      "bytes": 2308,
+      "sha256": "3d8a9df4f3713a38f004d0d76a58fa1badd71649c070ed59ff9822cbd5beff90"
+    },
+    {
+      "path": "B2B_V3_REGRESSION_RESULTS.csv",
+      "bytes": 48775,
+      "sha256": "36d08fb934269e8d61729da0c552a02dcf81ac597cc40faa8f5b7b958fe79734",
+      "rows": 311,
+      "columns": 21
+    },
+    {
+      "path": "B2B_V3_REGRESSION_RESULTS.json",
+      "bytes": 544468,
+      "sha256": "43611d884ac9a1a216c3597cbe1021bda036964ad253112ea54dd07cf7b08c1b"
+    },
+    {
+      "path": "B2B_V3_REPAIRED_PROVENANCE.json",
+      "bytes": 4577,
+      "sha256": "0c1a136a54a865990206fdf9cb8ba938cdf3dac90f4312317faffc5d4144c2ad"
+    },
+    {
+      "path": "B2B_V3_REPORT.md",
+      "bytes": 12229,
+      "sha256": "4148d2b3d4424b90c78575d6b833dc0c8b025c3ccd1cab297a02ac6c2a058da9"
+    },
+    {
+      "path": "B2B_V3_USAGE_RECLASSIFICATION.json",
+      "bytes": 597,
+      "sha256": "2ba741dc10b1b315557bbd93774940c811e6743aa9808f38d46edda851e7998e"
+    },
+    {
+      "path": "docs/B2B_V3_SOURCE_CONTRACT.md",
+      "bytes": 3960,
+      "sha256": "b76d50c60fd29cf397814f66ede0cbe95d456ce02fcfda2102eadb5e116d2397"
+    },
+    {
+      "path": "schema_match/b2b_v3.py",
+      "bytes": 17270,
+      "sha256": "6b0d5f78ac3e10d26c221aad7cf8db45f36babc0a723924a76807c218d4c09ca"
+    },
+    {
+      "path": "schema_match/b2b_v3_adapter.py",
+      "bytes": 3035,
+      "sha256": "0ab8ec5e2b0f5c26b9251871f223f3c72e3d5900f857329a000dce966fca4c75"
+    },
+    {
+      "path": "scripts/b2b_v3_campaign.py",
+      "bytes": 13836,
+      "sha256": "2667f9e6976909b201a329ffb62431d734bd875e640b6a5b2034b8ab47ba4fb3"
+    },
+    {
+      "path": "scripts/check_b2b_v3_precision_repair.py",
+      "bytes": 2221,
+      "sha256": "501f39c2e84c8dd35939cbacdbb364ff594e68e032102947eab19e70f835bd80"
+    },
+    {
+      "path": "scripts/package_b2b_v3.py",
+      "bytes": 3900,
+      "sha256": "5015c36c0e61b148080c6371d15ba1cbc2b65e9f46926b1b8b0e0f41ce44f30f"
+    },
+    {
+      "path": "scripts/report_b2b_v3.py",
+      "bytes": 22095,
+      "sha256": "095342148c7be2e53acf8f2a96643f0b7d6f1bea38af7e26a69ca4960cb58407"
+    },
+    {
+      "path": "scripts/score_b2b_v3.py",
+      "bytes": 7880,
+      "sha256": "c641cdb066895087fd761dafcc9873edb7a51685005ddbc557db014d2143ad47"
+    }
+  ],
+  "local_archives": {
+    "outputs/b2b-v3/author_evaluator_bundle.zip": "22c84a5f6b303b2edfda8ba70c1ba584d8b070c4bb66a693d0d72b94cf7638ca",
+    "outputs/b2b-v3/observed_model_inputs.zip": "73d777ed9fa2a05090a525b2599781538b0225acf490849a422c10fbd7396b5e",
+    "outputs/b2b-v3/repaired_regression_inputs.zip": "2fb4811d1d49e5687427ed792c4d6238e2b3c6d6807603a1f382b6dd40259ac4"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "same_family_precision_repair_REGRESSION_only",
+  "not_new_independent_evaluation": true,
+  "new_model_calls": 0,
+  "uses_original_sealed_conversion_plans": true,
+  "canonical_truth_unchanged": true,
+  "original_score_not_replaced": true,
+  "ready_plan_cells_checked": 24718,
+  "mismatches_after_source_precision_repair": 0,
+  "mismatches_in_preserved_original_evaluation": 374,
+  "model_did_not_observe_repaired_inputs": true,
+  "not_a_new_equal_input_model_comparison": true
+}

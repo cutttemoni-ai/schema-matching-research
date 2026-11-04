@@ -1,0 +1,154 @@
+{
+  "synthetic": true,
+  "notice": "합성 자료: 모든 거래처·상품·주문은 가상이며 실제 기업·거래 자료가 아닙니다.",
+  "seed": 2026110403,
+  "candidate_frozen_commit": "542d7365a9c4f17f376d5829a123a401c8fd000a",
+  "candidate_frozen_at": "2026-11-04T01:23:29.350342+00:00",
+  "generated_at": "2026-11-04T01:42:52.379027+00:00",
+  "generator_sha256": "a66985e9bd13d4ac9ef85822932a361afe243d91b87baaa502d44604cefefb33",
+  "source_type": "precision-repaired SAME-family REGRESSION only; not new structural evaluation",
+  "repair_of_manifest_sha256": "8930f0197a8d9a4cb94963f97695ab9f84427488fb744d81c6dea84ecb3875f2",
+  "independence_limit": "Author knows generic capabilities and selected structures; not author-blind, externally sourced or real-company independent evaluation",
+  "novelty": "NO NEW STRUCTURES: same observed N01-N04, source numerical serialization repaired after evaluation; regression only",
+  "source_metadata_condition": "All methods receive the same natural source descriptions and typed format evidence, no target IDs or truth",
+  "deliberately_missing_evidence": "one purchase-price tax-basis definition per vendor remains missing; mapped bindings not excluded",
+  "tasks": [
+    {
+      "task_id": "N01_products",
+      "rows": 237,
+      "columns": 13,
+      "reference_rows": 244,
+      "structure": {
+        "decimal": ",",
+        "group": ".",
+        "scale": "1000",
+        "gross": true,
+        "calendar": "gregorian_json",
+        "code": "nested_json",
+        "quantity": "nested_counts",
+        "basis": "row_varying"
+      },
+      "synthetic": true
+    },
+    {
+      "task_id": "N01_orders",
+      "rows": 257,
+      "columns": 16,
+      "reference_rows": 268,
+      "structure": {
+        "decimal": ",",
+        "group": ".",
+        "scale": "1000",
+        "gross": true,
+        "calendar": "gregorian_json",
+        "code": "nested_json",
+        "quantity": "nested_counts",
+        "basis": "row_varying"
+      },
+      "synthetic": true
+    },
+    {
+      "task_id": "N02_products",
+      "rows": 250,
+      "columns": 15,
+      "reference_rows": 257,
+      "structure": {
+        "decimal": ",",
+        "group": " ",
+        "scale": "0.01",
+        "gross": false,
+        "calendar": "iso_week",
+        "code": "three_parts",
+        "quantity": "two_counts",
+        "basis": "row_varying"
+      },
+      "synthetic": true
+    },
+    {
+      "task_id": "N02_orders",
+      "rows": 270,
+      "columns": 19,
+      "reference_rows": 281,
+      "structure": {
+        "decimal": ",",
+        "group": " ",
+        "scale": "0.01",
+        "gross": false,
+        "calendar": "iso_week",
+        "code": "three_parts",
+        "quantity": "two_counts",
+        "basis": "row_varying"
+      },
+      "synthetic": true
+    },
+    {
+      "task_id": "N03_products",
+      "rows": 263,
+      "columns": 13,
+      "reference_rows": 270,
+      "structure": {
+        "decimal": ".",
+        "group": ",",
+        "scale": "1",
+        "gross": true,
+        "calendar": "epoch_ms",
+        "code": "array_parts",
+        "quantity": "json_dynamic_unit",
+        "basis": "row_varying"
+      },
+      "synthetic": true
+    },
+    {
+      "task_id": "N03_orders",
+      "rows": 283,
+      "columns": 16,
+      "reference_rows": 294,
+      "structure": {
+        "decimal": ".",
+        "group": ",",
+        "scale": "1",
+        "gross": true,
+        "calendar": "epoch_ms",
+        "code": "array_parts",
+        "quantity": "json_dynamic_unit",
+        "basis": "row_varying"
+      },
+      "synthetic": true
+    },
+    {
+      "task_id": "N04_products",
+      "rows": 276,
+      "columns": 14,
+      "reference_rows": 283,
+      "structure": {
+        "decimal": ".",
+        "group": "",
+        "scale": "100",
+        "gross": false,
+        "calendar": "ordinal",
+        "code": "two_padded_parts",
+        "quantity": "three_tier_counts",
+        "basis": "row_varying"
+      },
+      "synthetic": true
+    },
+    {
+      "task_id": "N04_orders",
+      "rows": 296,
+      "columns": 20,
+      "reference_rows": 307,
+      "structure": {
+        "decimal": ".",
+        "group": "",
+        "scale": "100",
+        "gross": false,
+        "calendar": "ordinal",
+        "code": "two_padded_parts",
+        "quantity": "three_tier_counts",
+        "basis": "row_varying"
+      },
+      "synthetic": true
+    }
+  ],
+  "authoring_validation": "strict UTF8, CSV width/row range, disjoint identifiers, independent samples, quantity-price/tax/order-total reconciliation pass; no matcher invoked"
+}

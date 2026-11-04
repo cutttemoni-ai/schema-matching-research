@@ -1,0 +1,32 @@
+{
+  "effective_splits": {
+    "D01_products": "development",
+    "D01_orders": "development",
+    "D02_products": "development",
+    "D02_orders": "development",
+    "D03_products": "development",
+    "D03_orders": "development",
+    "D04_products": "development",
+    "D04_orders": "development",
+    "D05_products": "development",
+    "D05_orders": "development",
+    "D06_products": "development",
+    "D06_orders": "development",
+    "D07_products": "development",
+    "D07_orders": "development",
+    "D08_products": "development",
+    "D08_orders": "development",
+    "E09_products": "development",
+    "E09_orders": "development",
+    "E10_products": "development",
+    "E10_orders": "development",
+    "E11_products": "development",
+    "E11_orders": "development",
+    "E12_products": "development",
+    "E12_orders": "development",
+    "demo_products": "demo",
+    "demo_orders": "demo"
+  },
+  "eligible_old_holdout_tasks": [],
+  "reason": "E09-E12 disclosed and used for development/regression; original scores preserved"
+}

@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "discovered_after_scoring": true,
+  "candidate_not_changed": true,
+  "inputs_truth_scores_unchanged": true,
+  "issue": "Product quote tax rates were constructed with Decimal(float) then serialized at finite precision; no output rounding contract was declared.",
+  "affected": [
+    {
+      "task_id": "N01_products",
+      "source_columns": [
+        "新帳_08"
+      ],
+      "target": "sale_price",
+      "cells": 177,
+      "max_absolute_delta": "3.796419047619047609012209910E-23"
+    },
+    {
+      "task_id": "N03_products",
+      "source_columns": [
+        "항목_08"
+      ],
+      "target": "sale_price",
+      "cells": 197,
+      "max_absolute_delta": "3.928495238095238084853557463E-23"
+    }
+  ],
+  "strict_mismatches": 374,
+  "overall_max_absolute_delta": "3.928495238095238084853557463E-23",
+  "treatment": "All original strict mismatches remain errors. No tolerance/rounding applied, no affected case excluded, no corrected score substituted.",
+  "future_use": "Precision-corrected same-family data is a repair/regression version, not new-structure independent evaluation.",
+  "repair_generator": "authoring/build_v3_holdout.py; Decimal(str(rate)), with an independent inverse check of serialized prices",
+  "original_generator_preserved": "authoring/build_v3_holdout_observed_v1.py; exact hash matches original manifest",
+  "generator_fix_for_future_regression": "Use Decimal(str(rate_literal)), explicitly define output monetary precision/rounding, and independently validate serialized price/rate consistency."
+}
