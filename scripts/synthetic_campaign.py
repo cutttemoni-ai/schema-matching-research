@@ -64,7 +64,8 @@ def systems(arm,wire):
 def code_hashes():
     names=['schema_match/synthetic_adapter.py','scripts/synthetic_campaign.py','scripts/score_synthetic.py',
            'schema_match/vertex_provider_v1.py','schema_match/vertex_budget_v1_2.py','schema_match/b2b_engine.py',
-           'schema_match/semantic_engine.py','schema_match/profiles.py','schema_match/review.py','schema_match/models.py']
+           'schema_match/semantic_engine.py','schema_match/profiles.py','schema_match/review.py','schema_match/models.py',
+           'schema_match/files.py','schema_match/cloud_c_service.py','schema_match/synthetic_transforms.py']
     if (ROOT/'schema_match/synthetic_revision.py').exists():names.append('schema_match/synthetic_revision.py')
     return {n:hash_file(ROOT/n) for n in names if (ROOT/n).exists()}
 
@@ -83,6 +84,8 @@ def freeze_evaluation():
 
 def verify_freeze():
     f=read(ART/'final-freeze.json')
+    dirty=subprocess.check_output(['git','status','--porcelain','--untracked-files=no'],cwd=ROOT,text=True)
+    if dirty.strip():raise ValueError('Tracked changes after final freeze')
     if f['commit']!=git_head() or f['code']!=code_hashes() or f['config']!=config():
         raise ValueError('Final evaluation code/config/commit changed')
     return f

@@ -70,7 +70,7 @@ def aggregate(rows):
     return dict(all_bindings=len(rows),mapped_denominator=len(mapped),mapped_correct=sum(r['correct'] for r in mapped),
         mapped_accuracy=ratio(sum(r['correct'] for r in mapped),len(mapped)),
         defined_denominator=len(defined),defined_correct=sum(r['correct'] for r in defined),defined_accuracy=ratio(sum(r['correct'] for r in defined),len(defined)),
-        outcomes=dict(counts),wrong_auto_decisions=sum(r['wrong_auto'] for r in rows),
+        outcomes=dict(counts),wrong_auto_decisions=sum(r['wrong_auto'] for r in rows),wrong_auto_links=sum(r['wrong_auto_link'] for r in rows),
         review_count=sum(r['requested_review'] for r in rows),review_rate=ratio(sum(r['requested_review'] for r in rows),len(rows)),execution_failures=counts['execution_failure'],
         unmapped_denominator=len(unmapped),unmapped_correct=sum(r['correct'] for r in unmapped),
         unmapped_false_links=sum(r['wrong_auto'] for r in unmapped),
@@ -85,6 +85,8 @@ def aggregate(rows):
 
 def score(phase,partial=False):
     p=verify_plan(phase)
+    if not partial and not all((RUN/'jobs'/j['id']/'result.json').exists() for j in p['jobs']):
+        raise ValueError('Wait for all planned terminal records before full scoring; use --partial for smoke only')
     if phase=='evaluation':
         verify_freeze()
         if not all((RUN/'jobs'/j['id']/'result.json').exists() for j in p['jobs']):
@@ -128,6 +130,7 @@ def score(phase,partial=False):
             # Count a wrong automatic recommendation even if another overlapping
             # component has requested review. Ambiguity automatic guesses unsafe.
             wrong_auto=not failed and automatic and not correct
+            wrong_auto_link=wrong_auto and any(r['status']=='matched' for r in overlaps)
             cells=right=wrong_auto_cells=0;unsupported=False;examples=[]
             if b['status']=='mapped':
                 for i,(raw,oracle) in enumerate(zip(source_rows,expected,strict=True)):
@@ -135,8 +138,10 @@ def score(phase,partial=False):
                         if (i,target) in exclusions:continue
                         cells+=1;okay=False
                         if correct:
-                            try:okay=same(conversion_output(prediction,raw,target),oracle[target],types[target])
-                            except (ValueError,KeyError,TypeError,InvalidOperation,ZeroDivisionError):unsupported=True
+                            try:
+                                okay=same(conversion_output(prediction,raw,target),oracle[target],types[target])
+                                if not okay and not prediction.get('conversions'):unsupported=True
+                            except (ValueError,KeyError,IndexError,SyntaxError,TypeError,InvalidOperation,ZeroDivisionError,OverflowError):unsupported=True
                         if okay:right+=1
                         elif correct:
                             auto=next((c.get('status')=='ready' for c in prediction.get('conversions',[]) if c['target_id']==target),not prediction.get('conversions'))
@@ -144,7 +149,7 @@ def score(phase,partial=False):
                         if not okay and len(examples)<2:examples.append({'record':i+1,'target':target,'classification':'unsupported_or_value_mismatch' if correct else 'semantic_not_correct'})
             rows.append(dict(phase=phase,task_id=j['task_id'],vendor=j['task_id'].split('_')[0],arm=j['arm'],binding_id=b['binding_id'],
                 source_columns=b['source_columns'],expected_targets=b['semantic_targets'],truth_status=b['status'],cardinality=b['cardinality'],
-                prediction=prediction,overlapping_predictions=overlaps if not prediction else [],correct=correct,outcome=outcome,wrong_auto=wrong_auto,requested_review=review and not failed,
+                prediction=prediction,overlapping_predictions=overlaps if not prediction else [],correct=correct,outcome=outcome,wrong_auto=wrong_auto,wrong_auto_link=wrong_auto_link,requested_review=review and not failed,
                 transform_cells=cells,correct_transform_cells=right,unsupported_conversion=unsupported,
                 wrong_auto_conversion_cells=wrong_auto_cells,transform_failure_examples=examples))
         cost.append(dict(task_id=j['task_id'],arm=j['arm'],request_id=j['id'],category=record.get('execution_category'),
